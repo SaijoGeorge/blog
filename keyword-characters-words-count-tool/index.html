@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Keyword Character Word Count Tool</title>
+		<meta name="description" content="Free tool that can tell you the number of characters, words or a specific keyword that appears in any given text." />
+		<meta name="keywords" content="strikethrough text, strikethrough text twitter, strikethrough text facebook" />
+		<meta name="author" content="Saijo George" />
+		<meta name="robots" content="all">
+		<link rel="canonical" href="http://saijogeorge.com/keyword-characters-words-count-tool/" />
+		<meta name="theme-color" content="#F5AB35" />
+		<script type="application/ld+json">
+    		{  "@context" : "http://schema.org",
+       		"@type" : "WebSite",
+       		"name" : "Saijo George",
+       		"url" : "http://saijogeorge.com"
+    		}
+    	</script>
+    	<meta property="og:site_name" content="SaijoGeorge.com">
+		<meta property="og:title" content="Keyword Character Word Count Tool">
+		<meta property="og:description" content="Free tool that can tell you the number of characters, words or a specific keyword that appears in any given text.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="http://saijogeorge.com/keyword-characters-words-count-tool/">
+		<meta property="og:image" content="http://saijogeorge.com/images/banner/keyword-characters-words-count-tool.png">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@Saijo_George">
+		<meta name="twitter:creator" content="@Saijo_George">
+		<meta name="twitter:title" content="SaijoGeorge.com">
+		<meta name="twitter:domain" content="http://saijogeorge.com">
+		<meta name="twitter:description" content="Keyword Character Word Count Tool">
+		<meta name="twitter:image:src" content="http://saijogeorge.com/images/banner/keyword-characters-words-count-tool.png">
+
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component1.css" />
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type='text/javascript'>function count(seotext,seocounter) {
+			seocounter.value = seotext.value.length;
+
+			var numwords=document.seocharcount.countfun.value
+			numwords=numwords.split(" ")
+			document.seocharcount.words.value=numwords.length
+			}
+			function kcount(keyword,text){
+				document.getElementById('keyCnt').innerHTML=text.split(keyword).length-1;
+			}
+		</script>
+		<script type='text/javascript'>
+		$(document)
+        .one('focus.textarea', '.autoExpand', function(){
+            var savedValue = this.value;
+            this.value = '';
+            this.baseScrollHeight = this.scrollHeight;
+            this.value = savedValue;
+        })
+        .on('input.textarea', '.autoExpand', function(){
+            var minRows = this.getAttribute('data-min-rows')|0,
+                 rows;
+            this.rows = minRows;
+        console.log(this.scrollHeight , this.baseScrollHeight);
+            rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 23);
+            this.rows = minRows + rows;
+        });
+		</script>
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+		  (adsbygoogle = window.adsbygoogle || []).push({
+		    google_ad_client: "ca-pub-4939718182327406",
+		    enable_page_level_ads: true
+		  });
+		</script>
+
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a href="http://saijogeorge.com" target="_blank">by <strong>Saijo George</strong></a>
+
+				<span class="right"><a href="https://twitter.com/saijo_george" target="_blank">Twitter</a><a href="https://au.linkedin.com/in/saijogeorge" target="_blank">Linkedin</a>
+				</span>
+			</div>
+			<header>
+				<h1>Keyword / Character / Word Count Tool<span> Mobile Friendly</span></h1>
+			</header>
+			<section>
+				<p>This little tool works as a Keyword Count / Character Count / Word Count tool that will analyze any text that you copy paste or enter in-to the input area. Once you enter the text, the app will show you the number of characters and words automatically. Then, if you want you can enter a keyword and the app will tell you how many times that word appears in your given text.</p>
+				<p>Please refresh the page after each use, to get the correct data.</p>
+				<p>How do we calculate the number of words and characters?</p>
+				<ol>
+					<li>A word can consist of number, alphabets or both.</li>
+					<li>The script is very sensitive to whitespace characters ( spaces, tabs, linebreak, etc ).</li>
+					<li>Each space is considered as a word (so please make sure that you eliminate extra space at the start and end of your paragraphs).</li>
+					<li>Keyword search is case sensitive</li>
+				</ol><br/>
+
+				<div style="text-align: center;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- strike through -->
+					<ins class="adsbygoogle"
+					     style="display:block"
+					     data-ad-client="ca-pub-4939718182327406"
+					     data-ad-slot="2625502272"
+					     data-ad-format="auto"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div><br/><br/>
+
+				<form name="seocharcount">
+					<textarea class='autoExpand' rows='3' data-min-rows='3' name="countfun" onKeyDown="count(document.seocharcount.countfun,document.seocharcount.characters)" onKeyUp="count(document.seocharcount.countfun,document.seocharcount.characters)"></textarea><br/><br/>
+					Character Count : <input style='width:15em; display:inline;' class="seotools-input" readonly type="text" name="characters" size="4" maxlength="5" value="0" class="counter" /><br/><br/>
+					Word Count : <input style='width:15em; display:inline;' class="seotools-input" readonly type="text" name="words" size="4" maxlength="5" value="0" class="counter" /><br><br/>
+					The keyword  <input class="seotools-input" style='width:15em; display:inline;' type="text" name="keycount" onKeyUp="kcount(this.value,document.seocharcount.countfun.value)">  occurs <span style="color: #ff0000;"id="keyCnt"></span> times.
+				</form>
+
+			</section>
+			
+			<section class="related">
+				<p>Check out my other projects:</p>
+				<a target="_blank" href="http://saijogeorge.com/best-marketing-tools/">
+					<img src="http://saijogeorge.com/images/best-tools-list.png" />
+					<h3>Best SEO Tools</h3>
+				</a>
+				<a target="_blank" href="http://allthefreestock.com">
+					<img src="http://saijogeorge.com/images/allthefreestock.png" />
+					<h3>Free Stock Images</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/brand-style-guide-examples/">
+					<img src="http://saijogeorge.com/images/brand-styl-guides.png" />
+					<h3>Best Style Guides</h3>
+				</a>
+				<a target="_blank" href="https://helpmebuild.io">
+					<img src="http://saijogeorge.com/images/helpmebuild.png" />
+					<h3>Website Builders</h3>
+				</a>
+				<a target="_blank" href="http://codemyui.com">
+					<img src="http://saijogeorge.com/images/codemyui.png" />
+					<h3>Code My UI</h3>
+				</a>
+				<a target="_blank" href="https://nativeadvertisingworks.com">
+					<img src="http://saijogeorge.com/images/nativeads.png" />
+					<h3>Best Native Ads</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/css-puns/">
+					<img src="http://saijogeorge.com/images/css-puns.png" />
+					<h3>CSS Puns</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/google-local-review-direct-link/">
+					<img src="http://saijogeorge.com/images/google-local-review.png" />
+					<h3>Google Review Direct Link</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/title-case-converter/">
+					<img src="http://saijogeorge.com/images/title-case-converter.png">
+					<h3>Title Case Converter</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/one-click-encoding-decoding-tool/">
+					<img src="http://saijogeorge.com/images/encoding-decoding-tool.png">
+					<h3>Encoding Decoding Tool</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/strikethrough-text-generator/">
+					<img src="http://saijogeorge.com/images/strikethrough-text-generator.png">
+					<h3>Strikethrough Text Generator</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/prefix-suffix-keywords-tool/">
+					<img src="http://saijogeorge.com/images/prefix-suffix-keywords-tool.png">
+					<h3>Bulk Add Prefix Suffix</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/dummy-credit-card-generator/">
+					<img src="http://saijogeorge.com/images/dummy-credit-card-generator.png">
+					<h3>Dummy CC Generator</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/price-to-hours-worked/">
+					<img src="http://saijogeorge.com/images/price-to-hours-worked.png">
+					<h3>Price to Hours Worked</h3>
+				</a>
+			</section>
+			<section>
+			<div class="social-buttons"><a href="http://www.facebook.com/sharer.php?u=http://saijogeorge.com/keyword-characters-words-count-tool/" class="social-button facebook"><i class="fa<a target="_blank" href="http://saijogeorge.com/price-to-hours-worked/">
+					<img src="http://saijogeorge.com/images/price-to-hours-worked.png">
+					<h3>Price to Hours Worked</h3>
+				</a> fa-facebook"></i></a><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsaijogeorge.com%2Fkeyword-characters-words-count-tool%2F&amp;text=Find%20the%20number%20of%20characters%2C%20words%20or%20a%20specific%20keyword%20that%20appears%20in%20any%20given%20text&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fsaijogeorge.com%2Fkeyword-characters-words-count-tool%2F&amp;via=Saijo_George" class="social-button twitter"><i class="fa fa-twitter"></i></a><a href="http://plus.google.com/share?url=http://saijogeorge.com/keyword-characters-words-count-tool/" class="social-button google"><i class="fa fa-google"></i></a><a href="mailto:?subject=Keyword%20%2F%20Character%20%2F%20Word%20Count%20Tool&amp;body=Hi%20%0A%0ACheckout%20this%20free%20tool%20that%20can%20tell%20you%20the%20number%20of%20characters%2C%20words%20or%20a%20specific%20keyword%20that%20appears%20in%20any%20given%20text.%20http%3A%2F%2Fsaijogeorge.com%2Fkeyword-characters-words-count-tool%2F%0A%0ARegards%2C" class="social-button dribbble"><i class="fa fa-envelope"></i></a><a href="whatsapp://send?text=Keyword%20%2F%20Character%20%2F%20Word%20Count%20Tool%20%3A%20http%3A%2F%2Fsaijogeorge.com%2Fkeyword-characters-words-count-tool%2F" class="social-button whatsapp"><i class="fa fa-whatsapp"></i></a>
+			</div>
+			</section>
+		</div><!-- /container -->
+		<script src="js/polyfills.js"></script>
+		<script src="js/demo1.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-49302038-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</body>
+	<!-- Design based on http://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/ and http://tympanus.net/codrops/2013/06/13/creative-button-styles/ -->
+</html>

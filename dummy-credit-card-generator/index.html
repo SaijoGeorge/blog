@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Dummy Credit Card Generator</title>
+		<meta name="description" content="Generate fake Credit Card numbers for eCommerce testing purposes." />
+		
+		<link rel="canonical" href="http://saijogeorge.com/dummy-credit-card-generator/" />
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="./favicon.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="./favicon-196.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="./favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./favicon-152.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./favicon-144.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./favicon-120.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./favicon-114.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./favicon-76.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./favicon-72.png">
+        <link rel="apple-touch-icon" href="./favicon-57.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="./favicon-144.png">
+		<meta name="msapplication-config" content="./browserconfig.xml">
+
+		<meta name="theme-color" content="#67bcdb" />
+		<script type="application/ld+json">
+    		{  "@context" : "http://schema.org",
+       		"@type" : "WebSite",
+       		"name" : "Saijo George",
+       		"url" : "http://saijogeorge.com"
+    		}
+    	</script>
+		
+		<style>
+			/**********************
+
+			GENERAL STYLING
+
+			**********************/
+			body {
+			  padding: 0;
+			  margin: 0;
+			  background: #ff7b4a;
+			}
+
+			.credit-card {
+			  font-family: 'Verdana', sans-serif;
+			  transform-style: preserve-3d;
+			  animation: flip 3.4s infinite linear;
+			}
+
+			@keyframes flip {
+			  from {
+				transform: rotateY(0deg);
+			  }
+			  to {
+				transform: rotateY(360deg);
+			  }
+			}
+			.front, .back {
+			  position: absolute;
+			  top: calc(50% - 30px);
+			  left: calc(50% - 50px);
+			  display: block;
+			  width: 100px;
+			  height: 60px;
+			  border-radius: 5px;
+			  backface-visibility: hidden;
+			  background: #1E8BC3;
+			}
+
+			/**********************
+
+			FRONT OF CARD
+
+			**********************/
+			.front {
+			  transform: translate3d(0, 0, 0);
+			}
+
+			.box {
+			  position: absolute;
+			  top: 10px;
+			  left: 6px;
+			  display: block;
+			  width: 19px;
+			  height: 15px;
+			  border-radius: 2px;
+			  background: #ffffff;
+			  transform-origin: 0;
+			  transform: scaleX(0);
+			}
+			.box:after {
+			  content: '';
+			  display: block;
+			  width: 1px;
+			  height: 1px;
+			  box-shadow: 9px 0 #1E8BC3, 9px 1px #1E8BC3, 9px 2px #1E8BC3, 0 3px #1E8BC3, 1px 3px #1E8BC3, 2px 3px #1E8BC3, 3px 3px #1E8BC3, 4px 3px #1E8BC3, 5px 3px #1E8BC3, 6px 3px #1E8BC3, 7px 3px #1E8BC3, 8px 3px #1E8BC3, 9px 3px #1E8BC3, 4px 4px #1E8BC3, 4px 5px #1E8BC3, 4px 6px #1E8BC3, 13px 0 #1E8BC3, 13px 1px #1E8BC3, 13px 2px #1E8BC3, 13px 3px #1E8BC3, 13px 4px #1E8BC3, 13px 5px #1E8BC3, 13px 6px #1E8BC3, 13px 7px #1E8BC3, 14px 7px #1E8BC3, 15px 7px #1E8BC3, 16px 7px #1E8BC3, 17px 7px #1E8BC3, 18px 7px #1E8BC3, 0 7px #1E8BC3, 1px 7px #1E8BC3, 2px 7px #1E8BC3, 3px 7px #1E8BC3, 4px 7px #1E8BC3, 5px 7px #1E8BC3, 6px 7px #1E8BC3, 7px 7px #1E8BC3, 8px 7px #1E8BC3, 9px 7px #1E8BC3, 9px 8px #1E8BC3, 9px 9px #1E8BC3, 9px 10px #1E8BC3, 9px 11px #1E8BC3, 9px 12px #1E8BC3, 9px 13px #1E8BC3, 9px 14px #1E8BC3, 9px 15px #1E8BC3, 18px 11px #1E8BC3, 17px 11px #1E8BC3, 16px 11px #1E8BC3, 15px 11px #1E8BC3, 14px 11px #1E8BC3, 13px 11px #1E8BC3, 12px 11px #1E8BC3, 11px 11px #1E8BC3, 10px 11px #1E8BC3, 9px 11px #1E8BC3, 8px 11px #1E8BC3, 7px 11px #1E8BC3, 6px 11px #1E8BC3, 5px 11px #1E8BC3, 4px 11px #1E8BC3, 4px 12px #1E8BC3, 4px 13px #1E8BC3, 4px 14px #1E8BC3, 4px 15px #1E8BC3;
+			}
+
+			@keyframes scaleBox {
+			  from {
+				transform: scaleX(0);
+			  }
+			  to {
+				transform: scaleX(1);
+			  }
+			}
+			.logo, .logo:before, .logo:after {
+			  position: absolute;
+			  top: 10px;
+			  right: 6px;
+			  display: block;
+			  width: 17px;
+			  height: 17px;
+			  border-radius: 50%;
+			}
+			.logo:before {
+			  content: '';
+			  top: 0;
+			  right: 8px;
+			  background: #C5EFF7;
+			  transform: scale(0);
+			}
+			.logo:after {
+			  content: '';
+			  top: 0;
+			  right: 10px;
+			  background: #ffffff;
+			  transform: scale(0);
+			}
+
+			@keyframes scaleLogo {
+			  0% {
+				transform: scale(0);
+			  }
+			  50% {
+				transform: scale(1.1);
+			  }
+			  100% {
+				transform: scale(1);
+			  }
+			}
+			@keyframes scaleLogo2 {
+			  0% {
+				transform: scale(0) translate(0);
+			  }
+			  50% {
+				transform: scale(1.1) translate(5px);
+			  }
+			  100% {
+				transform: scale(1) translate(8px);
+			  }
+			}
+			.number {
+			  position: absolute;
+			  bottom: 12px;
+			  right: 6px;
+			  font-size: 8px;
+			  color: #ffffff;
+			}
+			.number:after {
+			  content: '';
+			  position: absolute;
+			  top: 0;
+			  left: -2px;
+			  display: block;
+			  width: 94px;
+			  height: 9px;
+			  background: #1E8BC3;
+			  transform-origin: 94px;
+			  transform: scaleX(1);
+			}
+
+			@keyframes scaleNumber {
+			  from {
+				transform: skew(30deg) scaleX(1);
+			  }
+			  to {
+				transform: skew(30deg) scaleX(0);
+			  }
+			}
+			/**********************
+
+			BACK OF CARD
+
+			**********************/
+			.back {
+			  transform: rotateY(180deg) translate3d(0, 0, 0);
+			}
+
+			.scan {
+			  position: absolute;
+			  top: 10px;
+			  display: block;
+			  width: 100px;
+			  height: 13px;
+			  overflow: hidden;
+			  background: #000;
+			  transform-origin: 0;
+			  transform: scale(0);
+			}
+			.scan:after {
+			  content: '';
+			  display: block;
+			  width: 5px;
+			  height: 100%;
+			  background: #6d5e46;
+			  box-shadow: 10px 0 #6d5e46, 14px 0 #6d5e46, 25px 0 #6d5e46;
+			  transform: skewX(-40deg) translate(110px);
+			}
+
+			@keyframes highlight {
+			  from {
+				transform: skewX(-40deg) translate(-35px);
+			  }
+			  to {
+				transform: skewX(-40deg) translate(110px);
+			  }
+			}
+			.info, .info:after {
+			  position: absolute;
+			  left: 6px;
+			  bottom: 16px;
+			  display: block;
+			  width: 38px;
+			  height: 10px;
+			  background: #ffffff;
+			  transform-origin: 0;
+			  transform: scale(0);
+			}
+			.info:after {
+			  content: '';
+			  top: 0;
+			  left: 44px;
+			  width: 16px;
+			}
+
+			.animate .box {
+			  animation: scaleBox 0.48571s forwards;
+			}
+			.animate .logo:before {
+			  animation: scaleLogo2 0.48571s 0.15s forwards;
+			}
+			.animate .logo:after {
+			  animation: scaleLogo 0.48571s forwards;
+			}
+			.animate .number:after {
+			  animation: scaleNumber 1s forwards;
+			}
+			.animate .scan {
+			  animation: scaleBox .5s forwards;
+			}
+			.animate .scan:after {
+			  animation: highlight 1.75s forwards;
+			}
+			.animate .info, .animate .info:after {
+			  animation: scaleBox 1s forwards;
+			}
+			.animate .info:after {
+			  animation: scaleBox 1s .6s forwards;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/jquery.min.js"></script>		
+		<script src="js/sweetalert.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/index.js"></script>
+		<script src="js/prefixfree.min.js"></script>
+		
+		<meta name="author" content="Saijo George">
+        <meta name="copyright" content="Saijo George">
+        <meta name="description" content="Generate fake Credit Card numbers for eCommerce testing purposes.">
+        <meta name="robots" content="all">
+        
+        <meta property="og:site_name" content="SaijoGeorge.com">
+        <meta property="og:title" content="Dummy Credit Card Generator">
+        <meta property="og:description" content="Generate fake Credit Card numbers for eCommerce testing purposes.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://saijogeorge.com/dummy-credit-card-generator/">
+        <meta property="og:image" content="http://saijogeorge.com/images/banner/dummy-credit-card-generator.png">
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@Saijo_George">
+        <meta name="twitter:creator" content="@Saijo_George">
+        <meta name="twitter:title" content="Dummy Credit Card Generator">
+        <meta name="twitter:domain" content="http://saijogeorge.com">
+        <meta name="twitter:description" content="Generate fake Credit Card numbers for eCommerce testing purposes.">
+        <meta name="twitter:image:src" content="http://saijogeorge.com/images/banner/dummy-credit-card-generator.png">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49302038-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4939718182327406",
+    enable_page_level_ads: true
+  });
+</script>
+
+	</head>
+	<body class="nl-blurred">
+		<div class="container demo-1">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a href="http://saijogeorge.com" target="_blank">by <strong>Saijo George</strong></a>
+				<span class="right"><a href="https://twitter.com/saijo_george" target="_blank">Twitter</a><a href="https://au.linkedin.com/in/saijogeorge" target="_blank">Linkedin</a>
+				</span>
+			</div>
+			<header>
+				<h1>Dummy Credit Card Generator</h1>
+				<span>Generate fake Credit Card numbers for eCommerce testing purposes</span>
+				<input type="radio" id="show" name="group">   
+                <input type="radio" id="hide" name="group" checked>
+                <label for="hide" class="hide"></label>
+                <label for="show" class="show"></label>
+                <span id="content">
+					 If you haven't already figured it out, this does NOT generate valid credit card numbers. Well, it will pass the Luhn algorithm/formula a.k.a the mod 10 check, but the financial institution will reject it.<br/><br/>This is something that could be useful for developers, while testing a payment gateway.<br/><br/>Big thanks to these folks for making this site possible : <a target="_blank" href="https://twitter.com/mukeshpnair">Mukesh</a>, <a target="_blank" href="http://tympanus.net/codrops/2013/05/21/natural-language-form-with-custom-input-elements/">Codrops</a>, <a target="_blank" href="https://gist.github.com/B-Con/4988902">Brad Conte</a>, <a target="_blank" href="http://codepen.io/ftntravis/pen/EoCjB">Travis Arnold</a> and <a target="_blank" href="http://tristanedwards.me/sweetalert">SweetAlert</a><br/><br/>Follow me on Twitter : <a target="_blank" href="https://twitter.com/Saijo_George">@Saijo_George</a>
+				</span>
+			</header>
+			<div class="main clearfix">
+			<br/>
+			<div class="credit-card">
+			<div class="front animate">
+				<i class="box"></i>
+				<i class="logo"></i>
+				<span class="number">0000 1111 1100 0011</span>
+			</div>
+			<div class="back">
+				<i class="scan"></i>
+				<i class="info"></i>
+			</div>
+			</div>
+			<br/>
+				<form id="nl-form" class="nl-form">
+					Choose a Credit Card<br/>
+					<span id="speriod">	
+					<select id="period">
+<option value="AE">American Express</option>
+<option value="D">Discover</option>
+<option value="MC">MasterCard</option>
+<option value="V">Visa</option>
+<option value="V13">Visa 13 digit</option>
+					</select></span>
+					<div class="nl-submit-wrap">
+						<button class="nl-submit" type="submit" id="ftot">Generate</button>
+					</div>
+					
+					<div class="nl-overlay"></div>
+					<br/>
+					<div style="text-align: center;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- Dummy CC -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-4939718182327406"
+						     data-ad-slot="2125327874"
+						     data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script></div>
+				</form>
+			</div>
+			<section class="related">
+				<p>Check out my other projects:</p>
+				<a target="_blank" href="http://saijogeorge.com/best-marketing-tools/">
+					<img src="http://saijogeorge.com/images/best-tools-list.png" />
+					<h3>Best SEO Tools</h3>
+				</a>
+				<a target="_blank" href="http://allthefreestock.com">
+					<img src="http://saijogeorge.com/images/allthefreestock.png" />
+					<h3>Free Stock Images</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/brand-style-guide-examples/">
+					<img src="http://saijogeorge.com/images/brand-styl-guides.png" />
+					<h3>Best Style Guides</h3>
+				</a>
+				<a target="_blank" href="https://helpmebuild.io">
+					<img src="http://saijogeorge.com/images/helpmebuild.png" />
+					<h3>Website Builders</h3>
+				</a>
+				<a target="_blank" href="http://codemyui.com">
+					<img src="http://saijogeorge.com/images/codemyui.png" />
+					<h3>Code My UI</h3>
+				</a>
+				<a target="_blank" href="https://nativeadvertisingworks.com">
+					<img src="http://saijogeorge.com/images/nativeads.png" />
+					<h3>Best Native Ads</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/css-puns/">
+					<img src="http://saijogeorge.com/images/css-puns.png" />
+					<h3>CSS Puns</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/google-local-review-direct-link/">
+					<img src="http://saijogeorge.com/images/google-local-review.png" />
+					<h3>Google Review Direct Link</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/title-case-converter/">
+					<img src="http://saijogeorge.com/images/title-case-converter.png">
+					<h3>Title Case Converter</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/one-click-encoding-decoding-tool/">
+					<img src="http://saijogeorge.com/images/encoding-decoding-tool.png">
+					<h3>Encoding Decoding Tool</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/strikethrough-text-generator/">
+					<img src="http://saijogeorge.com/images/strikethrough-text-generator.png">
+					<h3>Strikethrough Text Generator</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/keyword-characters-words-count-tool/">
+					<img src="http://saijogeorge.com/images/keyword-characters-words-count-tool.png">
+					<h3>Word Count Tool</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/prefix-suffix-keywords-tool/">
+					<img src="http://saijogeorge.com/images/prefix-suffix-keywords-tool.png">
+					<h3>Bulk Add Prefix Suffix</h3>
+				</a>
+				<a target="_blank" href="http://saijogeorge.com/price-to-hours-worked/">
+					<img src="http://saijogeorge.com/images/price-to-hours-worked.png">
+					<h3>Price to Hours Worked</h3>
+				</a>
+			</section>
+			<section>
+			<div class="social-buttons"><a href="http://www.facebook.com/sharer.php?u=http://saijogeorge.com/dummy-credit-card-generator/" class="social-button facebook"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsaijogeorge.com%2Fdummy-credit-card-generator%2F&amp;text=Generate%20fake%20Credit%20Card%20numbers%20for%20eCommerce%20testing%20purposes%20using&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fsaijogeorge.com%2Fdummy-credit-card-generator%2F&amp;via=Saijo_George" class="social-button twitter"><i class="fa fa-twitter"></i></a><a href="http://plus.google.com/share?url=http://saijogeorge.com/dummy-credit-card-generator/" class="social-button google"><i class="fa fa-google"></i></a><a href="mailto:?subject=Dummy%20Credit%20Card%20Generator&amp;body=Hi%20%0A%0ACheckout%20this%20free%20tool%20that%20can%20generate%20fake%20Credit%20Card%20numbers%20for%20eCommerce%20testing%20purposes.%20%0A%0Ahttp%3A%2F%2Fsaijogeorge.com%2Fdummy-credit-card-generator%2F%0A%0ARegards%2C%0A" class="social-button dribbble"><i class="fa fa-envelope"></i></a><a href="whatsapp://send?text=Generate%20fake%20Credit%20Card%20numbers%20for%20eCommerce%20testing%20purposes%20with%20http%3A%2F%2Fsaijogeorge.com%2Fdummy-credit-card-generator%2F" class="social-button whatsapp"><i class="fa fa-whatsapp"></i></a>
+			</div>
+			</section>
+		</div><!-- /container -->
+		<script src="js/nlform.js"></script>
+		<script src="js/ccgen.js"></script>
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
+	</body>
+</html>
