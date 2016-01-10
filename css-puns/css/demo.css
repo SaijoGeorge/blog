@@ -310,5 +310,9 @@ section {
     float: none;
     overflow: hidden;
     display: block;
-    font-size: 13px
+    font-size: 13px;
+}
+
+.carbonad .carbon-poweredby:link,.carbonad .carbon-poweredby:visited {
+    color: rgba(255,255,255,.75)
 }
