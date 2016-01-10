@@ -778,3 +778,21 @@ footer {
     transform: scale(1);
   }
 }
+
+
+/* Carbon Ads */
+.carbon-wrap img {
+float: left;
+margin: 0 15px 0px 0;
+border-radius: 6px;
+}
+a.carbon-text {
+font-family: 'Montserrat', sans-serif;
+display: block;
+font-size: 11px;
+color: #434343;
+font-size: 12px;
+line-height: 170%;
+text-decoration: none;
+padding-bottom: 5px;
+}
