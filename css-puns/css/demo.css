@@ -282,7 +282,7 @@ section {
 }
 
 /* Carbon Ads*/ 
-.carbonad {
+.carbonads {
     margin-right: auto;
     margin-left: auto;
     font-size: 13px;
@@ -292,27 +292,27 @@ section {
     background: rgba(255,255,255,.1)
 }
 
-.carbonad a:link,.carbonad a:visited {
+.carbonads a:link,.carbonads a:visited {
     color: #eee
 }
 
-.carbonad .carbon-wrap {
+.carbonads .carbon-wrap {
     display: block;
     overflow: hidden
 }
 
-.carbonad .carbon-wrap .carbon-img {
+.carbonads .carbon-wrap .carbon-img {
     float: left;
     margin-right: 1rem
 }
 
-.carbonad .carbon-wrap .carbon-text {
+.carbonads .carbon-wrap .carbon-text {
     float: none;
     overflow: hidden;
     display: block;
     font-size: 13px;
 }
 
-.carbonad .carbon-poweredby:link,.carbonad .carbon-poweredby:visited {
+.carbonads .carbon-poweredby:link,.carbonads .carbon-poweredby:visited {
     color: rgba(255,255,255,.75)
 }
