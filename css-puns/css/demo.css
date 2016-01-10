@@ -281,30 +281,34 @@ section {
   animation-direction: alternate;
 }
 
-#carbonads { 
-    max-width: 160px;
-    position: fixed; 
-    top: 78px;
-    right: 10px; 
-    padding: 15px;
-    border: 1px solid #fff; 
-    z-index: 1;
-   font-family: "Verdana", "Helvetica Neue", sans-serif;
-   font-size: .8em;
+/* Carbon Ads*/ 
+.carbonad {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 13px;
+    max-width: 20rem;
+    padding: 1rem;
+    border-radius: .25rem;
+    background: rgba(255,255,255,.1)
 }
 
-#carbonads a:hover, a:focus { 
-	color: white;
+.carbonad a:link,.carbonad a:visited {
+    color: #eee
 }
 
-.carbon-text {
-    display: block; 
-    color: white;
-    width: 130px; 
+.carbonad .carbon-wrap {
+    display: block;
+    overflow: hidden
 }
 
-.carbon-poweredby {
-    font-size: 80%;
-    color: white;
-    text-align: right; 
-}    
+.carbonad .carbon-wrap .carbon-img {
+    float: left;
+    margin-right: 1rem
+}
+
+.carbonad .carbon-wrap .carbon-text {
+    float: none;
+    overflow: hidden;
+    display: block;
+    font-size: 13px
+}
