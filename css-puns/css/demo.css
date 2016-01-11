@@ -304,6 +304,13 @@ section {
     color: #fff;
 }
 
+.carbon-text a:hover {
+    font-size: 80%;
+    line-height: 130%;
+    min-width: 120px;
+    color: #fff;
+}
+
 .carbon-poweredby {
     color: #fff;
     text-decoration: underline;
