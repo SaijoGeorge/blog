@@ -301,11 +301,11 @@ section {
     font-size: 80%;
     line-height: 130%;
     min-width: 120px;
-    color: #06c;
+    color: #fff;
 }
 
 .carbon-poweredby {
-    color: #6e6e6e;
+    color: #fff;
     text-decoration: underline;
     font-size: 65%;
     font-style: italic;
