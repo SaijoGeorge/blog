@@ -282,37 +282,27 @@ section {
 }
 
 /* Carbon Ads*/ 
-.carbonads {
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 13px;
-    max-width: 20rem;
-    padding: 1rem;
-    border-radius: .25rem;
-    background: rgba(255,255,255,.1)
+.carbonad {
+    background: #f8f8f8 !important;
+    padding: 10px !important;
+    border: none !important;
+    height: auto !important;
+    max-width: 300px;
+    width: 100% !important;
 }
 
-.carbonads a:link,.carbonads a:visited {
-    color: #eee
+.carbonad-img {
+    margin: 0 9px 0 0 !important;
 }
 
-.carbonads .carbon-wrap {
+.carbonad-text {
+    float: none !important;
+    width: auto !important;
+}
+
+.carbonad-tag {
+    float: none !important;
     display: block;
-    overflow: hidden
-}
-
-.carbonads .carbon-wrap .carbon-img {
-    float: left;
-    margin-right: 1rem
-}
-
-.carbonads .carbon-wrap .carbon-text {
-    float: none;
-    overflow: hidden;
-    display: block;
-    font-size: 13px;
-}
-
-.carbonads .carbon-poweredby:link,.carbonads .carbon-poweredby:visited {
-    color: rgba(255,255,255,.75)
+    width: auto !important;
+    text-align: right !important;
 }
