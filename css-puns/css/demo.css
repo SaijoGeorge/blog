@@ -297,7 +297,7 @@ section {
     margin-right: 10px;
 }
 
-.carbon-text {
+.carbon-text, .carbon-poweredby {
     font-size: 80%;
     line-height: 130%;
     min-width: 120px;
@@ -309,16 +309,6 @@ section {
     line-height: 130%;
     min-width: 120px;
     color: #fff;
-}
-
-.carbon-poweredby {
-    color: #fff;
-    text-decoration: underline;
-    font-size: 65%;
-    font-style: italic;
-    text-align: center;
-    display: block;
-    margin: 8px 0 0 0;
 }
 
 .cf:before,.cf:after, .carbon-wrap:before, .carbon-wrap:after{content:"";display:table;}
