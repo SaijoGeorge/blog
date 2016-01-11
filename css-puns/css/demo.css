@@ -284,8 +284,9 @@ section {
 /* Carbon Ads*/ 
 .carbon-wrap{
 	display: block;
-	background: #f1f1f1;
+	background: #b77c7b;
 	padding: 15px 15px 10px 15px;
+	max-width: 400px;
 }
 .carbon-wrap a {
     display: block;
