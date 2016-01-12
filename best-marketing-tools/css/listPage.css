@@ -780,34 +780,61 @@ footer {
 }
 
 
-/* Carbon Ads 
-.carbonad {
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 13px;
-    max-width: 20rem;
-    padding: 1rem;
-    border-radius: .25rem;
-    background: rgba(255,255,255,.1)
+/* Carbon Ads */
+.advertisement {
+  overflow: hidden;
+  padding: 1em;
 }
 
-.carbonad a:link,.carbonad a:visited {
-    color: #eee
+#carbonads {
+  display: block;
+  overflow: hidden;
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 26em;
+  border: solid 1px #2f89c6;
+  line-height: 1.5 !important;
 }
 
-.carbonad .carbon-wrap {
+  #carbonads a {
+    color: #3498db;
+  }
+
+  .carbon-wrap {
+    background: none !important;
+  }
+
+  #carbonads span {
     display: block;
-    overflow: hidden
-}
-
-.carbonad .carbon-wrap .carbon-img {
-    float: left;
-    margin-right: 1rem
-}
-
-.carbonad .carbon-wrap .carbon-text {
-    float: none;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: 0;
+  }
+
+  .carbon-text {
     display: block;
-    font-size: 13px
-}*/
+    float: left;
+    max-width: 55%;
+    text-align: left;
+  }
+
+  .carbon-img {
+    float: left;
+    margin-right: 1em;
+  }
+
+  .carbon-poweredby {
+    display: block;
+    float: right;
+    margin-top: -1.9em;
+    color: #2f89c6;
+    font-size: .8em;
+  }
+
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+  #carbonads {
+    max-width: 100%;
+    font-size: .9em;
+  }
+}
