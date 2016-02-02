@@ -15,14 +15,8 @@ $(document).ready(function(){
 	// INCLUDES LOADING
 	//----------------------------------------------------------------------------------//
 
-	//from localhost
-	//$(".top").load("http://localhost/DopeLists/include_top.html"); $(".footer").load("http://localhost/DopeLists/include_footer.html");
-
-	//from dominikserafin.pl
-	//$(".top").load("http://dominikserafin.pl/dope/include_top.html"); $(".footer").load("http://dominikserafin.pl/dope/include_footer.html");
-
-	//from dopelists.com
-	$(".top").load("http://dopelists.com/include_top.html"); $(".footer").load("http://dopelists.com/include_footer.html");
+	//from saijogeorge.com
+	$(".top").load("https://saijogeorge.com/best-marketing-tools/include_top.html"); $(".footer").load("https://saijogeorge.com/best-marketing-tools/include_footer.html");
 
 
 	//----------------------------------------------------------------------------------//
