@@ -778,3 +778,115 @@ footer {
     transform: scale(1);
   }
 }
+
+.multi-quote-section .inner {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.quote-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  min-height: 2em;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-transform: translate3d(0px);
+          transform: translate3d(0px);
+  will-change: transform, opacity; }
+  @media screen and (min-width: 550px) {
+    .quote-content {
+      min-width: 30em; } }
+  .quote-content p {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    line-height: 1.35em;
+    width: 100%; }
+  .quote-content.long-quote p {
+    font-size: 1.5em; }
+  .quote-content cite {
+  	width: 50%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 1em;
+ }
+    .quote-content cite a {
+      border: none; }
+
+.accolade .quote-open,
+.accolade .quote-close {
+  display: none; }
+
+@-webkit-keyframes voice-from-right-fx {
+  0% {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%); }
+  7% {
+    -webkit-transform: translateX(3%);
+            transform: translateX(3%); }
+  93% {
+    -webkit-transform: translateX(-8%);
+            transform: translateX(-8%); }
+  100% {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%); } }
+
+@keyframes voice-from-right-fx {
+  0% {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%); }
+  7% {
+    -webkit-transform: translateX(3%);
+            transform: translateX(3%); }
+  93% {
+    -webkit-transform: translateX(-8%);
+            transform: translateX(-8%); }
+  100% {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%); } }
+
+@-webkit-keyframes voice-from-right-cite-fx {
+  0% {
+    -webkit-transform: translateX(1.5em);
+            transform: translateX(1.5em); }
+  100% {
+    -webkit-transform: translateX(-1.5em);
+            transform: translateX(-1.5em); } }
+
+@keyframes voice-from-right-cite-fx {
+  0% {
+    -webkit-transform: translateX(8.5em);
+            transform: translateX(8.5em); }
+  100% {
+    -webkit-transform: translateX(-1.5em);
+            transform: translateX(-1.5em); } }
+
+@-webkit-keyframes fade-in-out {
+  0% {
+    opacity: 0; }
+  15% {
+    opacity: 1; }
+  85% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0; }
+  15% {
+    opacity: 1; }
+  85% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
