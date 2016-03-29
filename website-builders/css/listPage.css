@@ -37,7 +37,7 @@ sup {
 	width: 100%;
 	color: white;
 	border-top: 10px solid rgba(0,0,0,0.7);
-	background-color: #3498db;
+	background-color: #79BD8F;
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -150,7 +150,7 @@ sup {
 
 /* Pressed state */
 .navigation > .buttons > div.pressed {
-	background-color: rgba(0,255,0,0.3);
+	background-color: #F98B60;
 }
 
 .navigation > .buttons > div:hover {
@@ -166,11 +166,11 @@ sup {
 }
 
 .navigation > .buttons > .show.pressed {
-	background-color: rgba(0,255,0,0.3);
+	background-color: #F98B60;
 }
 
 .navigation > .buttons > .show:hover {
-	background-color: rgba(0,255,0,0.3);
+	background-color: #F98B60;
 }
 
 /*------------------------------------------*/
@@ -424,7 +424,7 @@ sup {
 	font-size: 12px;
 	margin: 7px 0 0 0;
 	padding: 6px 9px;
-	background: #3498db;
+	background: #79BD8F;
 	color: #fff;
 }
 
@@ -437,7 +437,7 @@ sup {
 	-moz-top: -13px;
 	top: -12px;
 
-	color: #3498db;
+	color: #79BD8F;
 	content: "▲";
 }
 
@@ -466,7 +466,7 @@ sup {
 .site-footer {
 	color: rgba(255,255,255,0.8);
 	padding-bottom: 55px;
-	background-color: #3498db;
+	background-color: #79BD8F;
 }
 
 /*------------------------------------------*/
