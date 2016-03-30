@@ -47,7 +47,7 @@ $(document).ready(function(){
 
 
 // Terminal Text Effect - as seen on http://codemyui.com/post/139832686855/terminal-style-text-effect   
- consoleText(['SEO', 'Marketing', 'Social', 'Site Audit', 'Outreach', 'A/B Testing', 'and more'], 'terminaltext',['#F98B60','#FAA9DF','#BA53DE', '#6163D3', '#FFE35E', '#FFBD67', '#C7F6F5']);
+ consoleText(['SEO', 'Marketing', 'Social', 'Site Audit', 'Outreach', 'A/B Testing', 'and more'], 'terminaltext',['#F98B60','#FAA9DF','#FC5185', '#3FBAC2', '#FFE35E', '#FFBD67', '#C7F6F5']);
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
