@@ -891,36 +891,3 @@ footer {
   100% {
     opacity: 0; } }
 
-/* Terminal Text Effect - as seen on http://codemyui.com/post/139832686855/terminal-style-text-effect */
-.hidden {
-  opacity:0;
-}
-.console-container {
-  font-size:1.6em;
-  text-align:center;
-  color:white;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin:auto;
-}
-.console-underscore {
-   display:inline-block;
-  position:relative;
-  top:-0.14em;
-  left:10px;
-}
-
-#terminaltext {
-	float:none;
-	padding: 0px;
-	margin: 0px;
-	background-color: #619773;
-	color: #eee;
-}      
-
-#terminaltextlink a, #terminaltextlink:hover {
-	background-color: #619773;
-}
-
