@@ -18,6 +18,27 @@
        		"url" : "http://saijogeorge.com"
     		}
     	</script>
+    	<script type="application/ld+json">
+			{
+			  "@context": "http://schema.org",
+			  "@type": "BreadcrumbList",
+			  "itemListElement": [{
+			    "@type": "ListItem",
+			    "position": 1,
+			    "item": {
+			      "@id": "http://saijogeorge.com",
+			      "name": "Home"
+			    }
+			  },{
+			    "@type": "ListItem",
+			    "position": 2,
+			    "item": {
+			      "@id": "http://saijogeorge.com/projects.html",
+			      "name": "Side Projects"
+			    }
+			  }]
+			}
+			</script>
     	<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
     	<meta property="og:site_name" content="SaijoGeorge.com">
 		<meta property="og:title" content="Title Case Converter : Turns Your Input into Title Case">
@@ -85,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<div class="container">
 			<!-- Top Navigation -->
 			<div class="codrops-top clearfix">
-				<a href="http://saijogeorge.com" target="_blank">by <strong>Saijo George</strong></a>
+				<a href="http://saijogeorge.com"><strong>Saijo George</strong></a> ›› <a href="http://saijogeorge.com/projects.html"><strong>Side Projects</strong></a> ›› Title Case Converter
 
 				<span class="right"><a href="https://twitter.com/saijo_george" target="_blank">Twitter</a><a href="https://au.linkedin.com/in/saijogeorge" target="_blank">Linkedin</a>
 				</span>
@@ -94,17 +115,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<h1>Title Case Converter</h1>
 			</header>
 			<section>
-				<p>This little Title Case Converter allows you to convert the text you enter in to Title Case, it will also un-capitalize words if they’re erroneously capitalized in the input.</p>
-				<h3>Title Case Rules:</h3>
-				<p>In title case you only use capital letters to start principal words in a sentence. With this Title Case Converter tool anything other than articles, coordinating conjunctions or prepositions (with four or less characters) are capitalized. Also the first and last words are also always capitalized. The tool also has some built in smarts to detect words like iPhone and leave the capitalization intact. This is based on the <a href="https://github.com/gouch/to-title-case">to-title-case</a> project by David Gouch.</p>
-				<p>Words not capitalized in this Title Case Converter : the, and, nor, or, yet, so, a, amid, an, apud, as, at, atop, but, by, down, for, from, in, into, like, mid, near, next, of, off, on, onto, out, over, pace, past, per, plus, pro, qua, sans, save, than, till, to, unto, up, upon, via, vice, vs., with.</p>
-				<h3>How to convert to title case:</h3>
-				<ol>
-				<li>Just add the sentence you want to convert in to the text field below</li>
-				<li>Click on the Title Case button</li>
-				<li>We will convert your input in to Title Case</li>
-				</ol>
-				<p>Note: Only accepts one sentence at a time.</p>
 				<strong>Add your title in here :</strong><br/><br/>
 				<input id="untitled" type="text" value="" /><br/><br/>
 				<div style="text-align: center;"><input type="button" title="Title Case" value="Title Case" onClick="titlecaseme();" /></div><br/>
@@ -121,6 +131,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<br/><strong>Result in Title Case:</strong><br/><br/>
 				<input id="titled" type="text">
 				<br/>
+				<p>Note: Only accepts one sentence at a time.</p>
+				<p>This little Title Case Converter allows you to convert the text you enter in to Title Case, it will also un-capitalize words if they’re erroneously capitalized in the input.</p>
+				<h3>Title Case Rules:</h3>
+				<p>In title case you only use capital letters to start principal words in a sentence. With this Title Case Converter tool anything other than articles, coordinating conjunctions or prepositions (with four or less characters) are capitalized. Also the first and last words are also always capitalized. The tool also has some built in smarts to detect words like iPhone and leave the capitalization intact. This is based on the <a href="https://github.com/gouch/to-title-case">to-title-case</a> project by David Gouch.</p>
+				<p>Words not capitalized in this Title Case Converter : the, and, nor, or, yet, so, a, amid, an, apud, as, at, atop, but, by, down, for, from, in, into, like, mid, near, next, of, off, on, onto, out, over, pace, past, per, plus, pro, qua, sans, save, than, till, to, unto, up, upon, via, vice, vs., with.</p>
+				<h3>How to convert to title case?</h3>
+				<ol>
+				<li>Just add the sentence you want to convert in to the text field below</li>
+				<li>Click on the Title Case button</li>
+				<li>We will convert your input in to Title Case</li>
+				</ol>
 			</section>
 			<section class="related">
 				<p>Check out my other projects:</p>
