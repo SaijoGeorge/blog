@@ -22,13 +22,34 @@
 	<meta name="msapplication-TileImage" content="./favicon-144.png">
 	<meta name="msapplication-config" content="./browserconfig.xml">
 
-	<script type="application/ld+json">
-    {  "@context" : "http://schema.org",
-       "@type" : "WebSite",
-       "name" : "Saijo George",
-       "url" : "http://saijogeorge.com"
-    }
-    </script>
+		<script type="application/ld+json">
+    		{  "@context" : "http://schema.org",
+       		"@type" : "WebSite",
+       		"name" : "Saijo George",
+       		"url" : "http://saijogeorge.com"
+    		}
+	    </script>
+	    <script type="application/ld+json">
+				{
+				  "@context": "http://schema.org",
+				  "@type": "BreadcrumbList",
+				  "itemListElement": [{
+				    "@type": "ListItem",
+				    "position": 1,
+				    "item": {
+				      "@id": "http://saijogeorge.com",
+				      "name": "Home"
+				    }
+				  },{
+				    "@type": "ListItem",
+				    "position": 2,
+				    "item": {
+				      "@id": "http://saijogeorge.com/projects.html",
+				      "name": "Side Projects"
+				    }
+				  }]
+				}
+		</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#E64545">
