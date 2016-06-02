@@ -1,0 +1,25 @@
+/**
+ *
+ * Apply your custom CSS here
+ *
+*/
+
+body {
+}
+
+a {
+}
+
+h1 {
+    font-size: 15px;
+    padding: 0px 10px 10px 10px;
+}
+p{
+  font-size: 15px;
+  padding: 0px 10px 10px 10px;
+}
+.selected-button{
+	position: absolute;
+	right:    10px;
+	top:   10px;
+}

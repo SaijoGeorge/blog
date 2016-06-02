@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/css/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/fonts/elusive/css/elusive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+  	<link rel="stylesheet" href="styles/fonts/linecons/css/linecons.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="styles/css/bootstrap.css">
+  	<link rel="stylesheet" href="styles/css/xenon-core.css">
+  	<link rel="stylesheet" href="styles/css/xenon-forms.css">
+  	<link rel="stylesheet" href="styles/css/xenon-components.css">
+  	<link rel="stylesheet" href="styles/css/xenon-skins.css">
+  	<link rel="stylesheet" href="styles/css/custom.css">
+
+  </head>
+  <body >
+    <body class="page-body skin-navy  user-info-navbar-skin-navy" ng-app="marketingtoolioApp" ng-controller="AppCtrl">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+  	<div class="settings-pane">
+
+  		<a href="#" data-toggle="settings-pane" data-animate="true">
+  			&times;
+  		</a>
+
+  		<div class="settings-pane-inner">
+
+  			<div class="row">
+
+  				<div class="col-md-4">
+
+  					<div class="user-info">
+
+  						<div class="user-image">
+  							<a href="extra-profile.html">
+  								<img src="assets/images/saijo_profile_small.jpg" class="img-responsive img-circle" />
+  							</a>
+  						</div>
+
+  						<div class="user-details">
+
+  							<h3>
+  								<a href="extra-profile.html">Saijo George</a>
+
+  								<!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
+  								<span class="user-status is-online"></span>
+  							</h3>
+
+  							<p class="user-title">SEO Consultant</p>
+
+  							<div class="user-links">
+  								<a href="https://twitter.com/Saijo_George" class="btn btn-primary" style="background-color: #55acee;">Twitter</a>
+  								<a href="https://au.linkedin.com/in/saijogeorge" class="btn btn-success" style="background-color: #0077b5;">LinkedIn</a>
+  							</div>
+
+  						</div>
+
+  					</div>
+
+  				</div>
+
+  				<div class="col-md-4 link-blocks-env">
+  					<div class="links-block left-sep">
+  						<h4>
+  							<a href="#">
+  								<span>Other Projects</span>
+  							</a>
+  						</h4>
+
+  						<ul class="list-unstyled">
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Support Center
+  								</a>
+  							</li>
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Submit a Ticket
+  								</a>
+  							</li>
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Domains Protocol
+  								</a>
+  							</li>
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Terms of Service
+  								</a>
+  							</li>
+  						</ul>
+  					</div>
+
+  				</div>
+
+  				<div class="col-md-4">
+
+  					<div class="user-info">
+
+  						<div class="user-image">
+  							<a href="extra-profile.html">
+  								<img src="assets/images/sumesh_profile_small.jpg" class="img-responsive img-circle" />
+  							</a>
+  						</div>
+
+  						<div class="user-details">
+
+  							<h3>
+  								<a href="extra-profile.html">Sumesh Suvarna</a>
+
+  								<!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
+  								<span class="user-status is-online"></span>
+  							</h3>
+
+  							<p class="user-title">Developer Consultant</p>
+
+  							<div class="user-links">
+  								<a href="https://twitter.com/GsSumesh1" class="btn btn-primary" style="background-color: #55acee;">Twitter</a>
+  								<a href="https://au.linkedin.com/in/sumesh-girisan-4a145922" class="btn btn-success" style="background-color: #0077b5;">LinkedIn</a>
+  							</div>
+
+  						</div>
+
+  					</div>
+
+  				</div>
+
+  			</div>
+
+  		</div>
+
+  	</div>
+
+  	<div class="page-container">
+
+  		<div class="sidebar-menu toggle-others fixed">
+
+  			<div class="sidebar-menu-inner">
+
+  				<header class="logo-env">
+
+  					<!-- logo -->
+  					<div class="logo">
+  						<a href="#" class="logo-expanded">
+  							<img src="assets/images/MarketingTool-logo.png" width="210px" alt="" />
+  						</a>
+
+  						<a href="#" class="logo-collapsed">
+  							<img src="assets/images/logo-collapsed@2x.png" width="40" alt="" />
+  						</a>
+  					</div>
+
+  					<!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+  					<div class="mobile-menu-toggle visible-xs">
+  						<a href="#" data-toggle="user-info-menu">
+  							<i class="fa-bell-o"></i>
+  							<span class="badge badge-success">7</span>
+  						</a>
+
+  						<a href="#" data-toggle="mobile-menu">
+  							<i class="fa-bars"></i>
+  						</a>
+  					</div>
+
+  					<!-- This will open the popup with user profile settings, you can use for any purpose, just be creative -->
+  					<div class="settings-icon">
+  						<a href="#" data-toggle="settings-pane" data-animate="true">
+  							<i class="linecons-cog"></i>
+  						</a>
+  					</div>
+
+
+  				</header>
+
+  				<!-- Sidebar User Info Bar - Ends -->
+
+  				<ul id="main-menu" class="main-menu">
+					<li>
+  						<a href="/">
+  							<i class="fa fa-home" aria-hidden="true"></i>
+  							<span class="title">Home</span>
+  						</a>
+  					</li>
+  					<li>
+  						<a href="/socialmediamonitoring.html">
+  							<i class="fa fa-tachometer" aria-hidden="true"></i>
+  							<span class="title">Social Media Monitoring</span>
+  						</a>
+  					</li>
+  				</ul>
+
+  			</div>
+
+  		</div>
+
+  		<div class="main-content">
+        <nav class="navbar user-info-navbar" role="navigation"><!-- User Info, Notifications and Menu Bar -->
+            <!-- Left links for user info navbar -->
+            <ul class="user-info-menu left-links list-inline list-unstyled">
+              <li class="hidden-sm hidden-xs" style="min-height: 76px;">
+                <a href="#" data-toggle="sidebar">
+                  <i class="fa-bars"></i>
+                </a>
+              </li>
+            </ul>
+
+
+            <!-- Right links for user info navbar -->
+            <ul class="user-info-menu right-links list-inline list-unstyled">
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa fa-twitter-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-facebook-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-google-plus-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+                        <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-linkedin-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-envelope-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+            </ul>
+
+          </nav>
+  				<!-- MAIN CONTENT -->
+				<div ng-view></div>
+				<!-- MAIN CONTENT ENDS -->
+
+  			<br />
+  			<!-- Main Footer -->
+  			<!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
+  			<!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
+  			<!-- Or class "fixed" to  always fix the footer to the end of page -->
+  			<footer class="main-footer fixed footer-type-1">
+
+  				<div class="footer-inner">
+
+  					<!-- Add your copyright text here -->
+  					<div class="footer-text">
+  						&copy; 2016
+  						<strong>MarketingTool.io</strong>
+  						created by <a href="#" target="_blank">Marketer</a> - <a href="#" target="_blank">for <strong>Marketer</strong></a>
+  					</div>
+
+
+  					<!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+  					<div class="go-up">
+
+  						<a href="#" rel="go-top">
+  							<i class="fa-angle-up"></i>
+  						</a>
+
+  					</div>
+
+  				</div>
+
+  			</footer>
+  		</div>
+
+
+
+  	</div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Imported styles For textarea expanding page -->
+  	<link rel="stylesheet" href="styles/fonts/elusive/css/elusive.css">
+
+    <!-- Custom Scripts -->
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/TweenMax.min.js"></script>
+    <script src="scripts/resizeable.js"></script>
+    <script src="scripts/joinable.js"></script>
+    <script src="scripts/xenon-api.js"></script>
+    <script src="scripts/xenon-toggles.js"></script>
+    <script src="scripts/toastr/toastr.min.js" id="script-resource-7"></script>
+    <!-- Imported scripts on this page -->
+  	<script src="scripts/xenon-widgets.js"></script>
+  	<script src="scripts/devexpress-web-14.1/js/globalize.min.js"></script>
+  	<script src="scripts/devexpress-web-14.1/js/dx.chartjs.js"></script>
+    <!-- Custom Script -->
+    <script src="scripts/xenon-custom.js"></script>
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/css/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/fonts/elusive/css/elusive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+  	<link rel="stylesheet" href="styles/fonts/linecons/css/linecons.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="styles/css/bootstrap.css">
+  	<link rel="stylesheet" href="styles/css/xenon-core.css">
+  	<link rel="stylesheet" href="styles/css/xenon-forms.css">
+  	<link rel="stylesheet" href="styles/css/xenon-components.css">
+  	<link rel="stylesheet" href="styles/css/xenon-skins.css">
+  	<link rel="stylesheet" href="styles/css/custom.css">
+
+  </head>
+  <body >
+    <body class="page-body skin-navy  user-info-navbar-skin-navy" ng-app="marketingtoolioApp" ng-controller="AppCtrl">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+  	<div class="settings-pane">
+
+  		<a href="#" data-toggle="settings-pane" data-animate="true">
+  			&times;
+  		</a>
+
+  		<div class="settings-pane-inner">
+
+  			<div class="row">
+
+  				<div class="col-md-4">
+
+  					<div class="user-info">
+
+  						<div class="user-image">
+  							<a href="extra-profile.html">
+  								<img src="assets/images/saijo_profile_small.jpg" class="img-responsive img-circle" />
+  							</a>
+  						</div>
+
+  						<div class="user-details">
+
+  							<h3>
+  								<a href="extra-profile.html">Saijo George</a>
+
+  								<!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
+  								<span class="user-status is-online"></span>
+  							</h3>
+
+  							<p class="user-title">SEO Consultant</p>
+
+  							<div class="user-links">
+  								<a href="https://twitter.com/Saijo_George" class="btn btn-primary" style="background-color: #55acee;">Twitter</a>
+  								<a href="https://au.linkedin.com/in/saijogeorge" class="btn btn-success" style="background-color: #0077b5;">LinkedIn</a>
+  							</div>
+
+  						</div>
+
+  					</div>
+
+  				</div>
+
+  				<div class="col-md-4 link-blocks-env">
+  					<div class="links-block left-sep">
+  						<h4>
+  							<a href="#">
+  								<span>Other Projects</span>
+  							</a>
+  						</h4>
+
+  						<ul class="list-unstyled">
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Support Center
+  								</a>
+  							</li>
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Submit a Ticket
+  								</a>
+  							</li>
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Domains Protocol
+  								</a>
+  							</li>
+  							<li>
+  								<a href="#">
+  									<i class="fa-angle-right"></i>
+  									Terms of Service
+  								</a>
+  							</li>
+  						</ul>
+  					</div>
+
+  				</div>
+
+  				<div class="col-md-4">
+
+  					<div class="user-info">
+
+  						<div class="user-image">
+  							<a href="extra-profile.html">
+  								<img src="assets/images/sumesh_profile_small.jpg" class="img-responsive img-circle" />
+  							</a>
+  						</div>
+
+  						<div class="user-details">
+
+  							<h3>
+  								<a href="extra-profile.html">Sumesh Suvarna</a>
+
+  								<!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
+  								<span class="user-status is-online"></span>
+  							</h3>
+
+  							<p class="user-title">Developer Consultant</p>
+
+  							<div class="user-links">
+  								<a href="https://twitter.com/GsSumesh1" class="btn btn-primary" style="background-color: #55acee;">Twitter</a>
+  								<a href="https://au.linkedin.com/in/sumesh-girisan-4a145922" class="btn btn-success" style="background-color: #0077b5;">LinkedIn</a>
+  							</div>
+
+  						</div>
+
+  					</div>
+
+  				</div>
+
+  			</div>
+
+  		</div>
+
+  	</div>
+
+  	<div class="page-container">
+
+  		<div class="sidebar-menu toggle-others fixed">
+
+  			<div class="sidebar-menu-inner">
+
+  				<header class="logo-env">
+
+  					<!-- logo -->
+  					<div class="logo">
+  						<a href="#" class="logo-expanded">
+  							<img src="assets/images/MarketingTool-logo.png" width="210px" alt="" />
+  						</a>
+
+  						<a href="#" class="logo-collapsed">
+  							<img src="assets/images/logo-collapsed@2x.png" width="40" alt="" />
+  						</a>
+  					</div>
+
+  					<!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+  					<div class="mobile-menu-toggle visible-xs">
+  						<a href="#" data-toggle="user-info-menu">
+  							<i class="fa-bell-o"></i>
+  							<span class="badge badge-success">7</span>
+  						</a>
+
+  						<a href="#" data-toggle="mobile-menu">
+  							<i class="fa-bars"></i>
+  						</a>
+  					</div>
+
+  					<!-- This will open the popup with user profile settings, you can use for any purpose, just be creative -->
+  					<div class="settings-icon">
+  						<a href="#" data-toggle="settings-pane" data-animate="true">
+  							<i class="linecons-cog"></i>
+  						</a>
+  					</div>
+
+
+  				</header>
+
+  				<!-- Sidebar User Info Bar - Ends -->
+
+  				<ul id="main-menu" class="main-menu">
+					<li>
+  						<a href="/">
+  							<i class="fa fa-home" aria-hidden="true"></i>
+  							<span class="title">Home</span>
+  						</a>
+  					</li>
+  					<li>
+  						<a href="/socialmediamonitoring">
+  							<i class="fa fa-tachometer" aria-hidden="true"></i>
+  							<span class="title">Social Media Monitoring</span>
+  						</a>
+  					</li>
+  				</ul>
+
+  			</div>
+
+  		</div>
+
+  		<div class="main-content">
+        <nav class="navbar user-info-navbar" role="navigation"><!-- User Info, Notifications and Menu Bar -->
+            <!-- Left links for user info navbar -->
+            <ul class="user-info-menu left-links list-inline list-unstyled">
+              <li class="hidden-sm hidden-xs" style="min-height: 76px;">
+                <a href="#" data-toggle="sidebar">
+                  <i class="fa-bars"></i>
+                </a>
+              </li>
+            </ul>
+
+
+            <!-- Right links for user info navbar -->
+            <ul class="user-info-menu right-links list-inline list-unstyled">
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa fa-twitter-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-facebook-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-google-plus-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+                        <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-linkedin-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+              <li style="min-height: 52px;">
+                <a href="#">
+                  <i class="fa-envelope-square" style="font-size: 20px; color: #FFFFFF;"></i>
+                </a>
+              </li>
+            </ul>
+
+          </nav>
+  				<!-- MAIN CONTENT -->
+				  <div class="row">
+         <div class="panel">
+           <div class="panel-header">
+             <div class="input-group input-group-lg input-group-minimal">
+               <span class="input-group-addon"><i class="fa fa-paperclip"></i> <b>Url: </b></span>
+               <input type="text" ng-model="url" name="url" id="url" class="form-control" placeholder="Enter you Webpage Url to see magic!!!">
+             </div>
+           </div>
+           <div class="panel-body">
+             <button class="btn btn-success pull-right url-submitted" onClick="submitShareCount()">Submit</button>
+             <button type="button" class="btn btn-success btn-single pull-right url-submitted hidden"><i class="fa fa-spin fa-gear"></i></button>
+           </div>
+         </div>
+  </div>
+  <div class="row">
+  				<div class="col-sm-3">
+
+  					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="121" data-duration="1">
+  						<div class="xe-icon">
+  							<i class="fa fa-share-alt" style="background-color: #3b5998;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="facebook">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Facebook Shares</span>
+  						</div>
+  					</div>
+
+  					<div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="1" data-to="117" data-duration="1" data-easing="false">
+  						<div class="xe-icon">
+  							<i class="fa fa-comments" style="background-color: #3b5998;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="facebook_comment">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Facebook Comments</span>
+  						</div>
+  					</div>
+
+  					<div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="247" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa-thumbs-up" style="background-color: #3b5998;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="facebook_like">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Facebook Like</span>
+  						</div>
+  					</div>
+
+  				</div>
+          
+
+  				<div class="col-sm-3">
+
+            <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="270" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa fa-google-plus" style="background-color: #dc4e41;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="google">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Google Plus Shares</span>
+  						</div>
+  					</div>
+
+            <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="470" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa fa-linkedin " style="background-color: #0077b5;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="linkedIn">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Linkedin Shares</span>
+  						</div>
+  					</div>
+
+            <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="70" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa fa-pinterest" style="background-color: #bd081c;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="pintrest">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Pinterest Share</span>
+  						</div>
+  					</div>
+
+  				</div>
+				
+				<div class="col-sm-3">
+
+                  <div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="99" data-duration="1">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-stumbleupon" style="background-color: #eb4924;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="stumbleupon">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Stumbleupon</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="1" data-to="117" data-duration="1" data-easing="false">
+                    <div class="xe-icon">
+                      <i class="fa fa-buffer" style="background-color: #168eea;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="buffer">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Buffer</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="145" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa-reddit" style="background-color: #ff4500;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="reddit">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Reddit</span>
+                    </div>
+                  </div>
+
+                </div>
+				
+				<div class="col-sm-3">
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="342" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-odnoklassniki" style="background-color: #ed812b;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="odnoklassniki">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Odnoklassniki</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="333" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-mail_ru" style="background-color: #168de2;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="mail_ru">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Mail_ru</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="654" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-vk" style="background-color: #45668e;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="vkontakte">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Vkontakte</span>
+                    </div>
+                  </div>
+
+                </div>
+				
+  			</div>
+        <div class="row">
+			<div class="col-sm-4">
+
+      			<div class="chart-item-bg">
+					<div class="chart-label">
+						<span class="h3 text-large text-bold"><i class="pull-left fa fa-facebook" style="color: #3b5998;"></i></span>
+						<span class="text-medium text-muted">Facebook Total</span>
+  						<div class="h3 text-bold"  data-count="this" data-from="0.00" data-to="14" data-duration="1" style="color: #3b5998;" id="facebook_total">0</div>
+					</div>
+      			   <div id="facebook-stats" style="height: 365px; padding: 20px 0;"></div>
+				  <div class="chart-footer">
+					<div class="row">
+					  <div class="col-sm-4"><div style="padding: 5px; margin: 5px; height: 5px; width: 5px; background-color: #68b828"></div><span class="text-medium text-muted">Share</span></div>
+					  <div class="col-sm-4"><div style="padding: 5px; margin: 5px; height: 5px; width: 5px; background-color: #7c38bc"></div><span class="text-medium text-muted">Like</span></div>
+					  <div class="col-sm-4"><div style="padding: 5px; margin: 5px; height: 5px; width: 5px; background-color: #0e62c7"></div><span class="text-medium text-muted">Comment</span></div>
+					</div>
+				  </div>
+      			</div>
+      		</div>
+			
+		
+			<div class="col-sm-4">
+                <div class="chart-item-bg">
+                  <div class="chart-label">
+                      <img src="assets/images/MarketingTool.io-black.png" width="180px" alt="">
+                    <div class="h3 text-secondary text-bold"  data-count="this" data-from="0" data-to="14" data-duration="1" id="marketingtoolio_score">Score: 0</div>
+
+                  </div>
+                  <div id="marketingtoolio-stats" style="height: 400px; padding: 40px 0;"></div>
+				  <div class="chart-footer">
+					<div class="row">
+					</div>
+				  </div>
+                </div>
+            </div>
+			
+			<div class="col-sm-4">
+
+                  <div class="chart-item-bg">
+                    <div class="chart-label">
+                        <span class="h3 text-large text-bold"><i class="pull-left fa fa-heart" style="color: red;"></i></span>
+                        <span class="text-medium text-muted">Overall Total</span>
+                      <div class="h3 text-secondary text-bold"  data-count="this" data-from="0" data-to="95" data-duration="1" id="overall-stats">0</div>
+
+                    </div>
+                    <div id="overall-stats-chart" style="height: 400px; padding: 20px 0;"></div>
+					<div class="chart-footer">
+						<div class="row">
+						</div>
+					  </div>
+                  </div>
+            </div>
+			  
+        </div>
+
+        <div class="row">
+                
+                
+
+                
+        </div>
+
+				<!-- MAIN CONTENT ENDS -->
+
+  			<br />
+  			<!-- Main Footer -->
+  			<!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
+  			<!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
+  			<!-- Or class "fixed" to  always fix the footer to the end of page -->
+  			<footer class="main-footer fixed footer-type-1">
+
+  				<div class="footer-inner">
+
+  					<!-- Add your copyright text here -->
+  					<div class="footer-text">
+  						&copy; 2016
+  						<strong>MarketingTool.io</strong>
+  						created by <a href="#" target="_blank">Marketer</a> - <a href="#" target="_blank">for <strong>Marketer</strong></a>
+  					</div>
+
+
+  					<!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+  					<div class="go-up">
+
+  						<a href="#" rel="go-top">
+  							<i class="fa-angle-up"></i>
+  						</a>
+
+  					</div>
+
+  				</div>
+
+  			</footer>
+  		</div>
+
+
+
+  	</div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+	
+	<!-- AWS SDK Scripts -->
+    <script type="text/javascript" src="scripts/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="scripts/lib/moment/moment.js"></script>
+    <script type="text/javascript" src="scripts/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="scripts/apigClient.js"></script>
+    <!-- AWS SDK Scripts Ends-->
+	
+    <!-- Imported styles For textarea expanding page -->
+  	<link rel="stylesheet" href="styles/fonts/elusive/css/elusive.css">
+
+    <!-- Custom Scripts -->
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/TweenMax.min.js"></script>
+    <script src="scripts/resizeable.js"></script>
+    <script src="scripts/joinable.js"></script>
+    <script src="scripts/xenon-api.js"></script>
+    <script src="scripts/xenon-toggles.js"></script>
+    <script src="scripts/toastr/toastr.min.js" id="script-resource-7"></script>
+    <!-- Imported scripts on this page -->
+  	<script src="scripts/xenon-widgets.js"></script>
+  	<script src="scripts/devexpress-web-14.1/js/globalize.min.js"></script>
+  	<script src="scripts/devexpress-web-14.1/js/dx.chartjs.js"></script>
+    <!-- Custom Script -->
+    <script src="scripts/xenon-custom.js"></script>
+	
+	<script type="text/javascript" src="scripts/socialmediaChart.js"></script>
+	<script type="text/javascript" src="scripts/socialmediamonitoring.js"></script>
+	
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- endbuild -->
+</body>
+</html>
