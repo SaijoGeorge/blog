@@ -1,12 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body,
-html {
+#launchbox {
   color: #FFF;
-  min-width: 600px;
   height: 100%;
   background: url('http://s33.postimg.org/p8bynn8nz/background.png') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -26,7 +19,7 @@ canvas {
   z-index: 1;
   opacity: .6;
 }
-#img {
+#imgx {
   display: none;
   z-index: 2;
 }
