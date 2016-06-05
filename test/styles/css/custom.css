@@ -36,3 +36,11 @@ p{
 .logo__io {
   fill: #111;
 }
+
+.sidebar-menu .logo-env {
+	padding: 0px !important;
+}
+
+.settings-icon {
+padding: 30px 45px !important;
+}
