@@ -1,6 +1,6 @@
 .herox {
   height: 100vh;
-  background: linear-gradient(45deg, rgba(204, 204, 204, .6), rgba(163, 163, 163, .6), rgba(209, 209, 209, .6), rgba(255, 255, 255, .6), rgba(229, 229, 229, .6)) 0 0 / 1000% no-repeat, url(http://s33.postimg.org/p8bynn8nz/background.png) 0 0 / cover no-repeat;
+  background: linear-gradient(45deg, rgba(204, 204, 204, .6), rgba(163, 163, 163, .6), rgba(209, 209, 209, .6), rgba(255, 255, 255, .6), rgba(229, 229, 229, .6)) 0 0 / 1000% no-repeat, url(assets/images/mybackground.png) 0 0 / cover no-repeat;
   -webkit-animation: gradientAnimation 400s ease infinite;
   animation: gradientAnimation 400s ease infinite;
 }
