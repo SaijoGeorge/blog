@@ -23,3 +23,16 @@ p{
 	right:    10px;
 	top:   10px;
 }
+
+.logo {
+  width: 350px;
+}
+.logo__letter, .logo__rect {
+  fill: white;
+}
+.logo__tool {
+  fill: #00AAFF;
+}
+.logo__io {
+  fill: #111;
+}

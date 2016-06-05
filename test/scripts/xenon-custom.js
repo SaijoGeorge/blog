@@ -1948,3 +1948,119 @@ function date(format, timestamp) {
 	};
 	return this.date(format, timestamp);
 }
+
+// SVG Logo 
+'use strict';
+(function () {
+    TweenMax.set('.logo path', { transformOrigin: 'center' });
+    TweenMax.set('.logo__letter', {
+        scale: 0,
+        opacity: 0
+    });
+    TweenMax.set('.logo__letter:nth-of-type(1)', { x: -90 });
+    TweenMax.set('.logo__letter:nth-of-type(2)', { x: -80 });
+    TweenMax.set('.logo__letter:nth-of-type(3)', { x: -70 });
+    TweenMax.set('.logo__letter:nth-of-type(4)', { x: -60 });
+    TweenMax.set('.logo__letter:nth-of-type(5)', { x: -50 });
+    TweenMax.set('.logo__letter:nth-of-type(6)', { x: -40 });
+    TweenMax.set('.logo__letter:nth-of-type(7)', { x: -30 });
+    TweenMax.set('.logo__letter:nth-of-type(8)', { x: -20 });
+    TweenMax.set('.logo__letter:nth-of-type(9)', { x: -10 });
+    TweenMax.set('.logo__tool', { opacity: 0 });
+    TweenMax.set('.logo__mg', {
+        x: -520,
+        scale: 0,
+        opacity: 0
+    });
+    TweenMax.set('.logo__h', {
+        x: -500,
+        y: 20,
+        scale: 0,
+        opacity: 0,
+        rotationY: 180,
+        rotation: -30
+    });
+    TweenMax.set('.logo__cog', { scale: 0.5 });
+    TweenMax.set('.logo__sd--1, .logo__sd--2', { y: 30 });
+    TweenMax.set('.logo__rect, .logo__io', { scale: 0 });
+    TweenMax.to('.logo__sd--1', 1, {
+        rotationY: 180,
+        repeat: -1,
+        ease: Power2.easeOut
+    });
+    TweenMax.to('.logo__cog', 15, {
+        rotation: 360,
+        repeat: -1,
+        ease: Power0.easeNone
+    });
+    var tl = new TimelineMax({ repeat: -1 });
+    tl.staggerTo('.logo__letter', 0.7, {
+        scale: 0.5,
+        opacity: 0.5,
+        ease: Back.easeOut.config(3)
+    }, 0.1);
+    tl.to('.logo__mg', 1, {
+        scale: 1,
+        opacity: 1,
+        ease: Back.easeOut.config(3)
+    }, '-=0.5');
+    tl.to('.logo__mg', 1.9, {
+        x: 0,
+        ease: Power4.easeOut
+    });
+    tl.staggerTo('.logo__letter', 0.7, {
+        scale: 1,
+        opacity: 1,
+        ease: Power4.easeOut
+    }, 0.06, '-=1.9');
+    tl.to('.logo__h', 1, {
+        scale: 1,
+        opacity: 1,
+        ease: Back.easeOut.config(3)
+    }, '-=1');
+    tl.to('.logo__h', 1, {
+        x: '+=42',
+        rotation: 0,
+        ease: Back.easeIn.config(4)
+    });
+    tl.staggerTo('.logo__letter', 0.7, {
+        x: 0,
+        ease: Back.easeOut.config(3)
+    }, 0.06);
+    tl.to('.logo__h', 0.5, { y: 0 }, '-=.4');
+    tl.to('.logo__h', 0.5, { rotationY: 0 }, '-=.3');
+    tl.to('.logo__h', 1.9, {
+        x: 0,
+        ease: Power4.easeOut
+    });
+    tl.to('.logo__cog', 0.6, {
+        opacity: 1,
+        scale: 1
+    }, '-=1');
+    tl.to('.logo__sd--1, .logo__sd--2', 0.6, {
+        y: 0,
+        opacity: 1
+    }, '-=0.3');
+    tl.to('.logo__rect', 1.3, {
+        scaleX: 1,
+        ease: Elastic.easeOut
+    }, '-=0.2');
+    tl.to('.logo__rect', 1.3, {
+        scaleY: 1,
+        ease: Elastic.easeOut
+    }, '-=1.2');
+    tl.to('.logo__io', 1.3, {
+        scaleX: 1,
+        ease: Elastic.easeOut
+    }, '-=1');
+    tl.to('.logo__io', 1.3, {
+        scaleY: 1,
+        ease: Elastic.easeOut
+    }, '-=1.2');
+    tl.to('.logo__io', 5, { x: 0 });
+    tl.staggerTo('.logo path', 0.7, {
+        scale: 0.5,
+        opacity: 0,
+        ease: Power4.easeOut
+    }, 0.06);
+}());
