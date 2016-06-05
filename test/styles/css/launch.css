@@ -1,32 +1,29 @@
+.herox:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  
+  display: block;
+  background-image: url('http://saijogeorge.com/test/assets/images/mybackground.png');
+  width: 100%;
+  height: 100%;
+  
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
 .herox {
-  height: 100vh;
-  background: linear-gradient(45deg, rgba(204, 204, 204, .6), rgba(163, 163, 163, .6), rgba(209, 209, 209, .6), rgba(255, 255, 255, .6), rgba(229, 229, 229, .6)) 0 0 / 1000% no-repeat, url(http://saijogeorge.com/test/assets/images/mybackground.png) 0 0 / cover no-repeat;
-  -webkit-animation: gradientAnimation 400s ease infinite;
-  animation: gradientAnimation 400s ease infinite;
-}
-
-@-webkit-keyframes gradientAnimation {
-  0% {
-    background-position: 0% 30%, 0 0;
-  }
-  50% {
-    background-position: 100% 70%, 0 0;
-  }
-  100% {
-    background-position: 0% 30%, 0 0;
-  }
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 30%, 0 0;
-  }
-  50% {
-    background-position: 100% 70%, 0 0;
-  }
-  100% {
-    background-position: 0% 30%, 0 0;
-  }
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .email-octopus-form-wrapper { position: absolute;
