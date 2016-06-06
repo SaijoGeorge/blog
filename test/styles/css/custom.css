@@ -44,3 +44,9 @@ p{
 .settings-icon {
 padding-top: 30px !important;
 }
+
+@media screen and (max-width: 768px)
+.mobile-menu-toggle {
+    padding-top: 30px !important;
+    padding-right: 10px !important;
+}
