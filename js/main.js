@@ -138,3 +138,5 @@ jQuery(document).ready(function($){
 		}, 1);
 	}
 });
+
+console.log('%c Looking to unlock some SEO secrets? There is none to be found here... -Saijo George', 'font-size: 25px; background: #222; color: #bada55');
