@@ -139,4 +139,4 @@ jQuery(document).ready(function($){
 	}
 });
 
-console.log('%c Looking to unlock some SEO secrets? There is none to be found here. Head over to http://saijogeorge.com/best-marketing-tools/ for some awesome SEO tools -Saijo George', 'font-size: 25px; background: #222; color: #bada55');
+console.log('%c Looking to unlock some SEO secrets? There is none to be found here. Head over to https://saijogeorge.com/best-marketing-tools/ for some awesome SEO tools -Saijo George', 'font-size: 25px; background: #222; color: #bada55');
