@@ -786,7 +786,7 @@ footer {
 
 /* Carbon Ads */
 .postnavsection {
-  overflow: hidden;
+  max-width: 70%;
   padding: 1em;
 }
 
