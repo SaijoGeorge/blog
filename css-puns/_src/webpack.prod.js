@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["css-puns"], {
       root: resolve(__dirname, "../.."),
-      exclude: [".git", "_assets", "_src", ".nojekyll"],
+      exclude: [".git", "_assets", "_src", "OLD_COPY", ".nojekyll"],
       verbose: true
     }),
     // new HappyPack({
