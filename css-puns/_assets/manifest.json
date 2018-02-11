@@ -1,0 +1,22 @@
+{
+  "name": "CSS Puns",
+  "short_name": "CSS Puns",
+  "description": "Handpicked collection of CSS Puns and CSS Jokes, curated by Saijo George.",
+  "icons": [
+    {
+      "src": "icons/64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#3982da",
+  "background_color": "#3982da",
+  "display": "standalone",
+  "orientation": "natural",
+  "start_url": "/css-puns/?addToHome=1"
+}

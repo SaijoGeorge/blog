@@ -1,0 +1,38 @@
+{
+  "name": "css-puns",
+  "scripts": {
+    "start": "webpack-dev-server --config=webpack.dev.js --open --progress",
+    "build": "webpack --config=webpack.prod.js -p --progress",
+    "serve": "http-server ../../",
+    "bundle-buddy": "bundle-buddy ../*.map"
+  },
+  "dependencies": {
+    "gsap": "^1.19.1",
+    "lodash.debounce": "^4.0.8",
+    "polished": "^1.2.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-helmet": "^5.0.3",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-syntax-highlighter": "^5.6.2",
+    "styled-components": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-styled-components": "^1.1.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.22.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "happypack": "^4.0.0-beta.2",
+    "static-site-generator-webpack-plugin": "^3.4.1",
+    "webpack": "^3.0.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dashboard": "next",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
