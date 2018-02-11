@@ -3,9 +3,9 @@ import styled from "styled-components"
 import { font, rem, min } from "../styles"
 import SyntaxHighlighter, {
   registerLanguage
-} from "react-syntax-highlighter/dist/light"
-import css from "react-syntax-highlighter/dist/languages/css"
-import monokaiSublime from "react-syntax-highlighter/dist/styles/monokai-sublime"
+} from "react-syntax-highlighter/light"
+import css from "react-syntax-highlighter/languages/hljs/css"
+import monokaiSublime from "react-syntax-highlighter/styles/hljs/monokai-sublime"
 
 registerLanguage("css", css)
 
