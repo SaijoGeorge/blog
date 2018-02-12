@@ -53,10 +53,14 @@ const About = ({ color }) => (
           </Link>{" "}
           I wanted to do something better with{" "}
           <Link href="https://saijogeorge.com/css-puns/">version 2</Link> and
-          this is my attempt at that. Along with the CSS puns I hsve also added
-          various merchandise that you can buy for example t-shirts, mugs, etc.
-          I have plans to add new things later on, you can always subscribe to
-          the newsletter to get notified when I add new puns or merchandise.
+          this is my attempt at that. Along with the CSS puns I have also added
+          various{" "}
+          <Link href="https://gumroad.com/saijogeorge" target="_blank">
+            merchandise
+          </Link>{" "}
+          that you can buy for example t-shirts, mugs, etc. I have plans to add
+          new things later on, you can always subscribe to the newsletter to get
+          notified when I add new puns or merchandise.
         </Text>
         <div style={{ textAlign: "center" }}>
           <Credits />
