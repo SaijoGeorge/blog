@@ -45,7 +45,7 @@ class Root extends Component {
   }
 
   changeHistory = punIndex => {
-    this.props.history.replace(`/${punFromIndex(punIndex).slug}`)
+    this.props.history.replace(`/${punFromIndex(punIndex).slug}/`)
   }
 
   goToFirstSlide = e => {
