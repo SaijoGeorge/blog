@@ -51,7 +51,19 @@ const About = ({ color }) => (
           >
             version one
           </Link>{" "}
-          I wanted to do something better with{" "}
+          (idea came from a {" "}
+          <Link
+            href="http://www.reddit.com/r/web_design/comments/2nxdb8/css_puns_can_you_come_up_with_more/"
+            target="_blank"
+          >
+            reddit
+          </Link>{" "} & {" "}
+          <Link
+            href="https://www.designernews.co/stories/39607-life-saver-css-code"
+            target="_blank"
+          >
+            DesignerNews
+          </Link>{" "} thread). I wanted to do something better with{" "}
           <Link href="https://saijogeorge.com/css-puns/">version 2</Link> and
           this is my attempt at that. Along with the CSS puns I have also added
           various{" "}
