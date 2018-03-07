@@ -12,7 +12,7 @@ const Container = styled.div`
   text-align: center;
 `
 
-const Heading = styled.h1`
+const Heading = styled.h2`
   margin: 0 0 ${rem(25)};
   font-size: ${rem(30)};
   line-height: 1.2;
