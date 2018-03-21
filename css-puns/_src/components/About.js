@@ -63,7 +63,13 @@ const About = ({ color }) => (
             target="_blank"
           >
             DesignerNews
-          </Link>{" "} thread). I wanted to do something better with{" "}
+          </Link>{" "} thread, but was initially published by {" "}
+          <Link
+            href="https://www.impressivewebs.com/css-in-real-life/"
+            target="_blank"
+          >
+            Louis Lazaris
+          </Link>{" "}). I wanted to do something better with{" "}
           <Link href="https://saijogeorge.com/css-puns/">version 2</Link> and
           this is my attempt at that. Along with the CSS puns I have also added
           various{" "}
