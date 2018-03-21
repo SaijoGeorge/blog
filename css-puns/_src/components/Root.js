@@ -18,7 +18,7 @@ import NavLink from "./NavLink"
 import Arrow from "./Arrow"
 import Slider from "./Slider"
 import Pun from "./Pun"
-import Ad from "./Ad"
+// import Ad from "./Ad"
 import Footer from "./Footer"
 import LoadGumroad from "./LoadGumroad"
 
@@ -105,7 +105,7 @@ class Root extends Component {
           <Pun data={currentPun} activeIndex={activeIndex} />
         )}
         <Container>
-          <Ad activeIndex={activeIndex} />
+          {/* <Ad activeIndex={activeIndex} /> */}
           <Footer />
         </Container>
         {/*<LoadGumroad />*/}
