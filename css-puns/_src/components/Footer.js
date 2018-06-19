@@ -8,15 +8,15 @@ let Footer = ({ className }) =>
     {"Other projects: "}
     <br />
     <TextLink href="http://allthefreestock.com/" external>
-      🖼️ AllTheFreeStock
+      🖼️ Free Images
     </TextLink>
     <br />{" "}
     <TextLink href="https://tldrmarketing.com/" external>
-      📑&nbsp;tl;dr Marketing
+      📑&nbsp;SEO News
     </TextLink>
     <br />{" "}
     <TextLink href="https://codemyui.com/" external>
-      💻&nbsp;CodeMyUI
+      💻&nbsp;UI Inspiration
     </TextLink>
     <br />{" "}
     <TextLink href="https://saijogeorge.com/best-marketing-tools/" external>
