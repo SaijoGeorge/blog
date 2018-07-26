@@ -7,7 +7,7 @@ let Footer = ({ className }) =>
   <footer className={className}>
     {"Other projects: "}
     <br />
-    <TextLink href="http://allthefreestock.com/" external>
+    <TextLink href="https://allthefreestock.com/" external>
       🖼️ Free Images
     </TextLink>
     <br />{" "}
