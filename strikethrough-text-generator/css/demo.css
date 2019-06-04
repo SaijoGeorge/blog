@@ -221,6 +221,7 @@ ol {
 
 li{
   list-style-type: decimal;
+  margin-left: 50px;
 }
 
 section.related {
@@ -360,7 +361,4 @@ section.related {
 }
 .social-button:focus {
   opacity: .85;
-}
-li {
-  margin-left: 50px;
 }
