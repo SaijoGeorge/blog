@@ -361,3 +361,6 @@ section.related {
 .social-button:focus {
   opacity: .85;
 }
+li {
+  margin-left: 50px;
+}
