@@ -1,3 +1,11 @@
+/* TEAM */
+                         
+Founder & SEO: Saijo George                       
+Site: saijogeorge.com
+Twitter: twitter.com/SaijoGeorge
+LinkedIn: linkedin.com/in/saijogeorge          
+Location: Melbourne, Australia
+
 Designer & Web Developer: Maciej Leszczyński
 Site: asista.pl
 Github: github.com/asistapl
