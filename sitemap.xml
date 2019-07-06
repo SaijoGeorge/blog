@@ -109,8 +109,9 @@
     <lastmod>2018-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:loc>https://saijogeorge.com/images/price-to-hours-worked.png</image:loc>
-        <image:title>price to hours worked</image:title>
+    <image:image>
+      <image:loc>https://saijogeorge.com/images/price-to-hours-worked.png</image:loc>
+      <image:title>price to hours worked</image:title>
       </image:image>
   </url>
   <url>
