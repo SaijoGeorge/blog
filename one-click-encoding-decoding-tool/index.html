@@ -1,195 +1,321 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>One Click Encoding Decoding Tool - Mobile Friendly</title>
-		<meta name="description" content="This FREE URL encoding tool converts characters that you input in to the text area below into the ASCII character-set format in a few simpleone click." />
-		<meta name="keywords" content="encoding tool, decoding tool, encoding decoding tool" />
-		<meta name="author" content="Saijo George" />
-		<meta name="robots" content="all">
-		<link rel="canonical" href="https://saijogeorge.com/one-click-encoding-decoding-tool/" />
-		<meta name="theme-color" content="#3498db" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Click Encoding Decoding Tool - Mobile Friendly</title>
+    <meta
+      name="description"
+      content="This FREE URL encoding tool converts characters that you input in to the text area below into the ASCII character-set format in a few simpleone click."
+    />
+    <meta
+      name="keywords"
+      content="encoding tool, decoding tool, encoding decoding tool"
+    />
+    <meta name="author" content="Saijo George" />
+    <meta name="robots" content="all" />
+    <link
+      rel="canonical"
+      href="https://saijogeorge.com/one-click-encoding-decoding-tool/"
+    />
+    <meta name="theme-color" content="#3498db" />
 
-    	<script type="application/ld+json">
-			{
-			  "@context": "http://schema.org",
-			  "@type": "BreadcrumbList",
-			  "itemListElement": [{
-			    "@type": "ListItem",
-			    "position": 1,
-			    "item": {
-			      "@id": "https://saijogeorge.com",
-			      "name": "Home"
-			    }
-			  },{
-			    "@type": "ListItem",
-			    "position": 2,
-			    "item": {
-			      "@id": "https://saijogeorge.com/projects.html",
-			      "name": "Side Projects"
-			    }
-			  }]
-			}
-		</script>
-    	<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
-    	<meta property="og:site_name" content="SaijoGeorge.com">
-		<meta property="og:title" content="One Click Encoding Decoding Tool - Mobile Friendly">
-		<meta property="og:description" content="This FREE URL encoding tool converts characters that you input in to the text area below into the ASCII character-set format in one click.">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://saijogeorge.com/one-click-encoding-decoding-tool/">
-		<meta property="og:image" content="https://saijogeorge.com/images/banner/encoding-decoding-tool.png">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://saijogeorge.com",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://saijogeorge.com/projects.html",
+              "name": "Side Projects"
+            }
+          }
+        ]
+      }
+    </script>
+    <meta
+      property="article:author"
+      content="https://www.facebook.com/SaijoGeorge"
+    />
+    <meta property="og:site_name" content="SaijoGeorge.com" />
+    <meta
+      property="og:title"
+      content="One Click Encoding Decoding Tool - Mobile Friendly"
+    />
+    <meta
+      property="og:description"
+      content="This FREE URL encoding tool converts characters that you input in to the text area below into the ASCII character-set format in one click."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://saijogeorge.com/one-click-encoding-decoding-tool/"
+    />
+    <meta
+      property="og:image"
+      content="https://saijogeorge.com/images/banner/encoding-decoding-tool.png"
+    />
 
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@SaijoGeorge">
-		<meta name="twitter:creator" content="@SaijoGeorge">
-		<meta name="twitter:title" content="SaijoGeorge.com">
-		<meta name="twitter:domain" content="https://saijogeorge.com">
-		<meta name="twitter:description" content="One Click Encoding Decoding Tool : convert content to ASCII character-set">
-		<meta name="twitter:image" content="https://saijogeorge.com/images/banner/encoding-decoding-tool.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SaijoGeorge" />
+    <meta name="twitter:creator" content="@SaijoGeorge" />
+    <meta name="twitter:title" content="SaijoGeorge.com" />
+    <meta name="twitter:domain" content="https://saijogeorge.com" />
+    <meta
+      name="twitter:description"
+      content="One Click Encoding Decoding Tool : convert content to ASCII character-set"
+    />
+    <meta
+      name="twitter:image"
+      content="https://saijogeorge.com/images/banner/encoding-decoding-tool.png"
+    />
 
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component1.css" />
-		<script src="js/modernizr-2.6.2.min.js"></script>
-		<script type="text/javascript">// <![CDATA[
-			function encode() {
-				var obj = document.getElementById('theencoder');
-				var unencoded = obj.value;
-				obj.value = encodeURIComponent(unencoded);
-			}
-			function decode() {
-				var obj = document.getElementById('theencoder');
-				var encoded = obj.value;
-				obj.value = decodeURIComponent(encoded.replace(/\+/g,  " "));
-			}
-			// ]]&gt;
-			function SelectAll(id){
-			document.getElementById(id).focus();
-			document.getElementById(id).select();}
-		</script>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component1.css" />
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript">
+      // <![CDATA[
+      function encode() {
+        var obj = document.getElementById("theencoder");
+        var unencoded = obj.value;
+        obj.value = encodeURIComponent(unencoded);
+      }
+      function decode() {
+        var obj = document.getElementById("theencoder");
+        var encoded = obj.value;
+        obj.value = decodeURIComponent(encoded.replace(/\+/g, " "));
+      }
+      // ]]&gt;
+      function SelectAll(id) {
+        document.getElementById(id).focus();
+        document.getElementById(id).select();
+      }
+    </script>
 
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-		  (adsbygoogle = window.adsbygoogle || []).push({
-		    google_ad_client: "ca-pub-4939718182327406",
-		    enable_page_level_ads: true
-		  });
-		</script>
-		
-	</head>
-	<body>
-	<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WDN6LH');</script>
-<!-- End Google Tag Manager -->
-		<div class="container">
-			<!-- Top Navigation -->
-			<div class="codrops-top clearfix">
-				<a href="https://saijogeorge.com"><strong>Saijo George</strong></a> ›› <a href="https://saijogeorge.com/projects.html"><strong>Side Projects</strong></a>
+    <script
+      async
+      src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4939718182327406",
+        enable_page_level_ads: true,
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager -->
+    <noscript
+      ><iframe
+        src="//www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden;"
+      ></iframe
+    ></noscript>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "//www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WDN6LH");
+    </script>
+    <!-- End Google Tag Manager -->
+    <div class="container">
+      <!-- Top Navigation -->
+      <div class="codrops-top clearfix">
+        <a href="https://saijogeorge.com"><strong>Saijo George</strong></a> ››
+        <a href="https://saijogeorge.com/projects.html"
+          ><strong>Side Projects</strong></a
+        >
 
-				<span class="right"><a href="https://twitter.com/SaijoGeorge" target="_blank">Twitter</a><a href="https://au.linkedin.com/in/saijogeorge" target="_blank">Linkedin</a>
-				</span>
-			</div>
-			<header>
-				<h1>One Click Encoding Decoding Tool<span>convert content to ASCII character-set</span></h1>
-			</header>
-			<section>
-				<p>URL encoding converts characters that you input in to the text area below into the ASCII character-set format which can be transmitted over the Internet. URL encoding is also known by some as Percent-encoding. You can use the free tool below to Encode or Decode any bit of text that you enter in to the text area below.</p>
-				<p>Once you generate your result you can click the “Select Text” button and “Ctrl+C” to copy the result to your clipboard.</p>
-				<p>This page is mobile friendly and will work on any modern smartphones.</p>
-				<textarea autofocus placeholder="Add your content to encode or decode here..." rows="10" id="theencoder"></textarea>
-				<div style="text-align: center;"><button class="btn btn-1 btn-1e" onclick="decode()">Decode</button> <button class="btn btn-1 btn-1e" onclick="encode()">Encode</button> <button class="btn btn-1 btn-1e" onclick="SelectAll('theencoder')">Select All</button><br/>
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- Encoding Decoding -->
-					<ins class="adsbygoogle"
-					     style="display:block"
-					     data-ad-client="ca-pub-4939718182327406"
-					     data-ad-slot="6457259472"
-					     data-ad-format="auto"></ins>
-				<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-				</div>
-			</section>
-			<section class="related">
-				<p>Check out my other projects:</p>
-				<a href="https://saijogeorge.com/best-marketing-tools/">
-					<img src="https://saijogeorge.com/images/best-tools-list.png" />
-					<h3>Best SEO Tools</h3>
-				</a>
-				<a target="_blank" href="https://allthefreestock.com">
-					<img src="https://saijogeorge.com/images/allthefreestock.png" />
-					<h3>Free Stock Images</h3>
-				</a>
-				<a target="_blank" href="https://tldrmarketing.com">
-					<img src="https://saijogeorge.com/images/tldrmarketing.png" />
-					<h3>tl;dr Marketing</h3>
-				</a>
-				<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/">
-					<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" />
-					<h3>JSON-LD Tag Manager Fix Tool</h3>
-				</a>
-				<a href="https://saijogeorge.com/brand-style-guide-examples/">
-					<img src="https://saijogeorge.com/images/brand-styl-guides.png" />
-					<h3>Best Style Guides</h3>
-				</a>
-				<a href="https://saijogeorge.com/website-builders/">
-					<img src="https://saijogeorge.com/images/website-builders.png" />
-					<h3>Website Builders</h3>
-				</a>
-				<a target="_blank" href="https://codemyui.com">
-					<img src="https://saijogeorge.com/images/codemyui.png" />
-					<h3>Code My UI</h3>
-				</a>
-				<a target="_blank" href="https://nativeadvertisingworks.com">
-					<img src="https://saijogeorge.com/images/nativeads.png" />
-					<h3>Best Native Ads</h3>
-				</a>
-				<a href="https://saijogeorge.com/css-puns/">
-					<img src="https://saijogeorge.com/images/css-puns.png" />
-					<h3>CSS Puns</h3>
-				</a>
-				<a href="https://saijogeorge.com/title-case-converter/">
-					<img src="https://saijogeorge.com/images/title-case-converter.png">
-					<h3>Title Case Converter</h3>
-				</a>
-				<a href="https://saijogeorge.com/strikethrough-text-generator/">
-					<img src="https://saijogeorge.com/images/strikethrough-text-generator.png">
-					<h3>Strikethrough Text Generator</h3>
-				</a>
-				<a href="https://saijogeorge.com/keyword-characters-words-count-tool/">
-					<img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png">
-					<h3>Word Count Tool</h3>
-				</a>
-				<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/">
-					<img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png">
-					<h3>Bulk Add Prefix Suffix</h3>
-				</a>
-				<a href="https://saijogeorge.com/dummy-credit-card-generator/">
-					<img src="https://saijogeorge.com/images/dummy-credit-card-generator.png">
-					<h3>Dummy CC Generator</h3>
-				</a>
-				<a href="https://saijogeorge.com/price-to-hours-worked/">
-					<img src="https://saijogeorge.com/images/price-to-hours-worked.png">
-					<h3>Price to Hours Worked</h3>
-				</a>
-			</section>
-			<section>
-			<div class="social-buttons"><a href="http://www.facebook.com/sharer.php?u=https://saijogeorge.com/one-click-encoding-decoding-tool/" class="social-button facebook"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F&amp;text=One%20Click%20Encoding%20Decoding%20Tool%20%3A%20convert%20content%20to%20ASCII%20character-set&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F&amp;via=SaijoGeorge" class="social-button twitter"><i class="fa fa-twitter"></i></a><a href="http://plus.google.com/share?url=https://saijogeorge.com/one-click-encoding-decoding-tool/" class="social-button google"><i class="fa fa-google"></i></a><a href="mailto:?subject=One%20Click%20Encoding%20Decoding%20Tool&amp;body=Hi%20%0A%0ACheckout%20this%20online%20tool%20by%20Saijo%20George%2C%20that%20lets%20you%20encode%20or%20decode%20content%20in%20a%20single%20click.%20%0Ahttp%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F%0A%0ARegards%2C" class="social-button dribbble"><i class="fa fa-envelope"></i></a><a href="whatsapp://send?text=One%20Click%20Encoding%20Decoding%20Tool%20%3A%20convert%20content%20to%20ASCII%20character-set%20http%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F" class="social-button whatsapp"><i class="fa fa-whatsapp"></i></a>
-			</div>
-			</section>
-		</div><!-- /container -->
-		<script src="js/polyfills.js"></script>
-		<script src="js/demo1.js"></script>
-	<script src="//instant.page/1.1.0" type="module" integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"></script>
-</body>
-	<!-- Design based on http://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/ and http://tympanus.net/codrops/2013/06/13/creative-button-styles/ -->
+        <span class="right"
+          ><a href="https://twitter.com/SaijoGeorge" target="_blank">Twitter</a
+          ><a href="https://au.linkedin.com/in/saijogeorge" target="_blank"
+            >Linkedin</a
+          >
+        </span>
+      </div>
+      <header>
+        <h1>
+          One Click Encoding Decoding Tool<span
+            >convert content to ASCII character-set</span
+          >
+        </h1>
+      </header>
+      <section>
+        <p>
+          URL encoding converts characters that you input in to the text area
+          below into the ASCII character-set format which can be transmitted
+          over the Internet. URL encoding is also known by some as
+          Percent-encoding. You can use the free tool below to Encode or Decode
+          any bit of text that you enter in to the text area below.
+        </p>
+        <p>
+          Once you generate your result you can click the “Select Text” button
+          and “Ctrl+C” to copy the result to your clipboard.
+        </p>
+        <p>
+          This page is mobile friendly and will work on any modern smartphones.
+        </p>
+        <textarea
+          autofocus
+          placeholder="Add your content to encode or decode here..."
+          rows="10"
+          id="theencoder"
+        ></textarea>
+        <div style="text-align: center;">
+          <button class="btn btn-1 btn-1e" onclick="decode()">Decode</button>
+          <button class="btn btn-1 btn-1e" onclick="encode()">Encode</button>
+          <button class="btn btn-1 btn-1e" onclick="SelectAll('theencoder')">
+            Select All</button
+          ><br />
+          <script
+            async
+            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
+          <!-- Encoding Decoding -->
+          <ins
+            class="adsbygoogle"
+            style="display: block;"
+            data-ad-client="ca-pub-4939718182327406"
+            data-ad-slot="6457259472"
+            data-ad-format="auto"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </section>
+      <section class="related">
+        <p>Check out my other projects:</p>
+        <a href="https://saijogeorge.com/best-marketing-tools/">
+          <img src="https://saijogeorge.com/images/best-tools-list.png" />
+          <h3>Best SEO Tools</h3>
+        </a>
+        <a target="_blank" href="https://allthefreestock.com">
+          <img src="https://saijogeorge.com/images/allthefreestock.png" />
+          <h3>Free Stock Images</h3>
+        </a>
+        <a target="_blank" href="https://tldrmarketing.com">
+          <img src="https://saijogeorge.com/images/tldrmarketing.png" />
+          <h3>tl;dr Marketing</h3>
+        </a>
+        <a
+          target="_blank"
+          href="https://saijogeorge.com/json-ld-tag-manager-fix/"
+        >
+          <img
+            src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png"
+          />
+          <h3>JSON-LD Tag Manager Fix Tool</h3>
+        </a>
+        <a href="https://saijogeorge.com/brand-style-guide-examples/">
+          <img src="https://saijogeorge.com/images/brand-styl-guides.png" />
+          <h3>Best Style Guides</h3>
+        </a>
+        <a target="_blank" href="https://justmotivate.me/">
+          <img src="https://saijogeorge.com/images/justmotivate-me.png" />
+          <h3>Motivational Quotes</h3>
+        </a>
+        <a target="_blank" href="https://codemyui.com">
+          <img src="https://saijogeorge.com/images/codemyui.png" />
+          <h3>Code My UI</h3>
+        </a>
+        <a target="_blank" href="https://nativeadvertisingworks.com">
+          <img src="https://saijogeorge.com/images/nativeads.png" />
+          <h3>Best Native Ads</h3>
+        </a>
+        <a href="https://saijogeorge.com/css-puns/">
+          <img src="https://saijogeorge.com/images/css-puns.png" />
+          <h3>CSS Puns</h3>
+        </a>
+        <a href="https://saijogeorge.com/title-case-converter/">
+          <img src="https://saijogeorge.com/images/title-case-converter.png" />
+          <h3>Title Case Converter</h3>
+        </a>
+        <a href="https://saijogeorge.com/strikethrough-text-generator/">
+          <img
+            src="https://saijogeorge.com/images/strikethrough-text-generator.png"
+          />
+          <h3>Strikethrough Text Generator</h3>
+        </a>
+        <a href="https://saijogeorge.com/keyword-characters-words-count-tool/">
+          <img
+            src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png"
+          />
+          <h3>Word Count Tool</h3>
+        </a>
+        <a href="https://saijogeorge.com/prefix-suffix-keywords-tool/">
+          <img
+            src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png"
+          />
+          <h3>Bulk Add Prefix Suffix</h3>
+        </a>
+        <a href="https://saijogeorge.com/dummy-credit-card-generator/">
+          <img
+            src="https://saijogeorge.com/images/dummy-credit-card-generator.png"
+          />
+          <h3>Dummy CC Generator</h3>
+        </a>
+        <a href="https://saijogeorge.com/price-to-hours-worked/">
+          <img src="https://saijogeorge.com/images/price-to-hours-worked.png" />
+          <h3>Price to Hours Worked</h3>
+        </a>
+      </section>
+      <section>
+        <div class="social-buttons">
+          <a
+            href="http://www.facebook.com/sharer.php?u=https://saijogeorge.com/one-click-encoding-decoding-tool/"
+            class="social-button facebook"
+            ><i class="fa fa-facebook"></i></a
+          ><a
+            href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F&amp;text=One%20Click%20Encoding%20Decoding%20Tool%20%3A%20convert%20content%20to%20ASCII%20character-set&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F&amp;via=SaijoGeorge"
+            class="social-button twitter"
+            ><i class="fa fa-twitter"></i></a
+          ><a
+            href="http://plus.google.com/share?url=https://saijogeorge.com/one-click-encoding-decoding-tool/"
+            class="social-button google"
+            ><i class="fa fa-google"></i></a
+          ><a
+            href="mailto:?subject=One%20Click%20Encoding%20Decoding%20Tool&amp;body=Hi%20%0A%0ACheckout%20this%20online%20tool%20by%20Saijo%20George%2C%20that%20lets%20you%20encode%20or%20decode%20content%20in%20a%20single%20click.%20%0Ahttp%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F%0A%0ARegards%2C"
+            class="social-button dribbble"
+            ><i class="fa fa-envelope"></i></a
+          ><a
+            href="whatsapp://send?text=One%20Click%20Encoding%20Decoding%20Tool%20%3A%20convert%20content%20to%20ASCII%20character-set%20http%3A%2F%2Fsaijogeorge.com%2Fone-click-encoding-decoding-tool%2F"
+            class="social-button whatsapp"
+            ><i class="fa fa-whatsapp"></i
+          ></a>
+        </div>
+      </section>
+    </div>
+    <!-- /container -->
+    <script src="js/polyfills.js"></script>
+    <script src="js/demo1.js"></script>
+    <script
+      src="//instant.page/1.1.0"
+      type="module"
+      integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"
+    ></script>
+  </body>
+  <!-- Design based on http://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/ and http://tympanus.net/codrops/2013/06/13/creative-button-styles/ -->
 </html>

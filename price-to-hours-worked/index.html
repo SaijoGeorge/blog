@@ -1,218 +1,371 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Price to Hours Worked Converter</title>
-		
-		<link rel="canonical" href="https://saijogeorge.com/price-to-hours-worked/" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price to Hours Worked Converter</title>
 
-        <link rel="shortcut icon" href="./favicon.ico">
-        <link rel="icon" sizes="16x16 32x32 64x64" href="./favicon.ico">
-        <link rel="icon" type="image/png" sizes="196x196" href="./favicon-196.png">
-        <link rel="icon" type="image/png" sizes="160x160" href="./favicon-160.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="./favicon-96.png">
-        <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="./favicon-152.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="./favicon-144.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="./favicon-120.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="./favicon-114.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="./favicon-76.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="./favicon-72.png">
-        <link rel="apple-touch-icon" href="./favicon-57.png">
-        <meta name="msapplication-TileColor" content="#FFFFFF">
-        <meta name="msapplication-TileImage" content="./favicon-144.png">
-		<meta name="msapplication-config" content="./browserconfig.xml">
-		
-		<meta name="author" content="Saijo George">
-        <meta name="copyright" content="Saijo George">
-        <meta name="description" content="Figuring out how many hours you will have to work to buy something, is a great way to discourage impulse buying.">
-        <meta name="robots" content="all">
-        <meta name="theme-color" content="#2da9d7">
-        
-        <meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
-        <meta property="og:site_name" content="SaijoGeorge.com">
-        <meta property="og:title" content="Price to Hours Worked Converter">
-        <meta property="og:description" content="Figuring out how many hours you will have to work to buy something, is a great way to discourage impulse buying.">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://saijogeorge.com/price-to-hours-worked/">
-        <meta property="og:image" content="https://saijogeorge.com/images/banner/price-to-hours-worked.png">
-        
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@SaijoGeorge">
-        <meta name="twitter:creator" content="@SaijoGeorge">
-        <meta name="twitter:title" content="Price to Hours Worked Converter">
-        <meta name="twitter:domain" content="https://saijogeorge.com">
-        <meta name="twitter:description" content="Figuring out how many hours you will have to work to buy something, is a great way to discourage impulse buying.">
-        <meta name="twitter:image" content="https://saijogeorge.com/images/banner/price-to-hours-worked.png">
-		
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="css/sweet-alert.css" />
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700" />
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" />
-		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" />
-		<script src="js/modernizr.custom.js"></script>
-		<script src="js/jquery.min.js"></script>		
-		<script src="js/sweet-alert.js"></script>
-		<script src="js/main.js"></script>
+    <link
+      rel="canonical"
+      href="https://saijogeorge.com/price-to-hours-worked/"
+    />
 
-		<script type="application/ld+json">
-			{
-			  "@context": "http://schema.org",
-			  "@type": "BreadcrumbList",
-			  "itemListElement": [{
-			    "@type": "ListItem",
-			    "position": 1,
-			    "item": {
-			      "@id": "https://saijogeorge.com",
-			      "name": "Home"
-			    }
-			  },{
-			    "@type": "ListItem",
-			    "position": 2,
-			    "item": {
-			      "@id": "https://saijogeorge.com/projects.html",
-			      "name": "Side Projects"
-			    }
-			  }]
-			}
-		</script>
-		
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4939718182327406",
-    enable_page_level_ads: true
-  });
-</script>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="./favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="./favicon-196.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="160x160"
+      href="./favicon-160.png"
+    />
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon-152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon-114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon-76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon-72.png" />
+    <link rel="apple-touch-icon" href="./favicon-57.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="./favicon-144.png" />
+    <meta name="msapplication-config" content="./browserconfig.xml" />
 
-	</head>
-	<body class="nl-blurred">
-	<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WDN6LH');</script>
-<!-- End Google Tag Manager -->
-		<div class="container demo-1">
-			<!-- Top Navigation -->
-			<div class="codrops-top clearfix">
-				<a href="https://saijogeorge.com"><strong>Saijo George</strong></a> ›› <a href="https://saijogeorge.com/projects.html"><strong>Side Projects</strong></a>
-				<span class="right"><a href="https://twitter.com/SaijoGeorge" target="_blank">Twitter</a><a href="https://au.linkedin.com/in/saijogeorge" target="_blank">Linkedin</a>
-				</span>
-			</div>
-			<header>
-				<h1>Price to Hours Worked</h1>
-				<span>How many hours will I have to work to buy this?</span>
-			</header>
-			<div class="main clearfix">
-				<form id="nl-form" class="nl-form">
-					I want to spend <span id="sspend">$ <input id="spend" type="text" value="100" placeholder="100" data-subline="Enter a numerical value eg: 100.00"/></span> on something. <br/> I earn $
-					<span id="searn">	<input id="earn"  type="text" value="100" placeholder="100" data-subline="Enter the amount after TAX"/> </span>per 
-					<span id="speriod">	
-					<select id="period">
-						<option value="1" selected>hour</option>
-						<option value="3">year</option>
-					</select>.</span>
-					<div class="nl-submit-wrap">
-						<button class="nl-submit" type="submit" id="ftot">Worth it?</button>
-					</div>
-				</form>
-			</div>	
-			<section>
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- price to hrs -->
-				<ins class="adsbygoogle"
-				     style="display:block"
-				     data-ad-client="ca-pub-4939718182327406"
-				     data-ad-slot="2134367476"
-				     data-ad-format="auto"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-				<p>I recently saw an article on <a href="http://www.makingsenseofcents.com/2014/03/do-you-value-items-in-terms-of-hours-worked.html" target="_blank">Making Sense of Cents</a>, that talked about an easy way to beat impulse buying. When you want to buy something, calculate how many hours you will have to work to pay for that item.</p>
-				<p>Here is an example that shows you how it works : Say you want to spend $60 on something and you earn $20/hour. That mean you will have to work for three hours to buy this.</p>
-				<p>If you make impulse spending decisions, this is a great trick to think twice about its value.</p>
-			</section>
-			<section class="related">
-				<p>Check out my other projects:</p>
-				<a href="https://saijogeorge.com/best-marketing-tools/">
-					<img src="https://saijogeorge.com/images/best-tools-list.png" />
-					<h3>Best SEO Tools</h3>
-				</a>
-				<a target="_blank" href="https://allthefreestock.com">
-					<img src="https://saijogeorge.com/images/allthefreestock.png" />
-					<h3>Free Stock Images</h3>
-				</a>
-				<a target="_blank" href="https://tldrmarketing.com">
-					<img src="https://saijogeorge.com/images/tldrmarketing.png" />
-					<h3>tl;dr Marketing</h3>
-				</a>
-				<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/">
-					<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" />
-					<h3>JSON-LD Tag Manager Fix Tool</h3>
-				</a>
-				<a href="https://saijogeorge.com/brand-style-guide-examples/">
-					<img src="https://saijogeorge.com/images/brand-styl-guides.png" />
-					<h3>Best Style Guides</h3>
-				</a>
-				<a href="https://saijogeorge.com/website-builders/">
-					<img src="https://saijogeorge.com/images/website-builders.png" />
-					<h3>Website Builders</h3>
-				</a>
-				<a target="_blank" href="https://codemyui.com">
-					<img src="https://saijogeorge.com/images/codemyui.png" />
-					<h3>Code My UI</h3>
-				</a>
-				<a target="_blank" href="https://nativeadvertisingworks.com">
-					<img src="https://saijogeorge.com/images/nativeads.png" />
-					<h3>Best Native Ads</h3>
-				</a>
-				<a href="https://saijogeorge.com/css-puns/">
-					<img src="https://saijogeorge.com/images/css-puns.png" />
-					<h3>CSS Puns</h3>
-				</a>
-				<a href="https://saijogeorge.com/title-case-converter/">
-					<img src="https://saijogeorge.com/images/title-case-converter.png">
-					<h3>Title Case Converter</h3>
-				</a>
-				<a href="https://saijogeorge.com/one-click-encoding-decoding-tool/">
-					<img src="https://saijogeorge.com/images/encoding-decoding-tool.png">
-					<h3>Encoding Decoding Tool</h3>
-				</a>
-				<a href="https://saijogeorge.com/strikethrough-text-generator/">
-					<img src="https://saijogeorge.com/images/strikethrough-text-generator.png">
-					<h3>Strikethrough Text Generator</h3>
-				</a>
-				<a href="https://saijogeorge.com/keyword-characters-words-count-tool/">
-					<img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png">
-					<h3>Word Count Tool</h3>
-				</a>
-				<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/">
-					<img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png">
-					<h3>Bulk Add Prefix Suffix</h3>
-				</a>
-				<a href="https://saijogeorge.com/dummy-credit-card-generator/">
-					<img src="https://saijogeorge.com/images/dummy-credit-card-generator.png">
-					<h3>Dummy CC Generator</h3>
-				</a>
-			</section>
-			<section>
-			<div class="social-buttons"><a href="http://www.facebook.com/sharer.php?u=https://saijogeorge.com/price-to-hours-worked/" class="social-button facebook"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F&amp;text=Price%20to%20Hours%20Worked%3A%20shows%20you%20how%20many%20hours%20will%20I%20have%20to%20work%20to%20buy%20this%3F&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F&amp;via=SaijoGeorge" class="social-button twitter"><i class="fa fa-twitter"></i></a><a href="http://plus.google.com/share?url=https://saijogeorge.com/price-to-hours-worked/" class="social-button google"><i class="fa fa-google"></i></a><a href="mailto:?subject=Price%20to%20Hours%20Worked&amp;body=Hi%20%0A%0ACheckout%20this%20free%20tool%20that%20shows%20you%20how%20many%20hours%20will%20you%20have%20to%20work%20to%20buy%20this%3F%0A%0Ahttp%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F%0A%0ARegards%2C" class="social-button dribbble"><i class="fa fa-envelope"></i></a><a href="whatsapp://send?text=Price%20to%20Hours%20Worked%3A%20shows%20you%20how%20many%20hours%20will%20I%20have%20to%20work%20to%20buy%20this%3F%20http%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F" class="social-button whatsapp"><i class="fa fa-whatsapp"></i></a>
-			</div>
-			</section>
-		</div><!-- /container -->
-		<script src="js/nlform.js"></script>
-		<script>
-			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
-		</script>
-	<script src="//instant.page/1.1.0" type="module" integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"></script>
-</body>
+    <meta name="author" content="Saijo George" />
+    <meta name="copyright" content="Saijo George" />
+    <meta
+      name="description"
+      content="Figuring out how many hours you will have to work to buy something, is a great way to discourage impulse buying."
+    />
+    <meta name="robots" content="all" />
+    <meta name="theme-color" content="#2da9d7" />
+
+    <meta
+      property="article:author"
+      content="https://www.facebook.com/SaijoGeorge"
+    />
+    <meta property="og:site_name" content="SaijoGeorge.com" />
+    <meta property="og:title" content="Price to Hours Worked Converter" />
+    <meta
+      property="og:description"
+      content="Figuring out how many hours you will have to work to buy something, is a great way to discourage impulse buying."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://saijogeorge.com/price-to-hours-worked/"
+    />
+    <meta
+      property="og:image"
+      content="https://saijogeorge.com/images/banner/price-to-hours-worked.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SaijoGeorge" />
+    <meta name="twitter:creator" content="@SaijoGeorge" />
+    <meta name="twitter:title" content="Price to Hours Worked Converter" />
+    <meta name="twitter:domain" content="https://saijogeorge.com" />
+    <meta
+      name="twitter:description"
+      content="Figuring out how many hours you will have to work to buy something, is a great way to discourage impulse buying."
+    />
+    <meta
+      name="twitter:image"
+      content="https://saijogeorge.com/images/banner/price-to-hours-worked.png"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/sweet-alert.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Lato:300,400,700"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css"
+    />
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sweet-alert.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://saijogeorge.com",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://saijogeorge.com/projects.html",
+              "name": "Side Projects"
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script
+      async
+      src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4939718182327406",
+        enable_page_level_ads: true,
+      });
+    </script>
+  </head>
+  <body class="nl-blurred">
+    <!-- Google Tag Manager -->
+    <noscript
+      ><iframe
+        src="//www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden;"
+      ></iframe
+    ></noscript>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "//www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WDN6LH");
+    </script>
+    <!-- End Google Tag Manager -->
+    <div class="container demo-1">
+      <!-- Top Navigation -->
+      <div class="codrops-top clearfix">
+        <a href="https://saijogeorge.com"><strong>Saijo George</strong></a> ››
+        <a href="https://saijogeorge.com/projects.html"
+          ><strong>Side Projects</strong></a
+        >
+        <span class="right"
+          ><a href="https://twitter.com/SaijoGeorge" target="_blank">Twitter</a
+          ><a href="https://au.linkedin.com/in/saijogeorge" target="_blank"
+            >Linkedin</a
+          >
+        </span>
+      </div>
+      <header>
+        <h1>Price to Hours Worked</h1>
+        <span>How many hours will I have to work to buy this?</span>
+      </header>
+      <div class="main clearfix">
+        <form id="nl-form" class="nl-form">
+          I want to spend
+          <span id="sspend"
+            >$
+            <input
+              id="spend"
+              type="text"
+              value="100"
+              placeholder="100"
+              data-subline="Enter a numerical value eg: 100.00"
+          /></span>
+          on something. <br />
+          I earn $
+          <span id="searn">
+            <input
+              id="earn"
+              type="text"
+              value="100"
+              placeholder="100"
+              data-subline="Enter the amount after TAX"
+            /> </span
+          >per
+          <span id="speriod">
+            <select id="period">
+              <option value="1" selected>hour</option>
+              <option value="3">year</option> </select
+            >.</span
+          >
+          <div class="nl-submit-wrap">
+            <button class="nl-submit" type="submit" id="ftot">Worth it?</button>
+          </div>
+        </form>
+      </div>
+      <section>
+        <script
+          async
+          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+        <!-- price to hrs -->
+        <ins
+          class="adsbygoogle"
+          style="display: block;"
+          data-ad-client="ca-pub-4939718182327406"
+          data-ad-slot="2134367476"
+          data-ad-format="auto"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <p>
+          I recently saw an article on
+          <a
+            href="http://www.makingsenseofcents.com/2014/03/do-you-value-items-in-terms-of-hours-worked.html"
+            target="_blank"
+            >Making Sense of Cents</a
+          >, that talked about an easy way to beat impulse buying. When you want
+          to buy something, calculate how many hours you will have to work to
+          pay for that item.
+        </p>
+        <p>
+          Here is an example that shows you how it works : Say you want to spend
+          $60 on something and you earn $20/hour. That mean you will have to
+          work for three hours to buy this.
+        </p>
+        <p>
+          If you make impulse spending decisions, this is a great trick to think
+          twice about its value.
+        </p>
+      </section>
+      <section class="related">
+        <p>Check out my other projects:</p>
+        <a href="https://saijogeorge.com/best-marketing-tools/">
+          <img src="https://saijogeorge.com/images/best-tools-list.png" />
+          <h3>Best SEO Tools</h3>
+        </a>
+        <a target="_blank" href="https://allthefreestock.com">
+          <img src="https://saijogeorge.com/images/allthefreestock.png" />
+          <h3>Free Stock Images</h3>
+        </a>
+        <a target="_blank" href="https://tldrmarketing.com">
+          <img src="https://saijogeorge.com/images/tldrmarketing.png" />
+          <h3>tl;dr Marketing</h3>
+        </a>
+        <a
+          target="_blank"
+          href="https://saijogeorge.com/json-ld-tag-manager-fix/"
+        >
+          <img
+            src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png"
+          />
+          <h3>JSON-LD Tag Manager Fix Tool</h3>
+        </a>
+        <a href="https://saijogeorge.com/brand-style-guide-examples/">
+          <img src="https://saijogeorge.com/images/brand-styl-guides.png" />
+          <h3>Best Style Guides</h3>
+        </a>
+        <a target="_blank" href="https://justmotivate.me/">
+          <img src="https://saijogeorge.com/images/justmotivate-me.png" />
+          <h3>Motivational Quotes</h3>
+        </a>
+        <a target="_blank" href="https://codemyui.com">
+          <img src="https://saijogeorge.com/images/codemyui.png" />
+          <h3>Code My UI</h3>
+        </a>
+        <a target="_blank" href="https://nativeadvertisingworks.com">
+          <img src="https://saijogeorge.com/images/nativeads.png" />
+          <h3>Best Native Ads</h3>
+        </a>
+        <a href="https://saijogeorge.com/css-puns/">
+          <img src="https://saijogeorge.com/images/css-puns.png" />
+          <h3>CSS Puns</h3>
+        </a>
+        <a href="https://saijogeorge.com/title-case-converter/">
+          <img src="https://saijogeorge.com/images/title-case-converter.png" />
+          <h3>Title Case Converter</h3>
+        </a>
+        <a href="https://saijogeorge.com/one-click-encoding-decoding-tool/">
+          <img
+            src="https://saijogeorge.com/images/encoding-decoding-tool.png"
+          />
+          <h3>Encoding Decoding Tool</h3>
+        </a>
+        <a href="https://saijogeorge.com/strikethrough-text-generator/">
+          <img
+            src="https://saijogeorge.com/images/strikethrough-text-generator.png"
+          />
+          <h3>Strikethrough Text Generator</h3>
+        </a>
+        <a href="https://saijogeorge.com/keyword-characters-words-count-tool/">
+          <img
+            src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png"
+          />
+          <h3>Word Count Tool</h3>
+        </a>
+        <a href="https://saijogeorge.com/prefix-suffix-keywords-tool/">
+          <img
+            src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png"
+          />
+          <h3>Bulk Add Prefix Suffix</h3>
+        </a>
+        <a href="https://saijogeorge.com/dummy-credit-card-generator/">
+          <img
+            src="https://saijogeorge.com/images/dummy-credit-card-generator.png"
+          />
+          <h3>Dummy CC Generator</h3>
+        </a>
+      </section>
+      <section>
+        <div class="social-buttons">
+          <a
+            href="http://www.facebook.com/sharer.php?u=https://saijogeorge.com/price-to-hours-worked/"
+            class="social-button facebook"
+            ><i class="fa fa-facebook"></i></a
+          ><a
+            href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F&amp;text=Price%20to%20Hours%20Worked%3A%20shows%20you%20how%20many%20hours%20will%20I%20have%20to%20work%20to%20buy%20this%3F&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F&amp;via=SaijoGeorge"
+            class="social-button twitter"
+            ><i class="fa fa-twitter"></i></a
+          ><a
+            href="http://plus.google.com/share?url=https://saijogeorge.com/price-to-hours-worked/"
+            class="social-button google"
+            ><i class="fa fa-google"></i></a
+          ><a
+            href="mailto:?subject=Price%20to%20Hours%20Worked&amp;body=Hi%20%0A%0ACheckout%20this%20free%20tool%20that%20shows%20you%20how%20many%20hours%20will%20you%20have%20to%20work%20to%20buy%20this%3F%0A%0Ahttp%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F%0A%0ARegards%2C"
+            class="social-button dribbble"
+            ><i class="fa fa-envelope"></i></a
+          ><a
+            href="whatsapp://send?text=Price%20to%20Hours%20Worked%3A%20shows%20you%20how%20many%20hours%20will%20I%20have%20to%20work%20to%20buy%20this%3F%20http%3A%2F%2Fsaijogeorge.com%2Fprice-to-hours-worked%2F"
+            class="social-button whatsapp"
+            ><i class="fa fa-whatsapp"></i
+          ></a>
+        </div>
+      </section>
+    </div>
+    <!-- /container -->
+    <script src="js/nlform.js"></script>
+    <script>
+      var nlform = new NLForm(document.getElementById("nl-form"));
+    </script>
+    <script
+      src="//instant.page/1.1.0"
+      type="module"
+      integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"
+    ></script>
+  </body>
 </html>
