@@ -96,29 +96,28 @@
       String.prototype.toTitleCase = function () {
         var smallWords = /^(the|and|nor|or|yet|so|a|amid|an|apud|as|at|atop|but|by|down|for|from|in|into|like|mid|near|next|of|off|on|onto|out|over|pace|past|per|plus|pro|qua|sans|save|than|till|to|unto|up|upon|via|vice|vs?\.?|with)$/i;
 
-        return this.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function (
-          match,
-          index,
-          title
-        ) {
-          if (
-            index > 0 &&
-            index + match.length !== title.length &&
-            match.search(smallWords) > -1 &&
-            title.charAt(index - 2) !== ":" &&
-            (title.charAt(index + match.length) !== "-" ||
-              title.charAt(index - 1) === "-") &&
-            title.charAt(index - 1).search(/[^\s-]/) < 0
-          ) {
-            return match.toLowerCase();
-          }
+        return this.replace(
+          /[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g,
+          function (match, index, title) {
+            if (
+              index > 0 &&
+              index + match.length !== title.length &&
+              match.search(smallWords) > -1 &&
+              title.charAt(index - 2) !== ":" &&
+              (title.charAt(index + match.length) !== "-" ||
+                title.charAt(index - 1) === "-") &&
+              title.charAt(index - 1).search(/[^\s-]/) < 0
+            ) {
+              return match.toLowerCase();
+            }
 
-          if (match.substr(1).search(/[A-Z]|\../) > -1) {
-            return match;
-          }
+            if (match.substr(1).search(/[A-Z]|\../) > -1) {
+              return match;
+            }
 
-          return match.charAt(0).toUpperCase() + match.substr(1);
-        });
+            return match.charAt(0).toUpperCase() + match.substr(1);
+          }
+        );
       };
     </script>
     <script type="text/javascript">
@@ -135,7 +134,7 @@
         src="//www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
         height="0"
         width="0"
-        style="display: none; visibility: hidden;"
+        style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
     <script>
@@ -171,7 +170,7 @@
       <section>
         <strong>Add your title in here :</strong><br /><br />
         <input id="untitled" type="text" value="" /><br /><br />
-        <div style="text-align: center;">
+        <div style="text-align: center">
           <input
             type="button"
             title="Title Case"
@@ -187,7 +186,7 @@
         <!-- title case responsive -->
         <ins
           class="adsbygoogle"
-          style="display: block;"
+          style="display: block"
           data-ad-client="ca-pub-4939718182327406"
           data-ad-slot="6025110673"
           data-ad-format="auto"
@@ -262,6 +261,10 @@
         <a target="_blank" href="https://justmotivate.me/">
           <img src="https://saijogeorge.com/images/justmotivate-me.png" />
           <h3>Motivational Quotes</h3>
+        </a>
+        <a target="_blank" href="https://whoisthebestseo.com/">
+          <img src="https://saijogeorge.com/images/whoisthebestseo.png" />
+          <h3>Who is the Best SEO?</h3>
         </a>
         <a target="_blank" href="https://codemyui.com">
           <img src="https://saijogeorge.com/images/codemyui.png" />
