@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Replace New Lines With Commas Online - Saijo George</title>
+    <meta name="description" content="Use this free online tool to easily replace new lines with commas in your text. Multiple configuration options: no space after comma, with space, etc. Perfect for CSV formatting, keyword manipulation, and more." />
+    <meta name="author" content="Saijo George" />
+    <meta name="robots" content="all" />
+    <link rel="canonical" href="https://saijogeorge.com/replace-lines-with-commas/" />
+    <meta name="theme-color" content="#F5AB35" />
+    <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "https://saijogeorge.com",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@id": "https://saijogeorge.com/projects.html",
+                  "name": "Side Projects"
+                }
+              }
+            ]
+          }
+        </script>
+    <meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
+    <meta property="og:site_name" content="SaijoGeorge.com" />
+    <meta property="og:title" content="Replace New Lines With Commas Online - Saijo George" />
+    <meta property="og:description" content="Use this free online tool to easily replace new lines with commas in your text. Multiple configuration options: no space after comma, with space, etc. Perfect for CSV formatting, keyword manipulation, and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saijogeorge.com/replace-lines-with-commas/" />
+    <meta property="og:image" content="https://saijogeorge.com/images/banner/replace-lines-with-commas.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SaijoGeorge" />
+    <meta name="twitter:creator" content="@SaijoGeorge" />
+    <meta name="twitter:title" content="SaijoGeorge.com" />
+    <meta name="twitter:domain" content="https://saijogeorge.com" />
+    <meta name="twitter:description" content="Replace New Lines With Commas Online - Saijo George" />
+    <meta name="twitter:image" content="https://saijogeorge.com/images/banner/replace-lines-with-commas.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <style>
+        /* This will be used for the alert messages */
+        .alert {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .alert.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:py-10 md:px-0">
+    <div class="container mx-auto">
+        <h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Replace New Lines With Commas Online</h1>
+        <p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">This Replace New Lines With Commas Online tool helps users replace new lines in a block of text with commas. Imagine you have a list of items, each on a new line, and you want them to be in a single line separated by commas. This tool does that for you for free.</p>
+        <div class="grid md:grid-cols-3 gap-4">
+            <!-- Column 1 -->
+            <div>
+                <label for="inputText" class="block text-xl mb-2">Input Text</label>
+                <textarea id="inputText" rows="13" class="w-full border p-2" placeholder="Frodo Baggins
+Samwise 'Sam' Gamgee
+Meriadoc 'Merry' Brandybuck
+
+Peregrin 'Pippin' Took
+Aragorn
+Legolas
+
+
+Gimli
+Boromir
+Gandalf"></textarea>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <label class="block text-xl mb-2">Processed Text</label>
+                <div id="processedText" class="border p-2 h-64 overflow-y-scroll"></div>
+                <div class="mt-2">
+                    <input type="checkbox" id="noSpaceAfterComma" class="form-checkbox h-5 w-5 text-blue-600">
+                    <label for="noSpaceAfterComma" class="ml-2 text-gray-700">No space after comma</label>
+                </div>
+                <button id="copyCol2" class="mt-2 bg-green-500 text-white py-2 px-5 rounded">Copy</button>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <label class="block text-xl mb-2">Random Results</label>
+                <div id="randomResults" class="border p-2 h-48 overflow-y-scroll"></div>
+                <div class="mt-2">
+                    <label for="numResults" class="mr-2 text-gray-700">How many items in random results:</label>
+                    <input type="number" id="numResults" value="6" min="1" class="form-input w-16">
+                </div>
+                <button id="copyCol3" class="mt-2 bg-green-500 text-white py-2 px-5 rounded mr-2">Copy</button>
+                <button id="randomize" class="mt-2 bg-red-400 text-white py-2 px-5 rounded">Randomize</button>
+                <div class="mt-4">
+                    <label for="numRows" class="mr-2 text-gray-700">How many rows of random results:</label>
+                    <input type="number" id="numRows" value="10" min="1" class="form-input w-16">
+                </div>
+                <div class="mt-2">
+                    <button id="copyRandomRows" class="bg-blue-500 text-white py-2 px-5 rounded">Copy 10 Random Rows</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Below your three-column grid -->
+<div class="container mx-auto mt-10">
+    <p class="mb-4">You enter your text (with items on separate lines) in the "Input Text" box on the left. If there are multiple new lines, it ignores that.</p>
+    <p class="mb-4">The comma-separated result is shown in the middle section under "Processed Text". Here you also have the option to remove the space after commas. So instead of</p>
+    <p class="mb-4 font-mono bg-gray-200 p-2">result1, result 2, result 3</p>
+    <p class="mb-4">you will get</p>
+    <p class="mb-4 font-mono bg-gray-200 p-2">result1,result 2,result 3</p>
+    <p class="mb-4">There is a button to copy that result to your clipboard.</p>
+    <p class="mb-4">The 3rd column, "Random Results", picks a certain number of items from your list at random and displays them. You can pick this number; the default is 6. If you want to get another set of random results just hit the red Randomise button. You can also decide on the number of rows of random results you'd like to generate at once using the blue Copy 10 Random Rows button.</p>
+  </div>
+
+<div style="background-color: #465650;">
+  <section class="p-4 container mx-auto mt-10" >
+    <h3 class="block text-xl mb-2 text-white">Check out my other projects:</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-4">
+<a href="https://saijogeorge.com/best-marketing-tools/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/best-tools-list.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Best SEO Tools</h3>
+</a>
+<a target="_blank" href="https://allthefreestock.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/allthefreestock.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Free Stock Images</h3>
+</a>
+<a target="_blank" href="https://tldrmarketing.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/tldrmarketing.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">tl;dr Marketing</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
+</a>
+<a href="https://saijogeorge.com/brand-style-guide-examples/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/brand-styl-guides.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Best Style Guides</h3>
+</a>
+<a target="_blank" href="https://justmotivate.me/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/justmotivate-me.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Motivational Quotes</h3>
+</a>
+<a target="_blank" href="https://whoisthebestseo.com/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/whoisthebestseo.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Who is the Best SEO?</h3>
+</a>
+<a target="_blank" href="https://codemyui.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/codemyui.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Code My UI</h3>
+</a>
+<a target="_blank" href="https://nativeadvertisingworks.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/nativeads.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Best Native Ads</h3>
+</a>
+<a href="https://saijogeorge.com/css-puns/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/css-puns.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">CSS Puns</h3>
+</a>
+<a href="https://saijogeorge.com/one-click-encoding-decoding-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/encoding-decoding-tool.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Encoding Decoding Tool</h3>
+</a>
+<a href="https://saijogeorge.com/strikethrough-text-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/strikethrough-text-generator.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Strikethrough Text Generator</h3>
+</a>
+<a href="https://saijogeorge.com/keyword-characters-words-count-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Word Count Tool</h3>
+</a>
+<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Bulk Add Prefix Suffix</h3>
+</a>
+<a href="https://saijogeorge.com/dummy-credit-card-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/dummy-credit-card-generator.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Dummy CC Generator</h3>
+</a>
+<a href="https://saijogeorge.com/price-to-hours-worked/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+ <img src="https://saijogeorge.com/images/price-to-hours-worked.png" class="w-full h-56 object-contain mb-2">
+        <h3 class="text-xl text-white">Price to Hours Worked</h3>
+</a>
+</div>
+  </section>
+</div>
+
+    <!-- Alert Message -->
+    <div class="alert bg-blue-500 text-white p-3 rounded shadow-lg"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const inputText = document.getElementById('inputText');
+    const processedText = document.getElementById('processedText');
+    const randomResults = document.getElementById('randomResults');
+    const copyCol2 = document.getElementById('copyCol2');
+    const copyCol3 = document.getElementById('copyCol3');
+    const randomize = document.getElementById('randomize');
+    const alertBox = document.querySelector('.alert');
+    const numRows = document.getElementById('numRows');
+    const copyRandomRows = document.getElementById('copyRandomRows');
+
+    // Process input text and display in column 2
+    inputText.addEventListener('input', function() {
+        const lines = this.value.split(/\n+/g).map(line => line.trim()).filter(line => line !== '');
+        const text = lines.join(', ');
+        processedText.textContent = text;
+        displayRandomResults(text);
+    });
+
+    const noSpaceAfterComma = document.getElementById('noSpaceAfterComma');
+
+    // Process input text and display in column 2
+    inputText.addEventListener('input', processInputText);
+
+    // Listen for changes on the checkbox
+    noSpaceAfterComma.addEventListener('change', function() {
+        processInputText();
+        displayRandomResults(processedText.textContent);
+    });
+
+    function processInputText() {
+        const separator = noSpaceAfterComma.checked ? ',' : ', ';
+        const lines = inputText.value.split(/\n+/g).map(line => line.trim()).filter(line => line !== '');
+        const text = lines.join(separator);
+        const numResults = document.getElementById('numResults');
+        processedText.textContent = text;
+        displayRandomResults(text);
+    }
+
+    // Function to generate a random row
+    function generateRandomRow(text) {
+        const separator = noSpaceAfterComma.checked ? ',' : ', ';
+        const items = [...text.split(separator)].filter(item => item.trim() !== ''); // Clone the array
+        const numOfResults = parseInt(numResults.value) || 6; // Use 6 as default if input is empty or invalid
+        let randomItems = [];
+        for (let i = 0; i < numOfResults && i < items.length; i++) {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            randomItems.push(items.splice(randomIndex, 1)[0]);
+        }
+        return randomItems.join(separator);
+    }
+
+    // Copy multiple rows of random results
+    copyRandomRows.addEventListener('click', function() {
+        const text = processedText.textContent;
+        const numRowsVal = parseInt(numRows.value) || 10; // Use 10 as default if input is empty or invalid
+        let allRows = [];
+        for (let i = 0; i < numRowsVal; i++) {
+            allRows.push(generateRandomRow(text));
+        }
+        copyToClipboard(allRows.join('\n')); // Each row on a new line
+        showAlert(`Copied ${numRowsVal} random rows to clipboard!`);
+    });
+
+    // Update the label of the copyRandomRows button when numRows value changes
+    numRows.addEventListener('input', function() {
+        const numRowsVal = parseInt(numRows.value) || 10; // Use 10 as default if input is empty or invalid
+        copyRandomRows.textContent = `Copy ${numRowsVal} Random Rows`;
+    });
+
+    function displayRandomResults(text) {
+        const separator = noSpaceAfterComma.checked ? ',' : ', ';
+        const items = [...text.split(separator)].filter(item => item.trim() !== ''); // Clone the array
+        const numOfResults = parseInt(numResults.value) || 6; // Use 6 as default if input is empty or invalid
+        let randomItems = [];
+        for (let i = 0; i < numOfResults && i < items.length; i++) {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            randomItems.push(items.splice(randomIndex, 1)[0]);
+        }
+        randomResults.textContent = randomItems.join(separator);
+    }
+
+    // Re-randomize when changing the number of results
+    numResults.addEventListener('input', function() {
+        displayRandomResults(processedText.textContent);
+    });
+
+    // Copy results from columns
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        showAlert('Copied to clipboard!');
+    }
+
+    copyCol2.addEventListener('click', function() {
+        copyToClipboard(processedText.textContent);
+    });
+
+    copyCol3.addEventListener('click', function() {
+        copyToClipboard(randomResults.textContent);
+    });
+
+    // Randomize results in column 3
+    randomize.addEventListener('click', function() {
+        displayRandomResults(processedText.textContent);
+    });
+
+    // Show alert message
+    function showAlert(message) {
+        alertBox.textContent = message;
+        alertBox.classList.add('show');
+        setTimeout(() => {
+            alertBox.classList.remove('show');
+        }, 3000);
+    }
+});
+
+    </script>
+</body>
+</html>
