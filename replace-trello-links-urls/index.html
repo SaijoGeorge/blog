@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<title>Replace Trello Links with URLs - Saijo George</title>
+<meta name="description" content="Replace vague Trello links with actual URLs for better clarity, works in descriptions, checklists, and comments." />
+<meta name="author" content="Saijo George" />
+<meta name="robots" content="all" />
+<link rel="canonical" href="https://saijogeorge.com/replace-trello-links-urls/" />
+<meta name="theme-color" content="#F5AB35" />
+<script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "https://saijogeorge.com",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@id": "https://saijogeorge.com/projects.html",
+                  "name": "Side Projects"
+                }
+              }
+            ]
+          }
+        </script>
+<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
+<meta property="og:site_name" content="SaijoGeorge.com" />
+<meta property="og:title" content="Replace Trello Links with URLs - Saijo George" />
+<meta property="og:description" content="Replace vague Trello links with actual URLs for better clarity, works in descriptions, checklists, and comments" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://saijogeorge.com/replace-trello-links-urls/" />
+<meta property="og:image" content="https://saijogeorge.com/images/banner/replace-trello-links-urls.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SaijoGeorge" />
+<meta name="twitter:creator" content="@SaijoGeorge" />
+<meta name="twitter:title" content="SaijoGeorge.com" />
+<meta name="twitter:domain" content="https://saijogeorge.com" />
+<meta name="twitter:description" content="Replace Trello Links with URLs - Saijo George" />
+<meta name="twitter:image" content="https://saijogeorge.com/images/banner/replace-trello-links-urls.png" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<style>
+        /* This will be used for the alert messages */
+        .alert {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .alert.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:py-10 md:px-0">
+<div class="container mx-auto">
+<h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Replace Trello Links with URLs</h1>
+<p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">Elevate your Trello experience with our FREE bookmarklet that prevents Trello from unfurls URLs directly within your cards. Say goodbye to vague and non-descriptive links. With one click you can replace Trello links in descriptions, checklists, and comments with the actual URLs. This makes it easier to identify content and streamlines your workflow for a more productive and efficient board management. Don't just click blindly; know exactly where each link leads you.</p><br>
+<a class="bg-blue-500 hover:bg-blue-400 text-white font-extrabold text-lg py-4 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="javascript:(function() {  const classes = ['js-fill-card-detail-desc', 'checklist-items-list', 'comment-container'];    classes.forEach((className) => {    const elements = document.getElementsByClassName(className);        Array.from(elements).forEach((element) => {      const anchors = element.getElementsByTagName('a');            Array.from(anchors).forEach((anchor) => {        anchor.innerText = anchor.href;      });    });  });})();">Trello Links</a>
+
+</div>
+
+<div class="container mx-auto mt-10 flex flex-wrap mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+  <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+  <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
+  <p class="mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
+
+  <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
+  <ul class="mb-4">
+    <li>When you are on a Trello Card, run the bookmarklet.</li>
+    <li>The Links will be replaced with URLs.</li>
+    <li>Will work in Descriptions, Checklists and Comments.</li>
+  </ul>
+</div>
+  
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="replace-trello-links-urls.png" alt="replace-trello-links-urls">
+  </div>
+</div>
+
+<div style="background-color: #465650;">
+<section class="p-4 container mx-auto mt-10">
+<h3 class="block text-xl mb-2 text-white">Check out my other projects:</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-4">
+<a href="https://saijogeorge.com/best-marketing-tools/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/best-tools-list.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best SEO Tools</h3>
+</a>
+<a target="_blank" href="https://allthefreestock.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/allthefreestock.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Free Stock Images</h3>
+</a>
+<a target="_blank" href="https://tldrmarketing.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/tldrmarketing.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">tl;dr Marketing</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
+</a>
+<a href="https://saijogeorge.com/brand-style-guide-examples/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/brand-styl-guides.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Style Guides</h3>
+</a>
+<a target="_blank" href="https://justmotivate.me/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/justmotivate-me.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Motivational Quotes</h3>
+</a>
+<a target="_blank" href="https://whoisthebestseo.com/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/whoisthebestseo.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Who is the Best SEO?</h3>
+</a>
+<a target="_blank" href="https://codemyui.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/codemyui.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Code My UI</h3>
+</a>
+<a target="_blank" href="https://nativeadvertisingworks.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/nativeads.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Native Ads</h3>
+</a>
+<a href="https://saijogeorge.com/css-puns/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/css-puns.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">CSS Puns</h3>
+</a>
+<a href="https://saijogeorge.com/one-click-encoding-decoding-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/encoding-decoding-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Encoding Decoding Tool</h3>
+</a>
+<a href="https://saijogeorge.com/strikethrough-text-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/strikethrough-text-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Strikethrough Text Generator</h3>
+</a>
+<a href="https://saijogeorge.com/keyword-characters-words-count-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Word Count Tool</h3>
+</a>
+<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Bulk Add Prefix Suffix</h3>
+</a>
+<a href="https://saijogeorge.com/dummy-credit-card-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/dummy-credit-card-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Dummy CC Generator</h3>
+</a>
+<a href="https://saijogeorge.com/price-to-hours-worked/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/price-to-hours-worked.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Price to Hours Worked</h3>
+</a>
+</div>
+</section>
+</div>
+
+
+</body>
+</html>
