@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<title>Reveal Hidden Text Bookmarklet 🫥 ➡️ 😐 - Saijo George</title>
+<meta name="description" content="This bookmarklet is designed to effortlessly reveal hidden text on webpages, offering you a deeper insight into the content you browse." />
+<meta name="author" content="Saijo George" />
+<meta name="robots" content="all" />
+<link rel="canonical" href="https://saijogeorge.com/reveal-hidden-text/" />
+<meta name="theme-color" content="#F5AB35" />
+<script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "https://saijogeorge.com",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@id": "https://saijogeorge.com/projects.html",
+                  "name": "Side Projects"
+                }
+              }
+            ]
+          }
+        </script>
+<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
+<meta property="og:site_name" content="SaijoGeorge.com" />
+<meta property="og:title" content="Reveal Hidden Text Bookmarklet 🫥 ➡️ 😐 - Saijo George" />
+<meta property="og:description" content="This bookmarklet is designed to effortlessly reveal hidden text on webpages, offering you a deeper insight into the content you browse." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://saijogeorge.com/reveal-hidden-text/" />
+<meta property="og:image" content="https://saijogeorge.com/images/banner/reveal-hidden-text.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SaijoGeorge" />
+<meta name="twitter:creator" content="@SaijoGeorge" />
+<meta name="twitter:title" content="SaijoGeorge.com" />
+<meta name="twitter:domain" content="https://saijogeorge.com" />
+<meta name="twitter:description" content="Reveal Hidden Text Bookmarklet 🫥 ➡️ 😐 - Saijo George" />
+<meta name="twitter:image" content="https://saijogeorge.com/images/banner/reveal-hidden-text.png" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<style>
+        /* This will be used for the alert messages */
+        .alert {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .alert.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .no-color {
+  color: initial;
+  background: none;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10px;
+    width: 10px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-radius: 50%;
+}
+
+ol {
+    counter-reset: list-counter;
+}
+
+ol li {
+    list-style: none;
+    position: relative;
+    counter-increment: list-counter;
+}
+
+ol li::before {
+    content: counter(list-counter);
+    position: absolute;
+    left: -35px; /* Adjusted for better positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    width: 20px; /* Ensures a circle shape */
+    height: 20px; /* Ensures a circle shape */
+    line-height: 20px; /* Aligns the text vertically */
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:py-10 md:px-0">
+<div class="container mx-auto">
+<h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Reveal Hidden Text Bookmarklet <span class="no-color">🫥 ➡️ 😐</span></h1>
+<p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">When analysing competitors' websites or auditing your own, having a comprehensive understanding of all content is essential, including elements not immediately visible. Hidden text may contain key keywords and other crucial SEO-related elements that aren't apparent at first glance. This bookmarklet simplifies the process, allowing you to see most of these elements with just one click. It's also designed to work seamlessly on mobile devices.</p><br>
+<a class="bg-blue-500 hover:bg-blue-400 text-white font-extrabold text-lg py-4 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="javascript:(function(){const e=[],t='background-color:#EEF296;border:3px%20solid%20#FF8F8F;color:#161A30;position:relative;',n='position:absolute;top:0;left:0;background-color:#FF8F8F;color:#FFF;padding:2px%205px;z-index:1001;';function%20o(e){const%20n=e.offsetWidth,o=e.offsetHeight,r=window.getComputedStyle(e),l=e.textContent.trim().length%3E15,i=r.margin.indexOf('-')===0,a=Math.abs(parseInt(r.textIndent))%3E1000,s=r.zIndex%3C0,c=r.color===r.backgroundColor,u='none'!==r.clipPath&&'none'!==r.mask;return(0===n&&0===o||'none'===r.display||'hidden'===r.visibility||'0'===r.opacity||e.hidden||i||a||s||c||u)&&l}function%20l(e){const%20t=window.getComputedStyle(e);return'none'===t.display?'CSS%20display:%20none':'hidden'===t.visibility?'CSS%20visibility:%20hidden':'0'===t.opacity?'CSS%20opacity:%200':e.hidden?'HTML5%20hidden%20attribute':t.margin.indexOf('-')===0?'Negative%20margin':Math.abs(parseInt(t.textIndent))%3E1000?'Text%20indentation':t.zIndex%3C0?'Negative%20z-index':t.color===t.backgroundColor?'Matching%20font%20and%20background%20color':('none'!==t.clipPath&&'none'!==t.mask)?'Clipping/Masking':'Unknown'}function%20c(e){if(!e)return!1;for(;e;){if(e.classList.contains('revealed-hidden-element'))return!0;e=e.parentElement}return!1}function%20i(e,s){s?(e.style.display='block',e.style.visibility='visible',e.style.opacity='1'):(e.style.display='',e.style.visibility='',e.style.opacity='')}document.querySelectorAll('*').forEach(a=%3E{if(a.tagName!=='SCRIPT'&&a.tagName!=='STYLE'){!c(a)&&o(a)&&(e.push(a),a.style=t,a.classList.add('revealed-hidden-element'),i(a,true));}});const%20a=document.createElement('button'),r=document.createElement('ol');a.innerText='Toggle%20Hidden%20Elements',a.style='position:fixed;top:0;left:0;z-index:999999999999;background-color:#FFF;',r.style='position:fixed;top:40px;left:0;z-index:999999999999;background-color:#FFF;display:none;max-height:200px;overflow:auto;',a.onclick=function(){r.style.display='block'===r.style.display?'none':'block'},document.body.insertBefore(r,document.body.firstChild),document.body.insertBefore(a,document.body.firstChild),r.style.display='none',e.forEach((e,t)=%3E{const%20a=document.createElement('span');a.style=n,a.innerText='sg'+(t+1),e.appendChild(a);const%20c=document.createElement('li'),d=e.textContent.trim().length,s=document.createElement('button');s.innerText=e.style.display==='none'?'Show':'Hide',s.onclick=()=%3E{i(e,e.style.display===''),s.innerText=s.innerText==='Show'?'Hide':'Show'},c.innerText=%60sg${t+1}.%20Type:%20${l(e)}%20(${d}%20characters)%60,c.appendChild(s),c.onclick=()=%3Ee.scrollIntoView(),r.appendChild(c)})})();">Reveal Hidden Text</a>
+
+</div>
+
+<div class="container mx-auto mt-10 flex flex-wrap items-center mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+  <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+  <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
+  <p class="mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
+  <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
+  <ol class="mb-4">
+    <li>When you are on a webpage, run the bookmarklet.</li>
+    <li>It will highlight hidden content detected on the page. The hidden element is highlighted with a yellow background and an orange border.</li>
+    <li>You can jump to the element by clicking on the item from the list.</li>
+    <li>It will show you the number of hidden characters in each element.</li>
+    <li>There is a button to show or hide the hidden element.</li>
+    <li>Each of the hidden elements are given a prefix, so it's easy to look it up in the source code.</li>
+  </ol>
+</div>
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="reveal-hidden-text.png" alt="reveal-hidden-text">
+  </div>
+</div>
+
+<hr class="my-4 border-t border-gray-300" />
+
+<div class="container mx-auto mt-10 flex flex-wrap items-center mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="toggle-hidden-elements.gif" alt="Toggle Hidden Elements">
+  </div>
+
+ <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">List of Hidden Elements with Toggle Function</h2>
+    <p class="mb-4">When you run the bookmarklet, it presents a list of all hidden elements found on the page. This list can be toggled on and off by clicking on the "Toggle Hidden Elements" button. This feature allows for an organized view of all hidden elements, enabling quick access and management. The toggle function is especially handy for decluttering the screen when you're not actively inspecting the hidden elements, thereby improving the usability and efficiency of your workflow.</p>
+</div>
+</div>
+
+<hr class="my-4 border-t border-gray-300" />
+
+<div class="container mx-auto mt-10 flex flex-wrap items-center mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+ <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Jump to Hidden Elements</h2>
+    <p class="mb-4">By clicking on an item from the provided list, you can directly jump to the corresponding hidden element on the webpage. This feature enhances navigation efficiency, especially in complex pages with many elements.</p>
+</div>
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="jump-to-hidden-elements.gif" alt="Jump to Hidden Elements">
+  </div>
+</div>
+
+<hr class="my-4 border-t border-gray-300" />
+
+<div class="container mx-auto mt-10 flex flex-wrap items-center mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="hidden-characters-count.gif" alt="Hidden Characters Count">
+  </div>
+
+ <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Hidden Characters Count</h2>
+    <p class="mb-4">The bookmarklet displays the number of hidden characters in each element. This information can be crucial for SEOs in understanding the extent of hidden content within a page. </p>
+</div>
+</div>
+
+<hr class="my-4 border-t border-gray-300" />
+
+<div class="container mx-auto mt-10 flex flex-wrap items-center mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+ <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Show/Hide Toggle for Hidden Elements</h2>
+    <p class="mb-4">There is a button associated with each hidden element that allows you to toggle its visibility. This means you can easily show or hide these elements, which is particularly useful for debugging or examining how the page layout changes with different content visibility. It is also useful when some unhidden elements block useful elements on the page. </p>
+</div>
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="show-hide-toggle-for-hidden-elements.gif" alt="Show Hide Toggle for Hidden Elements">
+  </div>
+</div>
+
+<hr class="my-4 border-t border-gray-300" />
+
+<div class="container mx-auto mt-10 flex flex-wrap items-center mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="visual-highlighting.gif" alt="Visual Highlighting">
+  </div>
+
+ <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Visual Highlighting</h2>
+    <p class="mb-4">Hidden elements are highlighted with a yellow background and an orange border. This visual indication makes it easier to identify and focus on these elements amidst the rest of the page content. </p>
+</div>
+</div>
+
+<hr class="my-4 border-t border-gray-300" />
+
+<div class="container mx-auto mt-10 flex flex-wrap items-center mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+ <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Prefix for Hidden Elements</h2>
+    <p class="mb-4">Each hidden element is assigned a prefix "sg" followed by a number, simplifying the task of locating and referencing it in the page's source code. This feature is beneficial when you need to trace or modify specific elements within the code.</p>
+</div>
+  <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="prefix-for-hidden-elements.png" alt="Prefix for Hidden Elements">
+  </div>
+</div>
+
+<hr class="my-4 border-t border-gray-300" />
+
+<div style="background-color: #465650;">
+<section class="p-4 container mx-auto mt-10">
+<h3 class="block text-xl mb-2 text-white">Check out my other projects:</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-4">
+<a href="https://saijogeorge.com/best-marketing-tools/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/best-tools-list.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best SEO Tools</h3>
+</a>
+<a target="_blank" href="https://allthefreestock.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/allthefreestock.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Free Stock Images</h3>
+</a>
+<a target="_blank" href="https://tldrmarketing.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/tldrmarketing.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">tl;dr Marketing</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/replace-trello-links-urls/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/replace-trello-links-urls.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Replace Trello Links with URLs</h3>
+</a>
+<a href="https://saijogeorge.com/brand-style-guide-examples/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/brand-styl-guides.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Style Guides</h3>
+</a>
+<a target="_blank" href="https://justmotivate.me/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/justmotivate-me.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Motivational Quotes</h3>
+</a>
+<a target="_blank" href="https://whoisthebestseo.com/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/whoisthebestseo.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Who is the Best SEO?</h3>
+</a>
+<a target="_blank" href="https://codemyui.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/codemyui.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Code My UI</h3>
+</a>
+<a target="_blank" href="https://nativeadvertisingworks.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/nativeads.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Native Ads</h3>
+</a>
+<a href="https://saijogeorge.com/css-puns/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/css-puns.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">CSS Puns</h3>
+</a>
+<a href="https://saijogeorge.com/one-click-encoding-decoding-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/encoding-decoding-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Encoding Decoding Tool</h3>
+</a>
+<a href="https://saijogeorge.com/strikethrough-text-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/strikethrough-text-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Strikethrough Text Generator</h3>
+</a>
+<a href="https://saijogeorge.com/keyword-characters-words-count-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Word Count Tool</h3>
+</a>
+<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Bulk Add Prefix Suffix</h3>
+</a>
+<a href="https://saijogeorge.com/dummy-credit-card-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/dummy-credit-card-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Dummy CC Generator</h3>
+</a>
+<a href="https://saijogeorge.com/price-to-hours-worked/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/price-to-hours-worked.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Price to Hours Worked</h3>
+</a>
+</div>
+</section>
+</div>
+
+
+</body>
+</html>
