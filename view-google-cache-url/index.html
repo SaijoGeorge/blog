@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<title>Copy Trello Checklist - Saijo George</title>
-<meta name="description" content="Effortlessly copy trello checklists with one click." />
+<title>View Google's Cache for any Link - Saijo George</title>
+<meta name="description" content="Struggling to access a website that's down or changed? Here is a bookmarklet to quickly view Google's cached copy of any URL in one click." />
 <meta name="author" content="Saijo George" />
 <meta name="robots" content="all" />
-<link rel="canonical" href="https://saijogeorge.com/copy-trello-checklists/" />
+<link rel="canonical" href="https://saijogeorge.com/view-google-cache-url/" />
 <meta name="theme-color" content="#F5AB35" />
 <script type="application/ld+json">
           {
@@ -37,18 +37,18 @@
         </script>
 <meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
 <meta property="og:site_name" content="SaijoGeorge.com" />
-<meta property="og:title" content="Copy Trello Checklists - Saijo George" />
-<meta property="og:description" content="Effortlessly copy trello checklists with one click." />
+<meta property="og:title" content="View Google's Cache for any Link - Saijo George" />
+<meta property="og:description" content="Struggling to access a website that's down or changed? Here is a bookmarklet to quickly view Google's cached copy of any URL in one click." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://saijogeorge.com/copy-trello-checklists/" />
-<meta property="og:image" content="https://saijogeorge.com/images/banner/copy-trello-checklists.png" />
+<meta property="og:url" content="https://saijogeorge.com/view-google-cache-url/" />
+<meta property="og:image" content="https://saijogeorge.com/images/banner/view-google-cache-url.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@SaijoGeorge" />
 <meta name="twitter:creator" content="@SaijoGeorge" />
 <meta name="twitter:title" content="SaijoGeorge.com" />
 <meta name="twitter:domain" content="https://saijogeorge.com" />
-<meta name="twitter:description" content="Copy Trello Checklists - Saijo George" />
-<meta name="twitter:image" content="https://saijogeorge.com/images/banner/copy-trello-checklists.png" />
+<meta name="twitter:description" content="View Google's Cache for any Link - Saijo George" />
+<meta name="twitter:image" content="https://saijogeorge.com/images/banner/view-google-cache-url.png" />
 <link rel="shortcut icon" href="../favicon.ico" />
 <style>
         /* This will be used for the alert messages */
@@ -65,38 +65,41 @@
             opacity: 1;
             visibility: visible;
         }
+        p a, li a 
+        {
+          text-decoration: underline;
+        }
     </style>
 </head>
 <body class="bg-gray-100 p-4 md:py-10 md:px-0">
 <div class="container mx-auto">
-<h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Copy Trello Checklists</h1>
-<p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">This bookmarklet simplifies the process of copying checklists from one Trello card to another. No need to fumble around with the "Copy items from…" dropdown with a gazillion checklists to choose from. The tool is also capable of handling multiple checklists, enabling you to copy all the checklist items to your clipboard and then effortlessly paste them into a different list.</p><br>
-<a class="bg-blue-500 hover:bg-blue-400 text-white font-extrabold text-lg py-4 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="javascript:(()=>{document.querySelectorAll('.atlaskit-smart-link').forEach(link=>link.textContent=link.href);let text=Array.from(document.querySelectorAll('.checklist')).map(e=>e.innerText.replace(/(Add an item|Delete)/g,'------------').replace(/Hide checked items|Show checked items \(\d+\)|^\d+%$/gm,'')).join('\n');let ta=document.createElement('textarea');document.body.appendChild(ta);ta.value=text;ta.select();if(!document.execCommand('copy')){prompt('Copy to clipboard:',text);}document.body.removeChild(ta);})();">Copy Trello Checklists v1.0</a>
+<h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">View Google's Cache for any Link</h1>
+<p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">Need help accessing a website that's down or changed? This bookmarklet offers a one-click solution to retrieve Google's cached version of any webpage instantly. Bypass downtime and view earlier versions of sites effortlessly, ensuring you always have access to the information you need. Drag the bookmarklet to your bookmarks bar, and enjoy uninterrupted web navigation, accessing cached pages with just a click.</p><br>
+<a class="bg-blue-500 hover:bg-blue-400 text-white font-extrabold text-lg py-4 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="javascript:void(window.open('https://www.google.com/search?q=cache:%27+encodeURIComponent(location.href)));">Google Cache Link</a>
 
 </div>
 
 <div class="container mx-auto mt-10 flex flex-wrap mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
   <!-- Text Column -->
   <div class="w-full md:w-1/2 p-4">
-  <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
-  <p class="mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
+  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
+  <p class="p-3 mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
 
-  <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
-  <ul class="mb-4">
-    <li>When you are on a Trello Card, run the bookmarklet.</li>
-    <li>Checklists will be copied to your clipboard.</li>
+  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
+  <ul class="p-3 mb-4">
+    <li>When you're on the webpage you wish to find a cached version of.</li>
+    <li>Click the Bookmarklet "Google Cache Link" from you browser bookmarks bar.</li>
+    <li>A new tab will open with Google's cache version of that page.</li>
   </ul>
-
-  <h2 class="text-2xl md:text-4xl p-2 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Some Limitations:</h2>
-  <ul class="mb-4">
-    <li>The bookmarklet will only copy checklist items that are visible. Hidden items will not be included in the clipboard.</li>
-    <li>Items that are <a style="text-decoration: line-through" href="https://saijogeorge.com/strikethrough-text-generator/">crossed out</a> will still be copied to the clipboard, but they will not appear as crossed out text when pasted.</li>
+  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Some Limitations:</h2>
+  <ul class="p-3 mb-4">
+    <li>If Google doesn't have a cached version of that page then the bookmarklet will not work. In that case you can try the <a target="_blank" href="https://archive.org/web/">Wayback Machine</a>.</li>
   </ul>
 </div>
   
   <!-- Image Column -->
   <div class="w-full md:w-1/2 p-4">
-    <img src="copy-trello-checklists.png" alt="copy-trello-checklists">
+    <img src="view-google-cache-url.png" alt="view-google-cache-url">
   </div>
 </div>
 
@@ -116,25 +119,21 @@
 <img src="https://saijogeorge.com/images/tldrmarketing.png" class="w-full h-56 object-contain mb-2">
 <h3 class="text-xl text-white">tl;dr Marketing</h3>
 </a>
-<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
-</a>
 <a target="_blank" href="https://saijogeorge.com/replace-lines-with-commas/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
 <img src="https://saijogeorge.com/images/replace-lines-with-commas.png" class="w-full h-56 object-contain mb-2">
 <h3 class="text-xl text-white">Replace New Lines With Commas</h3>
-</a>
-<a target="_blank" href="https://saijogeorge.com/view-google-cache-url/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/view-google-cache-url.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">View Google's Cache for any Link</h3>
 </a>
 <a target="_blank" href="https://saijogeorge.com/reveal-hidden-text/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
 <img src="https://saijogeorge.com/images/reveal-hidden-text.png" class="w-full h-56 object-contain mb-2">
 <h3 class="text-xl text-white">Reveal Hidden Text</h3>
 </a>
-<a target="_blank" href="https://saijogeorge.com/replace-trello-links-urls/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/replace-trello-links-urls.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Replace Trello Links with URLs</h3>
+<a target="_blank" href="https://saijogeorge.com/copy-trello-checklists/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/copy-trello-checklists.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Copy Trello Checklists</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
 </a>
 <a href="https://saijogeorge.com/brand-style-guide-examples/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
 <img src="https://saijogeorge.com/images/brand-styl-guides.png" class="w-full h-56 object-contain mb-2">
