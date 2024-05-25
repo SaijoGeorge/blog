@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+<title>Export Google Reviews as CSV from Google Business Profile - Saijo George</title>
+<meta name="description" content="Easily export Google Business Profile reviews to CSV. &#13; ❌ No programming experience required. &#13; ❌ No Signup. &#13;✅ FREE" />
+<meta name="author" content="Saijo George" />
+<meta name="robots" content="all" />
+<link rel="canonical" href="https://saijogeorge.com/export-google-reviews/" />
+<meta name="theme-color" content="#F5AB35" />
+<script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "https://saijogeorge.com",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@id": "https://saijogeorge.com/projects.html",
+                  "name": "Side Projects"
+                }
+              }
+            ]
+          }
+        </script>
+<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
+<meta property="og:site_name" content="SaijoGeorge.com" />
+<meta property="og:title" content="Export Google Reviews as CSV - Saijo George" />
+<meta property="og:description" content="Easily export Google Business Profile reviews to CSV with our free, user-friendly tool. No programming experience required." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://saijogeorge.com/export-google-reviews/" />
+<meta property="og:image" content="https://saijogeorge.com/images/banner/export-google-reviews.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SaijoGeorge" />
+<meta name="twitter:creator" content="@SaijoGeorge" />
+<meta name="twitter:title" content="SaijoGeorge.com" />
+<meta name="twitter:domain" content="https://saijogeorge.com" />
+<meta name="twitter:description" content="Export Google Reviews as CSV - Saijo George" />
+<meta name="twitter:image" content="https://saijogeorge.com/images/banner/export-google-reviews.png" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<style>
+        /* This will be used for the alert messages */
+        .alert {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .alert.show {
+            opacity: 1;
+            visibility: visible;
+        }
+                p a, li a 
+        {
+          text-decoration: underline;
+        }
+        ul, ol {
+    padding-left: 20px;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10px;
+    width: 10px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-radius: 50%;
+}
+
+ol {
+    counter-reset: list-counter;
+}
+
+ol li {
+    list-style: none;
+    position: relative;
+    counter-increment: list-counter;
+}
+
+ol li::before {
+    content: counter(list-counter);
+    position: absolute;
+    left: -35px; /* Adjusted for better positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    width: 20px; /* Ensures a circle shape */
+    height: 20px; /* Ensures a circle shape */
+    line-height: 20px; /* Aligns the text vertically */
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+}
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:py-10 md:px-0">
+<div class="container mx-auto">
+<h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Export Google Reviews as CSV</h1>
+<p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">This tool is designed to make exporting Google Business Profile reviews effortless! With just a few clicks, you can easily convert your reviews into a CSV file, no programming experience required. Best of all, this tool is completely free to use. Perfect for business owners and marketers looking to streamline their workflow and gain valuable insights from customer feedback. Try it today and experience the convenience of hassle-free review exporting!</p>
+<div class="grid md:grid-cols-3 gap-4">
+
+<div>
+<label for="inputText" class="block text-xl mb-2">Select The Takeout Folder</label>
+ <input type="file" id="folderInput" webkitdirectory directory class="block w-full mb-4 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <div id="businessList" class="mt-4"></div>
+        <div id="message" class="mt-6 text-lg text-green-600"></div>
+</div>
+
+
+
+
+    <script>
+         document.getElementById('folderInput').addEventListener('change', async (event) => {
+            const files = Array.from(event.target.files);
+            const businessData = await processFolder(files);
+            displayBusinessList(businessData);
+        });
+
+        async function processFolder(files) {
+            const businessData = {};
+
+            for (const file of files) {
+                const relativePath = file.webkitRelativePath;
+                const parts = relativePath.split('/');
+                const locationIndex = parts.findIndex(part => part.startsWith('location-'));
+
+                if (locationIndex !== -1) {
+                    const locationPath = parts.slice(0, locationIndex + 1).join('/');
+
+                    if (!businessData[locationPath]) {
+                        businessData[locationPath] = { title: 'Unknown Business', placeId: '', reviewFiles: [] };
+                    }
+
+                    const fileName = parts[parts.length - 1];
+                    if (fileName === 'data.json' && parts.length === locationIndex + 2) {
+                        // Read the data.json file
+                        const data = await readFile(file);
+                        businessData[locationPath].title = decodeUnicode(data.title || 'Unknown Business');
+                        businessData[locationPath].placeId = data.metadata?.placeId || '';
+                    } else if (fileName.startsWith('reviews') && parts.length === locationIndex + 2) {
+                        // Collect review files
+                        businessData[locationPath].reviewFiles.push(file);
+                    }
+                }
+            }
+
+            return businessData;
+        }
+
+        function readFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    try {
+                        resolve(JSON.parse(reader.result));
+                    } catch (error) {
+                        reject(error);
+                    }
+                };
+                reader.onerror = () => reject(reader.error);
+                reader.readAsText(file);
+            });
+        }
+
+        function decodeUnicode(str) {
+            return str.replace(/\\u([\dA-F]{4})/gi, (match, grp) => String.fromCharCode(parseInt(grp, 16)));
+        }
+
+        function displayBusinessList(businessData) {
+            const businessList = document.getElementById('businessList');
+            businessList.innerHTML = '';
+
+            for (const [location, data] of Object.entries(businessData)) {
+                const div = document.createElement('div');
+                div.classList.add('mb-6');
+                div.innerHTML = `
+                    <a href="https://www.google.com/maps/place/?q=place_id:${data.placeId}" class="font-bold text-blue-500 underline" target="_blank">${data.title}</a>
+                    <p>${data.reviewFiles.length} review files found</p>
+                    <button class="extract-button bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-600 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200 border border-blue-500" data-location="${location}">Extract Reviews</button>
+                    <hr class="border-t border-gray-300 my-6">
+                `;
+                businessList.appendChild(div);
+            }
+
+            document.querySelectorAll('.extract-button').forEach(button => {
+                button.addEventListener('click', async (event) => {
+                    const location = event.target.getAttribute('data-location');
+                    await extractReviews(businessData[location].reviewFiles);
+                });
+            });
+        }
+
+        async function extractReviews(reviewFiles) {
+            const promises = reviewFiles.map(file => readFile(file));
+            try {
+                const results = await Promise.all(promises);
+                const dataList = results.flatMap(result => processJson(result));
+                const csvContent = generateCsv(dataList);
+                downloadCsv(csvContent);
+                displayMessage(dataList.length);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        function processJson(data) {
+            const reviews = data.reviews || [];
+            return reviews.map(review => {
+                const reviewer = review.reviewer || {};
+                const displayName = reviewer.displayName || '';
+                const starRating = review.starRating || '';
+                const comment = review.comment || '';
+                const createTime = review.createTime || '';
+                const name = review.name || '';
+                const nameLastPart = name.split('/').pop() || '';
+                const reviewLink = `https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1s${nameLastPart}!2m1!1s0x0:0xb4125c27b382e909!3m1!1s2@1:CIHM0ogKEICAgIDjh4DcxQE%7CCgwI8fXrsQYQqIDH9QI%7C?hl=en-US`;
+
+                return [displayName, starRating, comment, createTime, reviewLink];
+            });
+        }
+
+        function generateCsv(dataList) {
+            const header = ['Reviewer Name', 'Rating', 'Review Content', 'Review Time', 'Review Link'];
+            const rows = dataList.map(row => row.map(field => `"${field.replace(/"/g, '""')}"`).join(','));
+            return [header.join(','), ...rows].join('\n');
+        }
+
+        function downloadCsv(csvContent) {
+            const utf8BOM = '\uFEFF';  // Add a UTF-8 Byte Order Mark
+            const blob = new Blob([utf8BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'extracted_data.csv';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function displayMessage(count) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = `${count} reviews were exported to the CSV.`;
+        }
+    </script>
+
+</div>
+</div>
+
+<div class="container mx-auto mt-10 flex flex-wrap mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+
+<div class="w-full md:w-1/2 p-4">
+<img src="view-google-cache-url.png" alt="view-google-cache-url">
+</div>
+
+<div class="w-full md:w-1/2 p-4">
+<h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
+<p class="p-3 mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
+<h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
+<ul class="p-5 mb-4">
+<li>When you're on the webpage you wish to find a cached version of.</li>
+<li>Click the Bookmarklet "Google Cache Link" from you browser bookmarks bar.</li>
+<li>A new tab will open with Google's cache version of that page.</li>
+</ul>
+<h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Some Limitations:</h2>
+<ul class="p-5 mb-4">
+<li>If Google doesn't have a cached version of that page then the bookmarklet will not work. In that case you can try the <a target="_blank" href="https://archive.org/web/">Wayback Machine</a>.</li>
+</ul>
+</div>
+</div>
+
+
+<div style="background-color: #465650;">
+<section class="p-4 container mx-auto mt-10">
+<h3 class="block text-xl mb-2 text-white">Check out my other projects:</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-4">
+<a href="https://saijogeorge.com/best-marketing-tools/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/best-tools-list.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best SEO Tools</h3>
+</a>
+<a target="_blank" href="https://allthefreestock.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/allthefreestock.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Free Stock Images</h3>
+</a>
+<a target="_blank" href="https://tldrmarketing.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/tldrmarketing.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">tl;dr Marketing</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/reveal-hidden-text/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/reveal-hidden-text.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Reveal Hidden Text</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/view-google-cache-url/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/view-google-cache-url.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">View Google's Cache for any Link</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/copy-trello-checklists/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/copy-trello-checklists.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Copy Trello Checklists</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/replace-trello-links-urls/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/replace-trello-links-urls.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Replace Trello Links with URLs</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
+</a>
+<a href="https://saijogeorge.com/brand-style-guide-examples/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/brand-styl-guides.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Style Guides</h3>
+</a>
+<a target="_blank" href="https://justmotivate.me/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/justmotivate-me.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Motivational Quotes</h3>
+</a>
+<a target="_blank" href="https://whoisthebestseo.com/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/whoisthebestseo.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Who is the Best SEO?</h3>
+</a>
+<a target="_blank" href="https://codemyui.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/codemyui.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Code My UI</h3>
+</a>
+<a target="_blank" href="https://nativeadvertisingworks.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/nativeads.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Native Ads</h3>
+</a>
+<a href="https://saijogeorge.com/css-puns/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/css-puns.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">CSS Puns</h3>
+</a>
+<a href="https://saijogeorge.com/one-click-encoding-decoding-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/encoding-decoding-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Encoding Decoding Tool</h3>
+</a>
+<a href="https://saijogeorge.com/strikethrough-text-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/strikethrough-text-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Strikethrough Text Generator</h3>
+</a>
+<a href="https://saijogeorge.com/keyword-characters-words-count-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Word Count Tool</h3>
+</a>
+<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Bulk Add Prefix Suffix</h3>
+</a>
+<a href="https://saijogeorge.com/dummy-credit-card-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/dummy-credit-card-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Dummy CC Generator</h3>
+</a>
+<a href="https://saijogeorge.com/price-to-hours-worked/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/price-to-hours-worked.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Price to Hours Worked</h3>
+</a>
+</div>
+</section>
+</div>
+
+<div class="alert bg-blue-500 text-white p-3 rounded shadow-lg"></div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const inputText = document.getElementById('inputText');
+    const processedText = document.getElementById('processedText');
+    const randomResults = document.getElementById('randomResults');
+    const copyCol2 = document.getElementById('copyCol2');
+    const copyCol3 = document.getElementById('copyCol3');
+    const randomize = document.getElementById('randomize');
+    const alertBox = document.querySelector('.alert');
+    const numRows = document.getElementById('numRows');
+    const copyRandomRows = document.getElementById('copyRandomRows');
+
+    // Process input text and display in column 2
+    inputText.addEventListener('input', function() {
+        const lines = this.value.split(/\n+/g).map(line => line.trim()).filter(line => line !== '');
+        const text = lines.join(', ');
+        processedText.textContent = text;
+        displayRandomResults(text);
+    });
+
+    const noSpaceAfterComma = document.getElementById('noSpaceAfterComma');
+
+    // Process input text and display in column 2
+    inputText.addEventListener('input', processInputText);
+
+    // Listen for changes on the checkbox
+    noSpaceAfterComma.addEventListener('change', function() {
+        processInputText();
+        displayRandomResults(processedText.textContent);
+    });
+
+    function processInputText() {
+        const separator = noSpaceAfterComma.checked ? ',' : ', ';
+        const lines = inputText.value.split(/\n+/g).map(line => line.trim()).filter(line => line !== '');
+        const text = lines.join(separator);
+        const numResults = document.getElementById('numResults');
+        processedText.textContent = text;
+        displayRandomResults(text);
+    }
+
+    // Function to generate a random row
+    function generateRandomRow(text) {
+        const separator = noSpaceAfterComma.checked ? ',' : ', ';
+        const items = [...text.split(separator)].filter(item => item.trim() !== ''); // Clone the array
+        const numOfResults = parseInt(numResults.value) || 6; // Use 6 as default if input is empty or invalid
+        let randomItems = [];
+        for (let i = 0; i < numOfResults && i < items.length; i++) {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            randomItems.push(items.splice(randomIndex, 1)[0]);
+        }
+        return randomItems.join(separator);
+    }
+
+    // Copy multiple rows of random results
+    copyRandomRows.addEventListener('click', function() {
+        const text = processedText.textContent;
+        const numRowsVal = parseInt(numRows.value) || 10; // Use 10 as default if input is empty or invalid
+        let allRows = [];
+        for (let i = 0; i < numRowsVal; i++) {
+            allRows.push(generateRandomRow(text));
+        }
+        copyToClipboard(allRows.join('\n')); // Each row on a new line
+        showAlert(`Copied ${numRowsVal} random rows to clipboard!`);
+    });
+
+    // Update the label of the copyRandomRows button when numRows value changes
+    numRows.addEventListener('input', function() {
+        const numRowsVal = parseInt(numRows.value) || 10; // Use 10 as default if input is empty or invalid
+        copyRandomRows.textContent = `Copy ${numRowsVal} Random Rows`;
+    });
+
+    function displayRandomResults(text) {
+        const separator = noSpaceAfterComma.checked ? ',' : ', ';
+        const items = [...text.split(separator)].filter(item => item.trim() !== ''); // Clone the array
+        const numOfResults = parseInt(numResults.value) || 6; // Use 6 as default if input is empty or invalid
+        let randomItems = [];
+        for (let i = 0; i < numOfResults && i < items.length; i++) {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            randomItems.push(items.splice(randomIndex, 1)[0]);
+        }
+        randomResults.textContent = randomItems.join(separator);
+    }
+
+    // Re-randomize when changing the number of results
+    numResults.addEventListener('input', function() {
+        displayRandomResults(processedText.textContent);
+    });
+
+    // Copy results from columns
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        showAlert('Copied to clipboard!');
+    }
+
+    copyCol2.addEventListener('click', function() {
+        copyToClipboard(processedText.textContent);
+    });
+
+    copyCol3.addEventListener('click', function() {
+        copyToClipboard(randomResults.textContent);
+    });
+
+    // Randomize results in column 3
+    randomize.addEventListener('click', function() {
+        displayRandomResults(processedText.textContent);
+    });
+
+    // Show alert message
+    function showAlert(message) {
+        alertBox.textContent = message;
+        alertBox.classList.add('show');
+        setTimeout(() => {
+            alertBox.classList.remove('show');
+        }, 3000);
+    }
+});
+
+    </script>
+</body>
+</html>
