@@ -52,19 +52,36 @@
 <link rel="shortcut icon" href="../favicon.ico" />
 <style>
         /* This will be used for the alert messages */
-        .alert {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .alert.show {
-            opacity: 1;
-            visibility: visible;
-        }
+      /* This will be used for the alert messages */
+.alert {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure spacing between elements */
+    width: 300px; /* Adjust width as needed */
+}
+.alert.show {
+    opacity: 1;
+    visibility: visible;
+}
+.alert .close-btn {
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.alert a {
+    color: white;
+    text-decoration: underline;
+}
                 p a, li a 
         {
           text-decoration: underline;
@@ -194,29 +211,32 @@ ol li::before {
             return str.replace(/\\u([\dA-F]{4})/gi, (match, grp) => String.fromCharCode(parseInt(grp, 16)));
         }
 
-        function displayBusinessList(businessData) {
-            const businessList = document.getElementById('businessList');
-            businessList.innerHTML = '';
+      function displayBusinessList(businessData) {
+    const businessList = document.getElementById('businessList');
+    businessList.innerHTML = '';
+    let count = 1;
 
-            for (const [location, data] of Object.entries(businessData)) {
-                const div = document.createElement('div');
-                div.classList.add('mb-6');
-                div.innerHTML = `
-                    <a href="https://www.google.com/maps/place/?q=place_id:${data.placeId}" class="font-bold text-blue-500 underline" target="_blank">${data.title}</a>
-                    <p>${data.reviewFiles.length} review files found</p>
-                    <button class="extract-button bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-600 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200 border border-blue-500" data-location="${location}">Extract Reviews</button>
-                    <hr class="border-t border-gray-300 my-6">
-                `;
-                businessList.appendChild(div);
-            }
+    for (const [location, data] of Object.entries(businessData)) {
+        const div = document.createElement('div');
+        div.classList.add('mb-6');
+        div.innerHTML = `
+            <p class="font-bold">#${count} - <a href="https://www.google.com/maps/place/?q=place_id:${data.placeId}" class="font-bold text-blue-500 underline" target="_blank">${data.title}</a></p>
+            <p>${data.reviewFiles.length} review files found</p>
+            <button class="extract-button bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-600 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200 border border-blue-500" data-location="${location}">Extract Reviews</button>
+            <hr class="border-t border-gray-300 my-6">
+        `;
+        businessList.appendChild(div);
+        count++;
+    }
 
-            document.querySelectorAll('.extract-button').forEach(button => {
-                button.addEventListener('click', async (event) => {
-                    const location = event.target.getAttribute('data-location');
-                    await extractReviews(businessData[location].reviewFiles);
-                });
-            });
-        }
+    document.querySelectorAll('.extract-button').forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const location = event.target.getAttribute('data-location');
+            await extractReviews(businessData[location].reviewFiles);
+        });
+    });
+}
+
 
         async function extractReviews(reviewFiles) {
             const promises = reviewFiles.map(file => readFile(file));
@@ -265,10 +285,46 @@ ol li::before {
             document.body.removeChild(link);
         }
 
-        function displayMessage(count) {
-            const messageDiv = document.getElementById('message');
-            messageDiv.textContent = `${count} reviews were exported to the CSV.`;
-        }
+       function displayMessage(count, csvContent) {
+    const messageDiv = document.getElementById('alertMessage');
+    const alertDiv = document.querySelector('.alert');
+    
+    const utf8BOM = '\uFEFF';  // Add a UTF-8 Byte Order Mark
+    const blob = new Blob([utf8BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+
+    messageDiv.innerHTML = `
+        ${count} reviews were exported in the CSV.
+        <a href="${url}" download="extracted_data.csv">Download CSV</a>
+    `;
+    alertDiv.classList.add('show');
+}
+
+function closeAlert() {
+    const alertDiv = document.querySelector('.alert');
+    alertDiv.classList.remove('show');
+}
+
+function generateCsv(dataList) {
+    const header = ['Reviewer Name', 'Rating', 'Review Content', 'Review Time', 'Review Link'];
+    const rows = dataList.map(row => row.map(field => `"${field.replace(/"/g, '""')}"`).join(','));
+    return [header.join(','), ...rows].join('\n');
+}
+
+// Example usage in extractReviews function
+async function extractReviews(reviewFiles) {
+    const promises = reviewFiles.map(file => readFile(file));
+    try {
+        const results = await Promise.all(promises);
+        const dataList = results.flatMap(result => processJson(result));
+        const csvContent = generateCsv(dataList);
+        displayMessage(dataList.length, csvContent);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
     </script>
 
 </div>
@@ -281,17 +337,17 @@ ol li::before {
 </div>
 
 <div class="w-full md:w-1/2 p-4">
-<h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
-<p class="p-3 mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
 <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
 <ul class="p-5 mb-4">
-<li>When you're on the webpage you wish to find a cached version of.</li>
-<li>Click the Bookmarklet "Google Cache Link" from you browser bookmarks bar.</li>
-<li>A new tab will open with Google's cache version of that page.</li>
-</ul>
-<h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Some Limitations:</h2>
-<ul class="p-5 mb-4">
-<li>If Google doesn't have a cached version of that page then the bookmarklet will not work. In that case you can try the <a target="_blank" href="https://archive.org/web/">Wayback Machine</a>.</li>
+<li>Head over to <a href="https://takeout.google.com/settings/takeout" target="_blank">Google Takeout</a>.</li>
+<li>Click on "Deselect all".</li>
+<li>Scroll down and enable "Google Business Profile".</li>
+<li>Click on "Next step" and follow the prompts to export your data.</li>
+<li>Once the export is complete and downloaded, extract the ZIP file.</li>
+<li>On this page, click on "Choose file" and pick the folder you just extracted.</li>
+<li>You will now see a list of businesses managed by that account.</li>
+<li>Pick the business for which you want to extract reviews and click on the "Extract Reviews" button.</li>
+<li>The CSV file containing the reviews should now be automatically downloaded.</li>
 </ul>
 </div>
 </div>
@@ -385,7 +441,11 @@ ol li::before {
 </section>
 </div>
 
-<div class="alert bg-blue-500 text-white p-3 rounded shadow-lg"></div>
+<div class="alert bg-blue-500 text-white p-3 rounded shadow-lg">
+    <span id="alertMessage"></span>
+    <button class="close-btn" onclick="closeAlert()">×</button>
+</div>
+
 <script>
         document.addEventListener('DOMContentLoaded', function() {
     const inputText = document.getElementById('inputText');
