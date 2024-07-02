@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<title>Trello Filter Exclude Label - Saijo George</title>
+<meta name="description" content="A simple bookmarklet to EXCLUDE Trello Labels in filter view. Can exlude multiple labels at a time." />
+<meta name="author" content="Saijo George" />
+<meta name="robots" content="all" />
+<link rel="canonical" href="https://saijogeorge.com/trello-filter-exclude-label/" />
+<meta name="theme-color" content="#F5AB35" />
+<script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "https://saijogeorge.com",
+                  "name": "Home"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@id": "https://saijogeorge.com/projects.html",
+                  "name": "Side Projects"
+                }
+              }
+            ]
+          }
+        </script>
+<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
+<meta property="og:site_name" content="SaijoGeorge.com" />
+<meta property="og:title" content="Trello Filter Exclude Label - Saijo George" />
+<meta property="og:description" content="A simple bookmarklet to EXCLUDE Trello Labels in filter view. Can exlude multiple labels at a time." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://saijogeorge.com/trello-filter-exclude-label/" />
+<meta property="og:image" content="https://saijogeorge.com/images/banner/trello-filter-exclude-label.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SaijoGeorge" />
+<meta name="twitter:creator" content="@SaijoGeorge" />
+<meta name="twitter:title" content="SaijoGeorge.com" />
+<meta name="twitter:domain" content="https://saijogeorge.com" />
+<meta name="twitter:description" content="Trello Filter Exclude Label - Saijo George" />
+<meta name="twitter:image" content="https://saijogeorge.com/images/banner/trello-filter-exclude-label.png" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<style>
+        /* This will be used for the alert messages */
+        .alert {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .alert.show {
+            opacity: 1;
+            visibility: visible;
+        }
+                p a, li a 
+        {
+          text-decoration: underline;
+        }
+        ul, ol {
+    padding-left: 20px;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10px;
+    width: 10px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-radius: 50%;
+}
+
+ol {
+    counter-reset: list-counter;
+}
+
+ol li {
+    list-style: none;
+    position: relative;
+    counter-increment: list-counter;
+}
+
+ol li::before {
+    content: counter(list-counter);
+    position: absolute;
+    left: -35px; /* Adjusted for better positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    width: 20px; /* Ensures a circle shape */
+    height: 20px; /* Ensures a circle shape */
+    line-height: 20px; /* Aligns the text vertically */
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+}
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:py-10 md:px-0">
+<div class="container mx-auto">
+<h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Trello Filter Exclude Label</h1>
+<p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">Trello's built-in filtering has a limitation: you can only include labels, not exclude them. This can be frustrating when you want to hide cards with specific labels. Our bookmarklet solves this problem by allowing you to quickly exclude cards based on label colors. It's a simple yet powerful tool that enhances Trello's filtering capabilities, making it easier to focus on the cards that matter most to you.</p><br>
+<a class="bg-blue-500 hover:bg-blue-400 text-white font-extrabold text-lg py-4 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="javascript:(function()%7Bfunction%20createInfoModal()%7Bvar%20infoModal%3Ddocument.createElement('div')%3BinfoModal.style.cssText%3D'position%3Afixed%3Btop%3A50%25%3Bleft%3A50%25%3Btransform%3Atranslate(-50%25%2C-50%25)%3Bbackground%3Awhite%3Bborder%3A1px%20solid%20black%3Bpadding%3A20px%3Bz-index%3A10000%3Bwidth%3A400px%3Bfont-family%3AArial%2Csans-serif%3B'%3Bvar%20closeBtn%3Ddocument.createElement('button')%3BcloseBtn.textContent%3D'%E2%9D%8C'%3BcloseBtn.style.cssText%3D'position%3Aabsolute%3Btop%3A5px%3Bright%3A5px%3Bborder%3Anone%3Bbackground%3Anone%3Bfont-size%3A20px%3Bcursor%3Apointer%3B'%3BcloseBtn.onclick%3Dfunction()%7Bdocument.body.removeChild(infoModal)%3B%7D%3BinfoModal.appendChild(closeBtn)%3Bvar%20content%3Ddocument.createElement('div')%3Bcontent.innerHTML%3D'%3Ch3%20style%3D%22text-align%3A%20center%3B%20margin-bottom%3A%2015px%3B%22%3ETrello%20Filter%20Exclude%20Label%3C%2Fh3%3E'%2B'%3Cp%20style%3D%22font-size%3A%2012px%3B%22%3E%3Cstrong%3EDeveloped%20by%3A%3C%2Fstrong%3E%20%3Ca%20href%3D%22https%3A%2F%2Fsaijogeorge.com%2F%22%20target%3D%22_blank%22%3ESaijo%20George%3C%2Fa%3E%3C%2Fp%3E'%2B'%3Cp%20style%3D%22font-size%3A%2012px%3B%22%3E%3Cstrong%3ECheck%20for%20Latest%20version%3A%3C%2Fstrong%3E%20%3Ca%20href%3D%22https%3A%2F%2Fsaijogeorge.com%2Ftrello-filter-exclude-label%2F%22%20target%3D%22_blank%22%3Ehere%3C%2Fa%3E%3C%2Fp%3E'%2B'%3Cp%20style%3D%22font-size%3A%2012px%3B%22%3E%3Cstrong%3EYou%20are%20using%3A%3C%2Fstrong%3E%20v%201.0%3C%2Fp%3E'%3BinfoModal.appendChild(content)%3Breturn%20infoModal%3B%7Dvar%20modal%3Ddocument.createElement('div')%3Bmodal.style.cssText%3D'position%3Afixed%3Btop%3A10px%3Bright%3A10px%3Bbackground%3Awhite%3Bborder%3A1px%20solid%20black%3Bpadding%3A10px%3Bz-index%3A9999%3B'%3Bvar%20titleContainer%3Ddocument.createElement('div')%3BtitleContainer.style.cssText%3D'display%3Aflex%3Balign-items%3Acenter%3Bjustify-content%3Aspace-between%3Bmargin-bottom%3A10px%3Bpadding-bottom%3A5px%3Bborder-bottom%3A1px%20solid%20%23ccc%3B'%3Bvar%20title%3Ddocument.createElement('h3')%3Btitle.textContent%3D'Exclude%20Label'%3Btitle.style.cssText%3D'margin%3A0%3Bfont-size%3A14px%3B'%3Bvar%20infoIcon%3Ddocument.createElement('span')%3BinfoIcon.textContent%3D'%E2%84%B9%EF%B8%8F'%3BinfoIcon.style.cssText%3D'cursor%3Apointer%3Bfont-size%3A14px%3Bmargin-left%3A10px%3B'%3BinfoIcon.onclick%3Dfunction()%7Bdocument.body.appendChild(createInfoModal())%3B%7D%3BtitleContainer.appendChild(title)%3BtitleContainer.appendChild(infoIcon)%3Bmodal.appendChild(titleContainer)%3Bvar%20form%3Ddocument.createElement('form')%3Bform.style.cssText%3D'display%3Aflex%3Bflex-direction%3Acolumn%3B'%3Bvar%20colorsContainer%3Ddocument.createElement('div')%3BcolorsContainer.style.cssText%3D'display%3Aflex%3Bjustify-content%3Aspace-between%3Bmargin-bottom%3A10px%3Bgap%3A3px%3B'%3Bvar%20colors%3D%5B%5B%7Bname%3A'Green'%2Cvalue%3A'green'%2Cbg%3A'%234bce97'%7D%2C%7Bname%3A'Yellow'%2Cvalue%3A'yellow'%2Cbg%3A'%23f5cd47'%7D%2C%7Bname%3A'Orange'%2Cvalue%3A'orange'%2Cbg%3A'%23fea362'%7D%2C%7Bname%3A'Red'%2Cvalue%3A'red'%2Cbg%3A'%23f87168'%7D%2C%7Bname%3A'Purple'%2Cvalue%3A'purple'%2Cbg%3A'%239f8fef'%7D%2C%7Bname%3A'Blue'%2Cvalue%3A'blue'%2Cbg%3A'%23579dff'%7D%2C%7Bname%3A'Sky'%2Cvalue%3A'sky'%2Cbg%3A'%236cc3e0'%7D%2C%7Bname%3A'Lime'%2Cvalue%3A'lime'%2Cbg%3A'%2394c748'%7D%2C%7Bname%3A'Pink'%2Cvalue%3A'pink'%2Cbg%3A'%23e774bb'%7D%2C%7Bname%3A'Black'%2Cvalue%3A'black'%2Cbg%3A'%238590a2'%7D%5D%2C%5B%7Bname%3A'Subtle%20Green'%2Cvalue%3A'green_light'%2Cbg%3A'%23baf3db'%7D%2C%7Bname%3A'Subtle%20Yellow'%2Cvalue%3A'yellow_light'%2Cbg%3A'%23f8e6a0'%7D%2C%7Bname%3A'Subtle%20Orange'%2Cvalue%3A'orange_light'%2Cbg%3A'%23ffe2bd'%7D%2C%7Bname%3A'Subtle%20Red'%2Cvalue%3A'red_light'%2Cbg%3A'%23ffd2cc'%7D%2C%7Bname%3A'Subtle%20Purple'%2Cvalue%3A'purple_light'%2Cbg%3A'%23dfd8fd'%7D%2C%7Bname%3A'Subtle%20Blue'%2Cvalue%3A'blue_light'%2Cbg%3A'%23cce0ff'%7D%2C%7Bname%3A'Subtle%20Sky'%2Cvalue%3A'sky_light'%2Cbg%3A'%23c1f0f5'%7D%2C%7Bname%3A'Subtle%20Lime'%2Cvalue%3A'lime_light'%2Cbg%3A'%23D3F1A7'%7D%2C%7Bname%3A'Subtle%20Pink'%2Cvalue%3A'pink_light'%2Cbg%3A'%23fdd0ec'%7D%2C%7Bname%3A'Subtle%20Black'%2Cvalue%3A'black_light'%2Cbg%3A'%23dcdfe4'%7D%5D%2C%5B%7Bname%3A'Bold%20Green'%2Cvalue%3A'green_dark'%2Cbg%3A'%231f845a'%7D%2C%7Bname%3A'Bold%20Yellow'%2Cvalue%3A'yellow_dark'%2Cbg%3A'%23946f00'%7D%2C%7Bname%3A'Bold%20Orange'%2Cvalue%3A'orange_dark'%2Cbg%3A'%23b65c02'%7D%2C%7Bname%3A'Bold%20Red'%2Cvalue%3A'red_dark'%2Cbg%3A'%23ca3521'%7D%2C%7Bname%3A'Bold%20Purple'%2Cvalue%3A'purple_dark'%2Cbg%3A'%236e5dc6'%7D%2C%7Bname%3A'Bold%20Blue'%2Cvalue%3A'blue_dark'%2Cbg%3A'%230c66e4'%7D%2C%7Bname%3A'Bold%20Sky'%2Cvalue%3A'sky_dark'%2Cbg%3A'%231d7f8c'%7D%2C%7Bname%3A'Bold%20Lime'%2Cvalue%3A'lime_dark'%2Cbg%3A'%235b7f24'%7D%2C%7Bname%3A'Bold%20Pink'%2Cvalue%3A'pink_dark'%2Cbg%3A'%23ae4787'%7D%2C%7Bname%3A'Bold%20Black'%2Cvalue%3A'black_dark'%2Cbg%3A'%23626f86'%7D%5D%5D%3Bcolors.forEach(colorGroup%3D%3E%7Bvar%20column%3Ddocument.createElement('div')%3Bcolumn.style.cssText%3D'display%3Aflex%3Bflex-direction%3Acolumn%3Bgap%3A3px%3B'%3Bcolumn.innerHTML%3DcolorGroup.map(color%3D%3E%60%3Clabel%20style%3D%22margin%3A0%3Bpadding%3A2px%204px%3Bborder-radius%3A3px%3Bbackground-color%3A%24%7Bcolor.bg%7D%3Bcolor%3A%24%7BgetContrastColor(color.bg)%7D%3Bfont-size%3A12px%3Bdisplay%3Aflex%3Balign-items%3Acenter%3B%22%3E%3Cinput%20type%3D%22checkbox%22%20value%3D%22%24%7Bcolor.value%7D%22%20style%3D%22margin%3A0%203px%200%200%3B%22%3E%20%24%7Bcolor.name%7D%3C%2Flabel%3E%60).join('')%3BcolorsContainer.appendChild(column)%3B%7D)%3Bform.appendChild(colorsContainer)%3Bvar%20submitButton%3Ddocument.createElement('button')%3BsubmitButton.textContent%3D'Submit'%3BsubmitButton.style.cssText%3D'font-size%3A12px%3Bpadding%3A5px%3Bwidth%3A100%25%3Bbackground-color%3A%2341B06E%3Bcolor%3Awhite%3Bborder%3Anone%3Bborder-radius%3A3px%3Bcursor%3Apointer%3B'%3Bform.appendChild(submitButton)%3Bmodal.appendChild(form)%3Bdocument.body.appendChild(modal)%3Bform.onsubmit%3Dfunction(e)%7Be.preventDefault()%3Bvar%20selectedColors%3DArray.from(form.querySelectorAll('input%3Achecked')).map(input%3D%3Einput.value)%3BselectedColors.forEach(color%3D%3E%7Bvar%20elements%3Ddocument.querySelectorAll(%60li%5Bdata-testid%3D%22list-card%22%5D%3Ahas(%5Bdata-color%3D%22%24%7Bcolor%7D%22%5D)%60)%3Belements.forEach(el%3D%3E%7Bel.style.display%3D'none'%3B%7D)%3B%7D)%3Bdocument.body.removeChild(modal)%3B%7D%3Bfunction%20getContrastColor(hexcolor)%7Bvar%20r%3DparseInt(hexcolor.substr(1%2C2)%2C16)%3Bvar%20g%3DparseInt(hexcolor.substr(3%2C2)%2C16)%3Bvar%20b%3DparseInt(hexcolor.substr(5%2C2)%2C16)%3Bvar%20yiq%3D((r*299)%2B(g*587)%2B(b*114))%2F1000%3Breturn(yiq%3E%3D128)%3F'black'%3A'white'%3B%7D%7D)()">Trello Filter Exclude Label</a>
+
+</div>
+
+<div class="container mx-auto mt-10 flex flex-wrap mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
+    <!-- Image Column -->
+  <div class="w-full md:w-1/2 p-4">
+    <img src="trello-filter-exclude-label.png" alt="trello-filter-exclude-label">
+  </div>
+  <!-- Text Column -->
+  <div class="w-full md:w-1/2 p-4">
+  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
+  <p class="mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
+
+  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
+  <ul class="p-5 mb-4">
+    <li>When you are on a Trello Board, run the bookmarklet.</li>
+    <li>A popup should appear that allows you to select a list of labels based on the color used. Select the ones you want to exclude. You can choose multiple ones to exlude.</li>
+    <li>Click on Submit.</li>
+    <li>Trello Cards with those labels should now be hidden from view.</li>
+  </ul>
+
+  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Some Limitations:</h2>
+  <ul class="p-5 mb-4">
+    <li>The bookmarklet can't differentiate labels with different names, everything with the same color will be hidden.</li>
+  </ul>
+</div>
+</div>
+
+<div style="background-color: #465650;">
+<section class="p-4 container mx-auto mt-10">
+<h3 class="block text-xl mb-2 text-white">Check out my other projects:</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-4">
+<a href="https://saijogeorge.com/best-marketing-tools/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/best-tools-list.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best SEO Tools</h3>
+</a>
+<a target="_blank" href="https://allthefreestock.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/allthefreestock.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Free Stock Images</h3>
+</a>
+<a target="_blank" href="https://tldrmarketing.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/tldrmarketing.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">tl;dr Marketing</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/replace-lines-with-commas/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/replace-lines-with-commas.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Replace New Lines With Commas</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/view-google-cache-url/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/view-google-cache-url.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">View Google's Cache for any Link</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/reveal-hidden-text/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/reveal-hidden-text.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Reveal Hidden Text</h3>
+</a>
+<a target="_blank" href="https://saijogeorge.com/replace-trello-links-urls/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/replace-trello-links-urls.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Replace Trello Links with URLs</h3>
+</a>
+<a href="https://saijogeorge.com/brand-style-guide-examples/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/brand-styl-guides.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Style Guides</h3>
+</a>
+<a target="_blank" href="https://justmotivate.me/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/justmotivate-me.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Motivational Quotes</h3>
+</a>
+<a target="_blank" href="https://whoisthebestseo.com/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/whoisthebestseo.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Who is the Best SEO?</h3>
+</a>
+<a target="_blank" href="https://codemyui.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/codemyui.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Code My UI</h3>
+</a>
+<a target="_blank" href="https://nativeadvertisingworks.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/nativeads.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Best Native Ads</h3>
+</a>
+<a href="https://saijogeorge.com/css-puns/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/css-puns.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">CSS Puns</h3>
+</a>
+<a href="https://saijogeorge.com/one-click-encoding-decoding-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/encoding-decoding-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Encoding Decoding Tool</h3>
+</a>
+<a href="https://saijogeorge.com/strikethrough-text-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/strikethrough-text-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Strikethrough Text Generator</h3>
+</a>
+<a href="https://saijogeorge.com/keyword-characters-words-count-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Word Count Tool</h3>
+</a>
+<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Bulk Add Prefix Suffix</h3>
+</a>
+<a href="https://saijogeorge.com/dummy-credit-card-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/dummy-credit-card-generator.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Dummy CC Generator</h3>
+</a>
+<a href="https://saijogeorge.com/price-to-hours-worked/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
+<img src="https://saijogeorge.com/images/price-to-hours-worked.png" class="w-full h-56 object-contain mb-2">
+<h3 class="text-xl text-white">Price to Hours Worked</h3>
+</a>
+</div>
+</section>
+</div>
+
+
+</body>
+</html>
