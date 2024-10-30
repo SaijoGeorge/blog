@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Paste with Formatting from ChatGPT, Gemini, Claude, etc</title>
+    <!-- Include marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7fafd;
+            color: #1f2c33;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            height: 90vh; /* Container height to 90% of the viewport */
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #5a43ef;
+            text-align: center;
+            margin: 0 0 10px;
+        }
+
+        /* Tab container styles */
+        .tab-container {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Individual tab styles */
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, opacity 0.3s;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .tab:first-child {
+            background-color: #F7D060;
+            border-right: 1px solid #ddd;
+        }
+
+        .tab:last-child {
+            background-color: #03C988;
+        }
+
+        .tab.active {
+            color: white;
+            opacity: 1;
+        }
+
+        .tab:first-child.active {
+            background-color: #F7D060;
+        }
+
+        .tab:last-child.active {
+            background-color: #03C988;
+        }
+
+        .tab:not(.active) {
+            background-color: #d3d3d3; /* Light grey for inactive tabs */
+            opacity: 0.7;
+        }
+
+        /* Panel styles */
+        .panel {
+            flex: 1;
+            display: none;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            background-color: #f7fafd;
+            overflow: hidden;
+        }
+
+        .panel textarea {
+            width: 100%;
+            height: calc(100% - 20px); /* Adjust for padding */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .panel .preview {
+            width: 100%;
+            height: calc(100% - 50px); /* Adjust for button height and padding */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f7fafd;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        /* Copy button styling */
+        .copy-btn {
+            display: block;
+            margin: 10px auto; /* Center the button */
+            padding: 10px 20px;
+            background-color: #03C988; /* Updated color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .copy-btn:hover {
+            background-color: #029e6e; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Copy Paste with Formatting from ChatGPT, Gemini, Claude, etc</h1>
+
+        <!-- Tab Container -->
+        <div class="tab-container">
+            <div class="tab active" id="copyPasteTab">Copy Paste Here</div>
+            <div class="tab" id="resultTab">Result Here</div>
+        </div>
+
+        <!-- Panel: Copy Paste Here -->
+        <div class="panel" id="copyPastePanel" style="display: block;">
+            <textarea id="markdownInput" placeholder="Paste your Markdown text here..." 
+                      oninput="processMarkdown(false)" 
+                      onpaste="handlePasteEvent(event)"></textarea>
+        </div>
+
+        <!-- Panel: Result Here -->
+        <div class="panel" id="resultPanel">
+            <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+            <div id="formattedPreview" class="preview" contenteditable="true"></div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize tab switching
+        const tabs = document.querySelectorAll('.tab');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                const allPanels = document.querySelectorAll('.panel');
+                allPanels.forEach(panel => panel.style.display = 'none');
+
+                const panelId = this.id === 'copyPasteTab' ? 'copyPastePanel' : 'resultPanel';
+                document.getElementById(panelId).style.display = 'block';
+            });
+        });
+
+        // Handle paste event and delay processing
+        function handlePasteEvent(event) {
+            event.preventDefault(); // Prevent default paste handling
+            const textarea = document.getElementById("markdownInput");
+
+            // Get the pasted content from the clipboard
+            const pastedText = (event.clipboardData || window.clipboardData).getData('text');
+
+            // Insert the pasted text at the current cursor position
+            const cursorPosition = textarea.selectionStart;
+            const textBefore = textarea.value.substring(0, cursorPosition);
+            const textAfter = textarea.value.substring(textarea.selectionEnd);
+            textarea.value = textBefore + pastedText + textAfter;
+
+            // Delay processing and tab switch to ensure content is pasted
+            setTimeout(() => {
+                processMarkdown(true);
+                document.getElementById('resultTab').click();
+            }, 50);
+        }
+
+        // Function to process Markdown input
+        function processMarkdown(isPaste) {
+            const input = document.getElementById("markdownInput").value;
+
+            // Convert Markdown to HTML
+            if (window.marked) {
+                const htmlOutput = window.marked.parse(input);
+                document.getElementById("formattedPreview").innerHTML = htmlOutput;
+            } else {
+                alert('Failed to load the Markdown parsing library.');
+            }
+        }
+
+        // Function to copy content to clipboard
+        function copyToClipboard() {
+            const formattedPreview = document.getElementById("formattedPreview");
+            const range = document.createRange();
+            range.selectNodeContents(formattedPreview);
+
+            const selection = window.getSelection();
+            selection.removeAllRanges(); // Clear previous selections
+            selection.addRange(range); // Select the content
+
+            try {
+                document.execCommand('copy');
+                alert('Copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy!');
+            }
+
+            // Clear the selection after copying
+            selection.removeAllRanges();
+        }
+    </script>
+
+</body>
+</html>
