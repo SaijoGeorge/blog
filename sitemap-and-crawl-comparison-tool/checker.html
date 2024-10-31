@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap and Crawl Comparison Tool</title>
+  <!-- Tailwind CSS Setup Script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS to Display Modal -->
+<style>
+  /* Show modal only when #imageModal is targeted */
+  #imageModal1:target, #imageModal2:target {
+    display: flex;
+  }
+</style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold text-gray-700 mb-6">Sitemap and Crawl Comparison Tool</h2>
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Left Column: XLSX File Upload and Filters -->
+        <div>
+          <label for="xlsxFile" class="block text-lg font-medium text-gray-700">Upload XLSX File:</label>
+          <input type="file" id="xlsxFile" accept=".xlsx" class="mt-2 block w-full text-gray-600 bg-gray-100 rounded-lg border border-gray-300 cursor-pointer p-2 mb-6">
+          
+          <!-- Filters -->
+          <div class="mt-4 space-y-4">
+            <label class="flex items-center">
+              <input type="checkbox" id="htmlOnly" checked class="form-checkbox h-5 w-5 text-blue-600">
+              <span class="ml-2 text-gray-700">Only HTML files</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" id="indexableOnly" checked class="form-checkbox h-5 w-5 text-blue-600">
+              <span class="ml-2 text-gray-700">Only Indexable URLs</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" id="cleanUrlOnly" checked class="form-checkbox h-5 w-5 text-blue-600">
+              <span class="ml-2 text-gray-700">Only Clean URLs</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Right Column: Sitemap XML File Upload -->
+        <div>
+          <label for="sitemapFiles" class="block text-lg font-medium text-gray-700">Upload Sitemap XML Files:</label>
+          <input type="file" id="sitemapFiles" accept=".xml" multiple class="mt-2 block w-full text-gray-600 bg-gray-100 rounded-lg border border-gray-300 cursor-pointer p-2 mb-6">
+        </div>
+      </div>
+      <!-- Centered and Enlarged Process Button -->
+      <div class="mt-8 flex justify-center">
+        <button id="processBtn" onclick="processFiles()" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition-colors">
+          Find Missing Pages
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
+
+<div class="lg:pr-4">
+  <div class="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
+    <a href="#imageModal" class="absolute inset-0">
+      <img class="h-full w-full cursor-pointer" src="get-internal-link-export-from-screaming-frog.png" alt="Get internal link export from Screaming Frog">
+    </a>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="imageModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center">
+  <div class="relative max-w-full max-h-full w-auto h-auto mx-4">
+    <img src="get-internal-link-export-from-screaming-frog.png" alt="Get internal link export from Screaming Frog" class="rounded-lg shadow-lg max-w-full max-h-screen">
+    <a href="#" class="absolute top-2 right-2 text-white rounded-full p-2 text-xl" style="background-color: #CC2B52;">
+      &times;
+    </a>
+  </div>
+</div>
+
+      <div>
+        <div class="text-base/7 text-gray-700 lg:max-w-lg">
+          <p class="text-base/7 font-semibold text-indigo-600">Step #1: Upload XLSX File</p>
+          <h2 class="mt-2 text-pretty text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">Get internal link export from Screaming Frog</h2>
+          <div class="max-w-xl">
+            <p class="mt-6">After you run a carwl on Screaming Frog, get the list of internal linked URL export in the Excel format, which will be a. xlsx file. There are some configuration options here which are given below.  </p>
+            <p class="mt-8"><strong>Only HTML files:</strong> This option filters out any non-HTML content from the uploaded file. If checked, only URLs that point to HTML pages (typically web pages) will be included, while other file types (like PDFs, scripts, images, etc.) will be excluded.</p>
+            <p class="mt-8"><strong>Only Indexable URLs:</strong> Selecting this option filters the URLs to include only those that are "indexable." This means URLs marked as non-indexable in the uploaded file (often pages blocked from search engines) will be excluded. </p>
+            <p class="mt-8"><strong>Only Clean URLs:</strong>  When checked, this filter excludes any URLs that contain query parameters (like ? or #). This option is helpful if you want to avoid temporary or duplicate URLs that may have extra parameters for tracking, session IDs, or filtering.</p>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
+      <div>
+        <div class="text-base/7 text-gray-700 lg:max-w-lg">
+          <p class="text-base/7 font-semibold text-indigo-600">Step #2: Upload Sitemap XML Files</p>
+          <h2 class="mt-2 text-pretty text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">Download Sitemap</h2>
+          <div class="max-w-xl">
+            <p class="mt-6">Download the xml sitemap file and save it to your PC. If you have multiple sitemap files you can download each of them which has the URLs and then upload those multiple files in the Upload Sitemap XML Files section.</p>
+            <p class="mt-8"><strong>NOTE:</strong>  If your sitemap points to a bunch of other XML sitemap files, then you'll need to go into each of those individual sitemap and download each one of them.</p>
+             <p class="mt-8">When you click the 'Find Missing Pages' button, the tool will compare the URLs from your uploaded XLSX file against those in the XML Sitemap. It will apply any selected filters, then generate a report showing pages missing from the sitemap, orphan pages, and the filtered list of URLs, which you can download as an XLSX file.</p>
+          </div>
+        </div>
+       
+      </div>
+
+<div class="lg:pr-4">
+  <div class="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
+    <a href="#imageModal2" class="absolute inset-0">
+      <img class="h-full w-full cursor-pointer" src="download-xml-sitemap.gif" alt="Download XML Sitemaps">
+    </a>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="imageModal2" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center">
+  <div class="relative max-w-full max-h-full w-auto h-auto mx-4">
+    <img src="download-xml-sitemap.gif" alt="Download XML Sitemaps" class="rounded-lg shadow-lg max-w-full max-h-screen">
+    <a href="#" class="absolute top-2 right-2 text-white rounded-full p-2 text-xl" style="background-color: #CC2B52;">
+      &times;
+    </a>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <!-- JavaScript Functionality -->
+  <script>
+    async function fetchLocalSitemapUrls(files) {
+      const collectedUrls = new Set();
+
+      for (const file of files) {
+        console.log(`Processing file: ${file.name}`);
+
+        // Verify file type
+        if (!file.name.endsWith('.xml')) {
+          console.error(`Skipping non-XML file: ${file.name}`);
+          continue;
+        }
+
+        try {
+          const text = await file.text();
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(text, "application/xml");
+
+          // Check for parsing errors
+          const parseError = xmlDoc.querySelector("parsererror");
+          if (parseError) {
+            console.error(`Error parsing XML for file: ${file.name}`);
+            console.error(parseError.textContent);
+            continue;
+          }
+
+          // Collect only <url> > <loc> elements to avoid <image:loc> and other nested loc tags
+          const locElements = Array.from(xmlDoc.querySelectorAll("url > loc"));
+          console.log(`Found ${locElements.length} <loc> tags in file: ${file.name}`);
+
+          for (const loc of locElements) {
+            const url = loc.textContent.trim();
+            if (!url.endsWith(".xml")) {
+              // Only add URLs that are not XML files (i.e., actual pages)
+              collectedUrls.add(url);
+              console.log(`Added URL: ${url}`);
+            } else {
+              console.log(`Skipping child sitemap (XML file): ${url}`);
+            }
+          }
+        } catch (error) {
+          console.error(`Failed to process file: ${file.name}`, error);
+        }
+      }
+
+      console.log(`Total URLs collected: ${collectedUrls.size}`);
+      return Array.from(collectedUrls);
+    }
+
+    async function processFiles() {
+      const xlsxFile = document.getElementById("xlsxFile").files[0];
+      const sitemapFiles = document.getElementById("sitemapFiles").files;
+
+      if (!xlsxFile || sitemapFiles.length === 0) {
+        alert("Please upload both an XLSX file and at least one Sitemap XML file.");
+        return;
+      }
+
+      // Check filter checkboxes
+      const htmlOnly = document.getElementById("htmlOnly").checked;
+      const indexableOnly = document.getElementById("indexableOnly").checked;
+      const cleanUrlOnly = document.getElementById("cleanUrlOnly").checked;
+
+      // Fetch sitemap URLs from uploaded XML files
+      const sitemapUrls = await fetchLocalSitemapUrls(sitemapFiles);
+
+      if (sitemapUrls.length === 0) {
+        alert("No URLs found in the sitemap files.");
+        return;
+      }
+
+      console.log("Sitemap URLs:", sitemapUrls);
+
+      // Read and process the XLSX file
+      const reader = new FileReader();
+      reader.onload = async function(event) {
+        const data = new Uint8Array(event.target.result);
+        const workbook = XLSX.read(data, { type: "array" });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const json = XLSX.utils.sheet_to_json(sheet);
+
+        // Apply filters
+        const filteredCrawlUrls = json
+          .filter(row => {
+            // Filter for HTML files if "Only HTML files" is checked
+            if (htmlOnly && !(row["Content Type"] || "").includes("html")) return false;
+            return true;
+          })
+          .filter(row => {
+            // Filter for indexable URLs if "Only Indexable URLs" is checked
+            if (indexableOnly && (row["Indexability"] || "").includes("non")) return false;
+            return true;
+          })
+          .filter(row => {
+            // Filter for clean URLs if "Only Clean URLs" is checked
+            if (cleanUrlOnly && /[?#]/.test(row["Address"])) return false;
+            return true;
+          })
+          .map(row => row["Address"]);
+
+        console.log("Filtered Crawl URLs:", filteredCrawlUrls);
+
+        // Determine missing and orphan URLs
+        const urlsMissingFromSitemaps = filteredCrawlUrls.filter(url => !sitemapUrls.includes(url));
+        const orphanPages = sitemapUrls.filter(url => !filteredCrawlUrls.includes(url));
+
+        console.log("URLs Missing from Sitemaps:", urlsMissingFromSitemaps);
+        console.log("Orphan Pages:", orphanPages);
+
+        // Prepare the workbook for export
+        const newWorkbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(newWorkbook, XLSX.utils.aoa_to_sheet([["Address"]].concat(filteredCrawlUrls.map(url => [url]))), "URLS from Crawl");
+        XLSX.utils.book_append_sheet(newWorkbook, XLSX.utils.aoa_to_sheet([["Address"]].concat(sitemapUrls.map(url => [url]))), "URLS from Sitemaps");
+        XLSX.utils.book_append_sheet(newWorkbook, XLSX.utils.aoa_to_sheet([["Address"]].concat(urlsMissingFromSitemaps.map(url => [url]))), "URLs Missing from Sitemaps");
+        XLSX.utils.book_append_sheet(newWorkbook, XLSX.utils.aoa_to_sheet([["Address"]].concat(orphanPages.map(url => [url]))), "Orphan Pages");
+
+        // Export the workbook
+        XLSX.writeFile(newWorkbook, "Sitemap_Crawl_Comparison.xlsx");
+      };
+
+      reader.readAsArrayBuffer(xlsxFile);
+    }
+  </script>
+</body>
+</html>
