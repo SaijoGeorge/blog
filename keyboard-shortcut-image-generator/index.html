@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Shortcut Image Generator</title>
+   <meta
+      name="description"
+      content="Easily download shortcut keys image for your tutorials, videos, or live streams."
+    />
+    <meta name="author" content="Saijo George" />
+    <meta name="robots" content="all" />
+    <link
+      rel="canonical"
+      href="https://saijogeorge.com/keyboard-shortcut-image-generator/"
+    />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Keyboard CSS Library -->
+  <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+  
+  <style>
+    .result-section {
+      min-height: 100px;
+      border: 2px dashed #ccc;
+    }
+  </style>
+    <!-- DOM-to-image Library (via CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-3xl mx-auto">
+    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+      <h1 class="text-2xl font-bold mb-4">Keyboard Shortcut Image Generator</h1>
+      
+      <div class="mb-6">
+        <p class="text-gray-600 mb-2">This tool lets you see keyboard shortcuts as you press the keys. Press one key after another, and they will appear on the screen. You can then click "Take Screenshot" to capture them with a transparent background. Download the image and use it in tutorials, webinars, or SOPs.</p>
+      </div>
+      
+      <div id="screenshot-area" class="bg-gray-50 p-8 rounded-lg mb-4">
+        <div id="result" class="result-section p-8 flex items-center justify-center flex-wrap gap-2">
+          <!-- Pressed keys will appear here -->
+        </div>
+      </div>
+      
+      <div class="flex gap-4">
+        <button id="resetBtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+          Reset
+        </button>
+        <button id="screenshotBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+          Take Screenshot
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const result = document.getElementById('result');
+    const resetBtn = document.getElementById('resetBtn');
+    const screenshotBtn = document.getElementById('screenshotBtn');
+    let pressedKeys = new Set();
+    let isCapturing = true;
+
+    function addKey(key) {
+      if (!isCapturing) return;
+      
+      const keyElement = document.createElement('span');
+      keyElement.className = 'kbc-button no-container kbc-button-lg';
+      keyElement.textContent = key;
+      
+      if (result.children.length > 0) {
+        const plus = document.createElement('span');
+        plus.textContent = '+';
+        plus.className = 'font-bold';
+        result.appendChild(plus);
+      }
+      
+      result.appendChild(keyElement);
+    }
+
+    // Capture keydown events
+document.addEventListener('keydown', (e) => {
+  e.preventDefault();
+
+  let key = e.key;
+
+  // Special key mappings
+  if (key === 'Control') {
+    key = 'Ctrl';
+  } else if (key === 'Meta') {
+    key = navigator.platform.includes('Mac') ? '⌘' : 'Win';
+  } else if (key === ' ') {
+    key = 'Space';
+  } else if (key.length === 1 && /[a-z]/.test(key)) {
+    key = key.toUpperCase();
+  }
+
+  // Add key if not already present
+  if (!pressedKeys.has(key)) {
+    pressedKeys.add(key);
+    addKey(key);
+  }
+});
+
+
+    // Capture keyup events
+    document.addEventListener('keyup', (e) => {
+      let key = e.key;
+      if (e.key === 'Control') key = 'Ctrl';
+      if (e.key === 'Meta') {
+        key = navigator.platform.includes('Mac') ? '⌘' : 'Win';
+      }
+      pressedKeys.delete(key);
+    });
+
+    // Reset the displayed keys
+    resetBtn.addEventListener('click', () => {
+      result.innerHTML = '';
+      pressedKeys.clear();
+      isCapturing = true;
+    });
+
+    // Take screenshot using dom-to-image
+    screenshotBtn.addEventListener('click', () => {
+      const node = document.getElementById('result');
+      domtoimage.toPng(node)
+        .then((dataUrl) => {
+          const link = document.createElement('a');
+          link.download = 'keyboard-shortcut.png';
+          link.href = dataUrl;
+          link.click();
+        })
+        .catch((error) => {
+          console.error('Oops, something went wrong!', error);
+        });
+    });
+  </script>
+</body>
+</html>
