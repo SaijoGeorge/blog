@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Webpage to Markdown Bookmarklet - Saijo George</title>
+  <meta name="description" content="Get LLM-friendly input from a URL in a click." />
+  <meta name="author" content="Saijo George" />
+  <meta name="robots" content="all" />
+  <link rel="canonical" href="https://saijogeorge.com/webpage-to-markdown/" />
+  <meta name="theme-color" content="#F5AB35" />
+  <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "item": {
+                    "@id": "https://saijogeorge.com",
+                    "name": "Home"
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "item": {
+                    "@id": "https://saijogeorge.com/projects.html",
+                    "name": "Side Projects"
+                  }
+                }
+              ]
+            }
+          </script>
+  <meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
+  <meta property="og:site_name" content="SaijoGeorge.com" />
+  <meta property="og:title" content="Webpage to Markdown Bookmarklet - Saijo George" />
+  <meta property="og:description" content="Get LLM-friendly input from a URL in a click." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://saijogeorge.com/webpage-to-markdown/" />
+  <meta property="og:image" content="https://saijogeorge.com/images/banner/webpage-to-markdown.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SaijoGeorge" />
+  <meta name="twitter:creator" content="@SaijoGeorge" />
+  <meta name="twitter:title" content="SaijoGeorge.com" />
+  <meta name="twitter:domain" content="https://saijogeorge.com" />
+  <meta name="twitter:description" content="Webpage to Markdown Bookmarklet - Saijo George" />
+  <meta name="twitter:image" content="https://saijogeorge.com/images/banner/webpage-to-markdown.png" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for fonts and container
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Arial", "\"Apple Color Emoji\"", "\"Segoe UI Emoji\"", "\"Segoe UI Symbol\""] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Small enhancements without leaving Tailwind philosophy */
+    .drag-hint { cursor: grab; }
+    .code-inline { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body class="h-full bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-30">
+    <div class="container flex items-center justify-between py-4">
+      <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+        <svg class="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14.59L8.71 12.3l1.42-1.42L13 12.76l4.88-4.88 1.42 1.42Z"/></svg>
+        <span>Saijo George</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="#install" class="rounded-xl bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-blue-500">Install</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <div class="container grid gap-8 py-16 md:grid-cols-2 md:items-center">
+      <div>
+        <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Webpage to Markdown Bookmarklet</h1>
+        <div id="install"></div>
+        <p class="mt-4 max-w-[60ch] text-lg text-gray-600">Drowning in cluttered webpages? What if you could instantly turn any article into a clean, distraction-free MARKDOWN summary with just one click? This webpage to markdown bookmarklet transforms any URL into a neat, reader-friendly version instantly, in a new tab, using <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" target="_blank" href="https://jina.ai/reader">Jina Reader's AI engine</a>.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <!-- The actual bookmarklet anchor users can drag to their bookmarks bar -->
+          <a id="bookmarkletLink" class="drag-hint rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white shadow hover:bg-blue-500 active:translate-y-px" href="javascript:(function(){function o(e){try{return&quot;https://r.jina.ai/&quot;+encodeURIComponent(new URL(e,location.href).href)}catch{return&quot;&quot;}}function i(e){if(!e)return&quot;&quot;;e=e.trim().replace(/[)\].,;:!?]+$/g,&quot;&quot;);let t=e.match(/https?:\/\/[^\s)]+/i);if(t)return t[0];if(t=e.match(/\/\/[a-z0-9.-]+(?:\/[^\s)]*)?/i))return&quot;https:&quot;+t[0];if(t=e.match(/[a-z0-9-]+(?:\.[a-z0-9-]+)+(?:\/[^\s)]*)?/i))return&quot;https://&quot;+t[0];return&quot;&quot;}function n(e){try{const t=e.getSelection&amp;&amp;e.getSelection();if(!t||!t.rangeCount)return{text:&quot;&quot;,href:&quot;&quot;};const r=String(t).trim(),c=t.getRangeAt(0);let a=c.commonAncestorContainer;for(;a&amp;&amp;a.nodeType===3;)a=a.parentNode;let s=a&amp;&amp;a.closest&amp;&amp;a.closest(&quot;a[href]&quot;);if(!s&amp;&amp;c.cloneContents){const l=c.cloneContents();if(l&amp;&amp;l.querySelector){const h=l.querySelector(&quot;a[href]&quot;);h&amp;&amp;(s=h)}}return{ text:r, href:s&amp;&amp;s.href?s.href:&quot;&quot; }}catch{return{ text:&quot;&quot;, href:&quot;&quot; }}}function d(){const e=document.activeElement;if(!e)return&quot;&quot;;const t=e.tagName; if(t===&quot;TEXTAREA&quot;||t===&quot;INPUT&quot;){try{const r=e.selectionStart??0,c=e.selectionEnd??0;if(c>r)return String(e.value).slice(r,c)}catch{}}return&quot;&quot;}let e=&quot;&quot;,t=&quot;&quot;,r=&quot;&quot;;const c=document.activeElement;if(c&amp;&amp;c.tagName===&quot;IFRAME&quot;)try{const a=c.contentWindow,s=n(a);t=s.href,r=s.text}catch{}if(!t&amp;&amp;!r){const a=n(window);t=a.href,r=a.text}if(!t&amp;&amp;!r)r=d();e=t||i(r)||location.href;const a=o(e);if(!a){alert(&quot;Could not resolve a valid URL from your selection or page.&quot;);return}window.open(a,&quot;_blank&quot;,&quot;noopener&quot;)})();" draggable="true">Webpage to Markdown v1.0</a>
+
+          <!-- How to use popover -->
+          <button popovertarget="howto" class="rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm hover:bg-gray-100">How it works</button>
+        </div>
+        <p class="mt-3 text-sm text-gray-500">Tip - if the button will not drag, right click it and choose Bookmark link.</p>
+      </div>
+      <div class="relative">
+        <div class="aspect-[16/10] w-full rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <div class="grid h-full place-content-center text-center p-6">
+            <div class="mx-auto max-w-sm">
+              <svg class="mx-auto h-16 w-16 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V7h18v12a2 2 0 0 1-2 2ZM3 5V4a2 2 0 0 1 2-2h3.5L10 3h4l1.5-1H19a2 2 0 0 1 2 2v1Z"/></svg>
+              <p class="mt-4 text-sm text-gray-500"><img src="webpage-to-markdown.png" alt="webpage-to-markdown"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popover content -->
+    <div id="howto" popover class="max-w-lg rounded-2xl border border-gray-200 bg-white p-6 text-sm shadow-xl">
+      <h3 class="mb-2 text-base font-semibold">How it works?</h3>
+      <ul class="list-decimal space-y-1 pl-5 text-gray-700">
+        <li>Detects a URL in this order:</li>
+        <ul>
+          <li>highlighted text that looks like a URL</li>
+          <li>the href of the focused link</li>
+          <li>the current tab’s URL</li>
+        </ul>
+        <li>Encodes the URL.</li>
+        <li>Opens the Jina Reader version in a new tab.</li>
+      </ul>
+      <p class="mt-3 text-gray-500"><b>Limitations:</b> If you select text that has multiple URLs, it will only pick the first URL and run it through jina.ai.</p>
+      <p class="mt-3 text-gray-500"><b>Bugs:</b> Let me know and I will sort them out.</p>
+    </div>
+  </section>
+
+  <!-- Two column feature sections -->
+  <section class="container space-y-16 py-16">
+    <!-- Section 1 -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+      <div class="order-1 md:order-none">
+        <img src="webpage-to-markdown.webp" alt="Bookmarklet demo" class="aspect-video w-full rounded-2xl object-cover shadow" />
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Why use the bookmarklet to convert a Webpage to Markdown?</h2>
+        <p class="mt-3 text-gray-600">This is a quick way to convert any webpage into LLM-friendly content, so you can easily copy-paste into LLMs.</p>
+        <ul class="mt-6 space-y-2">
+          <li class="flex gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white">✓</span><span>Saves you time.</span></li>
+          <li class="flex gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white">✓</span><span>Get LLM-friendly content easily.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 2 (image right) -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Features of Webpage to Markdown</h2>
+        <p class="mt-3 text-gray-600">An easy-to-use bookmarklet that gets you what you need in one click and should work for all modern browsers.</p>
+        <dl class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"><dt class="font-semibold">Feature 1</dt><dd class="mt-1 text-gray-600">Works on the current page by default.</dd></div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"><dt class="font-semibold">Feature 2</dt><dd class="mt-1 text-gray-600">If you highlight a URL on the page, it’ll use that instead.</dd></div>
+        </dl>
+      </div>
+      <div class="order-1 md:order-none">
+        <img src="selections.webp" alt="Code screenshot" class="aspect-video w-full rounded-2xl object-cover shadow" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Changelog timeline with toggles -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <h2 class="text-3xl font-extrabold tracking-tight">Changelog</h2>
+      <p class="mt-2 text-gray-600">Track how the bookmarklet evolved over time. Toggle a version to see what changed.</p>
+
+      <ol role="list" class="relative mt-10 space-y-8 border-l border-gray-200 pl-6">
+        <!-- Version item template -->
+        <li class="relative">
+          <span class="absolute -left-16 top-1.5 inline-flex items-center justify-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-600">v1.0</span>
+          <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm open:shadow transition-all">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <div>
+                <h3 class="font-semibold">v1.0 - 10 Sep 2025</h3>
+                <p class="mt-1 text-sm text-gray-600">Launched the initial version.</p>
+              </div>
+              <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-90" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M6.293 14.707a1 1 0 0 1 0-1.414L9.586 10 6.293 6.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"/></svg>
+            </summary>
+            <div class="mt-4 grid gap-3 text-sm">
+              <div class="rounded-lg bg-gray-50 p-3">1st version of bookmarklet launched.</div>
+            </div>
+          </details>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white">
+
+  </footer>
+
+  <script>
+    // ------- Util: copy the raw bookmarklet code -------
+    const copyBtn = document.getElementById('copyBtn');
+    const bookmarkletLink = document.getElementById('bookmarkletLink');
+
+    copyBtn?.addEventListener('click', async () => {
+      try {
+        const href = bookmarkletLink.getAttribute('href') || '';
+        // Ensure we only copy the javascript: part, without HTML encoding
+        const code = href.startsWith('javascript:') ? href : 'javascript:' + href;
+        await navigator.clipboard.writeText(code);
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => (copyBtn.textContent = 'Copy code'), 1500);
+      } catch (e) {
+        alert('Could not copy. Please copy manually.');
+      }
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
