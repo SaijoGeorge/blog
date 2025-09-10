@@ -69,6 +69,85 @@
     .drag-hint { cursor: grab; }
     .code-inline { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
   </style>
+  <script defer>
+  // Lightweight click-to-iframe loader with a11y and small perf wins
+  (function () {
+    const preconnect = () => {
+      if (preconnect.done) return;
+      preconnect.done = true;
+      const origins = [
+        "https://www.youtube-nocookie.com",
+        "https://i.ytimg.com",
+        "https://s.ytimg.com"
+      ];
+      origins.forEach(href => {
+        const l = document.createElement("link");
+        l.rel = "preconnect";
+        l.href = href;
+        l.crossOrigin = "";
+        document.head.appendChild(l);
+      });
+    };
+
+    const toIframe = (el) => {
+      const id = el.getAttribute("data-yt-id");
+      const title = el.getAttribute("data-yt-title") || "YouTube video";
+      const src =
+        "https://www.youtube-nocookie.com/embed/" +
+        encodeURIComponent(id) +
+        "?autoplay=1&modestbranding=1&rel=0&playsinline=1&hl=en";
+
+      const iframe = document.createElement("iframe");
+      iframe.setAttribute("title", title);
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.setAttribute(
+        "allow",
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      );
+      iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      iframe.setAttribute("loading", "lazy");
+      iframe.className = "absolute inset-0 h-full w-full rounded-xl";
+      iframe.src = src;
+
+      // Clear poster, insert iframe
+      el.innerHTML = "";
+      el.appendChild(iframe);
+    };
+
+    // Bind all placeholders
+    document.addEventListener("DOMContentLoaded", () => {
+      const blocks = document.querySelectorAll("[data-yt-id]");
+      blocks.forEach((el) => {
+        // Preconnect when the user shows intent
+        el.addEventListener("pointerover", preconnect, { once: true });
+        el.addEventListener("focus", preconnect, { once: true });
+
+        // Click or Enter/Space to play
+        el.addEventListener("click", () => toIframe(el), { once: true });
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toIframe(el);
+          }
+        });
+
+        // Optional: preconnect when the block is about to appear
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                preconnect();
+                io.disconnect();
+              }
+            });
+          }, { rootMargin: "200px" });
+          io.observe(el);
+        }
+      });
+    });
+  })();
+</script>
+
 </head>
 <body class="h-full bg-gray-50 text-gray-800">
   <!-- Header -->
@@ -103,10 +182,60 @@
       <div class="relative">
         <div class="aspect-[16/10] w-full rounded-2xl border border-gray-200 bg-white shadow-sm">
           <div class="grid h-full place-content-center text-center p-6">
-            <div class="mx-auto max-w-sm">
-              <svg class="mx-auto h-16 w-16 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V7h18v12a2 2 0 0 1-2 2ZM3 5V4a2 2 0 0 1 2-2h3.5L10 3h4l1.5-1H19a2 2 0 0 1 2 2v1Z"/></svg>
-              <p class="mt-4 text-sm text-gray-500"><img src="webpage-to-markdown.png" alt="webpage-to-markdown"></p>
-            </div>
+            <!-- Responsive, click-to-play YouTube embed -->
+<div class="mx-auto max-w-sm">
+  <div
+    class="group relative aspect-video w-full overflow-hidden rounded-xl bg-gray-100 shadow-sm"
+    data-yt-id="7pQfV4w2Ltk"
+    data-yt-title="Easiest Way to Convert Webpage to Markdown"
+    role="button"
+    tabindex="0"
+    aria-label="Play video: Easiest Way to Convert Webpage to Markdown"
+  >
+    <!-- Poster thumbnail -->
+    <img
+      class="absolute inset-0 h-full w-full object-cover transition opacity-100 group-hover:opacity-90"
+      src="https://i.ytimg.com/vi/7pQfV4w2Ltk/hqdefault.jpg"
+      srcset="
+        https://i.ytimg.com/vi/7pQfV4w2Ltk/sddefault.jpg 640w,
+        https://i.ytimg.com/vi/7pQfV4w2Ltk/hqdefault.jpg 480w
+      "
+      sizes="(min-width: 640px) 512px, 100vw"
+      alt="Video thumbnail"
+      loading="lazy"
+      decoding="async"
+    />
+
+    <!-- Play button -->
+    <div class="pointer-events-none absolute inset-0 grid place-items-center">
+      <div class="inline-flex items-center gap-3 rounded-full bg-white/90 px-4 py-2 shadow ring-1 ring-black/5 transition group-hover:bg-white">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+        <span class="text-sm font-medium">Play</span>
+      </div>
+    </div>
+
+    <!-- Preconnect hint, added only when needed -->
+    <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin hidden>
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin hidden>
+  </div>
+
+  <!-- No-JS fallback -->
+  <noscript>
+    <iframe
+      class="mt-3 aspect-video w-full rounded-xl"
+      src="https://www.youtube-nocookie.com/embed/7pQfV4w2Ltk?autoplay=0&modestbranding=1&rel=0&playsinline=1"
+      title="Easiest Way to Convert Webpage to Markdown"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+  </noscript>
+</div>
+
           </div>
         </div>
       </div>
