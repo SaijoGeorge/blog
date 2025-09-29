@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Preferred Sources Badge Generator - Saijo George</title>
+  <meta name="description" content="An easy way to create Google's Preferred Sources Badge so your visitors can mark you as a trusted source." />
+  <meta name="author" content="Saijo George" />
+  <meta name="robots" content="all" />
+  <link rel="canonical" href="https://saijogeorge.com/google-preferred-source-badge-generator/" />
+  <meta name="theme-color" content="#F5AB35" />
+  <script src="script.js"></script>
+  <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "item": {
+                    "@id": "https://saijogeorge.com",
+                    "name": "Home"
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "item": {
+                    "@id": "https://saijogeorge.com/projects.html",
+                    "name": "Side Projects"
+                  }
+                }
+              ]
+            }
+          </script>
+  <meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
+  <meta property="og:site_name" content="SaijoGeorge.com" />
+  <meta property="og:title" content="Google Preferred Sources Badge Generator -  Saijo George" />
+  <meta property="og:description" content="An easy way to create Google's Preferred Sources Badge so your visitors can mark you as a trusted source." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://saijogeorge.com/google-preferred-source-badge-generator/" />
+  <meta property="og:image" content="https://saijogeorge.com/images/banner/google-preferred-source-badge-generator.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SaijoGeorge" />
+  <meta name="twitter:creator" content="@SaijoGeorge" />
+  <meta name="twitter:title" content="SaijoGeorge.com" />
+  <meta name="twitter:domain" content="https://saijogeorge.com" />
+  <meta name="twitter:description" content="Google Preferred Sources Badge Generator -  Saijo George" />
+  <meta name="twitter:image" content="https://saijogeorge.com/images/banner/google-preferred-source-badge-generator.png" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for fonts and container
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Arial", "\"Apple Color Emoji\"", "\"Segoe UI Emoji\"", "\"Segoe UI Symbol\""] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Small enhancements without leaving Tailwind philosophy */
+    .drag-hint { cursor: grab; }
+    .code-inline { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="border-b border-gray-200 bg-white/80 sticky top-0 z-30">
+    <div class="container flex items-center justify-between py-4">
+      <a href="https://saijogeorge.com" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+        <svg class="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14.59L8.71 12.3l1.42-1.42L13 12.76l4.88-4.88 1.42 1.42Z"/></svg>
+        <span>Saijo George</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-16">
+    <div class="grid gap-12 md:grid-cols-2">
+
+      <!-- Left Column -->
+      <div>
+        <h1 class="text-3xl font-extrabold tracking-tight md:text-4xl">Google Preferred Sources Badge Generator</h1>
+        <p class="mt-4 max-w-[60ch] text-lg text-gray-600">Want to stand out in Google Search? Preferred Sources Badges help readers see you as a trusted authority. More visibility, more clicks, more trust - all in seconds. Generate your badge today.</p>
+        <div class="mt-8 flex flex-col gap-6" id="install">
+          <div class="grid gap-2">
+            <label for="website-url" class="font-semibold">Website URL</label>
+            <input type="text" id="website-url" placeholder="https://example.com" class="rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+
+          <div class="grid gap-2">
+            <label class="font-semibold">Theme</label>
+            <div class="flex gap-4">
+                <label for="light-theme" class="flex items-center gap-2 cursor-pointer"><input type="radio" id="light-theme" name="theme" value="light" checked class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"> Light</label>
+                <label for="dark-theme" class="flex items-center gap-2 cursor-pointer"><input type="radio" id="dark-theme" name="theme" value="dark" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"> Dark</label>
+            </div>
+          </div>
+
+          <div class="grid gap-4 rounded-lg border border-gray-200 bg-white p-4">
+            <div class="grid gap-2 mb-4">
+                <label for="font-family" class="font-semibold">Font Family</label>
+                <select id="font-family" class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <option value="Tahoma, sans-serif">Tahoma</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Helvetica, sans-serif">Helvetica</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                    <option value="Times New Roman, serif">Times New Roman</option>
+                    <option value="Georgia, serif">Georgia</option>
+                </select>
+            </div>
+            <div class="grid gap-2 mb-4">
+                <label class="font-semibold">Text Style</label>
+                <div class="flex gap-4">
+                    <label for="font-bold" class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="font-bold" checked class="h-4 w-4 rounded text-blue-600 border-gray-300 focus:ring-blue-500"> Bold</label>
+                    <label for="font-italic" class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="font-italic" class="h-4 w-4 rounded text-blue-600 border-gray-300 focus:ring-blue-500"> Italic</label>
+                </div>
+            </div>
+            <div class="grid gap-2 mb-4">
+                <label for="size-slider" class="font-semibold">Size</label>
+                <input type="range" id="size-slider" min="0.5" max="2" value="1" step="0.1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <button id="generate-btn" class="rounded-xl bg-blue-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-blue-500">Generate</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (Sticky) -->
+      <div class="md:sticky top-24 h-fit">
+        <h2 class="text-2xl font-bold tracking-tight">Preview</h2>
+        <div id="preview-container" class="mt-4 rounded-lg border border-gray-200 bg-white p-4 min-h-[100px]"></div>
+
+        <h2 class="mt-8 text-2xl font-bold tracking-tight">Embed Code</h2>
+        <div class="relative">
+          <textarea id="embed-code" readonly class="mt-4 w-full h-40 rounded-lg border border-gray-300 bg-gray-50 p-4 font-mono text-sm"></textarea>
+          <button id="copy-embed-btn" class="absolute top-6 right-2 rounded-lg bg-blue-200 px-3 py-1 text-sm font-semibold text-blue-700 hover:bg-gray-300">Copy</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Two column feature sections -->
+  <section class="container space-y-16 py-16">
+    <!-- Section 1 -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+       <div class="aspect-[16/10] w-full rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <!-- Replace everything below with YouTube Lite Embed -->
+    <div class="w-full h-full relative cursor-pointer group" id="yt-lite">
+      <img
+        src="https://img.youtube.com/vi/7pQfV4w2Ltk/hqdefault.jpg"
+        alt="YouTube video thumbnail"
+        class="object-cover w-full h-full transition group-hover:blur-sm"
+      />
+      <button aria-label="Play Video"
+        class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition">
+        <svg class="w-16 h-16 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 84 84">
+          <circle opacity="0.8" cx="42" cy="42" r="42"/>
+          <polygon points="33,27 63,42 33,57"/>
+        </svg>
+      </button>
+    </div>
+    <!-- End replacement block -->
+  </div>
+  <script>
+  document.getElementById('yt-lite').addEventListener('click', function() {
+    if(this.querySelector('iframe')) return;
+    this.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/7pQfV4w2Ltk?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>';
+  });
+</script>
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">What is Google Preferred Sources?</h2>
+        <p class="mt-3 text-gray-600">Google quietly soft-launched Preferred Sources in Search Labs in 2025, but now it's rolling out the feature widely across <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://blog.google/products/search/preferred-sources/" target="_blank">US and India</a>. With Preferred Sources, you can tell Google which websites you'd rather read. Once you've set your preferences, you'll notice more stories from those outlets showing up in Top Stories, especially when they've just published fresh and relevant content. You'll also get a dedicated From your sources section right on the results page, making it easier to spot articles from the sites you trust.</p>
+       <p class="mt-3 text-gray-600">This is what it looks like. You can click on it to add my site as a Preferred Source, if you are in the US or India.</p>
+       <br/>
+       <a href="https://www.google.com/preferences/source?q=https://saijogeorge.com" target="_blank" rel="noopener noreferrer"><svg loading="lazy" decoding="async" fetchpriority="low" width="270" height="70" viewBox="0 0 270 70" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="270" height="70" rx="12" ry="12" fill="#000000" stroke="#333" stroke-width="1"/>
+                <g transform="translate(15, 17) scale(1.5)">
+                    
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            <path d="M1 1h22v22H1z" fill="none"/>
+        </svg>
+    
+                </g>
+                <g style="font-family: Verdana, sans-serif; font-size: 18px; font-weight: bold; font-style: italic; fill: #FFFFFF;">
+                    <text x="65" y="32">Add as a preferred</text>
+                    <text x="65" y="54">source on Google</text>
+                </g>
+            </svg></a>
+      </div>
+    </div>
+
+    <!-- Section 2 (image right) -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Why add a Google Preferred Sources Badge?</h2>
+        <p class="mt-3 text-gray-600">Getting into user's Preferred Sources can lead to more consistent and relevant traffic rather than random hits.</p>
+        <dl class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"><dt class="font-semibold">Privileged Placement</dt><dd class="mt-1 text-gray-600">Gives you privileged placement for users who have chosen you.</dd></div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"><dt class="font-semibold">Social Proof</dt><dd class="mt-1 text-gray-600">It's a form of social proof/loyalty that translates into algorithmic preference.</dd></div>
+        </dl>
+      </div>
+      <div class="order-1 md:order-none">
+        <img src="google-preferred-sources-badge-generator.png" alt="Google Preferred Sources Badge Generator" class="aspect-video w-full rounded-2xl object-cover shadow" />
+      </div>
+    </div>
+
+        <div class="grid items-center gap-8 md:grid-cols-2">
+      <div class="order-1 md:order-none">
+        <img src="google-preferred-source-badge-only-in-usa-and-india.png" alt="Google Preferred Sources Badge only in USA and India" class="aspect-video w-full rounded-2xl object-cover shadow" />
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Advance Customisation for Google Preferred Sources Badge</h2>
+        <p class="mt-3 text-gray-600">Because the feature is currently limited to English-speaking users in the US and India, it's smart to show it only to visitors from those countries. You can do this using a geolocation service like <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://geotargetly.com/?red=saijo" target="_blank" rel="noopener sponsored">Geo Targetly</a> or using Cloudflare Workers.</p>
+   
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Changelog timeline with toggles -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <h2 class="text-3xl font-extrabold tracking-tight">Changelog</h2>
+      <p class="mt-2 text-gray-600">Track how the tool evolved over time. Toggle a version to see what changed.</p>
+
+      <ol role="list" class="relative mt-10 space-y-8 border-l border-gray-200 pl-6">
+        <!-- Version item template -->
+        <li class="relative">
+          <span class="absolute -left-16 top-1.5 inline-flex items-center justify-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-600">v1.0</span>
+          <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm open:shadow transition-all">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <div>
+                <h3 class="font-semibold">v1.0 - 29 Sep 2025</h3>
+                <p class="mt-1 text-sm text-gray-600">Launched the tool.</p>
+              </div>
+              <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-90" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M6.293 14.707a1 1 0 0 1 0-1.414L9.586 10 6.293 6.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"/></svg>
+            </summary>
+            <div class="mt-4 grid gap-3 text-sm">
+              <div class="rounded-lg bg-gray-50 p-3">Offers basic customisation options.</div>
+              <div class="rounded-lg bg-gray-50 p-3">Has a dark and light theme.</div>
+            </div>
+          </details>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="container flex flex-col items-center justify-between gap-4 py-8 md:flex-row">
+      <p class="text-sm text-gray-500">© <span id="year"></span> Saijo George. </p>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy embed code
+    const copyEmbedBtn = document.getElementById('copy-embed-btn');
+    const embedCode = document.getElementById('embed-code');
+
+    copyEmbedBtn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(embedCode.value);
+            copyEmbedBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyEmbedBtn.textContent = 'Copy';
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    });
+  </script>
+
+</body>
+</html>
