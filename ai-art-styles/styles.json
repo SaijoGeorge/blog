@@ -2,7 +2,7 @@
   {
     "name": "ASCII Art",
     "image": "image of a mango in ASCII Art style.png",
-    "prompt": "create an image of a mango in ASCII Art style",
+    "prompt": "create an actual image of a mango in ASCII Art style",
     "description": "A visual style where images are represented using ASCII characters to form patterns and shapes."
   },
   {
@@ -24,12 +24,6 @@
     "description": "A style centred on academia, libraries, and intellectual or scholarly aesthetics."
   },
   {
-    "name": "Acid",
-    "image": "image of a mango in Acid style.png",
-    "prompt": "create an image of a mango in Acid style",
-    "description": "Bright, psychedelic style with surreal, high-contrast colour palettes."
-  },
-  {
     "name": "Acid Design",
     "image": "image of a mango in Acid Design style.png",
     "prompt": "create an image of a mango in Acid Design style",
@@ -46,12 +40,6 @@
     "image": "image of a mango in Acidgrafix style.png",
     "prompt": "create an image of a mango in Acidgrafix style",
     "description": "A design style rooted in the acid aesthetic, mixing psychedelic visuals with graphic experimentation."
-  },
-  {
-    "name": "Acidgraphix",
-    "image": "image of a mango in Acidgraphix style.png",
-    "prompt": "create an image of a mango in Acidgraphix style",
-    "description": "Alternative spelling for acid-influenced graphic art with psychedelic distortions and bright palettes."
   },
   {
     "name": "Acubi",
@@ -94,18 +82,6 @@
     "image": "image of a mango in Aesthetic style.png",
     "prompt": "create an image of a mango in Aesthetic style",
     "description": "A broad term for visually pleasing style, often linked to internet culture and curated visuals."
-  },
-  {
-    "name": "Aesthetic Concept",
-    "image": "image of a mango in Aesthetic Concept style.png",
-    "prompt": "create an image of a mango in Aesthetic Concept style",
-    "description": "Design or art concept built around the study and application of aesthetics."
-  },
-  {
-    "name": "Aesthetic Concepts",
-    "image": "image of a mango in Aesthetic Concepts style.png",
-    "prompt": "create an image of a mango in Aesthetic Concepts style",
-    "description": "Different visual and philosophical ideas that define aesthetic experiences."
   },
   {
     "name": "Aesthetic Movement",
