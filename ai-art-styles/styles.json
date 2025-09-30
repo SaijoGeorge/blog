@@ -1,152 +1,152 @@
 [
   {
     "name": "ASCII Art",
-    "image": "path/to/ascii.jpg",
-    "prompt": "text-based art made entirely of ASCII characters, black and white",
+    "image": "image of a mango in ASCII Art style.png",
+    "prompt": "create an image of a mango in ASCII Art style",
     "description": "A visual style where images are represented using ASCII characters to form patterns and shapes."
   },
   {
     "name": "Abstract Tech",
-    "image": "path/to/abstract-tech.jpg",
-    "prompt": "futuristic abstract shapes with circuits, glowing lines, and tech vibes",
+    "image": "image of a mango in Abstract Tech style.png",
+    "prompt": "create an image of a mango in Abstract Tech style",
     "description": "Abstract style influenced by modern technology, often blending geometric shapes with glowing elements."
   },
   {
     "name": "Abstract Vector Art",
-    "image": "path/to/abstract-vector.jpg",
-    "prompt": "clean vector shapes in abstract composition, bold colours, flat design",
+    "image": "image of a mango in Abstract Vector Art style.png",
+    "prompt": "create an image of a mango in Abstract Vector Art style",
     "description": "Vector-based abstract artwork, known for smooth lines, clean geometry, and scalable design."
   },
   {
     "name": "Academia",
-    "image": "path/to/academia.jpg",
-    "prompt": "scholarly aesthetic, books, vintage libraries, intellectual mood",
+    "image": "image of a mango in Academia style.png",
+    "prompt": "create an image of a mango in Academia style",
     "description": "A style centred on academia, libraries, and intellectual or scholarly aesthetics."
   },
   {
     "name": "Acid",
-    "image": "path/to/acid.jpg",
-    "prompt": "trippy colours, neon contrasts, psychedelic patterns",
+    "image": "image of a mango in Acid style.png",
+    "prompt": "create an image of a mango in Acid style",
     "description": "Bright, psychedelic style with surreal, high-contrast colour palettes."
   },
   {
     "name": "Acid Design",
-    "image": "path/to/acid-design.jpg",
-    "prompt": "distorted visuals, vivid colours, chaotic yet artistic",
+    "image": "image of a mango in Acid Design style.png",
+    "prompt": "create an image of a mango in Acid Design style",
     "description": "Graphic design aesthetic inspired by acid culture, focusing on surreal, distorted visuals."
   },
   {
     "name": "Acid House",
-    "image": "path/to/acid-house.jpg",
-    "prompt": "smiley faces, neon colours, rave visuals, electronic music aesthetic",
+    "image": "image of a mango in Acid House style.png",
+    "prompt": "create an image of a mango in Acid House style",
     "description": "Visual identity connected to the Acid House music scene, featuring neon, psychedelic visuals, and rave symbols."
   },
   {
     "name": "Acidgrafix",
-    "image": "path/to/acidgrafix.jpg",
-    "prompt": "experimental design with warped shapes and neon tones",
+    "image": "image of a mango in Acidgrafix style.png",
+    "prompt": "create an image of a mango in Acidgrafix style",
     "description": "A design style rooted in the acid aesthetic, mixing psychedelic visuals with graphic experimentation."
   },
   {
     "name": "Acidgraphix",
-    "image": "path/to/acidgraphix.jpg",
-    "prompt": "psychedelic poster style with warped fonts and saturated colours",
+    "image": "image of a mango in Acidgraphix style.png",
+    "prompt": "create an image of a mango in Acidgraphix style",
     "description": "Alternative spelling for acid-influenced graphic art with psychedelic distortions and bright palettes."
   },
   {
     "name": "Acubi",
-    "image": "path/to/acubi.jpg",
-    "prompt": "minimal pastel aesthetic with soft edges and balanced composition",
+    "image": "image of a mango in Acubi style.png",
+    "prompt": "create an image of a mango in Acubi style",
     "description": "A Japanese-inspired aesthetic focusing on minimalism, pastel tones, and soft balance."
   },
   {
     "name": "Adventure Pulp",
-    "image": "path/to/adventure-pulp.jpg",
-    "prompt": "vintage pulp magazine illustration, adventurous scenes, bold colours",
+    "image": "image of a mango in Adventure Pulp style.png",
+    "prompt": "create an image of a mango in Adventure Pulp style",
     "description": "Classic pulp magazine illustration style with adventurous narratives and bold visual drama."
   },
   {
     "name": "Adventurecore",
-    "image": "path/to/adventurecore.jpg",
-    "prompt": "aesthetic of exploration, maps, nature, and mystery",
+    "image": "image of a mango in Adventurecore style.png",
+    "prompt": "create an image of a mango in Adventurecore style",
     "description": "Style built around themes of adventure, exploration, and discovery, often inspired by fantasy or nature."
   },
   {
     "name": "Aerobics Fashion",
-    "image": "path/to/aerobics-fashion.jpg",
-    "prompt": "1980s aerobics outfit, neon leotards, headbands, retro fitness vibe",
+    "image": "image of a mango in Aerobics Fashion style.png",
+    "prompt": "create an image of a mango in Aerobics Fashion style",
     "description": "Fashion aesthetic inspired by 1980s aerobics culture with neon colours and sporty retro looks."
   },
   {
     "name": "Aeropittura",
-    "image": "path/to/aeropittura.jpg",
-    "prompt": "Italian Futurist art style, dynamic movement, aerial views",
+    "image": "image of a mango in Aeropittura style.png",
+    "prompt": "create an image of a mango in Aeropittura style",
     "description": "Italian Futurist painting style that focuses on aerial perspectives, dynamism, and speed."
   },
   {
     "name": "Aesthete",
-    "image": "path/to/aesthete.jpg",
-    "prompt": "artful, refined visuals with focus on beauty and elegance",
+    "image": "image of a mango in Aesthete style.png",
+    "prompt": "create an image of a mango in Aesthete style",
     "description": "A person or style centred on appreciation of beauty, elegance, and refined aesthetics."
   },
   {
     "name": "Aesthetic",
-    "image": "path/to/aesthetic.jpg",
-    "prompt": "general aesthetic visuals, pleasing composition, curated colours",
+    "image": "image of a mango in Aesthetic style.png",
+    "prompt": "create an image of a mango in Aesthetic style",
     "description": "A broad term for visually pleasing style, often linked to internet culture and curated visuals."
   },
   {
     "name": "Aesthetic Concept",
-    "image": "path/to/aesthetic-concept.jpg",
-    "prompt": "conceptual visuals that explore aesthetic principles",
+    "image": "image of a mango in Aesthetic Concept style.png",
+    "prompt": "create an image of a mango in Aesthetic Concept style",
     "description": "Design or art concept built around the study and application of aesthetics."
   },
   {
     "name": "Aesthetic Concepts",
-    "image": "path/to/aesthetic-concepts.jpg",
-    "prompt": "multiple variations of visual aesthetic approaches",
+    "image": "image of a mango in Aesthetic Concepts style.png",
+    "prompt": "create an image of a mango in Aesthetic Concepts style",
     "description": "Different visual and philosophical ideas that define aesthetic experiences."
   },
   {
     "name": "Aesthetic Movement",
-    "image": "path/to/aesthetic-movement.jpg",
-    "prompt": "Victorian art movement with ornate details and beauty focus",
+    "image": "image of a mango in Aesthetic Movement style.png",
+    "prompt": "create an image of a mango in Aesthetic Movement style",
     "description": "An art movement of the late 19th century emphasising beauty and refined design over function."
   },
   {
     "name": "Aesthetic Sensibility",
-    "image": "path/to/aesthetic-sensibility.jpg",
-    "prompt": "sensitive artistic style with balanced forms and colours",
+    "image": "image of a mango in Aesthetic Sensibility style.png",
+    "prompt": "create an image of a mango in Aesthetic Sensibility style",
     "description": "A style highlighting heightened sensitivity to beauty, harmony, and visual refinement."
   },
   {
     "name": "Aesthetic quality",
-    "image": "path/to/aesthetic-quality.jpg",
-    "prompt": "visuals focused on high aesthetic appeal and polish",
+    "image": "image of a mango in Aesthetic quality style.png",
+    "prompt": "create an image of a mango in Aesthetic quality style",
     "description": "Designs or artworks with a strong emphasis on beauty and visual impact."
   },
   {
     "name": "Aestheticism",
-    "image": "path/to/aestheticism.jpg",
-    "prompt": "art for art's sake, ornamental, decorative focus",
+    "image": "image of a mango in Aestheticism style.png",
+    "prompt": "create an image of a mango in Aestheticism style",
     "description": "Philosophy and movement that values art for its beauty rather than function or moral message."
   },
   {
     "name": "Aesthetics 101",
-    "image": "path/to/aesthetics101.jpg",
-    "prompt": "introductory visuals exploring aesthetic theories",
+    "image": "image of a mango in Aesthetics 101 style.png",
+    "prompt": "create an image of a mango in Aesthetics 101 style",
     "description": "Basic or educational approach to understanding aesthetic principles."
   },
   {
     "name": "Aesthetics Wiki",
-    "image": "path/to/aesthetics-wiki.jpg",
-    "prompt": "visuals inspired by aesthetics wiki categorisation",
+    "image": "image of a mango in Aesthetics Wiki style.png",
+    "prompt": "create an image of a mango in Aesthetics Wiki style",
     "description": "Style references the aesthetics wiki, where internet communities define and collect aesthetic categories."
   },
   {
     "name": "Aetherpunk",
-    "image": "path/to/aetherpunk.jpg",
-    "prompt": "fantasy-punk visuals with magic and ether-driven tech",
+    "image": "image of a mango in Aetherpunk style.png",
+    "prompt": "create an image of a mango in Aetherpunk style",
     "description": "A fantasy-punk aesthetic blending magic, ether-based energy, and retro-futuristic tech."
   }
 ]
