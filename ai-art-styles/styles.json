@@ -1,5 +1,239 @@
 [
   {
+    "name": "1890s",
+    "image": "image of a mango in 1890s style.png",
+    "prompt": "create an image of a mango in 1890s style",
+    "description": "Victorian-era inspired visuals with ornate detailing, muted colours, and classical elegance."
+  },
+  {
+    "name": "1900s",
+    "image": "image of a mango in 1900s style.png",
+    "prompt": "create an image of a mango in 1900s style",
+    "description": "Turn-of-the-century style with Edwardian influences, rich fabrics, and decorative flourishes."
+  },
+  {
+    "name": "1910s",
+    "image": "image of a mango in 1910s style.png",
+    "prompt": "create an image of a mango in 1910s style",
+    "description": "Early modernist visuals, Edwardian fashion, sepia tones, and vintage photography vibes."
+  },
+  {
+    "name": "1920s",
+    "image": "image of a mango in 1920s style.png",
+    "prompt": "create an image of a mango in 1920s style",
+    "description": "Art Deco design with geometric patterns, bold glamour, and roaring twenties aesthetics."
+  },
+  {
+    "name": "1920s Cartoon",
+    "image": "image of a mango in 1920s Cartoon style.png",
+    "prompt": "create an image of a mango in 1920s Cartoon style",
+    "description": "Vintage black-and-white animation style, rubber hose characters, and expressive motion."
+  },
+  {
+    "name": "1930s",
+    "image": "image of a mango in 1930s style.png",
+    "prompt": "create an image of a mango in 1930s style",
+    "description": "Great Depression-era aesthetics, streamlined design, and early Hollywood glamour."
+  },
+  {
+    "name": "1940s",
+    "image": "image of a mango in 1940s style.png",
+    "prompt": "create an image of a mango in 1940s style",
+    "description": "World War II visuals with vintage posters, muted palettes, and utilitarian design."
+  },
+  {
+    "name": "1950s",
+    "image": "image of a mango in 1950s style.png",
+    "prompt": "create an image of a mango in 1950s style",
+    "description": "Mid-century visuals with bright colours, jukebox aesthetics, and classic Americana."
+  },
+  {
+    "name": "1950s Suburbia",
+    "image": "image of a mango in 1950s Suburbia style.png",
+    "prompt": "create an image of a mango in 1950s Suburbia style",
+    "description": "Clean-cut suburban homes, pastel colours, picket fences, and retro domestic life."
+  },
+  {
+    "name": "1960s",
+    "image": "image of a mango in 1960s style.png",
+    "prompt": "create an image of a mango in 1960s style",
+    "description": "Swinging sixties style with psychedelic art, mod fashion, and bold geometric patterns."
+  },
+  {
+    "name": "1970s",
+    "image": "image of a mango in 1970s style.png",
+    "prompt": "create an image of a mango in 1970s style",
+    "description": "Retro aesthetics with earthy tones, disco culture, and bohemian influences."
+  },
+  {
+    "name": "1980s",
+    "image": "image of a mango in 1980s style.png",
+    "prompt": "create an image of a mango in 1980s style",
+    "description": "Neon colours, synthwave vibes, bold fashion, and pop culture excess."
+  },
+  {
+    "name": "1990s",
+    "image": "image of a mango in 1990s style.png",
+    "prompt": "create an image of a mango in 1990s style",
+    "description": "Grunge fashion, VHS textures, streetwear, and retro internet nostalgia."
+  },
+  {
+    "name": "1990s Web Design",
+    "image": "image of a mango in 1990s Web Design style.png",
+    "prompt": "create an image of a mango in 1990s Web Design style",
+    "description": "Early internet visuals with pixel fonts, neon text, animated GIFs, and cluttered layouts."
+  },
+  {
+    "name": "20-year nostalgia cycle",
+    "image": "image of a mango in 20-year nostalgia cycle style.png",
+    "prompt": "create an image of a mango in 20-year nostalgia cycle style",
+    "description": "A cultural cycle where aesthetics from 20 years ago resurface in design and fashion."
+  },
+  {
+    "name": "2000s",
+    "image": "image of a mango in 2000s style.png",
+    "prompt": "create an image of a mango in 2000s style",
+    "description": "Y2K fashion, MySpace aesthetics, glossy magazine covers, and digital futurism."
+  },
+  {
+    "name": "2000s Anime",
+    "image": "image of a mango in 2000s Anime style.png",
+    "prompt": "create an image of a mango in 2000s Anime style",
+    "description": "Anime visuals from the 2000s with sharper outlines, vibrant colour palettes, and stylised characters."
+  },
+  {
+    "name": "2000s Autumn",
+    "image": "image of a mango in 2000s Autumn style.png",
+    "prompt": "create an image of a mango in 2000s Autumn style",
+    "description": "Cozy autumn vibes of the 2000s with warm tones, scarves, coffee, and seasonal nostalgia."
+  },
+  {
+    "name": "2000s Preppy",
+    "image": "image of a mango in 2000s Preppy style.png",
+    "prompt": "create an image of a mango in 2000s Preppy style",
+    "description": "Clean-cut style with polo shirts, plaid skirts, Ivy League fashion, and bright colours."
+  },
+  {
+    "name": "2010s",
+    "image": "image of a mango in 2010s style.png",
+    "prompt": "create an image of a mango in 2010s style",
+    "description": "Instagram-ready minimalism, normcore fashion, and curated lifestyle aesthetics."
+  },
+  {
+    "name": "2010s Bright Kawaii",
+    "image": "image of a mango in 2010s Bright Kawaii style.png",
+    "prompt": "create an image of a mango in 2010s Bright Kawaii style",
+    "description": "Hyper-cute Japanese-inspired style with pastel colours, big eyes, and playful accessories."
+  },
+  {
+    "name": "2010s Internet",
+    "image": "image of a mango in 2010s Internet style.png",
+    "prompt": "create an image of a mango in 2010s Internet style",
+    "description": "Meme culture, minimalist websites, social media filters, and viral content aesthetics."
+  },
+  {
+    "name": "2010s Meme Maximalism",
+    "image": "image of a mango in 2010s Meme Maximalism style.png",
+    "prompt": "create an image of a mango in 2010s Meme Maximalism style",
+    "description": "Over-the-top visuals inspired by meme culture with chaotic, ironic, and saturated designs."
+  },
+  {
+    "name": "2010s Soft Kawaii",
+    "image": "image of a mango in 2010s Soft Kawaii style.png",
+    "prompt": "create an image of a mango in 2010s Soft Kawaii style",
+    "description": "Gentle, pastel kawaii aesthetic with soft edges, dreamy tones, and a cute atmosphere."
+  },
+  {
+    "name": "2014 Girly",
+    "image": "image of a mango in 2014 Girly style.png",
+    "prompt": "create an image of a mango in 2014 Girly style",
+    "description": "Feminine Tumblr-era visuals with pink palettes, bows, makeup, and fashion quotes."
+  },
+  {
+    "name": "2014 Tumblr",
+    "image": "image of a mango in 2014 Tumblr style.png",
+    "prompt": "create an image of a mango in 2014 Tumblr style",
+    "description": "Tumblr-era collages, grunge overlays, moody photography, and indie quotes."
+  },
+  {
+    "name": "2020 Alt",
+    "image": "image of a mango in 2020 Alt style.png",
+    "prompt": "create an image of a mango in 2020 Alt style",
+    "description": "Alternative 2020s subculture visuals with e-girl makeup, piercings, and edgy fashion."
+  },
+  {
+    "name": "2020 TikTok",
+    "image": "image of a mango in 2020 TikTok style.png",
+    "prompt": "create an image of a mango in 2020 TikTok style",
+    "description": "TikTok-inspired aesthetic with viral fashion trends, neon lighting, and vertical video vibes."
+  },
+  {
+    "name": "2020s",
+    "image": "image of a mango in 2020s style.png",
+    "prompt": "create an image of a mango in 2020s style",
+    "description": "Current decade’s mix of digital minimalism, short-form media, and hybrid retro-futurism."
+  },
+  {
+    "name": "2020s E-Kid",
+    "image": "image of a mango in 2020s E-Kid style.png",
+    "prompt": "create an image of a mango in 2020s E-Kid style",
+    "description": "Online youth culture with dyed hair, chains, oversized clothes, and TikTok aesthetics."
+  },
+  {
+    "name": "2020s Gamer",
+    "image": "image of a mango in 2020s Gamer style.png",
+    "prompt": "create an image of a mango in 2020s Gamer style",
+    "description": "Gaming-inspired aesthetic with RGB lights, streaming culture, and esports energy."
+  },
+  {
+    "name": "2 Tone",
+    "image": "image of a mango in 2 Tone style.png",
+    "prompt": "create an image of a mango in 2 Tone style",
+    "description": "British ska-inspired style with black-and-white patterns, sharp suits, and punk influences."
+  },
+  {
+    "name": "30-year nostalgia cycle",
+    "image": "image of a mango in 30-year nostalgia cycle style.png",
+    "prompt": "create an image of a mango in 30-year nostalgia cycle style",
+    "description": "A design cycle where aesthetics from 30 years ago re-emerge in pop culture and fashion."
+  },
+  {
+    "name": "50s Suburbia",
+    "image": "image of a mango in 50s Suburbia style.png",
+    "prompt": "create an image of a mango in 50s Suburbia style",
+    "description": "Nostalgic representation of 1950s suburban life with idealised homes, cars, and family imagery."
+  },
+  {
+    "name": "8-Bit",
+    "image": "image of a mango in 8-Bit style.png",
+    "prompt": "create an image of a mango in 8-Bit style",
+    "description": "Pixelated graphics inspired by retro video games, blocky visuals, and limited colours."
+  },
+  {
+    "name": "80s Workout",
+    "image": "image of a mango in 80s Workout style.png",
+    "prompt": "create an image of a mango in 80s Workout style",
+    "description": "Bright spandex outfits, neon headbands, aerobics poses, and retro workout videos."
+  },
+  {
+    "name": "90s Cool",
+    "image": "image of a mango in 90s Cool style.png",
+    "prompt": "create an image of a mango in 90s Cool style",
+    "description": "Pop culture-heavy 90s fashion with baggy jeans, skateboards, graffiti, and hip-hop influence."
+  },
+  {
+    "name": "90s Web Design",
+    "image": "image of a mango in 90s Web Design style.png",
+    "prompt": "create an image of a mango in 90s Web Design style",
+    "description": "Retro internet visuals with neon buttons, HTML tables, and animated backgrounds."
+  },
+  {
+    "name": "ABG",
+    "image": "image of a mango in ABG style.png",
+    "prompt": "create an image of a mango in ABG style",
+    "description": "Asian Baby Girl aesthetic with heavy makeup, nightlife fashion, and bold accessories."
+  },
+  {
     "name": "ASCII Art",
     "image": "image of a mango in ASCII Art style.png",
     "prompt": "create an actual image of a mango in ASCII Art style",
@@ -76,12 +310,6 @@
     "image": "image of a mango in Aesthete style.png",
     "prompt": "create an image of a mango in Aesthete style",
     "description": "A person or style centred on appreciation of beauty, elegance, and refined aesthetics."
-  },
-  {
-    "name": "Aesthetic",
-    "image": "image of a mango in Aesthetic style.png",
-    "prompt": "create an image of a mango in Aesthetic style",
-    "description": "A broad term for visually pleasing style, often linked to internet culture and curated visuals."
   },
   {
     "name": "Aetherpunk",
