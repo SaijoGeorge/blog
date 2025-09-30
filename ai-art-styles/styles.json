@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Watercolor Dreams",
+    "image": "path/to/image1.jpg",
+    "prompt": "watercolor painting of a serene landscape, soft edges, flowing colors",
+    "description": "Soft, flowing style that mimics traditional watercolor techniques with gentle color bleeds and transparent layers."
+  },
+  {
+    "name": "Cyberpunk Noir",
+    "image": "path/to/image2.jpg",
+    "prompt": "cyberpunk city at night, neon lights, rain-soaked streets, dark atmosphere",
+    "description": "High-contrast futuristic style featuring neon colors, urban landscapes, and a dark dystopian aesthetic."
+  }
+]
