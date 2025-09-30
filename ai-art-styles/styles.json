@@ -6,12 +6,6 @@
     "description": "Victorian-era inspired visuals with ornate detailing, muted colours, and classical elegance."
   },
   {
-    "name": "1900s",
-    "image": "image of a mango in 1900s style.png",
-    "prompt": "create an image of a mango in 1900s style",
-    "description": "Turn-of-the-century style with Edwardian influences, rich fabrics, and decorative flourishes."
-  },
-  {
     "name": "1910s",
     "image": "image of a mango in 1910s style.png",
     "prompt": "create an image of a mango in 1910s style",
