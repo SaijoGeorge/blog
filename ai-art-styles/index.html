@@ -59,6 +59,11 @@
     <script>
         // Data will be loaded from styles.json
         let aiStyles = [];
+        let currentStyles = []; // Currently filtered/searched styles
+        let displayedCount = 0; // Number of items currently rendered
+        const INITIAL_LOAD = 80; // Initial number of items to render
+        const LOAD_MORE = 40; // Number of items to load on scroll
+        let isSearchActive = false; // Track if search is active
 
         // Load styles from JSON file
         async function loadStyles() {
@@ -68,7 +73,8 @@
                     throw new Error('Failed to load styles');
                 }
                 aiStyles = await response.json();
-                renderGrid(aiStyles);
+                currentStyles = aiStyles;
+                renderGrid(aiStyles, true);
             } catch (error) {
                 console.error('Error loading styles:', error);
                 document.getElementById('gridContainer').innerHTML = `
@@ -85,7 +91,7 @@
             return `
                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="aspect-square overflow-hidden bg-gray-200">
-                        <img src="${style.image}" alt="${style.name}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="${style.image}" alt="${style.name}" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-3 flex-1 flex flex-col">
                         <h3 class="text-lg font-bold text-gray-900 mb-1">${style.name}</h3>
@@ -125,34 +131,102 @@
             `;
         }
 
-        function renderGrid(styles) {
+        function renderGrid(styles, isInitial = false) {
             const container = document.getElementById('gridContainer');
             const noResults = document.getElementById('noResults');
             const resultsCount = document.getElementById('resultsCount');
-            
+
+            currentStyles = styles;
+
             if (styles.length === 0) {
                 container.innerHTML = '';
                 noResults.classList.remove('hidden');
                 resultsCount.textContent = '';
+                displayedCount = 0;
                 return;
             }
 
             noResults.classList.add('hidden');
             resultsCount.textContent = `Showing ${styles.length} style${styles.length !== 1 ? 's' : ''}`;
-            
-            let html = '';
-            let itemCount = 0;
 
-            styles.forEach((style, index) => {
-                // Insert ad every 9 items (after positions 8, 17, 26, etc.)
-                if (itemCount > 0 && itemCount % 19=== 0) {
+            // If search is active, show all results immediately
+            if (isSearchActive) {
+                displayedCount = styles.length;
+                let html = '';
+                let itemCount = 0;
+
+                styles.forEach((style, index) => {
+                    if (itemCount > 0 && itemCount % 19 === 0) {
+                        html += createAdCard();
+                    }
+                    html += createStyleCard(style);
+                    itemCount++;
+                });
+
+                container.innerHTML = html;
+                return;
+            }
+
+            // For initial load or no search, use lazy loading
+            if (isInitial) {
+                displayedCount = 0;
+                container.innerHTML = '';
+            }
+
+            loadMoreItems();
+        }
+
+        function loadMoreItems() {
+            const container = document.getElementById('gridContainer');
+            const itemsToLoad = Math.min(LOAD_MORE, currentStyles.length - displayedCount);
+
+            if (itemsToLoad <= 0) return;
+
+            let html = '';
+            const startIndex = displayedCount;
+            const endIndex = displayedCount + itemsToLoad;
+
+            for (let i = startIndex; i < endIndex; i++) {
+                // Insert ad every 19 items (after positions 18, 37, 56, etc.)
+                if (i > 0 && i % 19 === 0) {
                     html += createAdCard();
                 }
-                html += createStyleCard(style);
-                itemCount++;
+                html += createStyleCard(currentStyles[i]);
+            }
+
+            container.insertAdjacentHTML('beforeend', html);
+            displayedCount = endIndex;
+
+            // Set up observer for the last item if there are more items to load
+            if (displayedCount < currentStyles.length) {
+                observeLastItem();
+            }
+        }
+
+        let observer = null;
+
+        function observeLastItem() {
+            // Disconnect previous observer if it exists
+            if (observer) {
+                observer.disconnect();
+            }
+
+            // Create new observer
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && displayedCount < currentStyles.length) {
+                        loadMoreItems();
+                    }
+                });
+            }, {
+                rootMargin: '200px' // Start loading 200px before reaching the bottom
             });
 
-            container.innerHTML = html;
+            // Observe the last card in the grid
+            const cards = document.querySelectorAll('#gridContainer > div');
+            if (cards.length > 0) {
+                observer.observe(cards[cards.length - 1]);
+            }
         }
 
         function searchStyles(query) {
@@ -171,8 +245,10 @@
 
         // Event listener for search
         document.getElementById('searchInput').addEventListener('input', (e) => {
-            const results = searchStyles(e.target.value);
-            renderGrid(results);
+            const query = e.target.value;
+            isSearchActive = query.trim() !== '';
+            const results = searchStyles(query);
+            renderGrid(results, true);
         });
 
         // Copy prompt function
