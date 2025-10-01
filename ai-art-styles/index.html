@@ -39,8 +39,14 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
             </div>
-                    <!-- Results Count -->
-        <div id="resultsCount" class="text-center text-gray-600 mb-2"></div>
+                    <!-- Results Count and Filter -->
+        <div class="flex items-center justify-center gap-4 mb-2 mt-3">
+            <div id="resultsCount" class="text-gray-600"></div>
+            <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="featuredToggle" class="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500">
+                <span class="text-sm text-gray-700 font-medium">Featured only</span>
+            </label>
+        </div>
         </div>
 
 
@@ -56,6 +62,15 @@
         </div>
     </div>
 
+    <!-- Image Modal -->
+    <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-7xl max-h-full">
+            <button onclick="closeModal()" class="absolute -top-12 right-0 text-white hover:text-gray-300 text-4xl font-light">&times;</button>
+            <img id="modalImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain">
+            <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
+        </div>
+    </div>
+
     <script>
         // Data will be loaded from styles.json
         let aiStyles = [];
@@ -64,6 +79,7 @@
         const INITIAL_LOAD = 80; // Initial number of items to render
         const LOAD_MORE = 40; // Number of items to load on scroll
         let isSearchActive = false; // Track if search is active
+        let isFeaturedOnly = false; // Track if featured filter is active
 
         // Load styles from JSON file
         async function loadStyles() {
@@ -90,11 +106,14 @@
         function createStyleCard(style) {
             return `
                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <div class="aspect-square overflow-hidden bg-gray-200">
+                    <div class="aspect-square overflow-hidden bg-gray-200 cursor-pointer" onclick="openModal('${style.image}', '${style.name.replace(/'/g, "\\'")}')">
                         <img src="${style.image}" alt="${style.name}" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-3 flex-1 flex flex-col">
-                        <h3 class="text-lg font-bold text-gray-900 mb-1">${style.name}</h3>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1 flex items-center justify-between">
+                            <span>${style.name}</span>
+                            ${style.featured === 'yes' ? '<span class="text-xl">🌟</span>' : ''}
+                        </h3>
                         <p class="text-gray-600 text-xs mb-2 flex-1">${style.description}</p>
                         <div class="mt-auto">
                             <p class="text-xs text-gray-500 font-semibold mb-1">PROMPT:</p>
@@ -147,7 +166,13 @@
             }
 
             noResults.classList.add('hidden');
-            resultsCount.textContent = `Showing ${styles.length} style${styles.length !== 1 ? 's' : ''}`;
+
+            // Update results count with total
+            if (isSearchActive || isFeaturedOnly) {
+                resultsCount.textContent = `Showing ${styles.length} of ${aiStyles.length} styles`;
+            } else {
+                resultsCount.textContent = `Showing ${styles.length} style${styles.length !== 1 ? 's' : ''}`;
+            }
 
             // If search is active, show all results immediately
             if (isSearchActive) {
@@ -231,16 +256,24 @@
 
         function searchStyles(query) {
             const lowerQuery = query.toLowerCase().trim();
-            
-            if (lowerQuery === '') {
-                return aiStyles;
+
+            let filtered = aiStyles;
+
+            // Apply featured filter
+            if (isFeaturedOnly) {
+                filtered = filtered.filter(style => style.featured === 'yes');
             }
 
-            return aiStyles.filter(style => {
-                return style.name.toLowerCase().includes(lowerQuery) ||
-                       style.description.toLowerCase().includes(lowerQuery) ||
-                       style.prompt.toLowerCase().includes(lowerQuery);
-            });
+            // Apply search filter
+            if (lowerQuery !== '') {
+                filtered = filtered.filter(style => {
+                    return style.name.toLowerCase().includes(lowerQuery) ||
+                           style.description.toLowerCase().includes(lowerQuery) ||
+                           style.prompt.toLowerCase().includes(lowerQuery);
+                });
+            }
+
+            return filtered;
         }
 
         // Event listener for search
@@ -251,18 +284,27 @@
             renderGrid(results, true);
         });
 
+        // Event listener for featured toggle
+        document.getElementById('featuredToggle').addEventListener('change', (e) => {
+            isFeaturedOnly = e.target.checked;
+            const query = document.getElementById('searchInput').value;
+            isSearchActive = query.trim() !== '';
+            const results = searchStyles(query);
+            renderGrid(results, true);
+        });
+
         // Copy prompt function
         function copyPrompt(button, prompt) {
             navigator.clipboard.writeText(prompt).then(() => {
                 const copyIcon = button.querySelector('.copy-icon');
                 const checkIcon = button.querySelector('.check-icon');
-                
+
                 // Hide copy icon, show check icon
                 copyIcon.classList.add('hidden');
                 checkIcon.classList.remove('hidden');
                 button.classList.add('text-green-500');
                 button.classList.remove('text-gray-400');
-                
+
                 // Reset after 2 seconds
                 setTimeout(() => {
                     copyIcon.classList.remove('hidden');
@@ -274,6 +316,32 @@
                 console.error('Failed to copy:', err);
             });
         }
+
+        // Modal functions
+        function openModal(imageSrc, imageName) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+
+            modalImage.src = imageSrc;
+            modalImage.alt = imageName;
+            modalCaption.textContent = imageName;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
 
         // Initial render
         loadStyles();

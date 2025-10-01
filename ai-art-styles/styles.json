@@ -237,13 +237,15 @@
     "name": "Abstract Tech",
     "image": "image of a mango in Abstract Tech style.png",
     "prompt": "create an image of a mango in Abstract Tech style",
-    "description": "Abstract style influenced by modern technology, often blending geometric shapes with glowing elements."
+    "description": "Abstract style influenced by modern technology, often blending geometric shapes with glowing elements.",
+    "featured": "yes"
   },
   {
     "name": "Abstract Vector Art",
     "image": "image of a mango in Abstract Vector Art style.png",
     "prompt": "create an image of a mango in Abstract Vector Art style",
-    "description": "Vector-based abstract artwork, known for smooth lines, clean geometry, and scalable design."
+    "description": "Vector-based abstract artwork, known for smooth lines, clean geometry, and scalable design.",
+    "featured": "yes"
   },
   {
     "name": "Academia",
