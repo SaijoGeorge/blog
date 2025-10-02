@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Auto-update preview on any field change
-    websiteUrlInput.addEventListener('input', generateBadge);
+    websiteUrlInput.addEventListener('blur', generateBadge);
     lightThemeRadio.addEventListener('change', generateBadge);
     darkThemeRadio.addEventListener('change', generateBadge);
     fontFamilySelect.addEventListener('change', generateBadge);
