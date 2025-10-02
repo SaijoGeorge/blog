@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const generateBtn = document.getElementById('generate-btn');
     const websiteUrlInput = document.getElementById('website-url');
     const lightThemeRadio = document.getElementById('light-theme');
     const darkThemeRadio = document.getElementById('dark-theme');
@@ -74,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         embedCodeTextarea.value = embedCode;
     }
 
-    generateBtn.addEventListener('click', generateBadge);
+    // Auto-update preview on any field change
+    websiteUrlInput.addEventListener('input', generateBadge);
     lightThemeRadio.addEventListener('change', generateBadge);
     darkThemeRadio.addEventListener('change', generateBadge);
     fontFamilySelect.addEventListener('change', generateBadge);
