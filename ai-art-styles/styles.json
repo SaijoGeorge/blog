@@ -93,7 +93,8 @@
     "name": "2000s Anime",
     "image": "image of a mango in 2000s Anime style.webp",
     "prompt": "create an image of a mango in 2000s Anime style",
-    "description": "Anime visuals from the 2000s with sharper outlines, vibrant colour palettes, and stylised characters."
+    "description": "Anime visuals from the 2000s with sharper outlines, vibrant colour palettes, and stylised characters.",
+    "featured": "yes"
   },
   {
     "name": "2000s Autumn",
@@ -117,7 +118,8 @@
     "name": "2010s Bright Kawaii",
     "image": "image of a mango in 2010s Bright Kawaii style.webp",
     "prompt": "create an image of a mango in 2010s Bright Kawaii style",
-    "description": "Hyper-cute Japanese-inspired style with pastel colours, big eyes, and playful accessories."
+    "description": "Hyper-cute Japanese-inspired style with pastel colours, big eyes, and playful accessories.",
+    "featured": "yes"
   },
   {
     "name": "2010s Internet",
@@ -135,7 +137,8 @@
     "name": "2010s Soft Kawaii",
     "image": "image of a mango in 2010s Soft Kawaii style.webp",
     "prompt": "create an image of a mango in 2010s Soft Kawaii style",
-    "description": "Gentle, pastel kawaii aesthetic with soft edges, dreamy tones, and a cute atmosphere."
+    "description": "Gentle, pastel kawaii aesthetic with soft edges, dreamy tones, and a cute atmosphere.",
+    "featured": "yes"
   },
   {
     "name": "2014 Girly",
@@ -201,7 +204,8 @@
     "name": "8-Bit",
     "image": "image of a mango in 8-Bit style.webp",
     "prompt": "create an image of a mango in 8-Bit style",
-    "description": "Pixelated graphics inspired by retro video games, blocky visuals, and limited colours."
+    "description": "Pixelated graphics inspired by retro video games, blocky visuals, and limited colours.",
+    "featured": "yes"
   },
   {
     "name": "80s Workout",
@@ -269,7 +273,8 @@
     "name": "Acidgrafix",
     "image": "image of a mango in Acidgrafix style.webp",
     "prompt": "create an image of a mango in Acidgrafix style",
-    "description": "A design style rooted in the acid aesthetic, mixing psychedelic visuals with graphic experimentation."
+    "description": "A design style rooted in the acid aesthetic, mixing psychedelic visuals with graphic experimentation.",
+    "featured": "yes"
   },
   {
     "name": "Acubi",
@@ -491,7 +496,8 @@
     "name": "Animecore",
     "image": "image of a mango in Animecore style.webp",
     "prompt": "create an image of a mango in Animecore",
-    "description": "An aesthetic centered around the visual style and themes of Japanese anime and manga."
+    "description": "An aesthetic centered around the visual style and themes of Japanese anime and manga.",
+    "featured": "yes"
   },
   {
     "name": "Animegao Kigurumi",
@@ -503,7 +509,8 @@
     "name": "Animemo",
     "image": "image of a mango in Animemo style.webp",
     "prompt": "create an image of a mango in Animemo",
-    "description": "An aesthetic associated with early 2000s urban fantasy anime and video games, characterized by a youth-pop culture influence and themes of counter-culture and camaraderie."
+    "description": "An aesthetic associated with early 2000s urban fantasy anime and video games, characterized by a youth-pop culture influence and themes of counter-culture and camaraderie.",
+    "featured": "yes"
   },
   {
     "name": "Anti-Fashion",
@@ -569,7 +576,8 @@
     "name": "Art Deco",
     "image": "image of a mango in Art Deco style.webp",
     "prompt": "create an image of a mango in Art Deco",
-    "description": "A style of visual arts, architecture and design that first appeared in France just before World War I, characterized by bold geometric forms, rich materials, and lavish ornamentation."
+    "description": "A style of visual arts, architecture and design that first appeared in France just before World War I, characterized by bold geometric forms, rich materials, and lavish ornamentation.",
+    "featured": "yes"
   },
   {
     "name": "Art Hoe",
@@ -827,7 +835,8 @@
     "name": "Bauhaus",
     "image": "image of a mango in Bauhaus style.webp",
     "prompt": "create an image of a mango in Bauhaus",
-    "description": "A German design school and art movement from the early 20th century that emphasized functionality, clean lines, and the integration of art and technology."
+    "description": "A German design school and art movement from the early 20th century that emphasized functionality, clean lines, and the integration of art and technology.",
+    "featured": "yes"
   },
   {
     "name": "Beach Day",
@@ -1133,7 +1142,8 @@
     "name": "Brutalism",
     "image": "image of a mango in Brutalism style.webp",
     "prompt": "create an image of a mango in Brutalism",
-    "description": "An architectural style from the mid-20th century characterized by the use of raw concrete, massive forms, and a functional, utilitarian aesthetic."
+    "description": "An architectural style from the mid-20th century characterized by the use of raw concrete, massive forms, and a functional, utilitarian aesthetic.",
+    "featured": "yes"
   },
   {
     "name": "Bubble Bujo",
@@ -1163,7 +1173,8 @@
     "name": "Bubblegum Bass",
     "image": "image of a mango in Bubblegum Bass style.webp",
     "prompt": "create an image of a mango in Bubblegum Bass",
-    "description": "A subgenre of electronic dance music characterized by its playful, exaggerated, and experimental approach to pop music elements."
+    "description": "A subgenre of electronic dance music characterized by its playful, exaggerated, and experimental approach to pop music elements.",
+    "featured": "yes"
   },
   {
     "name": "Bubblegum Bitch",
@@ -1259,7 +1270,8 @@
     "name": "Byzantine",
     "image": "image of a mango in Byzantine style.webp",
     "prompt": "create an image of a mango in Byzantine",
-    "description": "An art style that originated in the Byzantine Empire, characterized by its religious themes, rich colors, and use of gold and mosaics."
+    "description": "An art style that originated in the Byzantine Empire, characterized by its religious themes, rich colors, and use of gold and mosaics.",
+    "featured": "yes"
   },
   {
     "name": "B\u014dryokudan",
@@ -1319,7 +1331,8 @@
     "name": "Candyland",
     "image": "image of a mango in Candyland style.webp",
     "prompt": "create an image of a mango in Candyland style",
-    "description": "A whimsical fantasy world aesthetic inspired by candy, sweets, and the classic board game."
+    "description": "A whimsical fantasy world aesthetic inspired by candy, sweets, and the classic board game.",
+    "featured": "yes"
   },
   {
     "name": "Canelé Style",
@@ -1331,7 +1344,8 @@
     "name": "Cani",
     "image": "image of a mango in Cani style.webp",
     "prompt": "create an image of a mango in Cani style",
-    "description": "An Italian youth subculture characterized by flashy sportswear, gold jewelry, and urban street style."
+    "description": "An Italian youth subculture characterized by flashy sportswear, gold jewelry, and urban street style.",
+    "featured": "yes"
   },
   {
     "name": "Cannibalcore",
@@ -1349,7 +1363,8 @@
     "name": "Caricaturism",
     "image": "image of a mango in Caricaturism style.webp",
     "prompt": "create an image of a mango in Caricaturism style",
-    "description": "An art style emphasizing exaggerated features and humorous distortions for satirical effect."
+    "description": "An art style emphasizing exaggerated features and humorous distortions for satirical effect.",
+    "featured": "yes"
   },
   {
     "name": "Carnivalcore",
@@ -1415,7 +1430,8 @@
     "name": "Celtic Revival",
     "image": "image of a mango in Celtic Revival style.webp",
     "prompt": "create an image of a mango in Celtic Revival style",
-    "description": "An art movement celebrating Celtic heritage through intricate knotwork, mythology, and traditional designs."
+    "description": "An art movement celebrating Celtic heritage through intricate knotwork, mythology, and traditional designs.",
+    "featured": "yes"
   },
   {
     "name": "Changelingcore",
@@ -1439,7 +1455,8 @@
     "name": "Chartreuse",
     "image": "image of a mango in Chartreuse style.webp",
     "prompt": "create an image of a mango in Chartreuse style",
-    "description": "An aesthetic centered on the vibrant yellow-green color, creating bold and energetic visuals."
+    "description": "An aesthetic centered on the vibrant yellow-green color, creating bold and energetic visuals.",
+    "featured": "yes"
   },
   {
     "name": "Chav",
@@ -1481,7 +1498,8 @@
     "name": "Chicha",
     "image": "image of a mango in Chicha style.webp",
     "prompt": "create an image of a mango in Chicha style",
-    "description": "A vibrant Peruvian design style with bold psychedelic colors and hand-painted typography."
+    "description": "A vibrant Peruvian design style with bold psychedelic colors and hand-painted typography.",
+    "featured": "yes"
   },
   {
     "name": "Chill Breakcore",
@@ -1529,7 +1547,8 @@
     "name": "Choni",
     "image": "image of a mango in Choni style.webp",
     "prompt": "create an image of a mango in Choni style",
-    "description": "A Spanish working-class subculture with flashy sportswear, gold chains, and urban style."
+    "description": "A Spanish working-class subculture with flashy sportswear, gold chains, and urban style.",
+    "featured": "yes"
   },
   {
     "name": "Chopped and Screwed",
@@ -1613,13 +1632,15 @@
     "name": "Classicism",
     "image": "image of a mango in Classicism style.webp",
     "prompt": "create an image of a mango in Classicism style",
-    "description": "An artistic style based on ancient Greek and Roman principles of harmony and proportion."
+    "description": "An artistic style based on ancient Greek and Roman principles of harmony and proportion.",
+    "featured": "yes"
   },
   {
     "name": "Claymorphism",
     "image": "image of a mango in Claymorphism style.webp",
     "prompt": "create an image of a mango in Claymorphism style",
-    "description": "A 3D design trend featuring soft, clay-like textures and inflated, playful shapes."
+    "description": "A 3D design trend featuring soft, clay-like textures and inflated, playful shapes.",
+    "featured": "yes"
   },
   {
     "name": "Clean Girl",
@@ -1757,13 +1778,15 @@
     "name": "Concept",
     "image": "image of a mango in Concept style.webp",
     "prompt": "create an image of a mango in Concept style",
-    "description": "An abstract aesthetic focused on ideas, theory, and intellectual exploration."
+    "description": "An abstract aesthetic focused on ideas, theory, and intellectual exploration.",
+    "featured": "yes"
   },
   {
     "name": "Constructivism",
     "image": "image of a mango in Constructivism style.webp",
     "prompt": "create an image of a mango in Constructivism style",
-    "description": "A Russian avant-garde art movement with geometric shapes and utilitarian design."
+    "description": "A Russian avant-garde art movement with geometric shapes and utilitarian design.",
+    "featured": "yes"
   },
   {
     "name": "Consumer Aesthetics Research Institute",
@@ -1823,7 +1846,8 @@
     "name": "Corporate Memphis",
     "image": "image of a mango in Corporate Memphis style.webp",
     "prompt": "create an image of a mango in Corporate Memphis style",
-    "description": "A flat illustration style with bright colors and simplified human figures used in tech branding."
+    "description": "A flat illustration style with bright colors and simplified human figures used in tech branding.",
+    "featured": "yes"
   },
   {
     "name": "Corporate Psychedelia",
@@ -1913,7 +1937,8 @@
     "name": "Craftcore",
     "image": "image of a mango in Craftcore style.webp",
     "prompt": "create an image of a mango in Craftcore style",
-    "description": "A DIY aesthetic celebrating handmade crafts, knitting, and creative hobbies."
+    "description": "A DIY aesthetic celebrating handmade crafts, knitting, and creative hobbies.",
+    "featured": "yes"
   },
   {
     "name": "Creepy",
@@ -1985,7 +2010,8 @@
     "name": "Cubism",
     "image": "image of a mango in Cubism style.webp",
     "prompt": "create an image of a mango in Cubism style",
-    "description": "An avant-garde art movement featuring fragmented, geometric, and multi-perspective compositions."
+    "description": "An avant-garde art movement featuring fragmented, geometric, and multi-perspective compositions.",
+    "featured": "yes"
   },
   {
     "name": "Cubo-Expressionism",
@@ -2009,7 +2035,8 @@
     "name": "Cugine",
     "image": "image of a mango in Cugine style.webp",
     "prompt": "create an image of a mango in Cugine style",
-    "description": "An Italian-American subculture aesthetic with flashy fashion and urban swagger."
+    "description": "An Italian-American subculture aesthetic with flashy fashion and urban swagger.",
+    "featured": "yes"
   },
   {
     "name": "Cult Party Kei",
@@ -2069,19 +2096,22 @@
     "name": "Cuteness",
     "image": "image of a mango in Cuteness style.webp",
     "prompt": "create an image of a mango in Cuteness style",
-    "description": "An aesthetic emphasizing adorable, sweet, and endearing visual qualities."
+    "description": "An aesthetic emphasizing adorable, sweet, and endearing visual qualities.",
+    "featured": "yes"
   },
   {
     "name": "Cyan",
     "image": "image of a mango in Cyan style.webp",
     "prompt": "create an image of a mango in Cyan style",
-    "description": "An aesthetic centered on the bright blue-green color cyan with aquatic vibes."
+    "description": "An aesthetic centered on the bright blue-green color cyan with aquatic vibes.",
+    "featured": "yes"
   },
   {
     "name": "Cyber",
     "image": "image of a mango in Cyber style.webp",
     "prompt": "create an image of a mango in Cyber style",
-    "description": "A futuristic aesthetic featuring technology, neon, and digital culture."
+    "description": "A futuristic aesthetic featuring technology, neon, and digital culture.",
+    "featured": "yes"
   },
   {
     "name": "Cyber Angel",
@@ -2111,13 +2141,15 @@
     "name": "Cyber Grunge",
     "image": "image of a mango in Cyber Grunge style.webp",
     "prompt": "create an image of a mango in Cyber Grunge style",
-    "description": "A combination of 1990s grunge with cyberpunk futurism and digital aesthetics."
+    "description": "A combination of 1990s grunge with cyberpunk futurism and digital aesthetics.",
+    "featured": "yes"
   },
   {
     "name": "Cyber Minimalism",
     "image": "image of a mango in Cyber Minimalism style.webp",
     "prompt": "create an image of a mango in Cyber Minimalism style",
-    "description": "A sleek, streamlined aesthetic combining minimalist design with cyberpunk elements."
+    "description": "A sleek, streamlined aesthetic combining minimalist design with cyberpunk elements.",
+    "featured": "yes"
   },
   {
     "name": "Cyber Prefix",
@@ -2255,7 +2287,8 @@
     "name": "Danish Pastel",
     "image": "image of a mango in Danish Pastel style.webp",
     "prompt": "create an image of a mango in Danish Pastel style",
-    "description": "A Scandinavian design aesthetic with soft pastel colors and minimalist Nordic style."
+    "description": "A Scandinavian design aesthetic with soft pastel colors and minimalist Nordic style.",
+    "featured": "yes"
   },
   {
     "name": "Dark Academia",
@@ -2375,7 +2408,8 @@
     "name": "De Stijl",
     "image": "image of a mango in De Stijl style.webp",
     "prompt": "create an image of a mango in De Stijl style",
-    "description": "A Dutch art movement featuring primary colors, geometric forms, and strict abstraction."
+    "description": "A Dutch art movement featuring primary colors, geometric forms, and strict abstraction.",
+    "featured": "yes"
   },
   {
     "name": "Dead Inside",
@@ -2538,12 +2572,6 @@
     "image": "image of a mango in Disco style.webp",
     "prompt": "create an image of a mango in Disco style",
     "description": "A 1970s aesthetic featuring glitter, disco balls, platforms, and dance floor glamour."
-  },
-  {
-    "name": "Disheveled English Woman",
-    "image": "image of a mango in Disheveled English Woman style.webp",
-    "prompt": "create an image of a mango in Disheveled English Woman style",
-    "description": "A charming, slightly messy British aesthetic with lived-in elegance and casual sophistication."
   },
   {
     "name": "Dissociative Pout",
@@ -2747,7 +2775,8 @@
     "name": "Earth Tones",
     "image": "image of a mango in Earth Tones style.webp",
     "prompt": "create an image of a mango in Earth Tones style",
-    "description": "An aesthetic using natural colors like browns, greens, and terracotta for warmth."
+    "description": "An aesthetic using natural colors like browns, greens, and terracotta for warmth.",
+    "featured": "yes"
   },
   {
     "name": "Earthcore",
@@ -2903,7 +2932,8 @@
     "name": "Ethereal",
     "image": "image of a mango in Ethereal style.webp",
     "prompt": "create an image of a mango in Ethereal style",
-    "description": "A delicate, otherworldly aesthetic with dreamlike, light, and airy qualities."
+    "description": "A delicate, otherworldly aesthetic with dreamlike, light, and airy qualities.",
+    "featured": "yes"
   },
   {
     "name": "Ethno-Chic",
@@ -3056,12 +3086,6 @@
     "description": "A rural aesthetic celebrating farm life, agriculture, animals, and country living."
   },
   {
-    "name": "Farmer's Daughter",
-    "image": "image of a mango in Farmer's Daughter style.webp",
-    "prompt": "create an image of a mango in Farmer's Daughter style",
-    "description": "A rustic, wholesome aesthetic with gingham, denim, and innocent country charm."
-  },
-  {
     "name": "Fashion",
     "image": "image of a mango in Fashion style.webp",
     "prompt": "create an image of a mango in Fashion style",
@@ -3083,19 +3107,14 @@
     "name": "Fauvism",
     "image": "image of a mango in Fauvism style.webp",
     "prompt": "create an image of a mango in Fauvism style",
-    "description": "An early 20th-century art movement using wild, vibrant colors and bold brushwork."
+    "description": "An early 20th-century art movement using wild, vibrant colors and bold brushwork.",
+    "featured": "yes"
   },
   {
     "name": "Female Horror Game Protagonist Fashion",
     "image": "image of a mango in Female Horror Game Protagonist Fashion style.webp",
     "prompt": "create an image of a mango in Female Horror Game Protagonist Fashion style",
     "description": "A practical yet stylish aesthetic inspired by video game heroines in survival horror."
-  },
-  {
-    "name": "Female Manipulator",
-    "image": "image of a mango in Female Manipulator style.webp",
-    "prompt": "create an image of a mango in Female Manipulator style",
-    "description": "A controversial aesthetic romanticizing complex, morally ambiguous female characters."
   },
   {
     "name": "Female Protagonist",
@@ -3191,7 +3210,8 @@
     "name": "Flat Design",
     "image": "image of a mango in Flat Design style.webp",
     "prompt": "create an image of a mango in Flat Design style",
-    "description": "A minimalist design aesthetic with simple shapes, solid colors, and no gradients."
+    "description": "A minimalist design aesthetic with simple shapes, solid colors, and no gradients.",
+    "featured": "yes"
   },
   {
     "name": "Fleischer Style",
@@ -3284,12 +3304,6 @@
     "description": "A design aesthetic blending suburban and urban elements from the Frutiger family."
   },
   {
-    "name": "Frazzled Englishwoman",
-    "image": "image of a mango in Frazzled Englishwoman style.webp",
-    "prompt": "create an image of a mango in Frazzled Englishwoman style",
-    "description": "A charmingly chaotic British aesthetic with messy elegance and scattered sophistication."
-  },
-  {
     "name": "Freakbeat",
     "image": "image of a mango in Freakbeat style.webp",
     "prompt": "create an image of a mango in Freakbeat style",
@@ -3329,7 +3343,8 @@
     "name": "Frutiger Aurora",
     "image": "image of a mango in Frutiger Aurora style.webp",
     "prompt": "create an image of a mango in Frutiger Aurora style",
-    "description": "A Frutiger variant featuring aurora borealis colors and ethereal light effects."
+    "description": "A Frutiger variant featuring aurora borealis colors and ethereal light effects.",
+    "featured": "yes"
   },
   {
     "name": "Frutiger Eco",
@@ -3371,7 +3386,8 @@
     "name": "Future Synth",
     "image": "image of a mango in Future Synth style.webp",
     "prompt": "create an image of a mango in Future Synth style",
-    "description": "A retro-futuristic electronic music aesthetic with synthesizers and neon."
+    "description": "A retro-futuristic electronic music aesthetic with synthesizers and neon.",
+    "featured": "yes"
   },
   {
     "name": "Futurepop",
@@ -3698,12 +3714,6 @@
     "description": "Medieval architectural style with pointed arches, flying buttresses, and stained glass."
   },
   {
-    "name": "Gothic Belly Dance",
-    "image": "image of a mango in Gothic Belly Dance style.webp",
-    "prompt": "create an image of a mango in Gothic Belly Dance style",
-    "description": "A belly dance fusion incorporating gothic aesthetics and dark theatrical elements."
-  },
-  {
     "name": "Gothic Lolita",
     "image": "image of a mango in Gothic Lolita style.webp",
     "prompt": "create an image of a mango in Gothic Lolita style",
@@ -3839,7 +3849,8 @@
     "name": "Groovival",
     "image": "image of a mango in Groovival style.webp",
     "prompt": "create an image of a mango in Groovival style",
-    "description": "A retro aesthetic blending groovy 1970s vibes with revival elements."
+    "description": "A retro aesthetic blending groovy 1970s vibes with revival elements.",
+    "featured": "yes"
   },
   {
     "name": "Grunge",
@@ -4043,13 +4054,15 @@
     "name": "HexD",
     "image": "image of a mango in HexD style.webp",
     "prompt": "create an image of a mango in HexD style",
-    "description": "A hexagonal design aesthetic with geometric patterns and digital styling."
+    "description": "A hexagonal design aesthetic with geometric patterns and digital styling.",
+    "featured": "yes"
   },
   {
     "name": "Hexatron",
     "image": "image of a mango in Hexatron style.webp",
     "prompt": "create an image of a mango in Hexatron style",
-    "description": "A futuristic aesthetic featuring hexagonal grids and electronic elements."
+    "description": "A futuristic aesthetic featuring hexagonal grids and electronic elements.",
+    "featured": "yes"
   },
   {
     "name": "High-Tech",
@@ -4196,12 +4209,6 @@
     "description": "An LGBTQ+ ballroom culture aesthetic with houses, voguing, and competitive performance."
   },
   {
-    "name": "How To Create A Wiki Article",
-    "image": "image of a mango in How To Create A Wiki Article style.webp",
-    "prompt": "create an image of a mango in How To Create A Wiki Article style",
-    "description": "A meta-aesthetic guide for documenting and cataloging aesthetic information."
-  },
-  {
     "name": "How To Find Your Aesthetic",
     "image": "image of a mango in How To Find Your Aesthetic style.webp",
     "prompt": "create an image of a mango in How To Find Your Aesthetic style",
@@ -4277,7 +4284,8 @@
     "name": "Impressionism",
     "image": "image of a mango in Impressionism style.webp",
     "prompt": "create an image of a mango in Impressionism style",
-    "description": "A 19th-century art movement capturing light and color with loose brushwork."
+    "description": "A 19th-century art movement capturing light and color with loose brushwork.",
+    "featured": "yes"
   },
   {
     "name": "Incroyables et Merveilleuses",
@@ -4517,7 +4525,8 @@
     "name": "Kawaii",
     "image": "image of a mango in Kawaii style.webp",
     "prompt": "create an image of a mango in Kawaii style",
-    "description": "A Japanese aesthetic of cuteness with pastels, childlike elements, and adorable characters."
+    "description": "A Japanese aesthetic of cuteness with pastels, childlike elements, and adorable characters.",
+    "featured": "yes"
   },
   {
     "name": "Kawaii Gamer",
@@ -4721,7 +4730,8 @@
     "name": "Les Fauves",
     "image": "image of a mango in Les Fauves style.webp",
     "prompt": "create an image of a mango in Les Fauves style",
-    "description": "A French art movement using wild, vibrant colors and bold brushstrokes."
+    "description": "A French art movement using wild, vibrant colors and bold brushstrokes.",
+    "featured": "yes"
   },
   {
     "name": "Libertywave",
@@ -4739,7 +4749,8 @@
     "name": "Lightcore",
     "image": "image of a mango in Lightcore style.webp",
     "prompt": "create an image of a mango in Lightcore style",
-    "description": "An aesthetic celebrating light, brightness, luminosity, and radiance."
+    "description": "An aesthetic celebrating light, brightness, luminosity, and radiance.",
+    "featured": "yes"
   },
   {
     "name": "Lighthousecore",
@@ -4751,7 +4762,8 @@
     "name": "Ligne Claire",
     "image": "image of a mango in Ligne Claire style.webp",
     "prompt": "create an image of a mango in Ligne Claire style",
-    "description": "A European comic book aesthetic with clear lines and flat colors."
+    "description": "A European comic book aesthetic with clear lines and flat colors.",
+    "featured": "yes"
   },
   {
     "name": "Liminal Spaces",
@@ -4853,7 +4865,8 @@
     "name": "Low Poly",
     "image": "image of a mango in Low Poly style.webp",
     "prompt": "create an image of a mango in Low Poly style",
-    "description": "A 3D art aesthetic with minimalist polygons and geometric simplification."
+    "description": "A 3D art aesthetic with minimalist polygons and geometric simplification.",
+    "featured": "yes"
   },
   {
     "name": "Lowbrow",
@@ -5114,12 +5127,6 @@
     "description": "An aesthetic celebrating weirdness, peculiarity, and unconventional imagery."
   },
   {
-    "name": "Office Siren",
-    "image": "image of a mango in Office Siren style.webp",
-    "prompt": "create an image of a mango in Office Siren style",
-    "description": "A seductive corporate aesthetic blending professional wear with allure."
-  },
-  {
     "name": "Old Hollywood",
     "image": "image of a mango in Old Hollywood style.webp",
     "prompt": "create an image of a mango in Old Hollywood style",
@@ -5159,13 +5166,15 @@
     "name": "Palewave",
     "image": "image of a mango in Palewave style.webp",
     "prompt": "create an image of a mango in Palewave style",
-    "description": "A minimalist aesthetic with washed-out pastels and soft tones."
+    "description": "A minimalist aesthetic with washed-out pastels and soft tones.",
+    "featured": "yes"
   },
   {
     "name": "Pastel",
     "image": "image of a mango in Pastel style.webp",
     "prompt": "create an image of a mango in Pastel style",
-    "description": "An aesthetic using soft, light, desaturated colors for gentle visual impact."
+    "description": "An aesthetic using soft, light, desaturated colors for gentle visual impact.",
+    "featured": "yes"
   },
   {
     "name": "Pastel Goth",
@@ -5213,7 +5222,8 @@
     "name": "Pixelscape",
     "image": "image of a mango in Pixelscape style.webp",
     "prompt": "create an image of a mango in Pixelscape style",
-    "description": "A pixel art aesthetic celebrating retro video game graphics and 8-bit imagery."
+    "description": "A pixel art aesthetic celebrating retro video game graphics and 8-bit imagery.",
+    "featured": "yes"
   },
   {
     "name": "Poolcore",
@@ -5225,7 +5235,8 @@
     "name": "Pop Art",
     "image": "image of a mango in Pop Art style.webp",
     "prompt": "create an image of a mango in Pop Art style",
-    "description": "A 1960s art movement celebrating mass culture and consumer products."
+    "description": "A 1960s art movement celebrating mass culture and consumer products.",
+    "featured": "yes"
   },
   {
     "name": "Pop-Punk Emo",
@@ -5285,7 +5296,8 @@
     "name": "Psychedelia",
     "image": "image of a mango in Psychedelia style.webp",
     "prompt": "create an image of a mango in Psychedelia style",
-    "description": "A 1960s counterculture aesthetic with trippy visuals, bright colors, and surrealism."
+    "description": "A 1960s counterculture aesthetic with trippy visuals, bright colors, and surrealism.",
+    "featured": "yes"
   },
   {
     "name": "Punk",
@@ -5351,7 +5363,8 @@
     "name": "Retrowave",
     "image": "image of a mango in Retrowave style.webp",
     "prompt": "create an image of a mango in Retrowave style",
-    "description": "A 1980s-inspired aesthetic with neon, synthwave, and nostalgic futurism."
+    "description": "A 1980s-inspired aesthetic with neon, synthwave, and nostalgic futurism.",
+    "featured": "yes"
   },
   {
     "name": "Riot Grrrl",
