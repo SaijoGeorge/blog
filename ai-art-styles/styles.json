@@ -1452,6 +1452,12 @@
     "description": "A recognizable character archetype or recurring pattern in storytelling and visual media."
   },
   {
+    "name": "Charcoal",
+    "image": "image of a mango in Charcoal style.webp",
+    "prompt": "create an image of a mango in Charcoal style",
+    "description": "A monochrome aesthetic using deep blacks and subtle smudges, capturing expressive shading and raw texture."
+  },
+  {
     "name": "Chartreuse",
     "image": "image of a mango in Chartreuse style.webp",
     "prompt": "create an image of a mango in Chartreuse style",
@@ -3726,6 +3732,13 @@
     "description": "A dark aesthetic combining Victorian era fashion with gothic elements."
   },
   {
+    "name": "Graffiti",
+    "image": "image of a mango in Graffiti style.webp",
+    "prompt": "create an image of a mango in Graffiti style",
+    "description": "A vibrant urban style bursting with colour, spray paint textures, and expressive street culture energy.",
+    "featured": "yes"
+  },
+  {
     "name": "Grandmacore",
     "image": "image of a mango in Grandmacore style.webp",
     "prompt": "create an image of a mango in Grandmacore style",
@@ -4740,6 +4753,13 @@
     "description": "An aesthetic celebrating American freedom, patriotism, and liberty values."
   },
   {
+    "name": "Light",
+    "image": "image of a mango in light style.webp",
+    "prompt": "create an image of a mango made of light",
+    "description": "An ethereal concept where the item appears sculpted from pure light, glowing with radiant, intangible beauty.",
+    "featured": "yes"
+  }
+  {
     "name": "Light Academia",
     "image": "image of a mango in Light Academia style.webp",
     "prompt": "create an image of a mango in Light Academia style",
@@ -5007,6 +5027,13 @@
     "description": "A Japanese forest girl aesthetic with natural fabrics and earthy layering."
   },
   {
+    "name": "Mosaic",
+    "image": "image of a mango in Mosaic style.webp",
+    "prompt": "create an image of a mango in Mosaic style",
+    "description": "An artistic composition made from small coloured tiles or glass pieces, forming a textured and geometric representation.",
+    "featured": "yes"
+  },
+  {
     "name": "Mosscore",
     "image": "image of a mango in Mosscore style.webp",
     "prompt": "create an image of a mango in Mosscore style",
@@ -5127,6 +5154,13 @@
     "description": "An aesthetic celebrating weirdness, peculiarity, and unconventional imagery."
   },
   {
+    "name": "Oil Painting",
+    "image": "image of a mango in Oil painting style.webp",
+    "prompt": "create an image of a mango in Oil painting style",
+    "description": "A classic fine art style rich with texture, depth, and vivid colour blending, evoking traditional realism and timeless artistry.",
+    "featured": "yes"
+  },
+  {
     "name": "Old Hollywood",
     "image": "image of a mango in Old Hollywood style.webp",
     "prompt": "create an image of a mango in Old Hollywood style",
@@ -5167,6 +5201,13 @@
     "image": "image of a mango in Palewave style.webp",
     "prompt": "create an image of a mango in Palewave style",
     "description": "A minimalist aesthetic with washed-out pastels and soft tones.",
+    "featured": "yes"
+  },
+  {
+    "name": "Papercraft",
+    "image": "image of a mango in Papercraft style.webp",
+    "prompt": "create an image of a mango in Papercraft style",
+    "description": "An aesthetic built from layered cut paper, combining texture, shadow, and dimension for a handcrafted feel.",
     "featured": "yes"
   },
   {
@@ -5245,6 +5286,13 @@
     "description": "A blend of pop-punk's energy with emo's emotional expression."
   },
   {
+    "name": "Porcelain",
+    "image": "image of a mango in porcelain style.webp",
+    "prompt": "create an image of a mango made of porcelain",
+    "description": "A smooth, glossy aesthetic resembling fine china, highlighting fragile elegance and refined craftsmanship.",
+    "featured": "yes"
+  },
+  {
     "name": "Post-Apocalyptic",
     "image": "image of a mango in Post-Apocalyptic style.webp",
     "prompt": "create an image of a mango in Post-Apocalyptic style",
@@ -5316,6 +5364,13 @@
     "image": "image of a mango in Queercore style.webp",
     "prompt": "create an image of a mango in Queercore style",
     "description": "A LGBTQ+ punk movement aesthetic with radical queer politics and DIY culture."
+  },
+  {
+    "name": "Quilling",
+    "image": "image of a mango in Quilling style.webp",
+    "prompt": "create an image of a mango in Quilling style",
+    "description": "An intricate art form using coiled paper strips arranged to create ornate, detailed, and dimensional designs.",
+    "featured": "yes"
   },
   {
     "name": "Rainbowcore",
@@ -5517,10 +5572,23 @@
     "description": "An aesthetic celebrating outer space, stars, galaxies, and cosmic wonder."
   },
   {
+    "name": "Stained Glass",
+    "image": "image of a mango in Stained Glass style.webp",
+    "prompt": "create an image of a mango in Stained Glass style",
+    "description": "A luminous art style inspired by coloured glass panels joined with lead, radiating light and intricate patterns.",
+    "featured": "yes"
+  },
+  {
     "name": "Steampunk",
     "image": "image of a mango in Steampunk style.webp",
     "prompt": "create an image of a mango in Steampunk style",
     "description": "A Victorian-era aesthetic with steam power, gears, brass, and retrofuturism."
+  },
+  {
+    "name": "Stencil",
+    "image": "image of a mango in Stencil style.webp",
+    "prompt": "create an image of a mango in Stencil style",
+    "description": "A bold, graphic aesthetic featuring sharp contrasts and clean outlines, often used in street art and printmaking."
   },
   {
     "name": "Streetcore",
@@ -5665,6 +5733,13 @@
     "image": "image of a mango in Warcore style.webp",
     "prompt": "create an image of a mango in Warcore style",
     "description": "A military aesthetic celebrating warfare, combat gear, and tactical equipment."
+  },
+  {
+    "name": "Watercolor",
+    "image": "image of a mango in Watercolor style.webp",
+    "prompt": "create an image of a mango in Watercolor style",
+    "description": "A delicate painting style with soft gradients, transparent washes, and flowing colour blends that evoke calm and creativity.",
+    "featured": "yes"
   },
   {
     "name": "Webcore",
