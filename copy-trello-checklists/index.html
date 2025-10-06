@@ -1,17 +1,44 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<title>Copy Trello Checklist - Saijo George</title>
-<meta name="description" content="Effortlessly copy trello checklists with one click." />
-<meta name="author" content="Saijo George" />
-<meta name="robots" content="all" />
-<link rel="canonical" href="https://saijogeorge.com/copy-trello-checklists/" />
-<meta name="theme-color" content="#F5AB35" />
-<script type="application/ld+json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="all">
+  <meta name="language" content="en">
+  <meta name="author" content="Saijo George">
+  <meta name="theme-color" content="#F5AB35">
+  
+  <!-- Primary Meta Tags -->
+  <title>Copy Trello Checklists - Saijo George</title>
+  <meta name="title" content="Copy Trello Checklists - Saijo George">
+  <meta name="description" content="Effortlessly copy Trello checklists with one click. Handle multiple checklists, preserve formatting, and more.">
+  <link rel="canonical" href="https://saijogeorge.com/copy-trello-checklists/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saijogeorge.com/copy-trello-checklists/">
+  <meta property="og:title" content="Copy Trello Checklists - Saijo George">
+  <meta property="og:description" content="Effortlessly copy Trello checklists with one click. Handle multiple checklists, preserve formatting, and more.">
+  <meta property="og:image" content="https://saijogeorge.com/images/banner/copy-trello-checklists.png">
+  <meta property="og:site_name" content="SaijoGeorge.com">
+  <meta property="article:author" content="https://www.facebook.com/SaijoGeorge">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://saijogeorge.com/copy-trello-checklists/">
+  <meta property="twitter:title" content="Copy Trello Checklists - Saijo George">
+  <meta property="twitter:description" content="Effortlessly copy Trello checklists with one click. Handle multiple checklists, preserve formatting, and more.">
+  <meta property="twitter:image" content="https://saijogeorge.com/images/banner/copy-trello-checklists.png">
+  <meta property="twitter:site" content="@SaijoGeorge">
+  <meta property="twitter:creator" content="@SaijoGeorge">
+  <meta property="twitter:domain" content="https://saijogeorge.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://saijogeorge.com/favicon.ico">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
           {
             "@context": "http://schema.org",
             "@type": "BreadcrumbList",
@@ -34,220 +61,271 @@
               }
             ]
           }
-        </script>
-<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
-<meta property="og:site_name" content="SaijoGeorge.com" />
-<meta property="og:title" content="Copy Trello Checklists - Saijo George" />
-<meta property="og:description" content="Effortlessly copy trello checklists with one click." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://saijogeorge.com/copy-trello-checklists/" />
-<meta property="og:image" content="https://saijogeorge.com/images/banner/copy-trello-checklists.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@SaijoGeorge" />
-<meta name="twitter:creator" content="@SaijoGeorge" />
-<meta name="twitter:title" content="SaijoGeorge.com" />
-<meta name="twitter:domain" content="https://saijogeorge.com" />
-<meta name="twitter:description" content="Copy Trello Checklists - Saijo George" />
-<meta name="twitter:image" content="https://saijogeorge.com/images/banner/copy-trello-checklists.png" />
-<link rel="shortcut icon" href="../favicon.ico" />
-<style>
-        /* This will be used for the alert messages */
-        .alert {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .alert.show {
-            opacity: 1;
-            visibility: visible;
-        }
-                p a, li a 
-        {
-          text-decoration: underline;
-        }
-        ul, ol {
-    padding-left: 20px;
-}
-
-ul li {
-    list-style: none;
-    position: relative;
-}
-
-ul li::before {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 10px;
-    width: 10px;
-    background: linear-gradient(135deg, #a855f7, #ec4899);
-    border-radius: 50%;
-}
-
-ol {
-    counter-reset: list-counter;
-}
-
-ol li {
-    list-style: none;
-    position: relative;
-    counter-increment: list-counter;
-}
-
-ol li::before {
-    content: counter(list-counter);
-    position: absolute;
-    left: -35px; /* Adjusted for better positioning */
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-weight: bold;
-    background: linear-gradient(135deg, #a855f7, #ec4899);
-    width: 20px; /* Ensures a circle shape */
-    height: 20px; /* Ensures a circle shape */
-    line-height: 20px; /* Aligns the text vertically */
-    border-radius: 50%;
-    text-align: center;
-    font-size: 12px;
-}
-    </style>
+  </script>
 </head>
-<body class="bg-gray-100 p-4 md:py-10 md:px-0">
-<div class="container mx-auto">
-<h1 class="text-3xl md:text-5xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Copy Trello Checklists</h1>
-<p class="mt-4 mb-6 text-lg text-gray-700 leading-relaxed">This bookmarklet simplifies the process of copying checklists from one Trello card to another. No need to fumble around with the "Copy items from…" dropdown with a gazillion checklists to choose from. The tool is also capable of handling multiple checklists, enabling you to copy all the checklist items to your clipboard and then effortlessly paste them into a different list.</p><br>
-<a class="bg-blue-500 hover:bg-blue-400 text-white font-extrabold text-lg py-4 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded" href='javascript:(function(){try{const RID=&quot;sg-trello-checklist-helper&quot;;const prev=document.getElementById(RID);if(prev)prev.remove();function findCardBack(){return document.querySelector(&#39;#layer-manager-card-back&#39;)||document.querySelector(&#39;[data-testid=&quot;layer-manager-card-back&quot;]&#39;)||document.querySelector(&#39;[data-testid=&quot;LayerManager&quot;]&#39;)||document.querySelector(&#39;[class*=&quot;layer-manager&quot;] [class*=&quot;card-back&quot;]&#39;)||null}const root=findCardBack();if(!root){alert(&quot;Open a Trello card first&quot;);return}const host=document.createElement(&quot;div&quot;);host.id=RID;host.style.cssText=&quot;all:initial;position:fixed;inset:0;z-index:2147483647;&quot;;document.body.appendChild(host);const ifr=document.createElement(&quot;iframe&quot;);ifr.title=&quot;Copy Trello Checklists&quot;;ifr.style.cssText=&quot;all:initial;width:100%;height:100%;border:0;background:transparent;&quot;;host.appendChild(ifr);const css=&quot;*{box-sizing:border-box}body{margin:0;font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#111;background:transparent}.wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(17,24,39,.08)}.modal{width:min(720px,92vw);max-height:88vh;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.2);padding:16px 16px 12px;display:flex;flex-direction:column;gap:12px;position:relative}.title{font-size:18px;font-weight:700;margin:0 28px 2px 0}.byline{font-size:12px;color:#6b7280;margin-top:-6px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{appearance:none;border:1px solid #d1d5db;background:#f9fafb;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:14px}.btn[disabled]{opacity:.6;cursor:default}.btn:hover{background:#f3f4f6}.close{position:absolute;top:8px;right:8px;border:none;background:transparent;cursor:pointer;width:28px;height:28px;border-radius:6px;font-size:18px;line-height:28px}.close:hover{background:#f3f4f6}.controls{display:flex;align-items:center;gap:12px}.toggle{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#374151}textarea{width:100%;height:260px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.5;padding:10px;border:1px solid #e5e7eb;border-radius:8px;background:#f9fafb}.footer{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6b7280}.footer a{color:#2563eb;text-decoration:none}.footer a:hover{text-decoration:underline}.copyok{font-size:12px;color:#065f46;background:#ecfdf5;border:1px solid #a7f3d0;padding:4px 8px;border-radius:6px;display:none}&quot;;const html=&#39;<!doctype html><html><head><meta charset=&quot;utf-8&quot;><style>&#39;+css+&#39;</style></head><body><div class=&quot;wrap&quot;><div class=&quot;modal&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-label=&quot;Copy Trello Checklists&quot;><button class=&quot;close&quot; title=&quot;Close&quot; aria-label=&quot;Close&quot;>&amp;times;</button><h2 class=&quot;title&quot;>Copy Trello Checklists</h2><div class=&quot;byline&quot;>by <a href=&quot;https://saijogeorge.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Saijo George</a></div><div class=&quot;row&quot;><button class=&quot;btn&quot; data-mode=&quot;all&quot;>1) Copy All Items</button><button class=&quot;btn&quot; data-mode=&quot;unchecked&quot;>2) Copy ☐ Unchecked Items</button><button class=&quot;btn&quot; data-mode=&quot;checked&quot;>3) Copy ☑ Checked Items</button></div><div class=&quot;controls&quot;><label class=&quot;toggle&quot;><input type=&quot;checkbox&quot; id=&quot;num&quot;> Number items</label><button class=&quot;btn&quot; id=&quot;copy&quot;>Copy to clipboard</button><span class=&quot;copyok&quot; id=&quot;ok&quot;>Copied</span></div><textarea id=&quot;out&quot; placeholder=&quot;Output appears here...&quot;></textarea><div class=&quot;footer&quot;><span>Not working? Let me know.</span><span><a href=&quot;https://saijogeorge.com/seo-tools/copy-trello-checklists/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>check for latest version</a></span></div></div></div></body></html>&#39;;ifr.srcdoc=html;function hasText(el,txt){return el&amp;&amp;el.textContent&amp;&amp;el.textContent.toLowerCase().includes(txt.toLowerCase())}function nodeToMd(n){if(!n)return&quot;&quot;;if(n.nodeType===Node.TEXT_NODE)return n.nodeValue.replace(/\s+/g,&quot; &quot;);if(n.nodeType!==Node.ELEMENT_NODE)return&quot;&quot;;const t=n.tagName.toLowerCase();let inner=Array.from(n.childNodes).map(nodeToMd).join(&quot;&quot;);if(t===&quot;strong&quot;||t===&quot;b&quot;)return&quot;**&quot;+inner.trim()+&quot;**&quot;;if(t===&quot;em&quot;||t===&quot;i&quot;)return&quot;*&quot;+inner.trim()+&quot;*&quot;;if(t===&quot;code&quot;)return&quot;`&quot;+inner.trim()+&quot;`&quot;;if(t===&quot;a&quot;){const href=n.getAttribute(&quot;href&quot;)||&quot;#&quot;;const text=inner.trim()||href;return&quot;[&quot;+text+&quot;](&quot;+href+&quot;)&quot;}if(t===&quot;br&quot;)return&quot;\n&quot;;if(t===&quot;p&quot;||t===&quot;div&quot;)return inner.trim();return inner}function htmlToMd(el){return nodeToMd(el).replace(/[ \t]+\n/g,&quot;\n&quot;).trim()}function liText(li){const c=li.cloneNode(true);c.querySelectorAll(&#39;input[type=&quot;checkbox&quot;]&#39;).forEach(i=>i.remove());return htmlToMd(c).trim()}function isChecked(li){const i=li.querySelector(&#39;input[type=&quot;checkbox&quot;]&#39;);if(!i)return false;const a=i.getAttribute(&quot;aria-checked&quot;);const ck=i.hasAttribute(&quot;checked&quot;);return a===&quot;true&quot;||ck}function isUnchecked(li){const i=li.querySelector(&#39;input[type=&quot;checkbox&quot;]&#39;);if(!i)return true;return i.getAttribute(&quot;aria-checked&quot;)===&quot;false&quot;}function itemCount(){return root.querySelectorAll(&#39;[data-testid=&quot;checklist-items&quot;] li&#39;).length}function qAllShow(){return Array.from(root.querySelectorAll(&#39;button,[role=&quot;button&quot;]&#39;)).filter(b=>hasText(b,&#39;show checked items&#39;))}function sleep(ms){return new Promise(r=>setTimeout(r,ms))}async function expandAndWait(){const btns=qAllShow();btns.forEach(b=>{try{b.click()}catch(_){}});let prev=itemCount(),lastChange=performance.now();const deadline=performance.now()+5000;while(performance.now()<deadline){await sleep(90);const now=itemCount();const still=qAllShow().length>0;if(now!==prev){prev=now;lastChange=performance.now()}if(!still&amp;&amp;performance.now()-lastChange>250)break}await new Promise(r=>requestAnimationFrame(()=>r()))}function getScrollContainer(){const header=root.querySelector(&#39;section[data-testid=&quot;card-back-header&quot;]&#39;);let c=header?header.closest(&#39;main&#39;):null;if(c&amp;&amp;c.scrollHeight>c.clientHeight+2)return c;let el=header||root;while(el){try{const cs=getComputedStyle(el);if(cs&amp;&amp;(cs.overflowY===&quot;auto&quot;||cs.overflowY===&quot;scroll&quot;)&amp;&amp;el.scrollHeight>el.clientHeight+2)return el}catch(_){ }el=el.parentElement}return document.scrollingElement||document.documentElement}async function sweepScroll(){const c=getScrollContainer();const getTop=()=>(&#39;scrollTop&#39;in c)?c.scrollTop:window.pageYOffset;const setTop=(v)=>{if(&#39;scrollTop&#39;in c){c.scrollTo({top:v,behavior:&#39;instant&#39;})}else{window.scrollTo({top:v,behavior:&#39;instant&#39;})}};const max=()=>(&#39;scrollHeight&#39;in c?c.scrollHeight-c.clientHeight:Math.max(0,document.documentElement.scrollHeight-window.innerHeight));let last=itemCount(),idleAt=performance.now();const start=performance.now(),limit=8000,step=Math.max(120,(c.clientHeight||window.innerHeight)-140);while(performance.now()-start<limit){const t=Math.min(getTop()+step,max());setTop(t);await new Promise(r=>requestAnimationFrame(()=>setTimeout(r,60)));const now=itemCount();if(now!==last){last=now;idleAt=performance.now()}if(t>=max()-2&amp;&amp;performance.now()-idleAt>300)break}}function titleForBlock(block){let t=block.querySelector(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;);if(t)return t.textContent.trim();let p=block.previousElementSibling;for(let i=0;i<8&amp;&amp;p;i++){if(p.matches&amp;&amp;p.matches(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;))return p.textContent.trim();const cand=p.querySelector&amp;&amp;p.querySelector(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;);if(cand)return cand.textContent.trim();p=p.previousElementSibling}let parent=block.parentElement;for(let d=0;d<4&amp;&amp;parent;d++){const titles=parent.querySelectorAll(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;);let best=null;titles.forEach(h=>{if(h.compareDocumentPosition(block)&amp;Node.DOCUMENT_POSITION_FOLLOWING){if(!best||(best.compareDocumentPosition(h)&amp;Node.DOCUMENT_POSITION_FOLLOWING))best=h}});if(best)return best.textContent.trim();parent=parent.parentElement}const all=Array.from(root.querySelectorAll(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;));let best=null;for(const h of all){if(h.compareDocumentPosition(block)&amp;Node.DOCUMENT_POSITION_FOLLOWING){if(!best||(best.compareDocumentPosition(h)&amp;Node.DOCUMENT_POSITION_FOLLOWING))best=h}}return best?best.textContent.trim():&quot;Checklist&quot;}function build(mode,numbered){const sections=[];const blocks=Array.from(root.querySelectorAll(&#39;[data-testid=&quot;checklist-items&quot;]&#39;));blocks.forEach(block=>{const title=titleForBlock(block);if(!title)return;let items=Array.from(block.querySelectorAll(&#39;li&#39;));if(mode===&quot;checked&quot;)items=items.filter(isChecked);else if(mode===&quot;unchecked&quot;)items=items.filter(isUnchecked);let n=0;const lines=items.map(li=>{const txt=liText(li);if(!txt)return null;n+=1;return numbered?`${n}) ${txt}`:txt}).filter(Boolean);const sec=[&quot;##&quot;+title,&quot;-------------------&quot;,...(lines.length?lines:[]),&quot;&quot;,&quot;-------------------&quot;,&quot;&quot;].join(&quot;\n&quot;);sections.push(sec)});return sections.join(&quot;\n&quot;)}async function doCopy(text){try{if(navigator.clipboard&amp;&amp;window.isSecureContext){await navigator.clipboard.writeText(text);return true}}catch(_){ }const ta=document.createElement(&quot;textarea&quot;);ta.value=text;ta.style.position=&quot;fixed&quot;;ta.style.left=&quot;-9999px&quot;;document.body.appendChild(ta);ta.focus();ta.select();let ok=false;try{ok=document.execCommand(&quot;copy&quot;)}catch(_){ }ta.remove();return ok}ifr.addEventListener(&quot;load&quot;,function(){try{let lastMode=null;const doc=ifr.contentDocument;const win=ifr.contentWindow;const $=s=>doc.querySelector(s);const setDisabled=(sel,on)=>{const el=$(sel);if(el)el.disabled=!!on};async function run(mode,btn){try{lastMode=mode;if(btn)btn.disabled=true;if(mode===&quot;all&quot;){await expandAndWait()}await sweepScroll();const numbered=$(&quot;#num&quot;).checked;const text=build(mode,numbered);$(&quot;#out&quot;).value=text||&quot;&quot;;const copied=await doCopy(text);const okEl=$(&quot;#ok&quot;);okEl.style.display=copied?&quot;inline-block&quot;:&quot;none&quot;;if(copied)setTimeout(()=>okEl.style.display=&quot;none&quot;,1200)}catch(err){console.error(err);$(&quot;#out&quot;).value=&quot;Error: &quot;+(err&amp;&amp;err.message?err.message:String(err))}finally{if(btn)btn.disabled=false}}doc.addEventListener(&quot;click&quot;,function(ev){const btn=ev.target.closest&amp;&amp;ev.target.closest(&quot;.btn[data-mode]&quot;);if(btn){run(btn.getAttribute(&quot;data-mode&quot;),btn)}});$(&quot;#num&quot;).addEventListener(&quot;change&quot;,function(){if(!lastMode)return;$(&quot;#out&quot;).value=build(lastMode,this.checked)});$(&quot;#copy&quot;).addEventListener(&quot;click&quot;,function(){doCopy($(&quot;#out&quot;).value||&quot;&quot;).then(c=>{const okEl=$(&quot;#ok&quot;);okEl.style.display=c?&quot;inline-block&quot;:&quot;none&quot;;if(c)setTimeout(()=>okEl.style.display=&quot;none&quot;,1200)})});doc.querySelector(&quot;.close&quot;).addEventListener(&quot;click&quot;,function(){try{host.remove()}catch(_){}});win.addEventListener(&quot;keydown&quot;,function(e){if(e.key===&quot;Escape&quot;){try{host.remove()}catch(_){}}});}catch(err){console.error(err)}});}catch(err){console.error(err);alert(&quot;Bookmarklet error - see console&quot;)}})();'>Copy Trello Checklists v3.0</a>
+<body class="h-full bg-gray-50 text-gray-800">
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <a href="https://saijogeorge.com" class="flex items-center gap-2 text-xl font-extrabold tracking-tight">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 600 600" version="1.1"><path d="M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563" stroke="none" fill="#ffffff" fill-rule="evenodd"/><path d="M 263.500 3.656 C 192.198 13.884, 134.411 42.843, 85.970 92.623 C 42.552 137.240, 14.683 193.389, 4.825 256.107 C 2.845 268.702, 2.562 274.248, 2.562 300.500 C 2.562 334.368, 3.900 346.463, 10.590 373.080 C 37.340 479.517, 120.412 563.173, 226 590.003 C 251.504 596.483, 272.203 599, 300 599 C 327.797 599, 348.496 596.483, 374 590.003 C 458.897 568.431, 530.899 509.192, 569.084 429.500 C 581.543 403.496, 590.392 374.834, 595.171 345 C 597.234 332.121, 597.490 327.146, 597.465 300.500 C 597.434 266.241, 596.033 253.934, 589.056 226.607 C 562.071 120.913, 478.979 37.617, 374 11.019 C 346.518 4.056, 342.846 3.664, 303 3.435 C 282.925 3.320, 265.150 3.419, 263.500 3.656 M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092" stroke="none" fill="#fbdb04" fill-rule="evenodd"/><path d="M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092 M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563" stroke="none" fill="#2474de" fill-rule="evenodd"/></svg>
+        <span>Saijo George</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="#install" class="rounded-xl bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-blue-500">Install</a>
+      </div>
+    </div>
+  </header>
 
-</div>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto grid gap-8 px-4 py-16 md:grid-cols-2 md:items-center">
+      <div>
+        <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Copy Trello Checklists</h1>
+        <div id="install"></div>
+        <p class="mt-4 max-w-[60ch] text-lg text-gray-600">
+          This bookmarklet simplifies the process of copying checklists from one Trello card to another. No need to fumble around with the "Copy items from…" dropdown with a gazillion checklists to choose from. The tool is also capable of handling multiple checklists, enabling you to copy all the checklist items to your clipboard and then effortlessly paste them into a different list.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a id="bookmarkletLink" class="drag-hint cursor-move rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white shadow hover:bg-blue-500 active:translate-y-px" draggable="true" href='javascript:(function(){try{const RID=&quot;sg-trello-checklist-helper&quot;;const prev=document.getElementById(RID);if(prev)prev.remove();function findCardBack(){return document.querySelector(&#39;#layer-manager-card-back&#39;)||document.querySelector(&#39;[data-testid=&quot;layer-manager-card-back&quot;]&#39;)||document.querySelector(&#39;[data-testid=&quot;LayerManager&quot;]&#39;)||document.querySelector(&#39;[class*=&quot;layer-manager&quot;] [class*=&quot;card-back&quot;]&#39;)||null}const root=findCardBack();if(!root){alert(&quot;Open a Trello card first&quot;);return}const host=document.createElement(&quot;div&quot;);host.id=RID;host.style.cssText=&quot;all:initial;position:fixed;inset:0;z-index:2147483647;&quot;;document.body.appendChild(host);const ifr=document.createElement(&quot;iframe&quot;);ifr.title=&quot;Copy Trello Checklists&quot;;ifr.style.cssText=&quot;all:initial;width:100%;height:100%;border:0;background:transparent;&quot;;host.appendChild(ifr);const css=&quot;*{box-sizing:border-box}body{margin:0;font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#111;background:transparent}.wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(17,24,39,.08)}.modal{width:min(720px,92vw);max-height:88vh;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.2);padding:16px 16px 12px;display:flex;flex-direction:column;gap:12px;position:relative}.title{font-size:18px;font-weight:700;margin:0 28px 2px 0}.byline{font-size:12px;color:#6b7280;margin-top:-6px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{appearance:none;border:1px solid #d1d5db;background:#f9fafb;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:14px}.btn[disabled]{opacity:.6;cursor:default}.btn:hover{background:#f3f4f6}.close{position:absolute;top:8px;right:8px;border:none;background:transparent;cursor:pointer;width:28px;height:28px;border-radius:6px;font-size:18px;line-height:28px}.close:hover{background:#f3f4f6}.controls{display:flex;align-items:center;gap:12px}.toggle{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#374151}textarea{width:100%;height:260px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.5;padding:10px;border:1px solid #e5e7eb;border-radius:8px;background:#f9fafb}.footer{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6b7280}.footer a{color:#2563eb;text-decoration:none}.footer a:hover{text-decoration:underline}.copyok{font-size:12px;color:#065f46;background:#ecfdf5;border:1px solid #a7f3d0;padding:4px 8px;border-radius:6px;display:none}&quot;;const html=&#39;<!doctype html><html><head><meta charset=&quot;utf-8&quot;><style>&#39;+css+&#39;</style></head><body><div class=&quot;wrap&quot;><div class=&quot;modal&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-label=&quot;Copy Trello Checklists&quot;><button class=&quot;close&quot; title=&quot;Close&quot; aria-label=&quot;Close&quot;>&amp;times;</button><h2 class=&quot;title&quot;>Copy Trello Checklists</h2><div class=&quot;byline&quot;>by <a href=&quot;https://saijogeorge.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Saijo George</a></div><div class=&quot;row&quot;><button class=&quot;btn&quot; data-mode=&quot;all&quot;>1) Copy All Items</button><button class=&quot;btn&quot; data-mode=&quot;unchecked&quot;>2) Copy ☐ Unchecked Items</button><button class=&quot;btn&quot; data-mode=&quot;checked&quot;>3) Copy ☑ Checked Items</button></div><div class=&quot;controls&quot;><label class=&quot;toggle&quot;><input type=&quot;checkbox&quot; id=&quot;num&quot;> Number items</label><button class=&quot;btn&quot; id=&quot;copy&quot;>Copy to clipboard</button><span class=&quot;copyok&quot; id=&quot;ok&quot;>Copied</span></div><textarea id=&quot;out&quot; placeholder=&quot;Output appears here...&quot;></textarea><div class=&quot;footer&quot;><span>Not working? Let me know.</span><span><a href=&quot;https://saijogeorge.com/seo-tools/copy-trello-checklists/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>check for latest version</a></span></div></div></div></body></html>&#39;;ifr.srcdoc=html;function hasText(el,txt){return el&amp;&amp;el.textContent&amp;&amp;el.textContent.toLowerCase().includes(txt.toLowerCase())}function nodeToMd(n){if(!n)return&quot;&quot;;if(n.nodeType===Node.TEXT_NODE)return n.nodeValue.replace(/\s+/g,&quot; &quot;);if(n.nodeType!==Node.ELEMENT_NODE)return&quot;&quot;;const t=n.tagName.toLowerCase();let inner=Array.from(n.childNodes).map(nodeToMd).join(&quot;&quot;);if(t===&quot;strong&quot;||t===&quot;b&quot;)return&quot;**&quot;+inner.trim()+&quot;**&quot;;if(t===&quot;em&quot;||t===&quot;i&quot;)return&quot;*&quot;+inner.trim()+&quot;*&quot;;if(t===&quot;code&quot;)return&quot;`&quot;+inner.trim()+&quot;`&quot;;if(t===&quot;a&quot;){const href=n.getAttribute(&quot;href&quot;)||&quot;#&quot;;const text=inner.trim()||href;return&quot;[&quot;+text+&quot;](&quot;+href+&quot;)&quot;}if(t===&quot;br&quot;)return&quot;\n&quot;;if(t===&quot;p&quot;||t===&quot;div&quot;)return inner.trim();return inner}function htmlToMd(el){return nodeToMd(el).replace(/[ \t]+\n/g,&quot;\n&quot;).trim()}function liText(li){const c=li.cloneNode(true);c.querySelectorAll(&#39;input[type=&quot;checkbox&quot;]&#39;).forEach(i=>i.remove());return htmlToMd(c).trim()}function isChecked(li){const i=li.querySelector(&#39;input[type=&quot;checkbox&quot;]&#39;);if(!i)return false;const a=i.getAttribute(&quot;aria-checked&quot;);const ck=i.hasAttribute(&quot;checked&quot;);return a===&quot;true&quot;||ck}function isUnchecked(li){const i=li.querySelector(&#39;input[type=&quot;checkbox&quot;]&#39;);if(!i)return true;return i.getAttribute(&quot;aria-checked&quot;)===&quot;false&quot;}function itemCount(){return root.querySelectorAll(&#39;[data-testid=&quot;checklist-items&quot;] li&#39;).length}function qAllShow(){return Array.from(root.querySelectorAll(&#39;button,[role=&quot;button&quot;]&#39;)).filter(b=>hasText(b,&#39;show checked items&#39;))}function sleep(ms){return new Promise(r=>setTimeout(r,ms))}async function expandAndWait(){const btns=qAllShow();btns.forEach(b=>{try{b.click()}catch(_){}});let prev=itemCount(),lastChange=performance.now();const deadline=performance.now()+5000;while(performance.now()<deadline){await sleep(90);const now=itemCount();const still=qAllShow().length>0;if(now!==prev){prev=now;lastChange=performance.now()}if(!still&amp;&amp;performance.now()-lastChange>250)break}await new Promise(r=>requestAnimationFrame(()=>r()))}function getScrollContainer(){const header=root.querySelector(&#39;section[data-testid=&quot;card-back-header&quot;]&#39;);let c=header?header.closest(&#39;main&#39;):null;if(c&amp;&amp;c.scrollHeight>c.clientHeight+2)return c;let el=header||root;while(el){try{const cs=getComputedStyle(el);if(cs&amp;&amp;(cs.overflowY===&quot;auto&quot;||cs.overflowY===&quot;scroll&quot;)&amp;&amp;el.scrollHeight>el.clientHeight+2)return el}catch(_){ }el=el.parentElement}return document.scrollingElement||document.documentElement}async function sweepScroll(){const c=getScrollContainer();const getTop=()=>(&#39;scrollTop&#39;in c)?c.scrollTop:window.pageYOffset;const setTop=(v)=>{if(&#39;scrollTop&#39;in c){c.scrollTo({top:v,behavior:&#39;instant&#39;})}else{window.scrollTo({top:v,behavior:&#39;instant&#39;})}};const max=()=>(&#39;scrollHeight&#39;in c?c.scrollHeight-c.clientHeight:Math.max(0,document.documentElement.scrollHeight-window.innerHeight));let last=itemCount(),idleAt=performance.now();const start=performance.now(),limit=8000,step=Math.max(120,(c.clientHeight||window.innerHeight)-140);while(performance.now()-start<limit){const t=Math.min(getTop()+step,max());setTop(t);await new Promise(r=>requestAnimationFrame(()=>setTimeout(r,60)));const now=itemCount();if(now!==last){last=now;idleAt=performance.now()}if(t>=max()-2&amp;&amp;performance.now()-idleAt>300)break}}function titleForBlock(block){let t=block.querySelector(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;);if(t)return t.textContent.trim();let p=block.previousElementSibling;for(let i=0;i<8&amp;&amp;p;i++){if(p.matches&amp;&amp;p.matches(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;))return p.textContent.trim();const cand=p.querySelector&amp;&amp;p.querySelector(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;);if(cand)return cand.textContent.trim();p=p.previousElementSibling}let parent=block.parentElement;for(let d=0;d<4&amp;&amp;parent;d++){const titles=parent.querySelectorAll(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;);let best=null;titles.forEach(h=>{if(h.compareDocumentPosition(block)&amp;Node.DOCUMENT_POSITION_FOLLOWING){if(!best||(best.compareDocumentPosition(h)&amp;Node.DOCUMENT_POSITION_FOLLOWING))best=h}});if(best)return best.textContent.trim();parent=parent.parentElement}const all=Array.from(root.querySelectorAll(&#39;h3[data-testid=&quot;checklist-title&quot;]&#39;));let best=null;for(const h of all){if(h.compareDocumentPosition(block)&amp;Node.DOCUMENT_POSITION_FOLLOWING){if(!best||(best.compareDocumentPosition(h)&amp;Node.DOCUMENT_POSITION_FOLLOWING))best=h}}return best?best.textContent.trim():&quot;Checklist&quot;}function build(mode,numbered){const sections=[];const blocks=Array.from(root.querySelectorAll(&#39;[data-testid=&quot;checklist-items&quot;]&#39;));blocks.forEach(block=>{const title=titleForBlock(block);if(!title)return;let items=Array.from(block.querySelectorAll(&#39;li&#39;));if(mode===&quot;checked&quot;)items=items.filter(isChecked);else if(mode===&quot;unchecked&quot;)items=items.filter(isUnchecked);let n=0;const lines=items.map(li=>{const txt=liText(li);if(!txt)return null;n+=1;return numbered?`${n}) ${txt}`:txt}).filter(Boolean);const sec=[&quot;##&quot;+title,&quot;-------------------&quot;,...(lines.length?lines:[]),&quot;&quot;,&quot;-------------------&quot;,&quot;&quot;].join(&quot;\n&quot;);sections.push(sec)});return sections.join(&quot;\n&quot;)}async function doCopy(text){try{if(navigator.clipboard&amp;&amp;window.isSecureContext){await navigator.clipboard.writeText(text);return true}}catch(_){ }const ta=document.createElement(&quot;textarea&quot;);ta.value=text;ta.style.position=&quot;fixed&quot;;ta.style.left=&quot;-9999px&quot;;document.body.appendChild(ta);ta.focus();ta.select();let ok=false;try{ok=document.execCommand(&quot;copy&quot;)}catch(_){ }ta.remove();return ok}ifr.addEventListener(&quot;load&quot;,function(){try{let lastMode=null;const doc=ifr.contentDocument;const win=ifr.contentWindow;const $=s=>doc.querySelector(s);const setDisabled=(sel,on)=>{const el=$(sel);if(el)el.disabled=!!on};async function run(mode,btn){try{lastMode=mode;if(btn)btn.disabled=true;if(mode===&quot;all&quot;){await expandAndWait()}await sweepScroll();const numbered=$(&quot;#num&quot;).checked;const text=build(mode,numbered);$(&quot;#out&quot;).value=text||&quot;&quot;;const copied=await doCopy(text);const okEl=$(&quot;#ok&quot;);okEl.style.display=copied?&quot;inline-block&quot;:&quot;none&quot;;if(copied)setTimeout(()=>okEl.style.display=&quot;none&quot;,1200)}catch(err){console.error(err);$(&quot;#out&quot;).value=&quot;Error: &quot;+(err&amp;&amp;err.message?err.message:String(err))}finally{if(btn)btn.disabled=false}}doc.addEventListener(&quot;click&quot;,function(ev){const btn=ev.target.closest&amp;&amp;ev.target.closest(&quot;.btn[data-mode]&quot;);if(btn){run(btn.getAttribute(&quot;data-mode&quot;),btn)}});$(&quot;#num&quot;).addEventListener(&quot;change&quot;,function(){if(!lastMode)return;$(&quot;#out&quot;).value=build(lastMode,this.checked)});$(&quot;#copy&quot;).addEventListener(&quot;click&quot;,function(){doCopy($(&quot;#out&quot;).value||&quot;&quot;).then(c=>{const okEl=$(&quot;#ok&quot;);okEl.style.display=c?&quot;inline-block&quot;:&quot;none&quot;;if(c)setTimeout(()=>okEl.style.display=&quot;none&quot;,1200)})});doc.querySelector(&quot;.close&quot;).addEventListener(&quot;click&quot;,function(){try{host.remove()}catch(_){}});win.addEventListener(&quot;keydown&quot;,function(e){if(e.key===&quot;Escape&quot;){try{host.remove()}catch(_){}}});}catch(err){console.error(err)}});}catch(err){console.error(err);alert(&quot;Bookmarklet error - see console&quot;)}})();'>Copy Trello Checklists v3.0</a>
+          <button popovertarget="howto" class="rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm hover:bg-gray-100">
+            How it works
+          </button>
+        </div>
+        <p class="mt-3 text-sm text-gray-500">Tip: If the button won't drag, right-click it and choose "Bookmark This Link".</p>
+      </div>
+      
+      <div class="order-1 md:order-none">
+        <img src="copy-trello-checklists.png" alt="Trello checklists interface showing multiple items" class="aspect-video w-full rounded-2xl border border-gray-200 object-cover shadow">
+      </div>
+    </div>
+    
+    <!-- Popover -->
+    <div id="howto" popover class="max-w-lg rounded-2xl border border-gray-200 bg-white p-6 text-sm shadow-xl">
+      <h3 class="mb-2 text-base font-semibold">How it works</h3>
+      <ol class="list-decimal space-y-1 pl-5 text-gray-700">
+        <li>Drag the bookmarklet button to your bookmarks bar</li>
+        <li>Open any Trello card with checklists</li>
+        <li>Click the bookmarklet in your bookmarks</li>
+        <li>Select your copy mode (All/Unchecked/Checked items)</li>
+        <li>Optionally enable numbering</li>
+        <li>Click "Copy to Clipboard"</li>
+        <li>Paste the checklist items wherever you need them</li>
+      </ol>
+      <p class="mt-3 text-gray-500"><b>Limitations:</b> Strikethrough formatting is not preserved when pasting. Items will copy as plain text with markdown formatting for bold, italics, and links.</p>
+    </div>
+  </section>
 
-<div class="container mx-auto mt-10 flex flex-wrap mt-4 mb-6 text-lg text-gray-700 leading-relaxed">
-    <!-- Image Column -->
-  <div class="w-full md:w-1/2 p-4">
-    <img src="copy-trello-checklists.png" alt="copy-trello-checklists">
-  </div>
-  <!-- Text Column -->
-  <div class="w-full md:w-1/2 p-4">
-  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Installation Instructions:</h2>
-  <p class="mb-4">Drag the button above to your bookmarks bar. If you don't see the bookmarks bar, you might need to enable it in your browser settings.</p>
+  <!-- Feature Sections -->
+  <section class="container mx-auto space-y-16 px-4 py-16">
+    
+    <!-- Section 1: Why use this? (Image Left) -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+      <div class="order-1 md:order-none">
+          <div class="aspect-[16/10] w-full rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+        <!-- Replace everything below with YouTube Lite Embed -->
+            <div class="w-full h-full relative cursor-pointer group" id="yt-lite">
+              <img
+                src="copy-trello-checklists.png"
+                alt="YouTube video thumbnail"
+                class="object-cover w-full h-full transition group-hover:blur-sm"
+              />
+              <button aria-label="Play Video"
+                class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition">
+                <svg class="w-16 h-16 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 84 84">
+                  <circle opacity="0.8" cx="42" cy="42" r="42"/>
+                  <polygon points="33,27 63,42 33,57"/>
+                </svg>
+              </button>
+            </div>
+            <script>
+            document.getElementById('yt-lite').addEventListener('click', function() {
+              if(this.querySelector('iframe')) return;
+              this.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/7pQfV4w2Ltk?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>';
+            });
+          </script>
+      </div>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Easiest way to copy paste Trello checklists</h2>
+        <p class="mt-3 text-gray-600">
+          Trello's native "Copy items from…" feature becomes unwieldy when you have multiple checklists across different cards. This bookmarklet eliminates the hassle by copying all checklist items directly to your clipboard in one click.
+        </p>
+        <ul class="mt-6 space-y-2">
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs text-white">✓</span>
+            <span>No more scrolling through endless dropdown menus</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs text-white">✓</span>
+            <span>Copy multiple checklists at once</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs text-white">✓</span>
+            <span>Paste anywhere: other Trello cards, documents, emails</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs text-white">✓</span>
+            <span>Works instantly without API keys or sign-ups</span>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">How To Use:</h2>
-  <ul class="p-5 mb-4">
-    <li>When you are on a Trello Card, run the bookmarklet.</li>
-    <li>Checklists will be copied to your clipboard.</li>
-  </ul>
+    <!-- Section 2: Features (Image Right) -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Powerful features</h2>
+        <p class="mt-3 text-gray-600">
+          This isn't just a simple copy tool. It includes smart features to give you complete control over how your checklists are copied.
+        </p>
+        <dl class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">Three Copy Modes</dt>
+            <dd class="mt-1 text-gray-600">Choose to copy all items, only ☐ unchecked items, or only ☑ checked items</dd>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">Format Preservation</dt>
+            <dd class="mt-1 text-gray-600">Keeps bold, italics, code formatting, and clickable links intact</dd>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">Auto Numbering</dt>
+            <dd class="mt-1 text-gray-600">Optionally add sequential numbers to your checklist items</dd>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">Smart Scrolling</dt>
+            <dd class="mt-1 text-gray-600">Automatically loads lazy-loaded items before copying</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="order-1 md:order-none">
+        <img src="copy-trello-checklist-ui.png" alt="Interface showing three copy mode options" class="aspect-video w-full rounded-2xl border border-gray-200 object-cover shadow">
+      </div>
+    </div>
 
-  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">Some Limitations:</h2>
-  <ul class="p-5 mb-4">
-    <li>Items that are <a style="text-decoration: line-through" href="https://saijogeorge.com/strikethrough-text-generator/">crossed out</a> will still be copied to the clipboard, but they will not appear as crossed out text when pasted.</li>
-  </ul>
-  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">V 2.0</h2>
-  <ul class="p-5 mb-4">
-    <li>It will copy links and preserve formatting such as bold, italics, and code. </li>
-  </ul>
-  <h2 class="text-2xl md:text-4xl p-1 font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">V 3.0</h2>
-  <ul class="p-5 mb-4">
-    <li>Fetches the title of each checklist. </li>
-    <li>Adds 3 modes: All items, Unchecked only, Checked only.</li>
-    <li>Auto scrolls to force lazy or dynamic items to load before scraping.</li>
-    <li>The ability to add numbering for checklist items.</li>
-  </ul>
-</div>
-</div>
+    
+  </section>
 
-<div style="background-color: #465650;">
-<section class="p-4 container mx-auto mt-10">
-<h3 class="block text-xl mb-2 text-white">Check out my other projects:</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-4">
-<a href="https://saijogeorge.com/best-marketing-tools/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/best-tools-list.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Best SEO Tools</h3>
-</a>
-<a target="_blank" href="https://allthefreestock.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/allthefreestock.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Free Stock Images</h3>
-</a>
-<a target="_blank" href="https://tldrmarketing.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/tldrmarketing.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">tl;dr Marketing</h3>
-</a>
-<a target="_blank" href="https://saijogeorge.com/json-ld-tag-manager-fix/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">JSON-LD Tag Manager Fix Tool</h3>
-</a>
-<a target="_blank" href="https://saijogeorge.com/replace-lines-with-commas/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/replace-lines-with-commas.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Replace New Lines With Commas</h3>
-</a>
-<a target="_blank" href="https://saijogeorge.com/view-google-cache-url/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/view-google-cache-url.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">View Google's Cache for any Link</h3>
-</a>
-<a target="_blank" href="https://saijogeorge.com/reveal-hidden-text/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/reveal-hidden-text.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Reveal Hidden Text</h3>
-</a>
-<a target="_blank" href="https://saijogeorge.com/replace-trello-links-urls/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/replace-trello-links-urls.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Replace Trello Links with URLs</h3>
-</a>
-<a href="https://saijogeorge.com/brand-style-guide-examples/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/brand-styl-guides.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Best Style Guides</h3>
-</a>
-<a target="_blank" href="https://justmotivate.me/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/justmotivate-me.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Motivational Quotes</h3>
-</a>
-<a target="_blank" href="https://whoisthebestseo.com/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/whoisthebestseo.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Who is the Best SEO?</h3>
-</a>
-<a target="_blank" href="https://codemyui.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/codemyui.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Code My UI</h3>
-</a>
-<a target="_blank" href="https://nativeadvertisingworks.com" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/nativeads.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Best Native Ads</h3>
-</a>
-<a href="https://saijogeorge.com/css-puns/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/css-puns.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">CSS Puns</h3>
-</a>
-<a href="https://saijogeorge.com/one-click-encoding-decoding-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/encoding-decoding-tool.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Encoding Decoding Tool</h3>
-</a>
-<a href="https://saijogeorge.com/strikethrough-text-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/strikethrough-text-generator.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Strikethrough Text Generator</h3>
-</a>
-<a href="https://saijogeorge.com/keyword-characters-words-count-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Word Count Tool</h3>
-</a>
-<a href="https://saijogeorge.com/prefix-suffix-keywords-tool/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Bulk Add Prefix Suffix</h3>
-</a>
-<a href="https://saijogeorge.com/dummy-credit-card-generator/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/dummy-credit-card-generator.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Dummy CC Generator</h3>
-</a>
-<a href="https://saijogeorge.com/price-to-hours-worked/" class="flex flex-col items-center border border-gray-300 p-2 rounded">
-<img src="https://saijogeorge.com/images/price-to-hours-worked.png" class="w-full h-56 object-contain mb-2">
-<h3 class="text-xl text-white">Price to Hours Worked</h3>
-</a>
-</div>
-</section>
-</div>
+  <!-- Changelog -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-extrabold tracking-tight">Changelog</h2>
+      <p class="mt-2 text-gray-600">Track how the Copy Trello Checklists tool evolved over time. Toggle a version to see what changed.</p>
 
+      <ol role="list" class="relative mt-10 space-y-8 border-l border-gray-200 pl-6">
+        
+        <!-- v3.0 -->
+        <li class="relative">
+          <span class="absolute -left-16 top-1.5 inline-flex items-center justify-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-600">
+            v3.0
+          </span>
+          <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all open:shadow">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <div>
+                <h3 class="font-semibold">v3.0 - September 2024</h3>
+                <p class="mt-1 text-sm text-gray-600">Major feature update with copy modes and enhanced functionality</p>
+              </div>
+              <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-90" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6.293 14.707a1 1 0 0 1 0-1.414L9.586 10 6.293 6.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+            <div class="mt-4 grid gap-3 text-sm">
+              <div class="rounded-lg bg-gray-50 p-3">
+                <strong>Checklist Titles:</strong> Now fetches and includes the title of each checklist, making it easier to organize copied content.
+              </div>
+              <div class="rounded-lg bg-gray-50 p-3">
+                <strong>Three Copy Modes:</strong> Choose between copying all items, unchecked items only, or checked items only to match your workflow needs.
+              </div>
+              <div class="rounded-lg bg-gray-50 p-3">
+                <strong>Auto-scroll Feature:</strong> Automatically scrolls to the bottom of the card to force lazy-loaded items to appear before copying.
+              </div>
+              <div class="rounded-lg bg-gray-50 p-3">
+                <strong>Optional Numbering:</strong> Add sequential numbering to checklist items for better organization and reference.
+              </div>
+            </div>
+          </details>
+        </li>
 
+        <!-- v2.0 -->
+        <li class="relative">
+          <span class="absolute -left-16 top-1.5 inline-flex items-center justify-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm font-semibold text-gray-600">
+            v2.0
+          </span>
+          <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all open:shadow">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <div>
+                <h3 class="font-semibold">v2.0</h3>
+                <p class="mt-1 text-sm text-gray-600">Added formatting preservation for richer content like bold, italics, and code.</p>
+              </div>
+              <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-90" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6.293 14.707a1 1 0 0 1 0-1.414L9.586 10 6.293 6.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+          </details>
+        </li>
+
+        <!-- v1.0 -->
+        <li class="relative">
+          <span class="absolute -left-16 top-1.5 inline-flex items-center justify-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm font-semibold text-gray-600">
+            v1.0
+          </span>
+          <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all open:shadow">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <div>
+                <h3 class="font-semibold">v1.0</h3>
+                <p class="mt-1 text-sm text-gray-600">Initial release with core functionality</p>
+              </div>
+              <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-90" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6.293 14.707a1 1 0 0 1 0-1.414L9.586 10 6.293 6.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+          </details>
+        </li>
+        
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- About -->
+        <div>
+          <h3 class="font-bold text-gray-800">Saijo George</h3>
+          <p class="mt-2 text-sm text-gray-600">
+            SEO and GEO expert from Melbourne, Australia. 
+          </p>
+        </div>
+        
+        <!-- Links -->
+        <div>
+          <h3 class="font-bold text-gray-800">Quick Links</h3>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li><a href="https://saijogeorge.com/best-marketing-tools/" class="text-gray-600 transition hover:text-blue-600">Best Marketing Tools</a></li>
+            <li><a href="https://whoisthebestseo.com/" target="_blank" class="text-gray-600 transition hover:text-blue-600">Who is the Best SEO?</a></li>
+            <li><a href="https://justmotivate.me/" target="_blank" class="text-gray-600 transition hover:text-blue-600">Motivational Quotes</a></li>
+          </ul>
+        </div>
+        
+        <!-- Social -->
+        <div>
+          <h3 class="font-bold text-gray-800">Connect</h3>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li><a href="https://www.youtube.com/@SEOSaijo" target="_blank" rel="noopener" class="text-gray-600 transition hover:text-blue-600">YouTube</a></li>
+            <li><a href="https://www.linkedin.com/in/saijogeorge/" target="_blank" rel="noopener" class="text-gray-600 transition hover:text-blue-600">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
+        <p>&copy; 2025 Saijo George. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
 </body>
 </html>
