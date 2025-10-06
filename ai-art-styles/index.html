@@ -85,7 +85,7 @@
 
 
         <!-- Grid Container -->
-        <div id="gridContainer" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div id="gridContainer" class="grid gap-4">
             <!-- Items will be inserted here by JavaScript -->
         </div>
 
@@ -116,8 +116,32 @@
                 </button>
             </div>
             <div class="flex-1 overflow-y-auto p-4">
-                <div class="mb-4">
-                    <label for="customTerm" class="block text-sm font-semibold text-gray-700 mb-2">Custom Prompt Term</label>
+                <!-- Grid Layout Settings -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Grid Layout</h3>
+
+                    <div class="mb-4">
+                        <label for="mobileColumns" class="block text-xs font-medium text-gray-600 mb-2">Mobile Columns (1-2)</label>
+                        <select id="mobileColumns" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="1">1 Column</option>
+                            <option value="2" selected>2 Columns</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="desktopColumns" class="block text-xs font-medium text-gray-600 mb-2">Desktop Columns (3-6)</label>
+                        <select id="desktopColumns" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="3">3 Columns</option>
+                            <option value="4" selected>4 Columns</option>
+                            <option value="5">5 Columns</option>
+                            <option value="6">6 Columns</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Custom Prompt Term -->
+                <div class="mb-4 pt-4 border-t border-gray-200">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Custom Prompt Term</h3>
                     <p class="text-xs text-gray-500 mb-3">Replace "mango" with your own term in all prompts. Use "a" or "an" automatically based on the first letter.</p>
                     <input
                         type="text"
@@ -125,10 +149,14 @@
                         placeholder="e.g., apple, orange, banana"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <button id="applyCustomTerm" class="mt-3 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="sticky bottom-0 bg-white pt-4 border-t border-gray-200">
+                    <button id="applySettings" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium mb-2">
                         Apply Changes
                     </button>
-                    <button id="resetCustomTerm" class="mt-2 w-full px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium">
+                    <button id="resetSettings" class="w-full px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium">
                         Reset to Default
                     </button>
                 </div>
@@ -150,6 +178,49 @@
         let isFeaturedOnly = true; // Track if featured filter is active (default: true)
         let customTerm = ''; // Store custom term for replacement
         let customArticle = 'a'; // Store article (a/an) for custom term
+        let mobileColumns = 2; // Default mobile columns
+        let desktopColumns = 4; // Default desktop columns
+        let adsData = []; // Store ads data
+        let adQueue = []; // Queue for ad rotation
+        let currentAdIndex = 0; // Current position in ad rotation
+
+        // Load ads from JSON file
+        async function loadAds() {
+            try {
+                const response = await fetch('ads.json');
+                if (!response.ok) {
+                    console.warn('ads.json not found, ads will not be displayed');
+                    return;
+                }
+                adsData = await response.json();
+                // Shuffle ads initially for randomization
+                adQueue = [...adsData].sort(() => Math.random() - 0.5);
+                currentAdIndex = 0;
+            } catch (error) {
+                console.warn('Error loading ads:', error);
+            }
+        }
+
+        // Get next ad from the queue
+        function getNextAd() {
+            if (adsData.length === 0) return null;
+
+            // If we've shown all ads, reshuffle and start over
+            if (currentAdIndex >= adQueue.length) {
+                adQueue = [...adsData].sort(() => Math.random() - 0.5);
+                currentAdIndex = 0;
+            }
+
+            const ad = adQueue[currentAdIndex];
+            currentAdIndex++;
+            return ad;
+        }
+
+        // Update grid columns based on settings
+        function updateGridColumns() {
+            const container = document.getElementById('gridContainer');
+            container.className = `grid gap-4 grid-cols-${mobileColumns} lg:grid-cols-${desktopColumns}`;
+        }
 
         // Load styles from JSON file
         async function loadStyles() {
@@ -232,14 +303,34 @@
         }
 
         function createAdCard() {
-            return `
-                <div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-md overflow-hidden flex items-center justify-center min-h-[400px]">
-                    <div class="text-center p-8">
-                        <p class="text-gray-400 text-sm mb-2">Advertisement</p>
-                        <p class="text-gray-500 font-semibold">Google Ad Placement</p>
-                        <p class="text-gray-400 text-xs mt-2">Your ad code goes here</p>
+            const ad = getNextAd();
+            if (!ad) {
+                // Fallback if no ads available
+                return `
+                    <div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-md overflow-hidden flex items-center justify-center min-h-[400px]">
+                        <div class="text-center p-8">
+                            <p class="text-gray-400 text-sm">Advertisement Space</p>
+                        </div>
                     </div>
-                </div>
+                `;
+            }
+
+            return `
+                <a href="${ad.link}" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                    <div class="aspect-square overflow-hidden bg-gray-100">
+                        <img src="${ad.image}" alt="${ad.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-bold text-gray-900 flex-1">${ad.title}</h3>
+                            <span class="text-xs text-gray-400 uppercase tracking-wide ml-2">Ad</span>
+                        </div>
+                        <p class="text-gray-600 text-sm flex-1">${ad.description}</p>
+                        <div class="mt-3 text-blue-600 text-sm font-medium group-hover:text-blue-700">
+                            Learn more →
+                        </div>
+                    </div>
+                </a>
             `;
         }
 
@@ -465,24 +556,40 @@
         document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
         document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
 
-        // Apply custom term
-        document.getElementById('applyCustomTerm').addEventListener('click', () => {
+        // Apply settings
+        document.getElementById('applySettings').addEventListener('click', () => {
+            // Update grid columns
+            mobileColumns = parseInt(document.getElementById('mobileColumns').value);
+            desktopColumns = parseInt(document.getElementById('desktopColumns').value);
+            updateGridColumns();
+
+            // Update custom term
             const term = document.getElementById('customTerm').value.trim();
             if (term) {
                 customTerm = term;
                 customArticle = getArticle(term);
-                // Re-render grid with new term
-                renderGrid(currentStyles, true);
-                closeSidebar();
             }
+
+            // Re-render grid with new settings
+            renderGrid(currentStyles, true);
+            closeSidebar();
         });
 
-        // Reset custom term
-        document.getElementById('resetCustomTerm').addEventListener('click', () => {
+        // Reset settings
+        document.getElementById('resetSettings').addEventListener('click', () => {
+            // Reset to defaults
+            mobileColumns = 2;
+            desktopColumns = 4;
             customTerm = '';
             customArticle = 'a';
+
+            // Reset UI
+            document.getElementById('mobileColumns').value = '2';
+            document.getElementById('desktopColumns').value = '4';
             document.getElementById('customTerm').value = '';
-            // Re-render grid with original prompts
+
+            // Update grid
+            updateGridColumns();
             renderGrid(currentStyles, true);
             closeSidebar();
         });
@@ -497,7 +604,8 @@
         });
 
         // Initial render
-        loadStyles();
+        updateGridColumns();
+        loadAds().then(() => loadStyles());
     </script>
 </body>
 </html>

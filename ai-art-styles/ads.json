@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Premium AI Tools",
+    "description": "Discover professional-grade AI tools for your creative workflow. Get started today!",
+    "image": "https://via.placeholder.com/400x400/4F46E5/ffffff?text=AI+Tools",
+    "link": "https://example.com/ai-tools"
+  },
+  {
+    "title": "Digital Art Course",
+    "description": "Master digital art techniques with our comprehensive online course. Learn from experts.",
+    "image": "https://via.placeholder.com/400x400/EC4899/ffffff?text=Art+Course",
+    "link": "https://example.com/art-course"
+  },
+  {
+    "title": "Creative Assets Bundle",
+    "description": "Thousands of high-quality assets for your projects. Unlimited downloads included.",
+    "image": "https://via.placeholder.com/400x400/10B981/ffffff?text=Assets",
+    "link": "https://example.com/assets"
+  },
+  {
+    "title": "Photo Editing Software",
+    "description": "Professional photo editing made simple. Try free for 30 days, no credit card required.",
+    "image": "https://via.placeholder.com/400x400/F59E0B/ffffff?text=Photo+Edit",
+    "link": "https://example.com/photo-editor"
+  },
+  {
+    "title": "Design Templates",
+    "description": "Ready-to-use templates for every project. Save time and create stunning designs.",
+    "image": "https://via.placeholder.com/400x400/8B5CF6/ffffff?text=Templates",
+    "link": "https://example.com/templates"
+  }
+]
