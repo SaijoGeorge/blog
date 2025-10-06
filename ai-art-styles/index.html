@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Art Styles Showcase</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gleam {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .gleam-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: gleam 2s ease-in-out;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Header -->
@@ -42,17 +59,23 @@
                     <!-- Results Count and Filter -->
         <div class="flex items-center justify-center gap-4 mb-2 mt-3">
             <div id="resultsCount" class="text-gray-600"></div>
-            <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="featuredToggle" class="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500">
+            <label class="flex items-center gap-2 cursor-pointer relative" id="featuredLabel">
+                <input type="checkbox" id="featuredToggle" class="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500" checked>
                 <span class="text-sm text-gray-700 font-medium">Featured only</span>
             </label>
+            <button id="settingsBtn" class="p-1.5 hover:bg-gray-200 rounded-lg transition-colors" title="Settings">
+                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+            </button>
         </div>
         </div>
 
 
 
         <!-- Grid Container -->
-        <div id="gridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div id="gridContainer" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <!-- Items will be inserted here by JavaScript -->
         </div>
 
@@ -65,11 +88,46 @@
     <!-- Image Modal -->
     <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4" onclick="closeModal()">
         <div class="relative max-w-7xl max-h-full">
-            <button onclick="closeModal()" class="absolute -top-12 right-0 text-white hover:text-gray-300 text-4xl font-light">&times;</button>
+            <button onclick="closeModal()" class="absolute -top-2 right-0 text-white hover:text-gray-300 text-4xl font-light">&times;</button>
             <img id="modalImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain">
             <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
         </div>
     </div>
+
+    <!-- Settings Sidebar -->
+    <div id="settingsSidebar" class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex flex-col h-full">
+            <div class="flex items-center justify-between p-4 border-b border-gray-200">
+                <h2 class="text-xl font-bold text-gray-900">Settings</h2>
+                <button id="closeSidebar" class="p-1 hover:bg-gray-100 rounded-lg transition-colors">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-4">
+                <div class="mb-4">
+                    <label for="customTerm" class="block text-sm font-semibold text-gray-700 mb-2">Custom Prompt Term</label>
+                    <p class="text-xs text-gray-500 mb-3">Replace "mango" with your own term in all prompts. Use "a" or "an" automatically based on the first letter.</p>
+                    <input
+                        type="text"
+                        id="customTerm"
+                        placeholder="e.g., apple, orange, banana"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <button id="applyCustomTerm" class="mt-3 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                        Apply Changes
+                    </button>
+                    <button id="resetCustomTerm" class="mt-2 w-full px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium">
+                        Reset to Default
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebarOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
 
     <script>
         // Data will be loaded from styles.json
@@ -79,7 +137,9 @@
         const INITIAL_LOAD = 80; // Initial number of items to render
         const LOAD_MORE = 40; // Number of items to load on scroll
         let isSearchActive = false; // Track if search is active
-        let isFeaturedOnly = false; // Track if featured filter is active
+        let isFeaturedOnly = true; // Track if featured filter is active (default: true)
+        let customTerm = ''; // Store custom term for replacement
+        let customArticle = 'a'; // Store article (a/an) for custom term
 
         // Load styles from JSON file
         async function loadStyles() {
@@ -103,7 +163,23 @@
 
         let displayedItems = [];
 
+        // Function to replace mango with custom term
+        function replacePromptTerm(prompt) {
+            if (!customTerm) return prompt;
+
+            // Replace "a mango" or "an mango" with appropriate article + custom term
+            let result = prompt.replace(/\b(a|an)\s+mango\b/gi, (match, article) => {
+                return `${customArticle} ${customTerm}`;
+            });
+
+            // Also replace standalone "mango" that might not have an article
+            result = result.replace(/\bmango\b/gi, customTerm);
+
+            return result;
+        }
+
         function createStyleCard(style) {
+            const displayPrompt = replacePromptTerm(style.prompt);
             return `
                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="aspect-square overflow-hidden bg-gray-200 cursor-pointer" onclick="openModal('${style.image}', '${style.name.replace(/'/g, "\\'")}')">
@@ -118,9 +194,9 @@
                         <div class="mt-auto">
                             <p class="text-xs text-gray-500 font-semibold mb-1">PROMPT:</p>
                             <div class="relative group">
-                                <p class="text-xs text-gray-700 italic bg-gray-50 p-2 pr-8 rounded">${style.prompt}</p>
+                                <p class="text-xs text-gray-700 italic bg-gray-50 p-2 pr-8 rounded">${displayPrompt}</p>
                                 <button
-                                    onclick="copyPrompt(this, \`${style.prompt.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)"
+                                    onclick="copyPrompt(this, \`${displayPrompt.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)"
                                     class="copy-btn absolute top-1 right-1 p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-200 rounded transition-colors"
                                     title="Copy prompt"
                                 >
@@ -340,7 +416,67 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
+                closeSidebar();
             }
+        });
+
+        // Sidebar functions
+        function openSidebar() {
+            const sidebar = document.getElementById('settingsSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('settingsSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Function to determine article (a/an)
+        function getArticle(word) {
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            return vowels.includes(word.charAt(0).toLowerCase()) ? 'an' : 'a';
+        }
+
+        // Settings button event listener
+        document.getElementById('settingsBtn').addEventListener('click', openSidebar);
+        document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
+        document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
+
+        // Apply custom term
+        document.getElementById('applyCustomTerm').addEventListener('click', () => {
+            const term = document.getElementById('customTerm').value.trim();
+            if (term) {
+                customTerm = term;
+                customArticle = getArticle(term);
+                // Re-render grid with new term
+                renderGrid(currentStyles, true);
+                closeSidebar();
+            }
+        });
+
+        // Reset custom term
+        document.getElementById('resetCustomTerm').addEventListener('click', () => {
+            customTerm = '';
+            customArticle = 'a';
+            document.getElementById('customTerm').value = '';
+            // Re-render grid with original prompts
+            renderGrid(currentStyles, true);
+            closeSidebar();
+        });
+
+        // Add gleam effect on load
+        window.addEventListener('load', () => {
+            const featuredLabel = document.getElementById('featuredLabel');
+            featuredLabel.classList.add('gleam-effect');
+            setTimeout(() => {
+                featuredLabel.classList.remove('gleam-effect');
+            }, 2000);
         });
 
         // Initial render
