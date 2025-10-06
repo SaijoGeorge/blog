@@ -17,7 +17,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 0, 0, 0.4),
+                rgba(255, 127, 0, 0.4),
+                rgba(255, 255, 0, 0.4),
+                rgba(0, 255, 0, 0.4),
+                rgba(0, 0, 255, 0.4),
+                rgba(75, 0, 130, 0.4),
+                rgba(148, 0, 211, 0.4),
+                transparent
+            );
             animation: gleam 2s ease-in-out;
             pointer-events: none;
         }
@@ -149,8 +159,15 @@
                     throw new Error('Failed to load styles');
                 }
                 aiStyles = await response.json();
-                currentStyles = aiStyles;
-                renderGrid(aiStyles, true);
+
+                // Apply featured filter if it's enabled on load
+                if (isFeaturedOnly) {
+                    currentStyles = aiStyles.filter(style => style.featured === 'yes');
+                } else {
+                    currentStyles = aiStyles;
+                }
+
+                renderGrid(currentStyles, true);
             } catch (error) {
                 console.error('Error loading styles:', error);
                 document.getElementById('gridContainer').innerHTML = `
