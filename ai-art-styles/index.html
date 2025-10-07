@@ -365,12 +365,17 @@
                 let itemCount = 0;
 
                 styles.forEach((style, index) => {
-                    if (itemCount > 0 && itemCount % 19 === 0) {
+                    if (itemCount > 0 && itemCount % 10 === 0) {
                         html += createAdCard();
                     }
                     html += createStyleCard(style);
                     itemCount++;
                 });
+
+                // If less than 10 items, add ad at the end
+                if (styles.length < 10 && adsData.length > 0) {
+                    html += createAdCard();
+                }
 
                 container.innerHTML = html;
                 return;
@@ -397,7 +402,7 @@
 
             for (let i = startIndex; i < endIndex; i++) {
                 // Insert ad every 19 items (after positions 18, 37, 56, etc.)
-                if (i > 0 && i % 19 === 0) {
+                if (i > 0 && i % 10 === 0) {
                     html += createAdCard();
                 }
                 html += createStyleCard(currentStyles[i]);
