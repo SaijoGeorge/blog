@@ -6,68 +6,37 @@
     <title>AI Art Styles Showcase</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes draw-circle {
+        @keyframes highlighter-swipe {
             0% {
-                stroke-dashoffset: 800;
+                width: 0%;
+                opacity: 0.7;
             }
-            70% {
-                stroke-dashoffset: 0;
+            50% {
+                width: 100%;
+                opacity: 0.7;
             }
             100% {
-                stroke-dashoffset: 0;
+                width: 100%;
                 opacity: 0;
             }
         }
 
-        @keyframes rainbow-glow {
-            0% { filter: drop-shadow(0 0 8px #ff0000) drop-shadow(0 0 15px #ff0000); }
-            14% { filter: drop-shadow(0 0 8px #ff7700) drop-shadow(0 0 15px #ff7700); }
-            28% { filter: drop-shadow(0 0 8px #ffff00) drop-shadow(0 0 15px #ffff00); }
-            42% { filter: drop-shadow(0 0 8px #00ff00) drop-shadow(0 0 15px #00ff00); }
-            57% { filter: drop-shadow(0 0 8px #0099ff) drop-shadow(0 0 15px #0099ff); }
-            71% { filter: drop-shadow(0 0 8px #4b0082) drop-shadow(0 0 15px #4b0082); }
-            85% { filter: drop-shadow(0 0 8px #9400d3) drop-shadow(0 0 15px #9400d3); }
-            100% { filter: drop-shadow(0 0 8px #ff0000) drop-shadow(0 0 15px #ff0000); }
-        }
-
-        .neon-effect {
+        .highlighter-effect {
             position: relative;
         }
 
-        .neon-effect::after {
+        .highlighter-effect::before {
             content: '';
             position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #FFD800;
             pointer-events: none;
-            z-index: 10;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100'%3E%3Cpath d='M 10,50 Q 10,10 50,10 L 350,10 Q 390,10 390,50 Q 390,90 350,90 L 50,90 Q 10,90 10,50 Q 12,48 14,46 Q 16,44 18,42' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            animation: draw-circle 3s ease-in-out forwards, rainbow-glow 3s ease-in-out;
-            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100'%3E%3Cpath d='M 10,50 Q 10,10 50,10 L 350,10 Q 390,10 390,50 Q 390,90 350,90 L 50,90 Q 10,90 10,50 Q 12,48 14,46 Q 16,44 18,42' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-dasharray='800' stroke-dashoffset='800' /%3E%3C/svg%3E");
-        }
-
-        .neon-effect svg {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: calc(100% + 30px);
-            height: calc(100% + 30px);
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        .neon-effect svg path {
-            fill: none;
-            stroke-width: 3;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dasharray: 800;
-            stroke-dashoffset: 800;
-            animation: draw-circle 3s ease-in-out forwards, rainbow-glow 3s ease-in-out;
+            z-index: -1;
+            animation: highlighter-swipe 3s ease-out forwards;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -635,31 +604,13 @@
             closeSidebar();
         });
 
-        // Add neon effect on load
+        // Add highlighter effect on load
         window.addEventListener('load', () => {
-            const filterSection = document.getElementById('filterSection');
-
-            // Create SVG element for the hand-drawn circle effect
-            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            svg.setAttribute('viewBox', '0 0 100 100');
-            svg.setAttribute('preserveAspectRatio', 'none');
-            svg.style.cssText = 'position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px); pointer-events: none; z-index: 10;';
-
-            // Create path with hand-drawn circle (slightly imperfect for organic feel)
-            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            path.setAttribute('d', 'M 5,50 Q 5,8 25,8 L 75,8 Q 95,8 95,30 L 95,70 Q 95,92 75,92 L 25,92 Q 5,92 5,70 L 5,50 Q 6,49 7,48');
-            path.setAttribute('stroke', '#ffffff');
-            path.setAttribute('fill', 'none');
-
-            svg.appendChild(path);
-            filterSection.appendChild(svg);
-            filterSection.classList.add('neon-effect');
+            const featuredLabel = document.getElementById('featuredLabel');
+            featuredLabel.classList.add('highlighter-effect');
 
             setTimeout(() => {
-                filterSection.classList.remove('neon-effect');
-                if (svg.parentNode) {
-                    svg.remove();
-                }
+                featuredLabel.classList.remove('highlighter-effect');
             }, 3000);
         });
 
