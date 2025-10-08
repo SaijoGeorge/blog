@@ -72,13 +72,23 @@
                 </svg>
             </div>
                     <!-- Results Count and Filter -->
-        <div id="filterSection" class="flex items-center justify-center gap-4 mb-2 mt-3">
-            <div id="resultsCount" class="text-gray-600"></div>
-            <label class="flex items-center gap-2 cursor-pointer relative" id="featuredLabel">
+        <div id="filterSection" class="flex items-center justify-center gap-6 mb-2 mt-3 flex-wrap">
+            <!-- FAQ Link -->
+            <a href="#faq" class="text-sm text-blue-600 hover:text-blue-800 font-medium underline decoration-2 underline-offset-4">
+                FAQ
+            </a>
+
+            <!-- Results Counter -->
+            <div id="resultsCount" class="text-gray-700 font-medium px-3 py-1 bg-gray-100 rounded-full"></div>
+
+            <!-- Featured Toggle -->
+            <label class="flex items-center gap-2 cursor-pointer relative px-3 py-1 bg-white border-2 border-gray-200 rounded-full hover:border-blue-400 transition-colors" id="featuredLabel">
                 <input type="checkbox" id="featuredToggle" class="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500" checked>
                 <span class="text-sm text-gray-700 font-medium">Featured only</span>
             </label>
-            <button id="settingsBtn" class="p-1.5 hover:bg-gray-200 rounded-lg transition-colors" title="Settings">
+
+            <!-- Settings Button -->
+            <button id="settingsBtn" class="p-2 hover:bg-blue-50 rounded-full transition-colors border-2 border-transparent hover:border-blue-400" title="Settings">
                 <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -98,6 +108,80 @@
         <div id="noResults" class="hidden text-center py-12">
             <p class="text-gray-500 text-xl">No styles found matching your search.</p>
         </div>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="mt-16 mb-12 scroll-mt-20">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">Frequently Asked Questions</h2>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="faq-question w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <h3 class="text-lg font-semibold text-gray-900 pr-4">What are AI art styles?</h3>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600 leading-relaxed">AI art styles are specific aesthetic approaches or visual themes that AI image generators can apply to create artwork. Each style represents a unique combination of artistic techniques, color palettes, and visual characteristics that define how the final image will look.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="faq-question w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <h3 class="text-lg font-semibold text-gray-900 pr-4">How do I use these prompts?</h3>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600 leading-relaxed">Simply copy any prompt by clicking the copy icon next to it, then paste it into your favorite AI image generator like Midjourney, DALL-E, Stable Diffusion, or others. You can also customize the prompts by replacing "mango" with your own subject using the settings menu.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="faq-question w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <h3 class="text-lg font-semibold text-gray-900 pr-4">What does the "Featured only" toggle do?</h3>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600 leading-relaxed">The "Featured only" toggle filters the displayed styles to show only our hand-picked, highest-quality and most popular art styles marked with a star (🌟). Uncheck it to see all available styles in the collection.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="faq-question w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <h3 class="text-lg font-semibold text-gray-900 pr-4">Can I customize the grid layout?</h3>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600 leading-relaxed">Yes! Click the settings icon (⚙️) to access layout options. You can adjust the number of columns displayed on both mobile (1-2 columns) and desktop (3-6 columns) to suit your preference and screen size.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <button class="faq-question w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFaq(this)">
+                            <h3 class="text-lg font-semibold text-gray-900 pr-4">Are these styles compatible with all AI generators?</h3>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transform transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4">
+                            <p class="text-gray-600 leading-relaxed">Most prompts work well across different AI image generators, though results may vary slightly between platforms. Each AI model has its own interpretation of styles and keywords, so feel free to experiment and adjust prompts as needed for your specific tool.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Image Modal -->
@@ -613,6 +697,18 @@
                 featuredLabel.classList.remove('highlighter-effect');
             }, 3000);
         });
+
+        // FAQ toggle functionality
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+
+            // Toggle the answer visibility
+            answer.classList.toggle('hidden');
+
+            // Rotate the icon
+            icon.classList.toggle('rotate-180');
+        }
 
         // Initial render
         updateGridColumns();
