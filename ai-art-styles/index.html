@@ -74,7 +74,7 @@
                     <!-- Results Count and Filter -->
         <div id="filterSection" class="flex items-center justify-center gap-6 mb-2 mt-3 flex-wrap">
             <!-- FAQ Link -->
-            <a href="#faq" class="text-sm text-blue-600 hover:text-blue-800 font-medium underline decoration-2 underline-offset-4">
+            <a href="#faq" onclick="scrollToFaq(event)" class="text-sm text-blue-600 hover:text-blue-800 font-medium underline decoration-2 underline-offset-4 cursor-pointer">
                 FAQ
             </a>
 
@@ -688,15 +688,38 @@
             closeSidebar();
         });
 
-        // Add highlighter effect on load
+        // Add highlighter effect when featured label is in view
         window.addEventListener('load', () => {
             const featuredLabel = document.getElementById('featuredLabel');
-            featuredLabel.classList.add('highlighter-effect');
 
-            setTimeout(() => {
-                featuredLabel.classList.remove('highlighter-effect');
-            }, 3000);
+            // Use IntersectionObserver to trigger effect when element is visible
+            const highlightObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !featuredLabel.dataset.highlighted) {
+                        featuredLabel.classList.add('highlighter-effect');
+                        featuredLabel.dataset.highlighted = 'true';
+
+                        setTimeout(() => {
+                            featuredLabel.classList.remove('highlighter-effect');
+                        }, 3000);
+
+                        // Disconnect after first highlight
+                        highlightObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            highlightObserver.observe(featuredLabel);
         });
+
+        // Scroll to FAQ function
+        function scrollToFaq(event) {
+            event.preventDefault();
+            const faqSection = document.getElementById('faq');
+            if (faqSection) {
+                faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
 
         // FAQ toggle functionality
         function toggleFaq(button) {
