@@ -90,23 +90,23 @@
                 </svg>
             </div>
                     <!-- Results Count and Filter -->
-        <div id="filterSection" class="flex items-center justify-center gap-6 mb-2 mt-3 flex-wrap">
+        <div id="filterSection" class="flex items-center justify-center gap-3 lg:gap-6 mb-2 mt-3">
             <!-- FAQ Link -->
-            <a href="#faq" onclick="openFaqModal(event)" class="text-sm text-blue-600 hover:text-blue-800 font-medium underline decoration-2 underline-offset-4 cursor-pointer">
+            <a href="#faq" onclick="openFaqModal(event)" class="text-sm text-blue-600 hover:text-blue-800 font-medium underline decoration-2 underline-offset-4 cursor-pointer whitespace-nowrap">
                 FAQ
             </a>
 
             <!-- Results Counter -->
-            <div id="resultsCount" class="text-gray-700 font-medium px-3 py-1 bg-gray-100 rounded-full"></div>
+            <div id="resultsCount" class="text-gray-700 font-medium px-2 lg:px-3 py-1 bg-gray-100 rounded-full text-xs lg:text-sm whitespace-nowrap"></div>
 
             <!-- Featured Toggle -->
-            <label class="flex items-center gap-2 cursor-pointer relative px-3 py-1 bg-white border-2 border-gray-200 rounded-full hover:border-blue-400 transition-colors" id="featuredLabel">
+            <label class="flex items-center gap-1.5 lg:gap-2 cursor-pointer relative px-2 lg:px-3 py-1 bg-white border-2 border-gray-200 rounded-full hover:border-blue-400 transition-colors whitespace-nowrap" id="featuredLabel">
                 <input type="checkbox" id="featuredToggle" class="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500" checked>
-                <span class="text-sm text-gray-700 font-medium">Featured only</span>
+                <span class="text-xs lg:text-sm text-gray-700 font-medium">Featured</span>
             </label>
 
             <!-- Settings Button -->
-            <button id="settingsBtn" class="p-2 hover:bg-blue-50 rounded-full transition-colors border-2 border-transparent hover:border-blue-400" title="Settings">
+            <button id="settingsBtn" class="p-1.5 lg:p-2 hover:bg-blue-50 rounded-full transition-colors border-2 border-transparent hover:border-blue-400" title="Settings">
                 <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -467,10 +467,20 @@
             noResults.classList.add('hidden');
 
             // Update results count with total
+            // Use shorter format on mobile
+            const isMobile = window.innerWidth < 1024;
             if (isSearchActive || isFeaturedOnly) {
-                resultsCount.textContent = `Showing ${styles.length} of ${aiStyles.length} styles`;
+                if (isMobile) {
+                    resultsCount.textContent = `${styles.length}/${aiStyles.length} shown`;
+                } else {
+                    resultsCount.textContent = `Showing ${styles.length} of ${aiStyles.length} styles`;
+                }
             } else {
-                resultsCount.textContent = `Showing ${styles.length} style${styles.length !== 1 ? 's' : ''}`;
+                if (isMobile) {
+                    resultsCount.textContent = `${styles.length} shown`;
+                } else {
+                    resultsCount.textContent = `Showing ${styles.length} style${styles.length !== 1 ? 's' : ''}`;
+                }
             }
 
             // If search is active, show all results immediately
