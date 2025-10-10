@@ -69,8 +69,134 @@
     .drag-hint { cursor: grab; }
     .code-inline { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <style>
+        /* Footer background with brick texture */
+        #myfoot {
+            background-color: #120d1f;
+            background-image: url('https://saijogeorge.com/images/brick.png');
+            background-position: 50% center;
+            background-repeat: repeat;
+            contain: layout style paint;
+        }
+        
+        /* Top border */
+        .footer-border {
+            width: 50%;
+            height: 4px;
+            margin: 0 auto;
+            background-color: #4b354b;
+            border-radius: 24px;
+        }
+        
+        /* Neon tube text styling - default off state */
+        .email-text {
+            font-family: 'Tilt Neon', cursive;
+        }
+        
+        .email-text span {
+            display: inline-block;
+            color: #5a4a5a;
+            line-height: 2.5rem;
+            font-size: 2.5rem;
+            font-weight: normal;
+            transition: all 0.3s ease;
+            position: relative;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            will-change: text-shadow, opacity;
+            /* Glassy tube effect when off - optimized */
+            text-shadow: 
+                0 0 3px rgba(150, 150, 180, 0.3),
+                0 0 8px rgba(150, 150, 180, 0.2),
+                -1px -1px 2px rgba(200, 200, 220, 0.4);
+            /* Slightly transparent for glass effect */
+            opacity: 0.7;
+            /* Letter spacing for glass tube separation */
+            letter-spacing: 0.05em;
+            /* Text stroke for glass tube outline */
+            -webkit-text-stroke: 0.5px rgba(100, 90, 110, 0.3);
+        }
+        
+        /* Neon glow effect for email parts when active - socod style in red */
+        .email-text span.neon-active {
+            color: #ffd9e2;
+            opacity: 1;
+            -webkit-text-stroke: 0;
+            text-shadow: 
+                0 0 10px #ff003c, 
+                0 0 20px rgba(255, 0, 60, 0.5), 
+                0 0 40px #ff003c, 
+                0 0 100px #ff003c, 
+                0 0 200px #ff003c;
+            animation: buzz 0.05s infinite alternate;
+        }
+        
+        @keyframes buzz {
+            70% {
+                opacity: 0.85;
+            }
+        }
+        
+        /* Social links styling */
+        .social-link {
+            margin: 0 0.25rem;
+            padding: 8px 16px;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        
+        .social-link:hover,
+        .social-link.link-active {
+            background-color: #D2C1B6;
+            color: #2c2c2c;
+        }
+        
+        .separator {
+            margin: 0 0.25rem;
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .footer-border {
+                width: 75%;
+            }
+            
+            .email-text span {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+            
+            .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDN6LH');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body class="h-full bg-gray-50 text-gray-800">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
   <!-- Header -->
   <header class="border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-30">
     <div class="container flex items-center justify-between py-4">
@@ -212,6 +338,166 @@
   <footer class="border-t border-gray-200 bg-white">
 
   </footer>
+   <div id="myfoot" class="w-full min-h-[200px]">
+        <!-- Top border -->
+        <div class="footer-border"></div>
+        
+        <!-- Footer content -->
+        <div class="container mx-auto">
+            <div class="w-full h-[200px] flex flex-col justify-center items-center">
+                <!-- Email/Website text with neon tube effect -->
+                <div class="email-text flex items-center mb-6">
+                    <span data-parts="email">iam</span>
+                    <span data-parts="email,social">@</span>
+                    <span data-parts="email,social,website">saijogeorge</span>
+                    <span data-parts="email,website">.</span>
+                    <span data-parts="email,website">com</span>
+                </div>
+                
+                <!-- Social links with background hover effect -->
+                <div class="social-links flex items-center">
+                    <a href="https://twitter.com/saijogeorge" class="social-link" data-trigger="social">Social</a>
+                    <span class="separator">-</span>
+                    <a href="mailto:iam@saijogeorge.com" class="social-link" data-trigger="email">Email</a>
+                    <span class="separator">-</span>
+                    <a href="https://saijogeorge.com/" class="social-link" data-trigger="website">Website</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Check if device is mobile
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        
+        const socialLinks = document.querySelectorAll('.social-link');
+        const emailParts = document.querySelectorAll('.email-text span');
+        
+        let rotationInterval;
+        let isUserInteracting = false;
+        const rotationSequence = ['social', 'email', 'website'];
+        let currentRotationIndex = 0;
+        
+        // Function to activate neon effect on email parts
+        function activateNeon(trigger) {
+            // Use requestAnimationFrame for smoother updates
+            requestAnimationFrame(() => {
+                // Remove all active states first
+                emailParts.forEach(part => part.classList.remove('neon-active'));
+                socialLinks.forEach(link => link.classList.remove('link-active'));
+                
+                // Find and activate parts that match the trigger
+                emailParts.forEach(part => {
+                    const parts = part.getAttribute('data-parts');
+                    if (parts && parts.includes(trigger)) {
+                        part.classList.add('neon-active');
+                    }
+                });
+                
+                // Activate corresponding link
+                const correspondingLink = document.querySelector(`[data-trigger="${trigger}"]`);
+                if (correspondingLink) {
+                    correspondingLink.classList.add('link-active');
+                }
+            });
+        }
+        
+        // Function to deactivate all neon effects
+        function deactivateNeon() {
+            requestAnimationFrame(() => {
+                emailParts.forEach(part => part.classList.remove('neon-active'));
+                socialLinks.forEach(link => link.classList.remove('link-active'));
+            });
+        }
+        
+        // Function to rotate through effects automatically
+        function startRotation() {
+            if (isUserInteracting) return;
+            
+            rotationInterval = setInterval(() => {
+                if (!isUserInteracting) {
+                    const trigger = rotationSequence[currentRotationIndex];
+                    activateNeon(trigger);
+                    currentRotationIndex = (currentRotationIndex + 1) % rotationSequence.length;
+                }
+            }, 2000); // Change every 2 seconds
+        }
+        
+        // Function to stop rotation
+        function stopRotation() {
+            if (rotationInterval) {
+                clearInterval(rotationInterval);
+            }
+        }
+        
+        // Desktop: hover events
+        if (!isMobile) {
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    isUserInteracting = true;
+                    stopRotation();
+                    const trigger = this.getAttribute('data-trigger');
+                    activateNeon(trigger);
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    isUserInteracting = false;
+                    deactivateNeon();
+                    startRotation();
+                });
+            });
+        } 
+        // Mobile: click/touch events
+        else {
+            let activeLink = null;
+            
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const trigger = this.getAttribute('data-trigger');
+                    
+                    // If clicking the same link, deactivate and follow link
+                    if (activeLink === this) {
+                        isUserInteracting = false;
+                        deactivateNeon();
+                        activeLink = null;
+                        startRotation();
+                        // Follow the link
+                        window.location.href = this.getAttribute('href');
+                    } else {
+                        isUserInteracting = true;
+                        stopRotation();
+                        deactivateNeon();
+                        
+                        // Activate this link
+                        activateNeon(trigger);
+                        activeLink = this;
+                    }
+                });
+            });
+            
+            // Click outside to deactivate - use passive listener
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.social-link') && !e.target.closest('.email-text')) {
+                    isUserInteracting = false;
+                    deactivateNeon();
+                    activeLink = null;
+                    startRotation();
+                }
+            }, { passive: true });
+        }
+        
+        // Start the rotation when page loads - use RAF for smoother start
+        requestAnimationFrame(() => {
+            startRotation();
+        });
+        
+        // Cleanup interval on page unload to prevent memory leaks
+        window.addEventListener('beforeunload', () => {
+            stopRotation();
+        }, { passive: true });
+    </script>
 
   <script>
     // ------- Util: copy the raw bookmarklet code -------
