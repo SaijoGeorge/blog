@@ -379,7 +379,7 @@
     <div class="container mx-auto px-4 py-8 text-center">
       <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Side Projects</h1>
       <p class="mx-auto mt-4 max-w-[120ch] text-lg text-gray-600">
-        Side projects are a brilliant way to learn new things. Without the restrictions of your day job, you can explore creative and risky ideas. Over the years, they've been my testing ground for new skills and, when monetised, a decent source of secondary income.
+        Side projects are a brilliant way to learn new things. Without the restrictions of your day job, you can <span class="seo-saijo-highlight">explore creative and risky ideas</span>. Over the years, they've been <span class="seo-saijo-highlight">my testing ground for new skills</span> and, when monetised, a decent source of secondary income.
       </p>
     </div>
   </section>
@@ -812,6 +812,33 @@
       stopRotation();
     }, { passive: true });
   </script>
+    <script>
+      (() => {
+        const els = document.querySelectorAll(".seo-saijo-highlight");
 
+        // Allow per-element delay and custom colour via data-attributes
+        els.forEach((el) => {
+          const c = el.dataset.highlightColor;
+          if (c) el.style.backgroundImage = `linear-gradient(${c},${c})`;
+        });
+
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              const el = entry.target;
+              const delay = parseInt(el.dataset.highlightDelay || 0, 10);
+
+              setTimeout(() => el.classList.add("is-marked"), delay);
+              obs.unobserve(el); // run once
+            });
+          },
+          { threshold: 0.35 }
+        );
+
+        els.forEach((el) => io.observe(el));
+      })();
+    </script>
 </body>
 </html>
