@@ -1,147 +1,962 @@
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="all" />
+    <meta name="language" content="en" />
+    <meta name="author" content="Saijo George" />
+    <meta name="theme-color" content="#F5AB35" />
+    <!-- Primary Meta Tags -->
+    <title>SEO Consultant Melbourne - Saijo George</title>
+    <meta name="title" content="SEO Consultant Melbourne - Saijo George" />
+    <meta
+      name="description"
+      content="Looking for specialized SEO services in Melbourne? Get expert technical SEO audits, algorithm recovery, and ecommerce optimization from Saijo George."
+    />
+    <link rel="canonical" href="https://saijogeorge.com/" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saijogeorge.com/" />
+    <meta
+      property="og:title"
+      content="SEO Consultant Melbourne - Saijo George"
+    />
+    <meta
+      property="og:description"
+      content="Looking for specialized SEO services in Melbourne? Get expert technical SEO audits, algorithm recovery, and ecommerce optimization from Saijo George."
+    />
+    <meta
+      property="og:image"
+      content="https://saijogeorge.com/images/saijo-george.webp"
+    />
+    <meta property="og:site_name" content="SaijoGeorge.com" />
+    <meta
+      property="article:author"
+      content="https://www.facebook.com/SaijoGeorge"
+    />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://saijogeorge.com/" />
+    <meta
+      property="twitter:title"
+      content="SEO Consultant Melbourne - Saijo George"
+    />
+    <meta
+      property="twitter:description"
+      content="Looking for specialized SEO services in Melbourne? Get expert technical SEO audits, algorithm recovery, and ecommerce optimization from Saijo George."
+    />
+    <meta
+      property="twitter:image"
+      content="https://saijogeorge.com/images/saijo-george.webp"
+    />
+    <meta property="twitter:site" content="@SaijoGeorge" />
+    <meta property="twitter:creator" content="@SaijoGeorge" />
+    <meta property="twitter:domain" content="https://saijogeorge.com" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://saijogeorge.com/favicon.ico"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Footer background with brick texture */
+      #myfoot {
+        background-color: #120d1f;
+        background-image: url("https://saijogeorge.com/images/brick.png");
+        background-position: 50% center;
+        background-repeat: repeat;
+        contain: layout style paint;
+      } /* Top border */
+      .footer-border {
+        width: 50%;
+        height: 4px;
+        margin: 0 auto;
+        background-color: #4b354b;
+        border-radius: 24px;
+      } /* Neon tube text styling - default off state */
+      .email-text {
+        font-family: "Tilt Neon", cursive;
+      }
+      .email-text span {
+        display: inline-block;
+        color: #5a4a5a;
+        line-height: 2.5rem;
+        font-size: 2.5rem;
+        font-weight: normal;
+        transition: all 0.3s ease;
+        position: relative;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: text-shadow, opacity;
+        text-shadow: 0 0 3px rgba(150, 150, 180, 0.3),
+          0 0 8px rgba(150, 150, 180, 0.2),
+          -1px -1px 2px rgba(200, 200, 220, 0.4);
+        opacity: 0.7;
+        letter-spacing: 0.05em;
+        -webkit-text-stroke: 0.5px rgba(100, 90, 110, 0.3);
+      } /* Neon glow effect */
+      .email-text span.neon-active {
+        color: #ffd9e2;
+        opacity: 1;
+        -webkit-text-stroke: 0;
+        text-shadow: 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5),
+          0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c;
+        animation: buzz 0.05s infinite alternate;
+      }
+      @keyframes buzz {
+        70% {
+          opacity: 0.85;
+        }
+      } /* Social links styling */
+      .social-link {
+        margin: 0 0.25rem;
+        padding: 8px 16px;
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        position: relative;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+      .social-link:hover,
+      .social-link.link-active {
+        background-color: #d2c1b6;
+        color: #2c2c2c;
+      }
+      .separator {
+        margin: 0 0.25rem;
+        font-size: 20px;
+        color: #ffffff;
+        font-weight: 700;
+      }
+      @media (max-width: 768px) {
+        .footer-border {
+          width: 75%;
+        }
+        .email-text span {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+        }
+        .social-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+      .seo-saijo-highlight {
+        --hl-thickness: 0.95em; /* thinner stripe (was 0.6em) */
+        --hl-offset: 88%; /* sits a touch lower */
+        position: relative;
+        font-style: italic;
+        background-image: linear-gradient(#fada7a, #fada7a);
+        background-repeat: no-repeat;
+        background-size: 0% var(--hl-thickness);
+        background-position: 0 var(--hl-offset);
+        padding: 0 0.06em;
+        transition: background-size 900ms cubic-bezier(0.22, 0.61, 0.36, 1);
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+      .seo-saijo-highlight.is-marked {
+        background-size: 100% var(--hl-thickness);
+      }
 
-	<link href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+      /* Optional: respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .seo-saijo-highlight {
+          transition: none;
+        }
+      }
+      .seo-saijo-cta {
+        position: relative;
+        border: 3px solid #ffd800;
+        box-shadow: 0 0 0 0 rgba(255, 216, 0, 0.6);
+        animation: cta-pulse-6s-gap 5.5s ease-out infinite both;
+      }
 
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<title>SEO Expert Melbourne Ξ 𝕊𝕒𝕚𝕛𝕠 𝔾𝕖𝕠𝕣𝕘𝕖</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      /* Hover/focus niceties */
+      .seo-saijo-cta:hover {
+        box-shadow: 0 0 0 4px rgba(255, 216, 0, 0.4),
+          0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+      .seo-saijo-cta:active {
+        transform: translateY(1px);
+      }
+      .seo-saijo-cta:focus-visible {
+        outline: 3px solid #ffd800;
+        outline-offset: 2px;
+      }
 
-	<link rel="canonical" href="https://saijogeorge.com/" />
-	<meta name="theme-color" content="#83b0b9">
-	<meta name="author" content="Saijo George">
-	<meta name="copyright" content="Saijo George">
-	<meta name="description" content="Ok Google: 'What does Saijo George do?'">
-	<meta name="robots" content="all">
+      /* Timeline:
+   - 0–80% (first ~6s): idle (no glow)
+   - 80–100% (~1.5s): slower, gentler pulse */
+      @keyframes cta-pulse-6s-gap {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+          transform: scale(1);
+        }
+        79.9% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+          transform: scale(1);
+        }
 
-	<meta property="article:author" content="https://www.facebook.com/SaijoGeorge" />
-	<meta property="og:site_name" content="SaijoGeorge.com">
-	<meta property="og:title" content="Saijo George's Portfolio">
-	<meta property="og:description" content="Get in touch if you are looking for enterprise OR ecommerce SEO.">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://saijogeorge.com">
-	<meta property="og:image" content="https://saijogeorge.com/images/banner/saijogeorge.png">
+        /* start pulse – soft ramp up */
+        80% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0.45);
+          transform: scale(1);
+        }
+        88% {
+          box-shadow: 0 0 0 18px rgba(255, 216, 0, 0);
+          transform: scale(1.02);
+        } /* slower, a touch larger radius */
+        96% {
+          box-shadow: 0 0 0 6px rgba(255, 216, 0, 0.12);
+          transform: scale(1.005);
+        } /* gentle ease back */
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+          transform: scale(1);
+        }
+      }
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@SaijoGeorge">
-	<meta name="twitter:creator" content="@SaijoGeorge">
-	<meta name="twitter:title" content="SaijoGeorge.com">
-	<meta name="twitter:domain" content="https://saijogeorge.com">
-	<meta name="twitter:description" content="Get in touch if you are looking for enterprise OR ecommerce SEO.">
-	<meta name="twitter:image" content="https://saijogeorge.com/images/banner/saijogeorge.png">
-	<!-- design by https://codyhouse.co/gem/animated-page-transition-2/ -->
-	<meta name="yandex-verification" content="bd5f29e7027907cb" />
-	<meta name="ahrefs-site-verification" content="e91ff59c9f9ef16aeffffda7cf62f8f8b53124a1f5f829d20a0b5ac37cc3df53">
-</head>
-<body>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WDN6LH');</script>
-<!-- End Google Tag Manager -->
-	<nav class="cd-side-navigation">
-		<ul>
-			<li>
-				<a href="#0" class="selected" data-menu="index">
-					<i class="fa fa-2x fa-home"></i><br/>
-					Intro
-				</a>
-			</li>
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .seo-saijo-cta {
+          animation: none;
+        }
+      }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WDN6LH");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body class="h-full bg-gray-50 text-gray-800">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Header -->
+    <header
+      class="border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-30"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between py-4 px-4"
+      >
+        <a
+          href="https://saijogeorge.com"
+          class="flex items-center gap-2 font-bold text-xl tracking-tight"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 600 600"
+            version="1.1"
+          >
+            <path
+              d="M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563"
+              stroke="none"
+              fill="#ffffff"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M 263.500 3.656 C 192.198 13.884, 134.411 42.843, 85.970 92.623 C 42.552 137.240, 14.683 193.389, 4.825 256.107 C 2.845 268.702, 2.562 274.248, 2.562 300.500 C 2.562 334.368, 3.900 346.463, 10.590 373.080 C 37.340 479.517, 120.412 563.173, 226 590.003 C 251.504 596.483, 272.203 599, 300 599 C 327.797 599, 348.496 596.483, 374 590.003 C 458.897 568.431, 530.899 509.192, 569.084 429.500 C 581.543 403.496, 590.392 374.834, 595.171 345 C 597.234 332.121, 597.490 327.146, 597.465 300.500 C 597.434 266.241, 596.033 253.934, 589.056 226.607 C 562.071 120.913, 478.979 37.617, 374 11.019 C 346.518 4.056, 342.846 3.664, 303 3.435 C 282.925 3.320, 265.150 3.419, 263.500 3.656 M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092"
+              stroke="none"
+              fill="#fbdb04"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092 M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563"
+              stroke="none"
+              fill="#2474de"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <span>SEO Saijo</span>
+        </a>
+        <nav class="flex items-center gap-6 text-sm font-semibold">
+          <a
+            href="https://saijogeorge.com/services/"
+            class="text-gray-700 hover:text-blue-600"
+            >Services</a
+          >
+          <a
+            href="https://saijogeorge.com/projects/"
+            class="text-gray-700 hover:text-blue-600"
+            >Tools</a
+          >
+          <a
+            href="https://saijogeorge.com/about/"
+            class="text-gray-700 hover:text-blue-600"
+            >About Me</a
+          >
+          <a
+            href="https://saijogeorge.com/contact/"
+            class="text-gray-700 hover:text-blue-600"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-b from-white to-gray-50"
+    >
+      <div
+        class="container mx-auto grid gap-8 py-16 md:grid-cols-2 md:items-center px-4"
+      >
+        <div>
+          <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
+            SEO Consultant Melbourne
+          </h1>
+          <p class="mt-4 max-w-[60ch] text-lg text-gray-600">
+            Looking for specialized SEO services like
+            <span class="seo-saijo-highlight"
+              >Google algorithm update recovery</span
+            >
+            or an impactful technical SEO audits? Want to get your results
+            <span class="seo-saijo-highlight"
+              >cited by LLMs like ChatGPT and Perplexity</span
+            >? Schedule a discovery call with Melbourne's leading SEO and GEO
+            expert, Saijo George.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="https://saijogeorge.com/contact/"
+              class="seo-saijo-cta rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white shadow hover:bg-blue-500 active:translate-y-px"
+            >
+              Book a Discovery Session
+            </a>
+          </div>
+        </div>
+        <div class="order-1 md:order-none">
+          <div class="relative inline-block">
+            <img
+              src="https://saijogeorge.com/images/saijo-george.webp"
+              alt="Saijo George - SEO Consultant Melbourne"
+              class="w-full md:w-4/5 lg:w-[88%] mx-auto rounded-2xl object-cover shadow border border-gray-200 block"
+            />
 
-			<li>
-				<a href="#0" data-menu="contentm">
-					<i class="fa fa-2x fa-newspaper-o"></i><br/>
-					Content
-				</a>
-			</li>
+            <div class="absolute inset-x-0 bottom-0 pointer-events-none">
+              <div
+                class="pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-6 w-[92%] md:w-3/4 lg:w-2/3 rounded-xl border border-white/40 bg-[#e5d8cc]/75 backdrop-blur-sm shadow-lg"
+              >
+                <p
+                  class="px-5 py-4 text-sm md:text-base leading-snug text-gray-900/90 text-center"
+                >
+                  Saijo George is the leading GEO and SEO expert based in
+                  Melbourne, Australia, offering custom search discovery
+                  services for Australian businesses.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Popover -->
+    <!-- Services Overview -->
+    <section class="container mx-auto space-y-16 py-16 px-4">
+      <div class="text-center max-w-5xl md:max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold tracking-tight">
+          Build Your Organic Reach with Expert SEO Services
+        </h2>
+        <p class="mt-4 text-lg text-gray-600">
+          You've got a great business, but if customers can't find you on
+          Google,
+          <span class="seo-saijo-highlight"
+            >they'll find your competitors instead</span
+          >. Without the right SEO strategy, you're missing out on valuable
+          traffic and sales. That's where I come in. My expert SEO services help
+          you build long-term organic reach, drive consistent traffic, and grow
+          your business.
+        </p>
+      </div>
+      <!-- Core Services Grid -->
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12">
+        <!-- Technical SEO -->
+        <div
+          class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
+              <svg
+                class="h-6 w-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Technical SEO</h3>
+              <p class="mt-2 text-sm text-gray-600">
+                Technical SEO lays the foundation for your website's visibility.
+                <span class="seo-saijo-highlight"
+                  >Without it, even the best content can go unseen</span
+                >. It ensures search engines can crawl, index, and rank your
+                site efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Ecommerce SEO -->
+        <div
+          class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
+              <svg
+                class="h-6 w-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Ecommerce SEO</h3>
+              <p class="mt-2 text-sm text-gray-600">
+                In eCommerce, visibility is everything and that goes beyond just
+                your website. Optimizing for platforms like Google Shopping
+                unlocks
+                <span class="seo-saijo-highlight"
+                  >additional exposure where high-intent buyers are already
+                  searching</span
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
 
-			<li>
-				<a href="#0" data-menu="social">
-					<i class="fa fa-2x fa-globe"></i><br/>
-					Social
-				</a>
-			</li>
+        <!-- SEO Audits -->
+        <div
+          class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
+              <svg
+                class="h-6 w-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">SEO Audits</h3>
+              <p class="mt-2 text-sm text-gray-600">
+                An
+                <span class="seo-saijo-highlight"
+                  >SEO audit isn't just a checklist</span
+                >; it's your blueprint for sustainable growth. Uncover what's
+                really holding your site back, from technical flaws and crawl
+                issues to missed content opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Local SEO -->
+        <div
+          class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
+              <svg
+                class="h-6 w-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Local SEO</h3>
+              <p class="mt-2 text-sm text-gray-600">
+                Local SEO is all about
+                <span class="seo-saijo-highlight"
+                  >showing up when nearby customers are searching</span
+                >, and your Google Business Profile is the front door. If it's
+                not optimized, you're missing out on map pack visibility,
+                reviews, and walk-in traffic.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Algorithm Recovery -->
+        <div
+          class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
+              <svg
+                class="h-6 w-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">
+                Google Algorithm Update Recovery
+              </h3>
+              <p class="mt-2 text-sm text-gray-600">
+                Dropped rankings?
+                <span class="seo-saijo-highlight">Don't guess, diagnose</span>.
+                Google's updates can expose weak spots in your content,
+                backlinks, or user experience. Recovery means digging into the
+                data and fixing what matters.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- AI SEO -->
+        <div
+          class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
+              <!-- Chat icon (matching h-6 w-6 + text-blue-600 like your other SVGs) -->
+              <svg
+                class="h-6 w-6 text-blue-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <!-- chat bubble -->
+                <rect x="3" y="3" width="18" height="14" rx="4" />
+                <!-- tail -->
+                <path d="M8 17H5v3l3-3z" />
+                <!-- message lines -->
+                <path d="M7 8h10M7 11h6" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">AI SEO</h3>
+              <p class="mt-2 text-sm text-gray-600">
+                <span class="seo-saijo-highlight" data-highlight-color="#fada7a"
+                  >Search is shifting from "ten blue links" to "one confident
+                  answer".</span
+                >
+                My AI SEO service positions you to be that answer. I help you
+                shift your focus from keywords to conversations and win in both
+                traditional and AI search.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a
+          href="https://saijogeorge.com/services/"
+          class="inline-flex items-center gap-2 font-semibold text-blue-700 hover:text-blue-800 underline decoration-2 underline-offset-2"
+        >
+          View all SEO services
+          <svg
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 12h14M13 5l7 7-7 7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <!-- Side Projects Section -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-5xl md:max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold tracking-tight">
+            Side Projects : For Fame & Fortune
+          </h2>
+          <p class="mt-3 text-gray-600">
+            Side projects aren't just passion pursuits—they're my
+            <span class="seo-saijo-highlight">SEO testing ground</span>. Without
+            constraints, I experiment with strategies, adapt to algorithm
+            changes, and refine tactics before applying them to client projects.
+            The result? SEO solutions that are innovative, data-driven, and
+            <span class="seo-saijo-highlight">proven to work</span>.
+          </p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12">
+          <a
+            href="https://saijogeorge.com/faq-schema-generator/"
+            class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition"
+          >
+            <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">
+              FAQPage Schema Generator
+            </h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Easiest way to generate FAQ Schema for your webpages.
+            </p>
+          </a>
+          <a
+            href="https://saijogeorge.com/best-marketing-tools/"
+            class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition"
+          >
+            <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">
+              Best SEO Tools
+            </h3>
+            <p class="mt-2 text-sm text-gray-600">
+              A handpicked collection of the latest and greatest SEO tools.
+            </p>
+          </a>
+          <a
+            href="https://saijogeorge.com/export-google-reviews-csv/"
+            class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition"
+          >
+            <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">
+              Export Google Reviews as CSV
+            </h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Export Google Reviews as CSV from your Google Business Profile.
+            </p>
+          </a>
+          <a
+            href="https://saijogeorge.com/google-favicon-checker/"
+            class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition"
+          >
+            <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">
+              Google Favicon Checker
+            </h3>
+            <p class="mt-2 text-sm text-gray-600">
+              A simple bookmarklet to instantly see if your site's favicon is
+              indexed by Google.
+            </p>
+          </a>
+          <a
+            href="https://saijogeorge.com/request-access-sab/"
+            class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition"
+          >
+            <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">
+              Request Access to Service Area Business
+            </h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Request access to any Google Business Profile from SERPs and
+              Google Maps.
+            </p>
+          </a>
+          <a
+            href="https://whoisthebestseo.com/"
+            target="_blank"
+            class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition"
+          >
+            <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">
+              Who is the Best SEO?
+            </h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Nominate someone to be the best SEO in the world.
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a
+          href="https://saijogeorge.com/projects/"
+          class="inline-flex items-center gap-2 font-semibold text-blue-700 hover:text-blue-800 underline decoration-2 underline-offset-2"
+        >
+          View all Side Projects
+          <svg
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 12h14M13 5l7 7-7 7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <!-- Contact Section -->
 
-			<li>
-				<a href="#0" data-menu="growth">
-					<i class="fa fa-2x fa-line-chart"></i><br/>
-					Growth
-				</a>
-			</li>
+    <section id="contact" class="container mx-auto py-16 px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold tracking-tight">
+          Ready to Boost Your Rankings?
+        </h2>
+        <p class="mt-4 text-lg text-gray-600">
+          Schedule a discovery session to discuss how my specialized SEO
+          services can help your business grow organically.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://saijogeorge.com/contact/"
+            class="seo-saijo-cta rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white shadow hover:bg-blue-500 active:translate-y-px"
+          >
+            Book a Discovery Session
+          </a>
+          <a
+            href="https://saijogeorge.com/about/"
+            class="rounded-2xl border-2 border-gray-300 bg-white px-8 py-4 font-semibold text-gray-800 shadow hover:bg-gray-50 transition"
+          >
+            Learn More About Me
+          </a>
+        </div>
+      </div>
+    </section>
+    <div id="myfoot" class="w-full min-h-[200px]">
+      <div class="footer-border"></div>
+      <div class="container mx-auto">
+        <div class="w-full h-[200px] flex flex-col justify-center items-center">
+          <div class="email-text flex items-center mb-6">
+            <span data-parts="email">iam</span>
+            <span data-parts="email,social">@</span>
+            <span data-parts="email,social,website">saijogeorge</span>
+            <span data-parts="email,website">.</span>
+            <span data-parts="email,website">com</span>
+          </div>
+          <div class="social-links flex items-center">
+            <a
+              href="https://twitter.com/saijogeorge"
+              class="social-link"
+              data-trigger="social"
+              >Social</a
+            >
+            <span class="separator">-</span>
+            <a
+              href="mailto:iam@saijogeorge.com"
+              class="social-link"
+              data-trigger="email"
+              >Email</a
+            >
+            <span class="separator">-</span>
+            <a
+              href="https://saijogeorge.com/"
+              class="social-link"
+              data-trigger="website"
+              >Website</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) || window.innerWidth <= 768;
+      const socialLinks = document.querySelectorAll(".social-link");
+      const emailParts = document.querySelectorAll(".email-text span");
+      let rotationInterval;
+      let isUserInteracting = false;
+      const rotationSequence = ["social", "email", "website"];
+      let currentRotationIndex = 0;
+      function activateNeon(trigger) {
+        requestAnimationFrame(() => {
+          emailParts.forEach((part) => part.classList.remove("neon-active"));
+          socialLinks.forEach((link) => link.classList.remove("link-active"));
+          emailParts.forEach((part) => {
+            const parts = part.getAttribute("data-parts");
+            if (parts && parts.includes(trigger)) {
+              part.classList.add("neon-active");
+            }
+          });
+          const correspondingLink = document.querySelector(
+            `[data-trigger="${trigger}"]`
+          );
+          if (correspondingLink) {
+            correspondingLink.classList.add("link-active");
+          }
+        });
+      }
+      function deactivateNeon() {
+        requestAnimationFrame(() => {
+          emailParts.forEach((part) => part.classList.remove("neon-active"));
+          socialLinks.forEach((link) => link.classList.remove("link-active"));
+        });
+      }
+      function startRotation() {
+        if (isUserInteracting) return;
+        rotationInterval = setInterval(() => {
+          if (!isUserInteracting) {
+            const trigger = rotationSequence[currentRotationIndex];
+            activateNeon(trigger);
+            currentRotationIndex =
+              (currentRotationIndex + 1) % rotationSequence.length;
+          }
+        }, 2000);
+      }
+      function stopRotation() {
+        if (rotationInterval) {
+          clearInterval(rotationInterval);
+        }
+      }
+      if (!isMobile) {
+        socialLinks.forEach((link) => {
+          link.addEventListener("mouseenter", function () {
+            isUserInteracting = true;
+            stopRotation();
+            const trigger = this.getAttribute("data-trigger");
+            activateNeon(trigger);
+          });
+          link.addEventListener("mouseleave", function () {
+            isUserInteracting = false;
+            deactivateNeon();
+            startRotation();
+          });
+        });
+      } else {
+        let activeLink = null;
+        socialLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const trigger = this.getAttribute("data-trigger");
+            if (activeLink === this) {
+              isUserInteracting = false;
+              deactivateNeon();
+              activeLink = null;
+              startRotation();
+              window.location.href = this.getAttribute("href");
+            } else {
+              isUserInteracting = true;
+              stopRotation();
+              deactivateNeon();
+              activateNeon(trigger);
+              activeLink = this;
+            }
+          });
+        });
+        document.addEventListener(
+          "click",
+          function (e) {
+            if (
+              !e.target.closest(".social-link") &&
+              !e.target.closest(".email-text")
+            ) {
+              isUserInteracting = false;
+              deactivateNeon();
+              activeLink = null;
+              startRotation();
+            }
+          },
+          { passive: true }
+        );
+      }
+      requestAnimationFrame(() => {
+        startRotation();
+      });
+      window.addEventListener(
+        "beforeunload",
+        () => {
+          stopRotation();
+        },
+        { passive: true }
+      );
+    </script>
+    <script>
+      (() => {
+        const els = document.querySelectorAll(".seo-saijo-highlight");
 
-			<li>
-				<a href="#0" data-menu="projects">
-					<i class="fa fa-2x fa-flask"></i><br/>
-					Projects
-				</a>
-			</li>
+        // Allow per-element delay and custom colour via data-attributes
+        els.forEach((el) => {
+          const c = el.dataset.highlightColor;
+          if (c) el.style.backgroundImage = `linear-gradient(${c},${c})`;
+        });
 
-			<li>
-				<a href="#0" data-menu="contact">
-					<i class="fa fa-2x fa-envelope"></i><br/>
-					</svg>
-					Contact
-				</a>
-			</li>
-		</ul>
-	</nav> <!-- .cd-side-navigation -->
-	
-	<main class="cd-main">
-		<section class="cd-section index visible">
-			<header>
-				<div class="cd-title">
-					<h1>SEO Services in Melbourne</h1>
-					<h2>by SEO Expert: Saijo George</h2>
-					<span>Looking for enterprise OR e-commerce SEO? I can help.<br><br>🗣 📱 Ok Google: "What does Saijo George do?"</span><br/><br/>
-					
-				</div>
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
 
-				<a href="#index-content" class="cd-scroll">Scroll Down</a>
-			</header>
+              const el = entry.target;
+              const delay = parseInt(el.dataset.highlightDelay || 0, 10);
 
-			<div class="cd-content" id="index-content">
-				<p>Hello and welcome! My name is Saijo George, one of the top SEO consultants in Melbourne.</p>
+              setTimeout(() => el.classList.add("is-marked"), delay);
+              obs.unobserve(el); // run once
+            });
+          },
+          { threshold: 0.35 }
+        );
 
-				<p>With a Masters of Information Technology (LaTrobe University) I’m a self-taught SEO and marketing professional. I started focusing seriously on SEO in 2008 and have worked on many successful projects for small to medium sites, local e-commerce stores, startups and global brands.</p>
-
-				<p>I also have extensive agency-side experience, juggling multiple clients with various SEO needs simultaneously, and have audited SEO at the enterprise level.</p>
-
-				<p>Currently I work as the SEO Strategy Director for a Melbourne based boutique <a target="_blank" title="Supple" href="https://supple.com.au/seo-agency/">SEO agency called Supple</a>.</p>
-
-				<p>Recently I managed SEO for <a title="Envato Market" target="_blank" href="http://market.envato.com/">Envato Market</a>, the leading marketplace for digital assets. I was also responsible for content marketing efforts on <a href="http://marketblog.envato.com/" target="_blank">MarketBlog</a> providing articulated, focused, niche content relevant to the audience.</p>
-
-				<p>I guest post on various design and marketing blogs within the industry cementing my authority on the topic. I co-organizer the monthly <a target="_blank" href="http://www.meetup.com/Melbourne-SEO/">Melbourne SEO Meetup</a> with a focus on building relationships with other entrepreneurs interested in SEO.  We discuss breaking news on creating digital strategies, <a href="contentm.html" data-menu="contentm">content marketing</a>, <a href="growth.html" data-menu="growth">growth hacking</a>, <a href="social.html" data-menu="social">social media</a> and of course SEO. </p>
-
-				<h2>What is Search Engine Optimisation - SEO?</h2>
-
-				<p>Put simply, Search Engine Optimization (SEO) is about getting traffic from search result pages. It includes optimising your website and content, so that it can rank well when your potential customers search for keywords relevant to your business.</p>
-
-				<p>Working with an SEO consultant will help your customers find your content on search engine result pages, and get rewarded by search engines for quality, consistent content.</p>
-
-				<p>SEO is not a game of instant gratification, it takes time to analyse and execute plans that will improve your rankings. </p>
-				
-				<p>There is no turn key solution, to really grasp where the actions can come from, you may need a full audit to understand where gains can be made. It should compliment your other efforts including your content marketing and social media marketing.</p>
-				
-				<p>Let me show you how, get in touch with me on <a target="_blank" href="https://twitter.com/SaijoGeorge">Twitter</a> or <a target="_blank" href="https://au.linkedin.com/in/saijogeorge">LinkedIn</a> to discuss how I can help apply these principles to your business.</p>
-
-				<div class="social-buttons">❤ it? Share it :<br/><br/><a href="http://www.facebook.com/sharer.php?u=https://saijogeorge.com" class="social-button facebook"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsaijogeorge.com&amp;text=Saijo%20George's%20Portfolio&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fsaijogeorge.com&amp;via=SaijoGeorge" class="social-button twitter"><i class="fa fa-twitter"></i></a><a href="http://plus.google.com/share?url=https://saijogeorge.com" class="social-button google"><i class="fa fa-google"></i></a><a href="mailto:?subject=Saijo%20George's%20Portfolio&amp;body=Hi%20%0A%0ACheckout%20this%20Saijo%20George's%20Portfolio%20%3A%20http%3A%2F%2Fsaijogeorge.com%0A%0ARegards%2C%0A" class="social-button dribbble"><i class="fa fa-envelope"></i></a><a href="whatsapp://send?text=Saijo%20George's%20Portfolio%20%3A%20http%3A%2F%2Fsaijogeorge.com" class="social-button whatsapp"><i class="fa fa-whatsapp"></i></a></div>
-			</div> <!-- .cd-content -->
-		</section> <!-- .cd-section -->
-	</main> <!-- .cd-main -->
-
-	<div id="cd-loading-bar" data-scale="1" class="index"></div> <!-- lateral loading bar -->
-<script src="js/jquery-2.1.4.js"></script>
-<script src="js/velocity.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-<script src="//instant.page/1.1.0" type="module" integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"></script>
-</body>
+        els.forEach((el) => io.observe(el));
+      })();
+    </script>
+  </body>
 </html>

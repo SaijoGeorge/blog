@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="all">
+  <meta name="language" content="en">
+  <meta name="author" content="Saijo George">
+  <meta name="theme-color" content="#F5AB35">
+  
+  <!-- Primary Meta Tags -->
+  <title>Side Projects - Saijo George</title>
+  <meta name="title" content="Side Projects - Saijo George">
+  <meta name="description" content="Side projects by Melbourne-based SEO and digital marketing strategist Saijo George. Tools, resources, and creative experiments to help marketers work smarter.">
+  <link rel="canonical" href="https://saijogeorge.com/projects/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saijogeorge.com/projects/">
+  <meta property="og:title" content="Side Projects - Saijo George">
+  <meta property="og:description" content="Side projects by Melbourne-based SEO and digital marketing strategist Saijo George. Tools, resources, and creative experiments to help marketers work smarter.">
+  <meta property="og:image" content="https://saijogeorge.com/images/banner/saijogeorge.png">
+  <meta property="og:site_name" content="SaijoGeorge.com">
+  <meta property="article:author" content="https://www.facebook.com/SaijoGeorge">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://saijogeorge.com/projects/">
+  <meta property="twitter:title" content="SaijoGeorge.com">
+  <meta property="twitter:description" content="Side Projects - Saijo George">
+  <meta property="twitter:image" content="https://saijogeorge.com/images/banner/saijogeorge.png">
+  <meta property="twitter:site" content="@SaijoGeorge">
+  <meta property="twitter:creator" content="@SaijoGeorge">
+  <meta property="twitter:domain" content="https://saijogeorge.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://saijogeorge.com/favicon.ico">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tilt+Neon&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://saijogeorge.com",
+            "name": "Home"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://saijogeorge.com/projects/",
+            "name": "Side Projects"
+          }
+        }
+      ]
+    }
+  </script>
+
+  <style>
+    /* Footer background with brick texture */
+    #myfoot {
+      background-color: #120d1f;
+      background-image: url('https://saijogeorge.com/images/brick.png');
+      background-position: 50% center;
+      background-repeat: repeat;
+      contain: layout style paint;
+    }
+    
+    /* Top border */
+    .footer-border {
+      width: 50%;
+      height: 4px;
+      margin: 0 auto;
+      background-color: #4b354b;
+      border-radius: 24px;
+    }
+    
+    /* Neon tube text styling - default off state */
+    .email-text {
+      font-family: 'Tilt Neon', cursive;
+    }
+    
+    .email-text span {
+      display: inline-block;
+      color: #5a4a5a;
+      line-height: 2.5rem;
+      font-size: 2.5rem;
+      font-weight: normal;
+      transition: all 0.3s ease;
+      position: relative;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: text-shadow, opacity;
+      text-shadow: 
+        0 0 3px rgba(150, 150, 180, 0.3),
+        0 0 8px rgba(150, 150, 180, 0.2),
+        -1px -1px 2px rgba(200, 200, 220, 0.4);
+      opacity: 0.7;
+      letter-spacing: 0.05em;
+      -webkit-text-stroke: 0.5px rgba(100, 90, 110, 0.3);
+    }
+    
+    /* Neon glow effect for email parts when active */
+    .email-text span.neon-active {
+      color: #ffd9e2;
+      opacity: 1;
+      -webkit-text-stroke: 0;
+      text-shadow: 
+        0 0 10px #ff003c, 
+        0 0 20px rgba(255, 0, 60, 0.5), 
+        0 0 40px #ff003c, 
+        0 0 100px #ff003c, 
+        0 0 200px #ff003c;
+      animation: buzz 0.05s infinite alternate;
+    }
+    
+    @keyframes buzz {
+      70% {
+        opacity: 0.85;
+      }
+    }
+    
+    /* Social links styling */
+    .social-link {
+      margin: 0 0.25rem;
+      padding: 8px 16px;
+      font-size: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      position: relative;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    
+    .social-link:hover,
+    .social-link.link-active {
+      background-color: #D2C1B6;
+      color: #2c2c2c;
+    }
+    
+    .separator {
+      margin: 0 0.25rem;
+      font-size: 20px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+    
+    /* Project card styles */
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+    
+    /* Hide filtered projects */
+    .project-card.hidden {
+      display: none;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .footer-border {
+        width: 75%;
+      }
+      
+      .email-text span {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+      
+      .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WDN6LH');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body class="h-full bg-gray-50 text-gray-800">
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-30">
+    <div class="container mx-auto flex items-center justify-between py-4 px-4">
+      <a href="https://saijogeorge.com" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 600 600" version="1.1"><path d="M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563" stroke="none" fill="#ffffff" fill-rule="evenodd"/><path d="M 263.500 3.656 C 192.198 13.884, 134.411 42.843, 85.970 92.623 C 42.552 137.240, 14.683 193.389, 4.825 256.107 C 2.845 268.702, 2.562 274.248, 2.562 300.500 C 2.562 334.368, 3.900 346.463, 10.590 373.080 C 37.340 479.517, 120.412 563.173, 226 590.003 C 251.504 596.483, 272.203 599, 300 599 C 327.797 599, 348.496 596.483, 374 590.003 C 458.897 568.431, 530.899 509.192, 569.084 429.500 C 581.543 403.496, 590.392 374.834, 595.171 345 C 597.234 332.121, 597.490 327.146, 597.465 300.500 C 597.434 266.241, 596.033 253.934, 589.056 226.607 C 562.071 120.913, 478.979 37.617, 374 11.019 C 346.518 4.056, 342.846 3.664, 303 3.435 C 282.925 3.320, 265.150 3.419, 263.500 3.656 M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092" stroke="none" fill="#fbdb04" fill-rule="evenodd"/><path d="M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092 M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563" stroke="none" fill="#2474de" fill-rule="evenodd"/></svg>
+        <span>SEO Saijo</span>
+      </a>
+        <nav class="flex items-center gap-6 text-sm font-semibold">
+          <a
+            href="https://saijogeorge.com/services/"
+            class="text-gray-700 hover:text-blue-600"
+            >Services</a
+          >
+          <a
+            href="https://saijogeorge.com/projects/"
+            class="text-gray-700 hover:text-blue-600"
+            >Tools</a
+          >
+          <a
+            href="https://saijogeorge.com/about/"
+            class="text-gray-700 hover:text-blue-600"
+            >About Me</a
+          >
+          <a
+            href="https://saijogeorge.com/contact/"
+            class="text-gray-700 hover:text-blue-600"
+            >Contact</a
+          >
+        </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4 py-8 text-center">
+      <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Side Projects</h1>
+      <p class="mx-auto mt-4 max-w-[120ch] text-lg text-gray-600">
+        Side projects are a brilliant way to learn new things. Without the restrictions of your day job, you can explore creative and risky ideas. Over the years, they've been my testing ground for new skills and, when monetised, a decent source of secondary income.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="container mx-auto px-4 pt-2">
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="text-sm font-semibold text-gray-700">Filter by:</span>
+      <button onclick="filterProjects('all')" class="filter-btn active rounded-full border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:border-blue-600 hover:text-blue-600 active:bg-blue-600 active:text-white active:border-blue-600" data-filter="all">
+        All <span class="count">(32)</span>
+      </button>
+      <button onclick="filterProjects('seo')" class="filter-btn rounded-full border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:border-blue-600 hover:text-blue-600" data-filter="seo">
+        SEO <span class="count">(0)</span>
+      </button>
+      <button onclick="filterProjects('trello')" class="filter-btn rounded-full border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:border-blue-600 hover:text-blue-600" data-filter="trello">
+        Trello <span class="count">(0)</span>
+      </button>
+      <button onclick="filterProjects('utilities')" class="filter-btn rounded-full border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:border-blue-600 hover:text-blue-600" data-filter="utilities">
+        Utilities <span class="count">(0)</span>
+      </button>
+      <button onclick="filterProjects('bookmarklet')" class="filter-btn rounded-full border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:border-blue-600 hover:text-blue-600" data-filter="bookmarklet">
+        Bookmarklet <span class="count">(0)</span>
+      </button>
+      <button onclick="filterProjects('design')" class="filter-btn rounded-full border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:border-blue-600 hover:text-blue-600" data-filter="design">
+        Design <span class="count">(0)</span>
+      </button>
+      <button onclick="filterProjects('others')" class="filter-btn rounded-full border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:border-blue-600 hover:text-blue-600" data-filter="others">
+        Others <span class="count">(0)</span>
+      </button>
+    </div>
+    
+    <div class="text-sm text-gray-600 mb-4">
+      Showing <span id="visible-count" class="font-semibold text-gray-800">32</span> projects
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="container mx-auto px-4 pb-16">
+    <div id="projects-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      
+      <!-- Project Cards with data-tags attributes -->
+      <a href="https://saijogeorge.com/best-marketing-tools/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo">
+        <img src="https://saijogeorge.com/images/best-tools-list.png" alt="Best SEO Tools" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Best SEO Tools</h3>
+      </a>
+
+     <a href="https://whoisthebestseo.com/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo">
+        <img src="https://saijogeorge.com/images/whoisthebestseo.png" alt="Who is the Best SEO?" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Who is the Best SEO?</h3>
+      </a>
+
+      <a href="https://justmotivate.me/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="design,others">
+        <img src="https://saijogeorge.com/images/justmotivate-me.png" alt="Motivational Quotes" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Motivational Quotes</h3>
+      </a>  
+
+      <a href="https://saijogeorge.com/strikethrough-text-generator/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities">
+        <img src="https://saijogeorge.com/images/strikethrough-text-generator.png" alt="Strikethrough Text Generator" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Strikethrough Text Generator</h3>
+      </a>
+
+     <a href="https://saijogeorge.com/google-preferred-sources-button-generator/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo">
+        <img src="https://saijogeorge.com/images/google-preferred-sources-badge-generator.png" alt="Preferred Sources Button Generator" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Preferred Sources Button</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/replace-lines-with-commas/" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities,seo">
+        <img src="https://saijogeorge.com/images/replace-lines-with-commas.png" alt="Replace New Lines With Commas" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Replace New Lines With Commas</h3>
+      </a>
+
+            <a href="https://saijogeorge.com/copy-trello-checklists/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="trello,bookmarklet">
+        <img src="https://saijogeorge.com/images/copy-trello-checklists.png" alt="Copy Trello Checklists" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Copy Trello Checklists</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/download-google-doc-images/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="others,bookmarklet">
+        <img src="https://saijogeorge.com/images/download-google-doc-images.png" alt="Download Google Doc Images" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Download Google Doc Images</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/export-google-reviews/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo">
+        <img src="https://saijogeorge.com/images/export-google-reviews.png" alt="Export Google Reviews" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Export Google Reviews</h3>
+      </a>
+      <a href="https://saijogeorge.com/request-access-to-gbp/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo,bookmarklet">
+        <img src="https://saijogeorge.com/images/request-access-to-gbp.png" alt="Request Access to GBP" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Request Access to GBP</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/sitemap-and-crawl-comparison-tool/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo">
+        <img src="https://saijogeorge.com/images/sitemap-and-crawl-comparison-tool.png" alt="Sitemap and Crawl Comparison Tool" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Sitemap Comparison Tool</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/trello-filter-exclude-label/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="trello,bookmarklet">
+        <img src="https://saijogeorge.com/images/trello-filter-exclude-label.png" alt="Trello Filter Exclude Label" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Trello Filter Exclude Label</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/webpage-to-markdown/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo,bookmarklet">
+        <img src="https://saijogeorge.com/images/webpage-to-markdown.png" alt="Webpage to Markdown" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Webpage to Markdown</h3>
+      </a>
+      <a href="https://saijogeorge.com/title-case-converter/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities">
+        <img src="https://saijogeorge.com/images/title-case-converter.png" alt="Title Case Converter" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Title Case Converter</h3>
+      </a>           
+
+      <a href="https://tldrmarketing.com/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo">
+        <img src="https://saijogeorge.com/images/tldrmarketing.png" alt="tl;dr Marketing" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">tl;dr Marketing</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/json-ld-schema-generator/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo">
+        <img src="https://saijogeorge.com/images/json-ld-tag-manager-fix.png" alt="JSON-LD Generators" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">JSON-LD Generators</h3>
+      </a>
+
+      <a href="https://allthefreestock.com/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="design">
+        <img src="https://saijogeorge.com/images/allthefreestock.png" alt="Free Stock Images" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Free Stock Images</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/brand-style-guide-examples/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="design">
+        <img src="https://saijogeorge.com/images/brand-styl-guides.png" alt="Best Style Guides" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Best Style Guides</h3>
+      </a>
+
+      <a href="https://codemyui.com/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="design">
+        <img src="https://saijogeorge.com/images/codemyui.png" alt="Code My UI" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Code My UI</h3>
+      </a>
+
+      <a href="https://nativeadvertisingworks.com/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="others">
+        <img src="https://saijogeorge.com/images/nativeads.png" alt="Best Native Ads" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Best Native Ads</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/css-puns/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="design">
+        <img src="https://saijogeorge.com/images/css-puns.png" alt="CSS Puns" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">CSS Puns</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/one-click-encoding-decoding-tool/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities">
+        <img src="https://saijogeorge.com/images/encoding-decoding-tool.png" alt="Encoding Decoding Tool" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Encoding Decoding Tool</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/keyword-characters-words-count-tool/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities,seo">
+        <img src="https://saijogeorge.com/images/keyword-characters-words-count-tool.png" alt="Word Count Tool" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Word Count Tool</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/prefix-suffix-keywords-tool/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities,seo">
+        <img src="https://saijogeorge.com/images/prefix-suffix-keywords-tool.png" alt="Bulk Add Prefix Suffix" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Bulk Add Prefix Suffix</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/dummy-credit-card-generator/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities,others">
+        <img src="https://saijogeorge.com/images/dummy-credit-card-generator.png" alt="Dummy CC Generator" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Dummy CC Generator</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/price-to-hours-worked/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="others">
+        <img src="https://saijogeorge.com/images/price-to-hours-worked.png" alt="Price to Hours Worked" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Price to Hours Worked</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/view-google-cache-url/" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo,bookmarklet">
+        <img src="https://saijogeorge.com/images/view-google-cache-url.png" alt="View Google's Cache for any Link" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">View Google's Cache</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/reveal-hidden-text/" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo,bookmarklet">
+        <img src="https://saijogeorge.com/images/reveal-hidden-text.png" alt="Reveal Hidden Text" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Reveal Hidden Text</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/replace-trello-links-urls/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="trello,bookmarklet">
+        <img src="https://saijogeorge.com/images/replace-trello-links-urls.png" alt="Replace Trello Links with URLs" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Replace Trello Links</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/google-favicon-checker/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="seo,bookmarklet">
+        <img src="https://saijogeorge.com/images/google-favicon-checker.png" alt="Google Favicon Checker" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Google Favicon Checker</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/keyboard-shortcut-image-generator/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities">
+        <img src="https://saijogeorge.com/images/keyboard-shortcut-image-generator.png" alt="Keyboard Shortcut Image Generator" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Keyboard Shortcut Generator</h3>
+      </a>
+
+      <a href="https://saijogeorge.com/paste-with-formatting-chatgpt/" target="_blank" class="project-card group rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition" data-tags="utilities">
+        <img src="https://saijogeorge.com/images/paste-with-formatting-chatgpt.png" alt="Paste with Formatting (ChatGPT)" class="aspect-video w-full rounded-xl object-cover">
+        <h3 class="mt-3 font-semibold text-gray-800 group-hover:text-blue-600 transition">Paste with Formatting</h3>
+      </a>
+
+    </div>
+  </section>
+
+  <div id="myfoot" class="w-full min-h-[200px]">
+    <!-- Top border -->
+    <div class="footer-border"></div>
+    
+    <!-- Footer content -->
+    <div class="container mx-auto">
+      <div class="w-full h-[200px] flex flex-col justify-center items-center">
+        <!-- Email/Website text with neon tube effect -->
+        <div class="email-text flex items-center mb-6">
+          <span data-parts="email">iam</span>
+          <span data-parts="email,social">@</span>
+          <span data-parts="email,social,website">saijogeorge</span>
+          <span data-parts="email,website">.</span>
+          <span data-parts="email,website">com</span>
+        </div>
+        
+        <!-- Social links with background hover effect -->
+        <div class="social-links flex items-center">
+          <a href="https://twitter.com/saijogeorge" class="social-link" data-trigger="social">Social</a>
+          <span class="separator">-</span>
+          <a href="https://saijogeorge.com/" class="social-link" data-trigger="website">Website</a>
+          <span class="separator">-</span>
+          <a href="mailto:iam@saijogeorge.com" class="social-link" data-trigger="email">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Filter functionality
+    function filterProjects(tag) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      let visibleCount = 0;
+      
+      // Remove active state from all buttons
+      buttons.forEach(btn => {
+        btn.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+      });
+      
+      // Add active state to clicked button
+      const activeBtn = document.querySelector(`[data-filter="${tag}"]`);
+      activeBtn.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+      
+      // Filter cards
+      cards.forEach(card => {
+        const tags = card.getAttribute('data-tags') || '';
+        
+        if (tag === 'all' || tags.includes(tag)) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      
+      // Update visible count
+      document.getElementById('visible-count').textContent = visibleCount;
+    }
+    
+    // Calculate and update counts for each filter on page load
+    function updateFilterCounts() {
+      const cards = document.querySelectorAll('.project-card');
+      const filters = ['all', 'seo', 'trello', 'utilities', 'bookmarklet', 'design', 'others'];
+      
+      filters.forEach(filter => {
+        let count = 0;
+        
+        if (filter === 'all') {
+          count = cards.length;
+        } else {
+          cards.forEach(card => {
+            const tags = card.getAttribute('data-tags') || '';
+            if (tags.includes(filter)) {
+              count++;
+            }
+          });
+        }
+        
+        const button = document.querySelector(`[data-filter="${filter}"]`);
+        if (button) {
+          const countSpan = button.querySelector('.count');
+          if (countSpan) {
+            countSpan.textContent = `(${count})`;
+          }
+        }
+      });
+    }
+    
+    // Initialize counts on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateFilterCounts();
+    });
+    
+    // Neon footer effect
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    
+    const socialLinks = document.querySelectorAll('.social-link');
+    const emailParts = document.querySelectorAll('.email-text span');
+    
+    let rotationInterval;
+    let isUserInteracting = false;
+    const rotationSequence = ['social', 'website', 'email'];
+    let currentRotationIndex = 0;
+    
+    function activateNeon(trigger) {
+      requestAnimationFrame(() => {
+        emailParts.forEach(part => part.classList.remove('neon-active'));
+        socialLinks.forEach(link => link.classList.remove('link-active'));
+        
+        emailParts.forEach(part => {
+          const parts = part.getAttribute('data-parts');
+          if (parts && parts.includes(trigger)) {
+            part.classList.add('neon-active');
+          }
+        });
+        
+        const correspondingLink = document.querySelector(`[data-trigger="${trigger}"]`);
+        if (correspondingLink) {
+          correspondingLink.classList.add('link-active');
+        }
+      });
+    }
+    
+    function deactivateNeon() {
+      requestAnimationFrame(() => {
+        emailParts.forEach(part => part.classList.remove('neon-active'));
+        socialLinks.forEach(link => link.classList.remove('link-active'));
+      });
+    }
+    
+    function startRotation() {
+      if (isUserInteracting) return;
+      
+      rotationInterval = setInterval(() => {
+        if (!isUserInteracting) {
+          const trigger = rotationSequence[currentRotationIndex];
+          activateNeon(trigger);
+          currentRotationIndex = (currentRotationIndex + 1) % rotationSequence.length;
+        }
+      }, 2000);
+    }
+    
+    function stopRotation() {
+      if (rotationInterval) {
+        clearInterval(rotationInterval);
+      }
+    }
+    
+    if (!isMobile) {
+      socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          isUserInteracting = true;
+          stopRotation();
+          const trigger = this.getAttribute('data-trigger');
+          activateNeon(trigger);
+        });
+        
+        link.addEventListener('mouseleave', function() {
+          isUserInteracting = false;
+          deactivateNeon();
+          startRotation();
+        });
+      });
+    } else {
+      let activeLink = null;
+      
+      socialLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const trigger = this.getAttribute('data-trigger');
+          
+          if (activeLink === this) {
+            isUserInteracting = false;
+            deactivateNeon();
+            activeLink = null;
+            startRotation();
+            window.location.href = this.getAttribute('href');
+          } else {
+            isUserInteracting = true;
+            stopRotation();
+            deactivateNeon();
+            
+            activateNeon(trigger);
+            activeLink = this;
+          }
+        });
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.social-link') && !e.target.closest('.email-text')) {
+          isUserInteracting = false;
+          deactivateNeon();
+          activeLink = null;
+          startRotation();
+        }
+      }, { passive: true });
+    }
+    
+    requestAnimationFrame(() => {
+      startRotation();
+    });
+    
+    window.addEventListener('beforeunload', () => {
+      stopRotation();
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
