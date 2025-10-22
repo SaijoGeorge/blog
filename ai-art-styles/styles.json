@@ -847,12 +847,6 @@
     "featured": "yes"
   },
   {
-    "name": "BDSM",
-    "image": "image of a mango in bdsm style.webp",
-    "prompt": "create an image of a mango in BDSM style",
-    "description": "A fashion aesthetic inspired by BDSM culture, characterized by the use of leather, latex, harnesses, and other fetishistic elements to create a bold, edgy, and powerful look."
-  },
-  {
     "name": "Beach Day",
     "image": "image of a mango in beach day style.webp",
     "prompt": "create an image of a mango in Beach Day style",
@@ -1050,12 +1044,6 @@
     "image": "image of a mango in bon chic, bon genre style.webp",
     "prompt": "create an image of a mango in Bon Chic, Bon Genre style",
     "description": "A French phrase meaning 'good style, good attitude,' often used to describe a classic, elegant, and sophisticated style."
-  },
-  {
-    "name": "Bondage",
-    "image": "image of a mango in bondage style.webp",
-    "prompt": "create an image of a mango in Bondage style",
-    "description": "A fashion aesthetic that incorporates elements of BDSM, such as leather, straps, and buckles, to create a provocative and edgy look."
   },
   {
     "name": "Bosozoku",
@@ -1662,6 +1650,13 @@
     "image": "image of a mango in city pop style.webp",
     "prompt": "create an image of a mango in City Pop style",
     "description": "A Japanese 1980s music genre aesthetic with urban sophistication and neon nostalgia."
+  },
+  {
+    "name": "Classic Comic Book",
+    "image": "image of a mango in classic comic book style.webp",
+    "prompt": "create an image of a mango in Classic Comic Book style",
+    "description": "A bold, action-packed art style with strong black outlines, halftone shading, and vibrant colours.",
+    "featured": "yes"
   },
   {
     "name": "Classic Lolita",
@@ -2637,6 +2632,12 @@
     "description": "A 1970s aesthetic featuring glitter, disco balls, platforms, and dance floor glamour."
   },
   {
+    "name": "Disney Classic",
+    "image": "image of a mango in disney classic style.webp",
+    "prompt": "create an image of a mango in Disney Classic style",
+    "description": "A charming animation style inspired by Disney’s golden age, featuring soft colours, expressive shapes, and whimsical character appeal."
+  },
+  {
     "name": "Dissociative Pout",
     "image": "image of a mango in dissociative pout style.webp",
     "prompt": "create an image of a mango in Dissociative Pout style",
@@ -3129,6 +3130,12 @@
     "image": "image of a mango in fantasy astronomy style.webp",
     "prompt": "create an image of a mango in Fantasy Astronomy style",
     "description": "An aesthetic blending celestial imagery with magical and fantastical elements."
+  },
+  {
+    "name": "Fantasy Storybook",
+    "image": "image of a mango in fantasy storybook style.webp",
+    "prompt": "create an image of a mango in Fantasy Storybook style",
+    "description": "A richly illustrated children’s book style with magical elements, ink outlines, and painterly details."
   },
   {
     "name": "FantasY2K",
@@ -4709,6 +4716,13 @@
     "description": "A medieval aesthetic celebrating knights, armor, chivalry, and honor."
   },
   {
+    "name": "Knitted Toy",
+    "image": "image of a mango in knitted toy style.webp",
+    "prompt": "create an image of a mango in Knitted Toy style",
+    "description": "A cosy handmade aesthetic mimicking soft yarn textures, stitched edges, and toy-like charm.",
+    "featured": "yes"
+  },
+  {
     "name": "Kogal",
     "image": "image of a mango in kogal style.webp",
     "prompt": "create an image of a mango in Kogal style",
@@ -5277,6 +5291,13 @@
     "description": "An aesthetic nostalgic for 1990s-early 2000s internet design and culture."
   },
   {
+    "name": "Origami",
+    "image": "image of a mango in origami style.webp",
+    "prompt": "create an image of a mango in Origami style",
+    "description": "A folded paper-inspired art style featuring crisp lines, geometric symmetry, and minimalist charm.",
+    "featured": "yes"
+  },
+  {
     "name": "Otaku",
     "image": "image of a mango in otaku style.webp",
     "prompt": "create an image of a mango in Otaku style",
@@ -5299,6 +5320,13 @@
     "image": "image of a mango in palewave style.webp",
     "prompt": "create an image of a mango in Palewave style",
     "description": "A minimalist aesthetic with washed-out pastels and soft tones.",
+    "featured": "yes"
+  },
+  {
+    "name": "Paper Collage",
+    "image": "image of a mango in paper collage style.webp",
+    "prompt": "create an image of a mango in Paper Collage style",
+    "description": "A mixed-media look created by layering torn or cut paper, with visible texture and organic composition.",
     "featured": "yes"
   },
   {
@@ -5466,6 +5494,12 @@
     "description": "A 1970s rebellious aesthetic with DIY ethics, mohawks, and anti-establishment attitude."
   },
   {
+    "name": "Puppet",
+    "image": "image of a mango in puppet style.webp",
+    "prompt": "create an image of a mango in Puppet style",
+    "description": "A stop-motion inspired style featuring textured materials, handcrafted charm, and a tactile, whimsical feel."
+  },
+  {
     "name": "Queencore",
     "image": "image of a mango in queencore style.webp",
     "prompt": "create an image of a mango in Queencore style",
@@ -5532,6 +5566,12 @@
     "prompt": "create an image of a mango in Retrowave style",
     "description": "A 1980s-inspired aesthetic with neon, synthwave, and nostalgic futurism.",
     "featured": "yes"
+  },
+  {
+    "name": "Rick and Morty",
+    "image": "image of a mango in rick and morty style.webp",
+    "prompt": "create an image of a mango in Rick and Morty style",
+    "description": "A modern cartoon style known for its sci-fi themes, expressive character designs, and chaotic humour."
   },
   {
     "name": "Riot Grrrl",
@@ -5666,6 +5706,13 @@
     "description": "An optimistic speculative aesthetic with green technology and sustainable futures."
   },
   {
+    "name": "South Park",
+    "image": "image of a mango in south park style.webp",
+    "prompt": "create an image of a mango in South Park style",
+    "description": "A cutout animation-inspired style featuring simple shapes, bold colours, and satirical cartoon charm.",
+    "featured": "yes"
+  },
+  {
     "name": "Southern Gothic",
     "image": "image of a mango in southern gothic style.webp",
     "prompt": "create an image of a mango in Southern Gothic style",
@@ -5710,10 +5757,23 @@
     "description": "A bold, graphic aesthetic featuring sharp contrasts and clean outlines, often used in street art and printmaking."
   },
   {
+    "name": "Sticker",
+    "image": "image of a mango in sticker style.webp",
+    "prompt": "create an image of a mango in Sticker style",
+    "description": "A playful and clean illustrative style with bold outlines, flat colours, and glossy sticker-like finish.",
+    "featured": "yes"
+  },
+  {
     "name": "Streetcore",
     "image": "image of a mango in streetcore style.webp",
     "prompt": "create an image of a mango in Streetcore style",
     "description": "An urban aesthetic celebrating street culture, graffiti, and city life."
+  },
+  {
+    "name": "Studio Ghibli",
+    "image": "image of a mango in studio ghibli style.webp",
+    "prompt": "create an image of a mango in Studio Ghibli style",
+    "description": "A hand-painted Japanese animation style known for its detailed worlds, gentle tones, and magical realism."
   },
   {
     "name": "Studyblr",
@@ -5744,6 +5804,12 @@
     "image": "image of a mango in techwear style.webp",
     "prompt": "create an image of a mango in Techwear style",
     "description": "A futuristic fashion aesthetic with functional, technical, waterproof urban clothing."
+  },
+  {
+    "name": "The Simpsons",
+    "image": "image of a mango in the simpsons style.webp",
+    "prompt": "create an image of a mango in The Simpsons style",
+    "description": "A cartoon style with simple linework, flat colours, and exaggerated, humorous expressions inspired by the iconic TV show."
   },
   {
     "name": "Trad Goth",
