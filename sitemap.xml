@@ -12,6 +12,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+    <url>
+    <loc>https://saijogeorge.com/ai-art-styles/</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://saijogeorge.com/contentm.html</loc>
     <lastmod>2018-02-12</lastmod>
