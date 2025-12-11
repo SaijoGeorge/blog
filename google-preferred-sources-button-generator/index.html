@@ -203,6 +203,53 @@
         outline-offset: 2px;
       }
 
+ins, del{
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 .3em;
+}
+ins {
+  background: #83d5a8;
+  height: auto;
+  border-radius: .3em;
+  display: inline; 
+  -webkit-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+  margin-left: .07em;
+  margin-right: .07em;
+}
+del {
+  background: rgba(231, 76, 60,.5);
+  cursor: no-drop;
+  position: relative;
+  top: .2em;
+  height: 1.31em;
+  width: .4em;
+  line-height: 1.35;
+  overflow: hidden;
+  color: transparent;
+  margin: -.4em .07em -.05em .07em;
+  padding: 0 0 .1em 0;
+  -webkit-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+  border-radius: .3em;
+  transition: padding-left ease .3s, padding-right ease .3s, color ease .15s;
+}
+del:hover {
+  width: auto;
+  color: #962e22;
+  display: inline;
+  padding: 0 .35em 0em 0.35em;
+  line-height: unset;
+  position: unset;
+  top: unset;
+  height: unset;
+  transition: padding-left ease .3s, padding-right ease .3s, color ease .7s;
+}
+
+
       /* Timeline:
    - 0–80% (first ~6s): idle (no glow)
    - 80–100% (~1.5s): slower, gentler pulse */
@@ -469,7 +516,7 @@
 </script>
       <div>
         <h2 class="text-2xl font-bold tracking-tight">What is Google Preferred Sources?</h2>
-        <p class="mt-3 text-gray-600">Google quietly soft-launched Preferred Sources in Search Labs in 2025, but now it's rolling out the feature widely across the <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://blog.google/products/search/preferred-sources/" target="_blank">US and India</a>. With Preferred Sources, you can tell Google which websites you'd rather read. Once you've set your preferences, you'll notice more stories from those outlets showing up in Top Stories, especially when they've just published fresh and relevant content. You'll also get a dedicated From your sources section right on the results page, making it easier to spot articles from the sites you trust.</p>
+        <p class="mt-3 text-gray-600">Google quietly soft-launched Preferred Sources in Search Labs in 2025, but now it's rolling out the feature <del> widely across <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://blog.google/products/search/preferred-sources/" target="_blank">US and India</a></del><ins> globally for <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://blog.google/products/search/tools-partnerships-web-ecosystem/" target="_blank">all English</a> users</ins> . With Preferred Sources, you can tell Google which websites you'd rather read. Once you've set your preferences, you'll notice more stories from those outlets showing up in Top Stories, especially when they've just published fresh and relevant content. You'll also get a dedicated From your sources section right on the results page, making it easier to spot articles from the sites you trust.</p>
        <p class="mt-3 text-gray-600">This is what it looks like. You can click on it to add my site as a Preferred Source, if you are in the US or India.</p>
        <br/>
        <a href="https://www.google.com/preferences/source?q=https://saijogeorge.com" target="_blank" rel="noopener noreferrer"><svg loading="lazy" decoding="async" fetchpriority="low" width="270" height="70" viewBox="0 0 270 70" xmlns="http://www.w3.org/2000/svg">
@@ -510,11 +557,11 @@
 
         <div class="grid items-center gap-8 md:grid-cols-2">
       <div class="order-1 md:order-none">
-        <img src="google-preferred-source-badge-only-in-usa-and-india.png" alt="Google Preferred Sources Badge only in USA and India" class="aspect-video w-full rounded-2xl object-cover shadow" />
+        <img src="google-preferred-source-badge-only-in-usa-and-india.webp" alt="Google Preferred Sources Badge only in USA and India" class="aspect-video w-full rounded-2xl object-cover shadow" />
       </div>
       <div>
         <h2 class="text-2xl font-bold tracking-tight">Advance Customisation for Google Preferred Sources Badge</h2>
-        <p class="mt-3 text-gray-600">Since the feature is currently limited to English-speaking users in the US and India, it's advisable to display it only to visitors from these countries. You can do this (saw it from <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://coywolf.com/guides/how-to-show-and-hide-geo-targeted-content-by-country-state-city-or-zip-code/" target="_blank" rel="noopener">Coywolf by Jon Henshaw</a>) using a geolocation service like <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://geotargetly.com/?red=saijo" target="_blank" rel="noopener sponsored">Geo Targetly</a> or using Cloudflare Workers.</p>
+        <p class="mt-3 text-gray-600">Since the feature is currently <del cite="https://www.linkedin.com/posts/saijogeorge_googles-preferred-sources-is-no-longer-a-activity-7404655017145692160-VdWD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAT1v_8BELALtlQmXLUAlOFqngDFUcgXPRY" datetime="2025-12-11">limited to English-speaking users in the US and India</del> <ins>rolling out globally for all English users</ins>, it's advisable to display it only to visitors from these countries. You can do this (saw it from <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://coywolf.com/guides/how-to-show-and-hide-geo-targeted-content-by-country-state-city-or-zip-code/" target="_blank" rel="noopener">Coywolf by Jon Henshaw</a>) using a geolocation service like <a class="text-blue-600 hover:underline underline-offset-4 decoration-2" href="https://geotargetly.com/?red=saijo" target="_blank" rel="noopener sponsored">Geo Targetly</a> or using Cloudflare Workers.</p>
 
         <p class="mt-3 text-gray-600">Set up Google Tag Manager to trigger a custom GA4 event whenever someone clicks on your Preferred Source badge so that you can track badge clicks in GA4.</p>
    
