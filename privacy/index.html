@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="all" />
+    <meta name="language" content="en" />
+    <meta name="author" content="Saijo George" />
+    <meta name="theme-color" content="#F5AB35" />
+
+    <!-- Primary Meta Tags -->
+    <title>Privacy Policy - Saijo George</title>
+    <meta name="title" content="Privacy Policy - Saijo George" />
+    <meta
+      name="description"
+      content="How I collect, use, and protect your data on saijogeorge.com. Plain English privacy policy covering analytics, cookies, and email collection."
+    />
+    <link rel="canonical" href="https://saijogeorge.com/privacy/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saijogeorge.com/privacy/" />
+    <meta property="og:title" content="Privacy Policy - Saijo George" />
+    <meta
+      property="og:description"
+      content="How I collect, use, and protect your data on saijogeorge.com. Plain English privacy policy covering analytics, cookies, and email collection."
+    />
+    <meta
+      property="og:image"
+      content="https://saijogeorge.com/images/saijo-george.webp"
+    />
+    <meta property="og:site_name" content="SaijoGeorge.com" />
+    <meta
+      property="article:author"
+      content="https://www.facebook.com/SaijoGeorge"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://saijogeorge.com/privacy/" />
+    <meta property="twitter:title" content="Privacy Policy - Saijo George" />
+    <meta
+      property="twitter:description"
+      content="How I collect, use, and protect your data on saijogeorge.com. Plain English privacy policy covering analytics, cookies, and email collection."
+    />
+    <meta
+      property="twitter:image"
+      content="https://saijogeorge.com/images/saijo-george.webp"
+    />
+    <meta property="twitter:site" content="@SaijoGeorge" />
+    <meta property="twitter:creator" content="@SaijoGeorge" />
+    <meta property="twitter:domain" content="https://saijogeorge.com" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://saijogeorge.com/favicon.ico"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://saijogeorge.com",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://saijogeorge.com/privacy/",
+              "name": "Privacy Policy"
+            }
+          }
+        ]
+      }
+    </script>
+ 
+    <style>
+      /* Footer background with brick texture */
+      #myfoot {
+        background-color: #120d1f;
+        background-image: url("https://saijogeorge.com/images/brick.png");
+        background-position: 50% center;
+        background-repeat: repeat;
+        contain: layout style paint;
+      }
+
+      /* Top border */
+      .footer-border {
+        width: 50%;
+        height: 4px;
+        margin: 0 auto;
+        background-color: #4b354b;
+        border-radius: 24px;
+      }
+
+      /* Neon tube text styling - default off state */
+      .email-text {
+        font-family: "Tilt Neon", cursive;
+      }
+
+      .email-text span {
+        display: inline-block;
+        color: #5a4a5a;
+        line-height: 2.5rem;
+        font-size: 2.5rem;
+        font-weight: normal;
+        transition: all 0.3s ease;
+        position: relative;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: text-shadow, opacity;
+        /* Glassy tube effect when off - optimized */
+        text-shadow:
+          0 0 3px rgba(150, 150, 180, 0.3),
+          0 0 8px rgba(150, 150, 180, 0.2),
+          -1px -1px 2px rgba(200, 200, 220, 0.4);
+        /* Slightly transparent for glass effect */
+        opacity: 0.7;
+        /* Letter spacing for glass tube separation */
+        letter-spacing: 0.05em;
+        /* Text stroke for glass tube outline */
+        -webkit-text-stroke: 0.5px rgba(100, 90, 110, 0.3);
+      }
+
+      /* Neon glow effect for email parts when active - socod style in red */
+      .email-text span.neon-active {
+        color: #ffd9e2;
+        opacity: 1;
+        -webkit-text-stroke: 0;
+        text-shadow:
+          0 0 10px #ff003c,
+          0 0 20px rgba(255, 0, 60, 0.5),
+          0 0 40px #ff003c,
+          0 0 100px #ff003c,
+          0 0 200px #ff003c;
+        animation: buzz 0.05s infinite alternate;
+      }
+
+      @keyframes buzz {
+        70% {
+          opacity: 0.85;
+        }
+      }
+
+      /* Social links styling */
+      .social-link {
+        margin: 0 0.25rem;
+        padding: 8px 16px;
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        position: relative;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+
+      .social-link:hover,
+      .social-link.link-active {
+        background-color: #d2c1b6;
+        color: #2c2c2c;
+      }
+
+      .separator {
+        margin: 0 0.25rem;
+        font-size: 20px;
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .footer-border {
+          width: 75%;
+        }
+
+        .email-text span {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+        }
+
+        .social-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      .seo-saijo-highlight {
+        --hl-thickness: 0.95em;
+        --hl-offset: 88%;
+        position: relative;
+        font-style: italic;
+        background-image: linear-gradient(#fada7a, #fada7a);
+        background-repeat: no-repeat;
+        background-size: 0% var(--hl-thickness);
+        background-position: 0 var(--hl-offset);
+        padding: 0 0.06em;
+        transition: background-size 900ms cubic-bezier(0.22, 0.61, 0.36, 1);
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+
+      .seo-saijo-highlight.is-marked {
+        background-size: 100% var(--hl-thickness);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .seo-saijo-highlight {
+          transition: none;
+        }
+      }
+
+      .seo-saijo-cta {
+        position: relative;
+        border: 3px solid #ffd800;
+        box-shadow: 0 0 0 0 rgba(255, 216, 0, 0.6);
+        animation: cta-pulse-6s-gap 5.5s ease-out infinite both;
+      }
+
+      .seo-saijo-cta:hover {
+        box-shadow:
+          0 0 0 4px rgba(255, 216, 0, 0.4),
+          0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .seo-saijo-cta:active {
+        transform: translateY(1px);
+      }
+
+      .seo-saijo-cta:focus-visible {
+        outline: 3px solid #ffd800;
+        outline-offset: 2px;
+      }
+
+      @keyframes cta-pulse-6s-gap {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+          transform: scale(1);
+        }
+        79.9% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+          transform: scale(1);
+        }
+        80% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0.45);
+          transform: scale(1);
+        }
+        88% {
+          box-shadow: 0 0 0 18px rgba(255, 216, 0, 0);
+          transform: scale(1.02);
+        }
+        96% {
+          box-shadow: 0 0 0 6px rgba(255, 216, 0, 0.12);
+          transform: scale(1.005);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+          transform: scale(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .seo-saijo-cta {
+          animation: none;
+        }
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WDN6LH");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body class="h-full bg-gray-50 text-gray-800">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header
+      class="border-b md:border-b border-t md:border-t-0 border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 fixed bottom-0 md:sticky md:top-0 left-0 right-0 z-30"
+    >
+      <div class="container mx-auto flex items-center justify-between py-4 px-4">
+        <a href="https://saijogeorge.com" class="flex items-center gap-2 font-bold text-xl tracking-tight">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 600 600" version="1.1">
+            <path
+              d="M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563"
+              stroke="none"
+              fill="#ffffff"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M 263.500 3.656 C 192.198 13.884, 134.411 42.843, 85.970 92.623 C 42.552 137.240, 14.683 193.389, 4.825 256.107 C 2.845 268.702, 2.562 274.248, 2.562 300.500 C 2.562 334.368, 3.900 346.463, 10.590 373.080 C 37.340 479.517, 120.412 563.173, 226 590.003 C 251.504 596.483, 272.203 599, 300 599 C 327.797 599, 348.496 596.483, 374 590.003 C 458.897 568.431, 530.899 509.192, 569.084 429.500 C 581.543 403.496, 590.392 374.834, 595.171 345 C 597.234 332.121, 597.490 327.146, 597.465 300.500 C 597.434 266.241, 596.033 253.934, 589.056 226.607 C 562.071 120.913, 478.979 37.617, 374 11.019 C 346.518 4.056, 342.846 3.664, 303 3.435 C 282.925 3.320, 265.150 3.419, 263.500 3.656 M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092"
+              stroke="none"
+              fill="#fbdb04"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092 M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563"
+              stroke="none"
+              fill="#2474de"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <span>SEO Saijo</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+          <a href="https://saijogeorge.com/services/" class="text-gray-700 hover:text-blue-600">Services</a>
+          <a href="https://saijogeorge.com/projects/" class="text-gray-700 hover:text-blue-600">Tools</a>
+          <a href="https://saijogeorge.com/about/" class="text-gray-700 hover:text-blue-600">About Me</a>
+          <a href="https://saijogeorge.com/contact/" class="text-gray-700 hover:text-blue-600">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden md:hidden absolute bottom-full left-0 right-0 border-t border-gray-200 bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+          <a href="https://saijogeorge.com/services/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">Services</a>
+          <a href="https://saijogeorge.com/projects/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">Tools</a>
+          <a href="https://saijogeorge.com/about/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">About Me</a>
+          <a href="https://saijogeorge.com/contact/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16 max-w-4xl mb-20 md:mb-0">
+      <article class="prose prose-lg max-w-none">
+        <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl mb-2">
+          Privacy Policy
+        </h1>
+        <p class="text-sm text-gray-500 mb-8">Last updated: 1 January 2026</p>
+
+        <p class="text-lg text-gray-600">
+          Look, I respect your privacy. This policy explains what information I
+          collect when you visit saijogeorge.com, why I collect it, and what I
+          do with it.
+        </p>
+
+        <h2 class="text-2xl font-bold tracking-tight mt-12 mb-4">
+          What I collect
+        </h2>
+
+        <h3 class="text-xl font-semibold mt-8 mb-3">
+          Analytics and usage data
+        </h3>
+
+        <p class="text-gray-600">
+          I use Google Analytics 4 (via Google Tag Manager) and Microsoft
+          Clarity to understand how people use this site. These tools collect
+          things like:
+        </p>
+
+        <ul class="mt-4 space-y-2 text-gray-600">
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span>Pages you visit</span>
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span>How long you spend on the site</span>
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span>What device and browser you're using</span>
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span
+              >Your general location (country/city level, not your actual
+              address)</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span
+              >How you interact with the site (clicks, scrolls, that sort of
+              thing)</span
+            >
+          </li>
+        </ul>
+
+        <p class="text-gray-600 mt-4">
+          Clarity also records sessions so I can see where people get stuck or
+          confused. It's anonymised - I can't see who you are, just what's
+          happening on the page.
+        </p>
+
+        <p class="text-gray-600 mt-4">
+          Both Google and Clarity use cookies to track this stuff. If you'd
+          rather they didn't, most browsers let you block cookies or go
+          incognito.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-3">
+          Email addresses (when I add the signup form)
+        </h3>
+
+        <p class="text-gray-600">
+          When I eventually add a newsletter signup form, I'll collect:
+        </p>
+
+        <ul class="mt-4 space-y-2 text-gray-600">
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span>Your email address</span>
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span
+              >Your first name (so emails don't feel like they're coming from a
+              robot)</span
+            >
+          </li>
+        </ul>
+
+        <p class="text-gray-600 mt-4">
+          That's it. I won't collect anything else unless you specifically give
+          it to me.
+        </p>
+
+        <h2 class="text-2xl font-bold tracking-tight mt-12 mb-4">
+          What I do with this information
+        </h2>
+
+        <p class="text-gray-600">
+          <strong>Analytics data:</strong> I use it to figure out what's
+          working and what's not. Which pages are people actually reading?
+          Where do they drop off? Are my tools useful or just taking up space?
+        </p>
+
+        <p class="text-gray-600 mt-4">
+          Google and Microsoft process this data on their servers. They have
+          their own privacy policies:
+        </p>
+
+        <ul class="mt-4 space-y-2 text-gray-600">
+          <li>
+            
+              <a href="https://policies.google.com/privacy"
+              class="text-blue-600 hover:underline underline-offset-4 decoration-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Google's Privacy Policy</a
+            >
+          </li>
+          <li>
+            
+              <a href="https://privacy.microsoft.com/en-us/privacystatement"
+              class="text-blue-600 hover:underline underline-offset-4 decoration-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Microsoft's Privacy Policy</a
+            >
+          </li>
+        </ul>
+
+        <p class="text-gray-600 mt-6">
+          <strong>Email addresses:</strong> When I start collecting them, I'll
+          use them to send you occasional emails - updates about new tools,
+          blog posts, or things I reckon you'll find useful. I won't spam you,
+          and I definitely won't sell your email to anyone. It's for my use
+          only.
+        </p>
+
+        <h2 class="text-2xl font-bold tracking-tight mt-12 mb-4">
+          Your rights
+        </h2>
+
+        <p class="text-gray-600">You're in control here. You can:</p>
+
+        <ul class="mt-4 space-y-2 text-gray-600">
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span
+              ><strong>Unsubscribe</strong> from emails anytime (there'll be an
+              unsubscribe link in every email)</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span
+              ><strong>Request your data</strong> if you want to see what I've
+              got</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span><strong>Delete your data</strong> if you want it gone</span>
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs"
+              >✓</span
+            >
+            <span
+              ><strong>Block cookies</strong> through your browser
+              settings</span
+            >
+          </li>
+        </ul>
+
+        <p class="text-gray-600 mt-6">
+          If you're in the EU, you've got extra rights under GDPR. If you're in
+          California, you've got rights under CCPA. Basically, you can ask me
+          what data I have, ask me to delete it, or tell me to stop collecting
+          it. Just email me.
+        </p>
+
+        <h2 class="text-2xl font-bold tracking-tight mt-12 mb-4">
+          Kids' privacy
+        </h2>
+
+        <p class="text-gray-600">
+          This site isn't aimed at kids under 13. I don't knowingly collect
+          information from children. If you're a parent and reckon I've
+          accidentally collected your kid's data, let me know and I'll delete
+          it.
+        </p>
+
+        <h2 class="text-2xl font-bold tracking-tight mt-12 mb-4">
+          Changes to this policy
+        </h2>
+
+        <p class="text-gray-600">
+          If I change how I handle your data, I'll update this page and change
+          the date at the top. If it's a big change, I'll probably mention it
+          in an email (if you're signed up) or stick a note on the site.
+        </p>
+
+        <h2 class="text-2xl font-bold tracking-tight mt-12 mb-4">Contact</h2>
+
+        <p class="text-gray-600">
+          Questions? Concerns? Want to request or delete your data?
+        </p>
+
+        <p class="text-gray-600 mt-4">
+          Email me:
+          
+            <a href="mailto:iam@saijogeorge.com"
+            class="text-blue-600 hover:underline underline-offset-4 decoration-2"
+            >iam@saijogeorge.com</a
+          >
+        </p>
+      </article>
+    </main>
+
+    <!-- Footer -->
+
+    <div id="myfoot" class="w-full min-h-[200px]">
+      <div class="footer-border"></div>
+      <div class="container mx-auto">
+        <div class="w-full h-[200px] flex flex-col justify-center items-center">
+          <div class="email-text flex items-center mb-6">
+            <span data-parts="email">iam</span>
+            <span data-parts="email,social">@</span>
+            <span data-parts="email,social,website">saijogeorge</span>
+            <span data-parts="email,website">.</span>
+            <span data-parts="email,website">com</span>
+          </div>
+          <div class="social-links flex items-center">
+            <a href="https://www.linkedin.com/in/saijogeorge/" class="social-link" data-trigger="social">Social</a>
+            <span class="separator">-</span>
+            <a href="https://saijogeorge.com/" class="social-link" data-trigger="website">Website</a>
+            <span class="separator">-</span>
+            <a href="mailto:iam@saijogeorge.com" class="social-link" data-trigger="email">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Check if device is mobile
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) || window.innerWidth <= 768;
+
+      const socialLinks = document.querySelectorAll(".social-link");
+      const emailParts = document.querySelectorAll(".email-text span");
+
+      let rotationInterval;
+      let isUserInteracting = false;
+      const rotationSequence = ["social", "website", "email"];
+      let currentRotationIndex = 0;
+
+      // Function to activate neon effect on email parts
+      function activateNeon(trigger) {
+        // Use requestAnimationFrame for smoother updates
+        requestAnimationFrame(() => {
+          // Remove all active states first
+          emailParts.forEach((part) => part.classList.remove("neon-active"));
+          socialLinks.forEach((link) => link.classList.remove("link-active"));
+
+          // Find and activate parts that match the trigger
+          emailParts.forEach((part) => {
+            const parts = part.getAttribute("data-parts");
+            if (parts && parts.includes(trigger)) {
+              part.classList.add("neon-active");
+            }
+          });
+
+          // Activate corresponding link
+          const correspondingLink = document.querySelector(
+            `[data-trigger="${trigger}"]`
+          );
+          if (correspondingLink) {
+            correspondingLink.classList.add("link-active");
+          }
+        });
+      }
+
+      // Function to deactivate all neon effects
+      function deactivateNeon() {
+        requestAnimationFrame(() => {
+          emailParts.forEach((part) => part.classList.remove("neon-active"));
+          socialLinks.forEach((link) => link.classList.remove("link-active"));
+        });
+      }
+
+      // Function to rotate through effects automatically
+      function startRotation() {
+        if (isUserInteracting) return;
+
+        rotationInterval = setInterval(() => {
+          if (!isUserInteracting) {
+            const trigger = rotationSequence[currentRotationIndex];
+            activateNeon(trigger);
+            currentRotationIndex =
+              (currentRotationIndex + 1) % rotationSequence.length;
+          }
+        }, 2000); // Change every 2 seconds
+      }
+
+      // Function to stop rotation
+      function stopRotation() {
+        if (rotationInterval) {
+          clearInterval(rotationInterval);
+        }
+      }
+
+      // Desktop: hover events
+      if (!isMobile) {
+        socialLinks.forEach((link) => {
+          link.addEventListener("mouseenter", function () {
+            isUserInteracting = true;
+            stopRotation();
+            const trigger = this.getAttribute("data-trigger");
+            activateNeon(trigger);
+          });
+
+          link.addEventListener("mouseleave", function () {
+            isUserInteracting = false;
+            deactivateNeon();
+            startRotation();
+          });
+        });
+      }
+      // Mobile: click/touch events
+      else {
+        let activeLink = null;
+
+        socialLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const trigger = this.getAttribute("data-trigger");
+
+            // If clicking the same link, deactivate and follow link
+            if (activeLink === this) {
+              isUserInteracting = false;
+              deactivateNeon();
+              activeLink = null;
+              startRotation();
+              // Follow the link
+              window.location.href = this.getAttribute("href");
+            } else {
+              isUserInteracting = true;
+              stopRotation();
+              deactivateNeon();
+
+              // Activate this link
+              activateNeon(trigger);
+              activeLink = this;
+            }
+          });
+        });
+
+        // Click outside to deactivate - use passive listener
+        document.addEventListener(
+          "click",
+          function (e) {
+            if (
+              !e.target.closest(".social-link") &&
+              !e.target.closest(".email-text")
+            ) {
+              isUserInteracting = false;
+              deactivateNeon();
+              activeLink = null;
+              startRotation();
+            }
+          },
+          { passive: true }
+        );
+      }
+
+      // Start the rotation when page loads - use RAF for smoother start
+      requestAnimationFrame(() => {
+        startRotation();
+      });
+
+      // Cleanup interval on page unload to prevent memory leaks
+      window.addEventListener(
+        "beforeunload",
+        () => {
+          stopRotation();
+        },
+        { passive: true }
+      );
+    </script>
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", function () {
+        const isExpanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", !isExpanded);
+        mobileMenu.classList.toggle("hidden");
+
+        // Animate hamburger icon to X
+        const spans = this.querySelectorAll("span");
+        if (!isExpanded) {
+          spans[0].style.transform = "rotate(45deg) translateY(8px)";
+          spans[1].style.opacity = "0";
+          spans[2].style.transform = "rotate(-45deg) translateY(-8px)";
+        } else {
+          spans[0].style.transform = "";
+          spans[1].style.opacity = "";
+          spans[2].style.transform = "";
+        }
+      });
+    </script>
+  </body>
+</html>
