@@ -406,6 +406,12 @@
         </svg>
       </button>
     </div>
+      <script>
+  document.getElementById('yt-lite').addEventListener('click', function() {
+    if(this.querySelector('iframe')) return;
+    this.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/Ccogr0xI3xY?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>';
+  });
+</script>
         </div>
       </div>
 
