@@ -203,6 +203,98 @@
           animation: none;
         }
       }
+      /* Featured block styling - reusable for services and projects */
+.featured-block {
+  position: relative;
+  background: linear-gradient(135deg, #2173DF 0%, #6B46C1 100%) !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(33, 115, 223, 0.25),
+              0 0 20px rgba(255, 0, 110, 0.3);
+  padding: 1.5rem !important;
+}
+
+/* Animated neon border using ::before pseudo-element */
+.featured-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.75rem;
+  padding: 3px;
+  background: linear-gradient(
+    90deg,
+    #FF006E,  /* neon pink */
+    #FFBE0B,  /* neon yellow */
+    #00F5FF,  /* neon cyan */
+    #8338EC,  /* neon purple */
+    #3A86FF,  /* neon blue */
+    #FB5607,  /* neon orange */
+    #FF006E,  /* neon pink */
+    #FFBE0B   /* neon yellow */
+  );
+  background-size: 400% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -1;
+  animation: neon-border-rotate 6s linear infinite;
+}
+
+@keyframes neon-border-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+.featured-block:hover {
+  box-shadow: 0 12px 32px rgba(33, 115, 223, 0.35),
+              0 0 30px rgba(255, 0, 110, 0.5),
+              0 0 40px rgba(0, 245, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Override text colors for featured blocks */
+.featured-block h3,
+.featured-block .font-bold,
+.featured-block .font-semibold {
+  color: #ffffff;
+}
+
+.featured-block p,
+.featured-block .text-sm {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Icon container styling for featured blocks */
+.featured-block .bg-blue-100 {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.featured-block .text-blue-600 {
+  color: #ffffff;
+}
+
+/* Ensure content is above the animated border */
+.featured-block > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Respect reduced motion for neon border animation */
+@media (prefers-reduced-motion: reduce) {
+  .featured-block::before {
+    animation: none;
+    background: linear-gradient(90deg, #FF006E, #00F5FF, #8338EC);
+  }
+}
+
     </style>
     <!-- Google Tag Manager -->
     <script>
@@ -353,6 +445,22 @@
         </div>
 
         <!-- SEO Audits -->
+<!-- <a href="https://saijogeorge.com/services/seo-audit-video/" class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition featured-block block">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
+      <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+      </svg>
+    </div>
+    <div>
+      <h3 class="font-bold text-lg">Express SEO Audit Video</h3>
+      <p class="mt-2 text-sm text-gray-600">
+        Get a personalised 10-minute video audit of your website. Discover what's holding you back and the exact next steps to fix it. $99 AUD.
+      </p>
+    </div>
+  </div>
+</a> -->
+
         <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition">
           <div class="flex items-start gap-4">
             <div class="flex-shrink-0 rounded-full bg-blue-100 p-3">
@@ -460,10 +568,14 @@
             <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">Export Google Reviews as CSV</h3>
             <p class="mt-2 text-sm text-gray-600">Export Google Reviews as CSV from your Google Business Profile.</p>
           </a>
-          <a href="https://saijogeorge.com/google-favicon-checker/" class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition">
+          <a target="_blank" href="https://push2.ai/ai-button-generator/" class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition featured-block ">
+  <h3 class="font-semibold text-gray-800 group-hover:text-yellow-200">AI Share Button Generator</h3>
+  <p class="mt-2 text-sm text-gray-600">Embeddable "AI Share" buttons for websites, allowing visitors to instantly send content to multiple AI chatbots.</p>
+</a>
+          <!-- <a href="https://saijogeorge.com/google-favicon-checker/" class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition">
             <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">Google Favicon Checker</h3>
             <p class="mt-2 text-sm text-gray-600">A simple bookmarklet to instantly see if your site's favicon is indexed by Google.</p>
-          </a>
+          </a> -->
           <a href="https://saijogeorge.com/request-access-sab/" class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition">
             <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">Request Access to Service Area Business</h3>
             <p class="mt-2 text-sm text-gray-600">Request access to any Google Business Profile from SERPs and Google Maps.</p>
