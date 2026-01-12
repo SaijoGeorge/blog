@@ -376,59 +376,48 @@
             instantly.
           </p>
 
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            
-              <a href="https://saijogeorge.com/gbp-review-scraper/"
-              target="_blank"
-                rel="noopener" class="seo-saijo-cta rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white shadow hover:bg-blue-500 active:translate-y-px"
-            >
-              <!-- Download Extension -->Coming Soon
-            </a>
-            <button
-              popovertarget="howto"
-              class="rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm hover:bg-gray-100"
-            >
-              How it works
-            </button>
-          </div>
-          <p class="mt-3 text-sm text-gray-500">Download v1.0 from the Chrome Store.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="https://saijogeorge.com/tools/gbp-review-scraper/gbp-review-scraper.zip" 
+             class="seo-saijo-cta rounded-2xl bg-blue-600 px-6 py-4 font-semibold text-white shadow hover:bg-blue-500 active:translate-y-px inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Download ZIP
+          </a>
+          <button popovertarget="howto" class="rounded-2xl border border-gray-300 bg-white px-6 py-4 text-sm font-semibold shadow-sm hover:bg-gray-100">
+            Installation guide
+          </button>
+        </div>
+          <p class="mt-3 text-sm text-gray-500">Note: This extension requires manual installation (sideloading) as it can't be listed on the Chrome Web Store. (Google's guidelines prevent review scraping 🙄)</p>
         </div>
 
 
 
-        <div class="order-1 md:order-none">
-                  <div class="w-full h-full relative cursor-pointer group" id="yt-lite">
-      <img src="https://saijogeorge.com/gbp-review-scraper/gbp-review-scraper.webp" alt="GBP Review Scraper Chrome extension side panel showing extracted reviews" class="object-cover w-full h-full transition group-hover:blur-sm">
-      <button aria-label="Play Video" class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition">
-        <svg class="w-16 h-16 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 84 84">
-          <circle opacity="0.8" cx="42" cy="42" r="42"></circle>
-          <polygon points="33,27 63,42 33,57"></polygon>
-        </svg>
-      </button>
-    </div>
-      <script>
-  document.getElementById('yt-lite').addEventListener('click', function() {
-    if(this.querySelector('iframe')) return;
-    this.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/Ccogr0xI3xY?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>';
-  });
-</script>
-        </div>
+              <div class="order-1 md:order-none w-full aspect-video">
+  <iframe
+    class="h-full w-full"
+    src="https://www.youtube.com/embed/Ccogr0xI3xY"
+    title="GBP Review Scraper Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+</div>
       </div>
 
       <!-- How it works Popover -->
-      <div id="howto" popover class="max-w-lg rounded-2xl border border-gray-200 bg-white p-6 text-sm shadow-xl">
-        <h3 class="mb-2 text-base font-semibold">How it works</h3>
-        <ul class="list-decimal space-y-1 pl-5 text-gray-700">
-          <li>Install the Chrome extension following the steps below</li>
-          <li>Navigate to any Google Business listing on Google Search or Maps</li>
-          <li>Click the extension icon in your toolbar</li>
-          <li>Watch the side panel extract reviews in real time</li>
-          <li>Download your reviews as a CSV file</li>
-        </ul>
-        <p class="mt-3 text-gray-500">
-          <b>Limitations:</b> Requires Chrome 114+ for Side Panel API. Google structure changes may occasionally break functionality.
-        </p>
-      </div>
+<div id="howto" popover class="max-w-lg rounded-2xl border border-gray-200 bg-white p-6 text-sm shadow-xl">
+  <h3 class="mb-2 text-base font-semibold">How to install (sideload)</h3>
+  <ol class="list-decimal space-y-2 pl-5 text-gray-700">
+    <li>Download the extension ZIP file and extract it to a folder (put it somewhere you won't accidentally delete it)</li>
+    <li>Open Chrome and put this in the URL bar <code class="bg-gray-100 px-1 rounded">chrome://extensions</code></li>
+    <li>Enable "Developer mode" using the toggle in the top right</li>
+    <li>Click "Load unpacked" and select the folder where you extracted the ZIP earlier</li>
+    <li>The extension icon will appear in your toolbar (you will need to pin it)</li>
+  </ol>
+  <p class="mt-3 text-gray-500"><strong>Why sideload?</strong> Google's guidelines prevent review scraping extensions in the Chrome Web Store.</p>
+</div>
     </section>
 
     <!-- Installation Section -->
@@ -540,6 +529,108 @@
           </ul>
         </div>
       </div>
+
+          <div class="grid items-center gap-8 md:grid-cols-2">
+
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Reviews are competitive intelligence hiding in plain sight</h2>
+        <p class="mt-3 text-gray-600">
+          Here's the thing most people miss: GBP reviews aren't just social proof. Every single review tells you exactly what worked, what didn't, and what customers wished existed. Multiply that across your competitors and you've got something way more valuable than any market research report.
+        </p>
+        <ul class="mt-6 space-y-2">
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs">✓</span>
+            <span>Discover what customers consistently praise about competitors</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs">✓</span>
+            <span>Find weaknesses and unmet needs you can capitalise on</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs">✓</span>
+            <span>Copy the exact language customers use into your marketing</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs">✓</span>
+            <span>Spot when competitors stumble before they realise it</span>
+          </li>
+        </ul>
+      </div>
+            <div class="order-1 md:order-none">
+        <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center border border-gray-200 shadow">
+          <svg class="w-24 h-24 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Features (Image Right) -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+            <div class="order-1 md:order-none">
+        <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center border border-gray-200 shadow">
+          <svg class="w-24 h-24 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Skip the soul-destroying manual work</h2>
+        <p class="mt-3 text-gray-600">
+          The manual way is clicking through each competitor's profile, copying reviews one by one, pasting into a spreadsheet. It's tedious. This extension does it all with one click, giving you a clean CSV ready for analysis.
+        </p>
+        <dl class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">One-Click Extraction</dt>
+            <dd class="mt-1 text-gray-600">Click the extension, watch the reviews load into your side panel</dd>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">Real-Time Progress</dt>
+            <dd class="mt-1 text-gray-600">See exactly how many reviews have been scraped as it runs</dd>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">CSV Export</dt>
+            <dd class="mt-1 text-gray-600">Download everything in a format ready for Excel or Google Sheets</dd>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <dt class="font-semibold">Works Everywhere</dt>
+            <dd class="mt-1 text-gray-600">Google Search, Maps, and Knowledge Graph panels</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Section 3: What You Can Do (Image Left) -->
+    <div class="grid items-center gap-8 md:grid-cols-2">
+
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">What you can actually do with this data</h2>
+        <p class="mt-3 text-gray-600">
+          Once you've got the reviews in a spreadsheet, the real work begins. Feed them into an AI tool for sentiment analysis, sort them into piles (happy, neutral, frustrated), and start spotting patterns.
+        </p>
+        <ul class="mt-6 space-y-2">
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs">✓</span>
+            <span><strong>Sentiment analysis:</strong> Find what customers love and hate, then use those insights to shape your operations and marketing</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs">✓</span>
+            <span><strong>Timing patterns:</strong> A sudden spike in negative reviews means something changed. Spot when competitors stumble</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white text-xs">✓</span>
+            <span><strong>Voice of customer:</strong> Copy the exact words customers use into your ads and landing pages</span>
+          </li>
+        </ul>
+      </div>
+            <div class="order-1 md:order-none">
+        <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center border border-gray-200 shadow">
+          <svg class="w-24 h-24 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
     </section>
 
     <!-- Alternative Method -->
