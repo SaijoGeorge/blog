@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="all">
+  <meta name="language" content="en">
+  <meta name="author" content="Saijo George">
+  <meta name="theme-color" content="#F5AB35">
+  
+  <!-- Primary Meta Tags -->
+  <title>AI Words Detector - Free Chrome Extension to Spot AI Writing Patterns | Saijo George</title>
+  <meta name="title" content="AI Words Detector - Free Chrome Extension to Spot AI Writing Patterns | Saijo George">
+  <meta name="description" content="Instantly highlight AI buzzwords like 'delve', em-dashes, and custom words on any webpage. Free Chrome extension for editors, writers, and SEOs.">
+  <link rel="canonical" href="https://saijogeorge.com/ai-words-detector/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saijogeorge.com/ai-words-detector/">
+  <meta property="og:title" content="AI Words Detector - Free Chrome Extension to Spot AI Writing Patterns | Saijo George">
+  <meta property="og:description" content="Instantly highlight AI buzzwords like 'delve', em-dashes, and custom words on any webpage. Free Chrome extension for editors, writers, and SEOs.">
+  <meta property="og:image" content="https://saijogeorge.com/ai-word-detector-free.png">
+  <meta property="og:site_name" content="SaijoGeorge.com">
+  <meta property="article:author" content="https://www.facebook.com/SaijoGeorge">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://saijogeorge.com/ai-words-detector/">
+  <meta property="twitter:title" content="AI Words Detector - Free Chrome Extension | Saijo George">
+  <meta property="twitter:description" content="Instantly highlight AI buzzwords like 'delve', em-dashes, and custom words on any webpage. Free Chrome extension for editors, writers, and SEOs.">
+  <meta property="twitter:image" content="https://saijogeorge.com/ai-word-detector-free.png">
+  <meta property="twitter:site" content="@SaijoGeorge">
+  <meta property="twitter:creator" content="@SaijoGeorge">
+  <meta property="twitter:domain" content="https://saijogeorge.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://saijogeorge.com/favicon.ico">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tilt+Neon&display=swap" rel="stylesheet">
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://saijogeorge.com",
+          "name": "Home"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "https://saijogeorge.com/projects.html",
+          "name": "Side Projects"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://saijogeorge.com/ai-words-detector/",
+          "name": "AI Words Detector"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Software Application Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SEO Saijo AI Words Detector",
+    "operatingSystem": "Chrome",
+    "applicationCategory": "BrowserApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Saijo George",
+      "url": "https://saijogeorge.com"
+    },
+    "description": "Free Chrome extension that highlights AI buzzwords, em-dashes, and custom words on any webpage.",
+    "softwareVersion": "2.0.1",
+    "downloadUrl": "https://chromewebstore.google.com/detail/seo-saijo-ai-words-detect/pjgmihnkgnhnbeioconodbfladbnkdbh"
+  }
+  </script>
+  
+  <!-- Styles -->
+  <style>
+    /* Footer background with brick texture */
+    #myfoot {
+      background-color: #120d1f;
+      background-image: url('https://saijogeorge.com/images/brick.png');
+      background-position: 50% center;
+      background-repeat: repeat;
+      contain: layout style paint;
+    }
+    
+    .footer-border {
+      width: 50%;
+      height: 4px;
+      margin: 0 auto;
+      background-color: #4b354b;
+      border-radius: 24px;
+    }
+    
+    /* Neon tube text styling - default off state */
+    .email-text {
+      font-family: 'Tilt Neon', cursive;
+    }
+    
+    .email-text span {
+      display: inline-block;
+      color: #5a4a5a;
+      line-height: 2.5rem;
+      font-size: 2.5rem;
+      font-weight: normal;
+      transition: all 0.3s ease;
+      position: relative;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: text-shadow, opacity;
+      text-shadow: 
+        0 0 3px rgba(150, 150, 180, 0.3),
+        0 0 8px rgba(150, 150, 180, 0.2),
+        -1px -1px 2px rgba(200, 200, 220, 0.4);
+      opacity: 0.7;
+      letter-spacing: 0.05em;
+      -webkit-text-stroke: 0.5px rgba(100, 90, 110, 0.3);
+    }
+    
+    /* Neon glow effect when active */
+    .email-text span.neon-active {
+      color: #ffd9e2;
+      opacity: 1;
+      -webkit-text-stroke: 0;
+      text-shadow: 
+        0 0 10px #ff003c, 
+        0 0 20px rgba(255, 0, 60, 0.5), 
+        0 0 40px #ff003c, 
+        0 0 100px #ff003c, 
+        0 0 200px #ff003c;
+      animation: buzz 0.05s infinite alternate;
+    }
+    
+    @keyframes buzz {
+      70% { opacity: 0.85; }
+    }
+    
+    /* Social links styling */
+    .social-link {
+      margin: 0 0.25rem;
+      padding: 8px 16px;
+      font-size: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      position: relative;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    
+    .social-link:hover,
+    .social-link.link-active {
+      background-color: #D2C1B6;
+      color: #2c2c2c;
+    }
+    
+    .separator {
+      margin: 0 0.25rem;
+      font-size: 20px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .footer-border { width: 75%; }
+      .email-text span {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+      .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+    
+    /* Highlight effect for emphasized text */
+    .seo-saijo-highlight {
+      --hl-thickness: 0.95em;
+      --hl-offset: 88%;
+      position: relative;
+      font-style: italic;
+      background-image: linear-gradient(#fada7a, #fada7a);
+      background-repeat: no-repeat;
+      background-size: 0% var(--hl-thickness);
+      background-position: 0 var(--hl-offset);
+      padding: 0 0.06em;
+      transition: background-size 900ms cubic-bezier(0.22, 0.61, 0.36, 1);
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    
+    .seo-saijo-highlight.is-marked {
+      background-size: 100% var(--hl-thickness);
+    }
+    
+    /* CTA pulse animation */
+    .seo-saijo-cta {
+      position: relative;
+      border: 3px solid #ffd800;
+      box-shadow: 0 0 0 0 rgba(255, 216, 0, 0.6);
+      animation: cta-pulse-6s-gap 5.5s ease-out infinite both;
+    }
+    
+    .seo-saijo-cta:hover {
+      box-shadow: 0 0 0 4px rgba(255, 216, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .seo-saijo-cta:active {
+      transform: translateY(1px);
+    }
+    
+    @keyframes cta-pulse-6s-gap {
+      0%, 79.9% {
+        box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+        transform: scale(1);
+      }
+      80% {
+        box-shadow: 0 0 0 0 rgba(255, 216, 0, 0.45);
+        transform: scale(1);
+      }
+      88% {
+        box-shadow: 0 0 0 18px rgba(255, 216, 0, 0);
+        transform: scale(1.02);
+      }
+      96% {
+        box-shadow: 0 0 0 6px rgba(255, 216, 0, 0.12);
+        transform: scale(1.005);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 216, 0, 0);
+        transform: scale(1);
+      }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .seo-saijo-highlight { transition: none; }
+      .seo-saijo-cta { animation: none; }
+    }
+
+    /* AI word highlight demo */
+    .ai-word-demo {
+      background-color: #FFF085;
+      border-bottom: 2px solid #F16767;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .ai-word-demo-block {
+      line-height: 3rem !important;
+    }
+
+    .ai-word-custom {
+      background-color: #B771E5;
+      border-bottom: 2px solid #4635B1;
+      padding: 0 2px;
+      border-radius: 2px;
+      color: white;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WDN6LH');</script>
+</head>
+<body class="bg-white text-gray-800">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDN6LH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- Header -->
+<header class="border-b md:border-b border-t md:border-t-0 border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 fixed bottom-0 md:sticky md:top-0 left-0 right-0 z-30">
+  <div class="container mx-auto flex items-center justify-between py-4 px-4">
+    <a href="https://saijogeorge.com" class="flex items-center gap-2 font-bold text-xl tracking-tight">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 600 600">
+        <path d="M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563" stroke="none" fill="#ffffff" fill-rule="evenodd"/>
+        <path d="M 263.500 3.656 C 192.198 13.884, 134.411 42.843, 85.970 92.623 C 42.552 137.240, 14.683 193.389, 4.825 256.107 C 2.845 268.702, 2.562 274.248, 2.562 300.500 C 2.562 334.368, 3.900 346.463, 10.590 373.080 C 37.340 479.517, 120.412 563.173, 226 590.003 C 251.504 596.483, 272.203 599, 300 599 C 327.797 599, 348.496 596.483, 374 590.003 C 458.897 568.431, 530.899 509.192, 569.084 429.500 C 581.543 403.496, 590.392 374.834, 595.171 345 C 597.234 332.121, 597.490 327.146, 597.465 300.500 C 597.434 266.241, 596.033 253.934, 589.056 226.607 C 562.071 120.913, 478.979 37.617, 374 11.019 C 346.518 4.056, 342.846 3.664, 303 3.435 C 282.925 3.320, 265.150 3.419, 263.500 3.656 M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092" stroke="none" fill="#fbdb04" fill-rule="evenodd"/>
+        <path d="M 275 57.092 C 226.360 63.415, 187.165 78.986, 151.119 106.308 C 140.099 114.661, 120.028 134.186, 111.345 145 C 96.915 162.972, 83.865 185.178, 75.496 206 C 67.024 227.080, 62.896 243.042, 59.461 268 C 57.771 280.282, 57.502 315.598, 59.017 326.308 C 63.178 355.725, 70.167 379.163, 82.035 403.500 C 115.522 472.168, 179.736 521.667, 254.500 536.443 C 271.428 539.789, 279.279 540.471, 301 540.485 C 323.735 540.500, 330.486 539.864, 350.416 535.831 C 408.767 524.022, 463.397 488.393, 499.656 438.500 C 516.727 415.010, 531.677 381.956, 538.102 353.500 C 542.656 333.330, 544.135 320.165, 544.226 299 C 544.495 236.425, 524.073 182.322, 482.619 135.781 C 451.493 100.835, 409.334 75.461, 362.639 63.569 C 355.413 61.728, 345.900 59.717, 341.500 59.099 C 337.100 58.482, 330.264 57.532, 326.308 56.988 C 317.797 55.819, 284.274 55.886, 275 57.092 M 317.359 94.506 C 316.251 97.395, 317.658 494.058, 318.781 495.181 C 320.990 497.390, 355.221 490.238, 367.750 484.950 C 368.988 484.427, 371.012 483.598, 372.250 483.106 C 385.493 477.844, 401.415 468.722, 415 458.614 C 444.864 436.391, 469.211 404.255, 482.892 369 C 484.706 364.325, 486.550 359.600, 486.989 358.500 C 491.508 347.181, 496.513 323.162, 498.034 305.500 C 499.048 293.718, 498.714 274.768, 497.368 267.750 L 496.841 265 442.921 265 L 389 265 389 282.988 L 389 300.975 425.217 301.238 L 461.434 301.500 461.170 306.500 C 460.713 315.162, 457.600 331.024, 454.496 340.500 C 439.234 387.095, 405.993 425.894, 363.143 447.127 L 353.500 451.905 353.247 295.289 C 353.108 209.150, 353.196 138.471, 353.442 138.224 C 354.293 137.374, 371.526 146.310, 381.500 152.775 C 399.386 164.367, 414.867 178.735, 427.835 195.780 C 434.067 203.969, 443.045 217.865, 444.292 221.250 C 444.878 222.839, 446.827 223, 465.469 223 C 487.325 223, 487.572 222.940, 485.080 218.236 C 484.574 217.281, 481.664 211.439, 478.613 205.254 C 466.816 181.335, 447.037 156.811, 424 137.539 C 396.645 114.655, 357.256 97.325, 323.762 93.438 C 318.863 92.870, 317.927 93.026, 317.359 94.506 M 260 96.563 C 234.418 102.089, 206.254 115.424, 182.687 133.171 C 169.781 142.890, 150.749 162.761, 140.593 177.121 C 132.400 188.707, 122.134 207.015, 117.672 218 C 116.667 220.475, 115.448 223.400, 114.964 224.500 C 112.512 230.072, 108.724 243.380, 106.352 254.760 C 104.102 265.551, 103.681 270.177, 103.598 285 L 103.500 302.500 169.750 302.757 L 236 303.014 236 375.053 L 236 447.092 227.994 442.812 C 205.345 430.706, 181.752 409.069, 166.590 386.500 C 162.612 380.579, 153.666 363.391, 150.976 356.500 C 149.822 353.545, 146.276 343.768, 145.626 341.750 C 145.117 340.169, 143.326 340, 127.090 340 C 117.206 340, 108.863 340.413, 108.550 340.918 C 107.945 341.898, 109.597 348.712, 112.811 358.500 C 127.376 402.844, 156.114 439.844, 196.546 466.307 C 205.764 472.340, 228.444 484, 230.961 484 C 231.547 484, 232.809 484.429, 233.764 484.953 C 238.695 487.659, 261.106 493.619, 268.500 494.191 L 272.500 494.500 272.429 448 C 272.390 422.425, 272.278 371.012, 272.179 333.750 L 272 266 207.500 266 C 156.560 266, 143.002 265.737, 143.012 264.750 C 143.018 264.063, 143.892 260.125, 144.952 256 C 146.013 251.875, 147.171 247.375, 147.524 246 C 147.878 244.625, 148.536 242.600, 148.986 241.500 C 149.436 240.400, 150.829 236.800, 152.081 233.500 C 156.028 223.094, 164.804 206.848, 171.776 197.043 C 183.295 180.841, 210.428 155.247, 222.835 148.879 C 224.301 148.127, 227.501 146.271, 229.946 144.756 C 232.391 143.240, 234.753 142, 235.196 142 C 235.638 142, 236 160.225, 236 182.500 L 236 223 254 223 L 272 223 272 159 L 272 95 269.250 95.079 C 267.738 95.123, 263.575 95.791, 260 96.563" stroke="none" fill="#2474de" fill-rule="evenodd"/>
+      </svg>
+      <span>SEO Saijo</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+      <a href="https://saijogeorge.com/services/" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="https://saijogeorge.com/projects/" class="text-gray-700 hover:text-blue-600">Tools</a>
+      <a href="https://saijogeorge.com/about/" class="text-gray-700 hover:text-blue-600">About Me</a>
+      <a href="https://saijogeorge.com/contact/" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded" aria-label="Toggle menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="hidden md:hidden absolute bottom-full left-0 right-0 border-t border-gray-200 bg-white shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+      <a href="https://saijogeorge.com/services/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">Services</a>
+      <a href="https://saijogeorge.com/projects/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">Tools</a>
+      <a href="https://saijogeorge.com/about/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">About Me</a>
+      <a href="https://saijogeorge.com/contact/" class="text-gray-700 hover:text-blue-600 font-semibold text-sm py-2">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+  <div class="container mx-auto grid gap-8 py-16 md:grid-cols-2 md:items-center px-4">
+    <!-- Left Column: Text Content -->
+    <div>
+      <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">AI Words Detector</h1>
+      <p class="mt-4 max-w-[60ch] text-lg text-gray-600">
+        Easiest way to spot AI words and phrases in webpages and Google Docs.</p>
+      <p class="mt-4 max-w-[60ch] text-lg text-gray-600">
+        You know that feeling when you're reading something and it just... sounds like AI? Words like <span class="ai-word-demo">delve</span>, <span class="ai-word-demo">multifaceted</span>, and those telltale em-dashes <span class="ai-word-demo">—</span> everywhere. This free Chrome extension highlights them instantly on any webpage, so you can spot AI patterns before your readers do.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="https://chromewebstore.google.com/detail/seo-saijo-ai-words-detect/pjgmihnkgnhnbeioconodbfladbnkdbh" 
+           target="_blank"
+           rel="noopener"
+           class="seo-saijo-cta rounded-2xl bg-blue-600 px-5 py-3 font-semibold text-white shadow hover:bg-blue-500 active:translate-y-px inline-flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728z"/>
+          </svg>
+          Add to Chrome (Free)
+        </a>
+        <button popovertarget="howto" 
+                class="rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm hover:bg-gray-100">
+          How it works
+        </button>
+      </div>
+      <p class="mt-3 text-sm text-gray-500">Works on Google Docs, WordPress, competitor sites, and pretty much anywhere.</p>
+    </div>
+
+    <!-- Right Column: Video -->
+    <div class="aspect-[16/10] w-full rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+      <div class="w-full h-full relative cursor-pointer group" id="yt-lite" onclick="loadYouTube()">
+        <img src="https://img.youtube.com/vi/WWCmLE6tNzg/maxresdefault.jpg" 
+             alt="AI Words Detector Chrome Extension demo video" 
+             class="object-cover w-full h-full transition group-hover:brightness-75">
+        <button aria-label="Play Video" 
+                class="absolute inset-0 flex items-center justify-center">
+          <svg class="w-20 h-20 text-red-600 drop-shadow-lg" viewBox="0 0 68 48">
+            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="currentColor"/>
+            <path d="M 45,24 27,14 27,34" fill="#fff"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works Popover -->
+<div id="howto" popover class="max-w-lg rounded-2xl border border-gray-200 bg-white p-6 text-sm shadow-xl">
+  <h3 class="mb-3 text-base font-semibold">How to use AI Words Detector</h3>
+  <ol class="list-decimal list-inside space-y-2 text-gray-700">
+    <li>Install the extension from the Chrome Web Store</li>
+    <li>Visit any webpage you want to analyse</li>
+    <li>Click the extension icon to open the side panel</li>
+    <li>Watch as AI-typical words get highlighted instantly</li>
+    <li>Click any word in the panel to jump through occurrences</li>
+    <li>Add your own custom words to track (like client no-go terms)</li>
+  </ol>
+</div>
+
+<!-- Section 1: Why use this (Image Left) -->
+<section class="bg-white py-16">
+  <div class="container mx-auto grid gap-8 md:grid-cols-2 md:items-center px-4">
+    <!-- Image -->
+    <div>
+      <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center border border-gray-200 shadow p-8">
+        <p class="text-2xl md:text-3xl text-gray-700 text-center ai-word-demo-block">
+          "Let me <span class="ai-word-demo">delve</span> into this <span class="ai-word-demo">multifaceted</span> topic <span class="ai-word-demo">—</span> it's truly <span class="ai-word-demo">paramount</span> to <span class="ai-word-demo">unravel</span> its <span class="ai-word-demo">intricacies</span>."
+        </p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Spot AI writing patterns instantly</h2>
+      <p class="mt-4 text-gray-600">
+        AI-generated content has tells. Certain words appear far more frequently in LLM output than in human writing. Once you see them, you can't unsee them. This extension makes those patterns visible at a glance.
+      </p>
+      <ul class="mt-6 space-y-3">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">250+ pre-loaded AI buzzwords like "delve", "tapestry", "nuanced", "multifaceted"</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Catches em-dashes (—) which LLMs use excessively</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Add your own words to track, like client-specific no-go terms</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Works on Google Docs, WordPress, and tricky SPAs</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Features (Image Right) -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto grid gap-8 md:grid-cols-2 md:items-center px-4">
+    <!-- Content -->
+    <div class="md:order-1">
+      <h2 class="text-2xl font-bold tracking-tight">Features that actually help</h2>
+      <p class="mt-4 text-gray-600">
+        This isn't some bloated tool that tries to do everything. It does one thing well: highlight words you need to pay attention to.
+      </p>
+      
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+          <h3 class="font-semibold text-gray-800">Jump Navigation</h3>
+          <p class="mt-1 text-sm text-gray-600">Click any word in the sidebar to jump through each occurrence on the page. No more Ctrl+F hunting.</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+          <h3 class="font-semibold text-gray-800">Two Colour Sets</h3>
+          <p class="mt-1 text-sm text-gray-600">Default AI words get <span class="ai-word-demo">yellow</span> highlights. Your custom words get <span class="ai-word-custom">purple</span>. Easy to tell apart.</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+          <h3 class="font-semibold text-gray-800">Word Counts</h3>
+          <p class="mt-1 text-sm text-gray-600">See exactly how many times each flagged word appears. Sort by count or alphabetically.</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+          <h3 class="font-semibold text-gray-800">Toggle On/Off</h3>
+          <p class="mt-1 text-sm text-gray-600">Turn individual words or all highlights on and off. Helpful when the page gets busy.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Image -->
+    <div class="md:order-2">
+      <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 flex flex-col items-center justify-center border border-gray-200 shadow p-6">
+        <div class="bg-white rounded-lg shadow-lg p-4 w-full max-w-xs border border-gray-100">
+          <div class="text-sm font-semibold text-gray-800 mb-3">Default AI Words</div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-sm">
+              <span class="ai-word-demo">delve</span>
+              <span class="text-gray-500">×12</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="ai-word-demo">multifaceted</span>
+              <span class="text-gray-500">×7</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="ai-word-demo">—</span>
+              <span class="text-gray-500">×23</span>
+            </div>
+          </div>
+          <div class="text-sm font-semibold text-gray-800 mt-4 mb-3">Custom Words</div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-sm">
+              <span class="ai-word-custom">guarantee</span>
+              <span class="text-gray-500">×3</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="ai-word-custom">lorem ipsum</span>
+              <span class="text-gray-500">×1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Hidden Terms Detection (Image Left) -->
+<section class="bg-white py-16">
+  <div class="container mx-auto grid gap-8 md:grid-cols-2 md:items-center px-4">
+    <!-- Image -->
+    <div>
+      <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center border border-gray-200 shadow p-8">
+        <p class="text-center text-gray-500">
+          <img src="hidden-word-highlight.gif" 
+             alt="hidden-word-highlight">
+        </p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Catch hidden terms you can't see</h2>
+      <p class="mt-4 text-gray-600">
+        AI-generated content sometimes hides in collapsed sections or elements with zero opacity. This extension detects those hidden terms and makes them visible, so you can find every instance of AI patterns; even the ones deliberately concealed.
+      </p>
+      <ul class="mt-6 space-y-3">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Detects terms in collapsed or hidden HTML elements (<code class="text-sm bg-gray-100 px-1 rounded">display:none</code>, zero opacity)</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Click detected terms to highlight and scroll to the section containing them</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Expand collapsed sections to reveal the actual hidden text in context</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Never miss AI patterns buried in the DOM structure</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-gray-700">Perfect for catching sneaky content that passes visual inspection</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold tracking-tight text-center">Perfect for</h2>
+    <p class="mt-4 text-gray-600 text-center max-w-2xl mx-auto">
+      Whether you're editing your own content, reviewing client work, or analysing competitors, this extension saves you time.
+    </p>
+    
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
+        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-800">Content Editors</h3>
+        <p class="mt-2 text-sm text-gray-600">Quickly spot AI-generated sections in articles before they go live. Make content sound more human without second-guessing every sentence.</p>
+      </div>
+      
+      <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
+        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-800">SEO Professionals</h3>
+        <p class="mt-2 text-sm text-gray-600">Audit client sites and competitor content. See if that "hand-written" content they're paying for has suspicious patterns.</p>
+      </div>
+      
+      <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
+        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-800">Agency Teams</h3>
+        <p class="mt-2 text-sm text-gray-600">Add client-specific no-go words like "guarantee" or brand terms they don't want used. Catch issues before the client does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Default Words Section -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold tracking-tight text-center">The usual suspects</h2>
+    <p class="mt-4 text-gray-600 text-center max-w-2xl mx-auto">
+      The extension comes loaded with 250+ words and phrases that frequently appear in AI-generated content. Here's a sample of what it catches:
+    </p>
+    
+    <div class="mt-8 flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">delve</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">multifaceted</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">tapestry</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">nuanced</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">the multifaceted nature</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">unveil</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">embark</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">leverage</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">synergy</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">holistic</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">pivotal</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">seamless</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">testament</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">realm</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">a stark reminder</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">landscape</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">unparalleled</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">groundbreaking</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">—</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">in today's world</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">dive into</span>
+      <span class="ai-word-demo px-3 py-1 rounded-full text-sm">shed light</span>
+      <span class="text-gray-500 px-3 py-1 text-sm">+ 230 more...</span>
+    </div>
+    
+    <p class="mt-6 text-sm text-gray-500 text-center">
+      You can add your own words or remove any defaults in the settings panel.
+    </p>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-blue-600 py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white">Ready to spot AI patterns?</h2>
+    <p class="mt-4 text-blue-100 max-w-xl mx-auto">
+      Free forever. No account needed. No data collection. Just install and go.
+    </p>
+    <a href="https://chromewebstore.google.com/detail/seo-saijo-ai-words-detect/pjgmihnkgnhnbeioconodbfladbnkdbh" 
+       target="_blank"
+       rel="noopener"
+       class="mt-8 inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-4 font-semibold text-blue-600 shadow-lg hover:bg-gray-50 transition">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728z"/>
+      </svg>
+      Add to Chrome (Free)
+    </a>
+  </div>
+</section>
+
+<!-- Changelog Section -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4 max-w-2xl">
+    <h2 class="text-2xl font-bold tracking-tight text-center">Changelog</h2>
+    <p class="mt-4 text-gray-600 text-center">
+      Track how the AI Words Detector evolved over time.
+    </p>
+
+    <div class="mt-10 relative border-l-2 border-gray-200 pl-8 space-y-8">
+      <!-- Version 2.0.1 -->
+      <details class="group relative rounded-lg border border-gray-200 bg-white p-4 shadow-sm open:shadow" open>
+        <summary class="flex cursor-pointer items-center gap-3 list-none">
+          <span class="absolute -left-[25px] top-5 h-4 w-4 rounded-full border-2 border-blue-500 bg-blue-500"></span>
+          <svg class="h-4 w-4 text-gray-500 transition-transform group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">v2.0.1</span>
+          <span class="text-sm text-gray-500">January 2025</span>
+        </summary>
+        <div class="mt-4 pl-7 text-sm text-gray-600">
+          <ul class="list-disc list-inside space-y-1">
+            <li>Link issue fixed</li>
+          </ul>
+        </div>
+      </details>
+      
+      <!-- Version 2.0.0 -->
+      <details class="group relative rounded-lg border border-gray-200 bg-white p-4 shadow-sm open:shadow">
+        <summary class="flex cursor-pointer items-center gap-3 list-none">
+          <span class="absolute -left-[25px] top-5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white"></span>
+          <svg class="h-4 w-4 text-gray-500 transition-transform group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700">v2.0.0</span>
+          <span class="text-sm text-gray-500">January 2025</span>
+        </summary>
+        <div class="mt-4 pl-7 text-sm text-gray-600">
+          <ul class="list-disc list-inside space-y-1">
+            <li>Complete UI redesign with side panel interface</li>
+            <li>Added word count display with sorting options</li>
+            <li>Jump navigation to cycle through word occurrences</li>
+            <li>Separate colour schemes for default and custom words</li>
+            <li>Master toggle to show/hide all highlights</li>
+            <li>Expanded default word list to 250+ terms</li>
+            <li>Added academic phrases commonly found in AI content</li>
+            <li>Improved Google Docs compatibility</li>
+          </ul>
+        </div>
+      </details>
+      
+      <!-- Version 1.0 -->
+      <details class="group relative rounded-lg border border-gray-200 bg-white p-4 shadow-sm open:shadow">
+        <summary class="flex cursor-pointer items-center gap-3 list-none">
+          <span class="absolute -left-[25px] top-5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white"></span>
+          <svg class="h-4 w-4 text-gray-500 transition-transform group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700">v1.0</span>
+          <span class="text-sm text-gray-500">2024</span>
+        </summary>
+        <div class="mt-4 pl-7 text-sm text-gray-600">
+          <ul class="list-disc list-inside space-y-1">
+            <li>Initial release with core highlighting functionality</li>
+            <li>Basic word detection for common AI terms</li>
+            <li>Em-dash detection</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div id="myfoot" class="w-full min-h-[200px]">
+  <div class="footer-border"></div>
+  <div class="container mx-auto">
+    <div class="w-full h-[200px] flex flex-col justify-center items-center">
+      <!-- Email/Website with neon effect -->
+      <div class="email-text flex items-center mb-6">
+        <span data-parts="email">iam</span>
+        <span data-parts="email,social">@</span>
+        <span data-parts="email,social,website">saijogeorge</span>
+        <span data-parts="email,website">.</span>
+        <span data-parts="email,website">com</span>
+      </div>
+      
+      <!-- Social links -->
+      <div class="social-links flex items-center">
+        <a href="https://twitter.com/saijogeorge" class="social-link" data-trigger="social">Social</a>
+        <span class="separator">-</span>
+        <a href="https://saijogeorge.com/" class="social-link" data-trigger="website">Website</a>
+        <span class="separator">-</span>
+        <a href="mailto:iam@saijogeorge.com" class="social-link" data-trigger="email">Email</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+  // YouTube lite loader
+  function loadYouTube() {
+    const container = document.getElementById('yt-lite');
+    container.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/WWCmLE6tNzg?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  }
+</script>
+
+<!-- Neon animation script -->
+<script>
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  
+  const socialLinks = document.querySelectorAll('.social-link');
+  const emailParts = document.querySelectorAll('.email-text span');
+  
+  let rotationInterval;
+  let isUserInteracting = false;
+  const rotationSequence = ['social', 'website', 'email'];
+  let currentRotationIndex = 0;
+  
+  function activateNeon(trigger) {
+    requestAnimationFrame(() => {
+      emailParts.forEach(part => part.classList.remove('neon-active'));
+      socialLinks.forEach(link => link.classList.remove('link-active'));
+      
+      emailParts.forEach(part => {
+        const parts = part.getAttribute('data-parts');
+        if (parts && parts.includes(trigger)) {
+          part.classList.add('neon-active');
+        }
+      });
+      
+      const correspondingLink = document.querySelector(`[data-trigger="${trigger}"]`);
+      if (correspondingLink) {
+        correspondingLink.classList.add('link-active');
+      }
+    });
+  }
+  
+  function deactivateNeon() {
+    requestAnimationFrame(() => {
+      emailParts.forEach(part => part.classList.remove('neon-active'));
+      socialLinks.forEach(link => link.classList.remove('link-active'));
+    });
+  }
+  
+  function startRotation() {
+    if (isUserInteracting) return;
+    rotationInterval = setInterval(() => {
+      if (!isUserInteracting) {
+        const trigger = rotationSequence[currentRotationIndex];
+        activateNeon(trigger);
+        currentRotationIndex = (currentRotationIndex + 1) % rotationSequence.length;
+      }
+    }, 2000);
+  }
+  
+  function stopRotation() {
+    if (rotationInterval) clearInterval(rotationInterval);
+  }
+  
+  if (!isMobile) {
+    socialLinks.forEach(link => {
+      link.addEventListener('mouseenter', function() {
+        isUserInteracting = true;
+        stopRotation();
+        const trigger = this.getAttribute('data-trigger');
+        activateNeon(trigger);
+      });
+      
+      link.addEventListener('mouseleave', function() {
+        isUserInteracting = false;
+        deactivateNeon();
+        startRotation();
+      });
+    });
+  } else {
+    let activeLink = null;
+    socialLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const trigger = this.getAttribute('data-trigger');
+        
+        if (activeLink === this) {
+          isUserInteracting = false;
+          deactivateNeon();
+          activeLink = null;
+          startRotation();
+          window.location.href = this.getAttribute('href');
+        } else {
+          isUserInteracting = true;
+          stopRotation();
+          deactivateNeon();
+          activateNeon(trigger);
+          activeLink = this;
+        }
+      });
+    });
+    
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.social-link') && !e.target.closest('.email-text')) {
+        isUserInteracting = false;
+        deactivateNeon();
+        activeLink = null;
+        startRotation();
+      }
+    }, { passive: true });
+  }
+  
+  requestAnimationFrame(() => startRotation());
+  
+  window.addEventListener('beforeunload', () => stopRotation(), { passive: true });
+</script>
+
+<!-- Mobile menu toggle script -->
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton.addEventListener("click", function () {
+    const isExpanded = this.getAttribute("aria-expanded") === "true";
+    this.setAttribute("aria-expanded", !isExpanded);
+    mobileMenu.classList.toggle("hidden");
+
+    const spans = this.querySelectorAll("span");
+    if (!isExpanded) {
+      spans[0].style.transform = "rotate(45deg) translateY(8px)";
+      spans[1].style.opacity = "0";
+      spans[2].style.transform = "rotate(-45deg) translateY(-8px)";
+    } else {
+      spans[0].style.transform = "";
+      spans[1].style.opacity = "";
+      spans[2].style.transform = "";
+    }
+  });
+</script>
+
+<!-- Highlight animation script -->
+<script>
+  (() => {
+    const els = document.querySelectorAll(".seo-saijo-highlight");
+    
+    els.forEach((el) => {
+      const c = el.dataset.highlightColor;
+      if (c) el.style.backgroundImage = `linear-gradient(${c},${c})`;
+    });
+
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const delay = parseInt(el.dataset.highlightDelay || 0, 10);
+          setTimeout(() => el.classList.add("is-marked"), delay);
+          obs.unobserve(el);
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    els.forEach((el) => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>
